@@ -25,6 +25,14 @@ function handleClick() {
     // Change the text excitingly
     h1.innerText = "You clicked it!";
 
+    // Trigger the pink confetti explosion!
+    confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#FF69B4', '#FF1493', '#FFB6C1', '#DB7093', '#C71585', '#FFC0CB'] // All shades of pink
+    });
+
     // Reset text after 2 seconds
     setTimeout(() => {
         h1.innerText = "Hello Holly!";
