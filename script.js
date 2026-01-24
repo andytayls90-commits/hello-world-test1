@@ -27,7 +27,7 @@ function handleClick() {
 
     // Reset text after 2 seconds
     setTimeout(() => {
-        h1.innerText = "Hello User!";
+        h1.innerText = "Hello Holly!";
     }, 2000);
 }
 
