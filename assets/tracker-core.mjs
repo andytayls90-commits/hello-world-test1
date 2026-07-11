@@ -125,6 +125,30 @@ export function classifyFreshness(updatedAt, now = new Date(), staleAfterHours =
   return { state: ageHours > staleAfterHours ? 'STALE' : 'FRESH', age_hours: Math.round(ageHours * 10) / 10 };
 }
 
+export function classifySchedule(task, now = new Date()) {
+  if (!task?.target_at) return { state: task?.status === 'COMPLETE' ? 'COMPLETE' : 'NO_TARGET', delta_hours: null };
+  const target = new Date(task.target_at);
+  if (Number.isNaN(target.getTime())) return { state: 'UNKNOWN', delta_hours: null };
+  if (task.status === 'COMPLETE' && task.completed_at) {
+    const completed = new Date(task.completed_at);
+    if (Number.isNaN(completed.getTime())) return { state: 'UNKNOWN', delta_hours: null };
+    const delta = (completed.getTime() - target.getTime()) / 3_600_000;
+    return { state: delta <= 0 ? 'COMPLETE_ON_TIME' : 'COMPLETE_LATE', delta_hours: Math.round(delta * 10) / 10 };
+  }
+  if (['SUPERSEDED','CANCELLED'].includes(task.status)) return { state: task.status, delta_hours: null };
+  const delta = (now.getTime() - target.getTime()) / 3_600_000;
+  return { state: delta > 0 ? 'OVERDUE' : 'ON_TRACK', delta_hours: Math.round(delta * 10) / 10 };
+}
+
+export function statusMatchesFilter(status, filter) {
+  if (filter === 'all') return true;
+  if (filter === 'active') return ['READY','IN_PROGRESS'].includes(status);
+  if (filter === 'complete') return status === 'COMPLETE';
+  if (filter === 'blocked') return status === 'BLOCKED';
+  if (filter === 'planned') return ['PLANNED','UNKNOWN'].includes(status);
+  return true;
+}
+
 export function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>'"]/g, (char) => ({
     '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
@@ -159,23 +183,35 @@ function freshnessBanner(updatedAt, staleAfterHours, now) {
   return `<div class="notice notice--warning" role="status">${badge(freshness.state)} Data age: ${freshness.age_hours ?? 'unknown'} hours.</div>`;
 }
 
-function taskCard(task) {
+function taskCard(task, now) {
   const blockers = task.blockers.length
     ? `<div class="notice notice--blocked"><strong>Blockers:</strong> ${task.blockers.map(escapeHtml).join('; ')}</div>`
     : '';
+  const schedule = classifySchedule(task, now);
   return `<article class="task" data-status="${escapeHtml(task.status)}">
-    <div class="task__head"><h3>${escapeHtml(task.id)} · ${escapeHtml(task.title)}</h3>${badge(task.status)}</div>
+    <div class="task__head"><h3>${escapeHtml(task.id)} · ${escapeHtml(task.title)}</h3><span>${badge(task.status)} ${badge(schedule.state, 'schedule')}</span></div>
     <p>${escapeHtml(task.summary)}</p>
     <dl><dt>Owner</dt><dd>${escapeHtml(task.owner)}</dd><dt>Evidence</dt><dd>${badge(task.evidence, 'evidence')}</dd>
-    <dt>Commit</dt><dd>${escapeHtml(task.commit ?? 'Not recorded')}</dd><dt>Updated</dt><dd>${escapeHtml(formatDate(task.updated_at))}</dd></dl>
+    <dt>Started</dt><dd>${escapeHtml(formatDate(task.started_at))}</dd><dt>Target</dt><dd>${escapeHtml(formatDate(task.target_at))}</dd>
+    <dt>Completed</dt><dd>${escapeHtml(formatDate(task.completed_at))}</dd><dt>Commit</dt><dd>${escapeHtml(task.commit ?? 'Not recorded')}</dd>
+    <dt>Updated</dt><dd>${escapeHtml(formatDate(task.updated_at))}</dd></dl>
     ${blockers}<p><strong>Next:</strong> ${escapeHtml(task.next_action)}</p>
   </article>`;
+}
+
+function renderHistory(history) {
+  const items = [...history].sort((a, b) => Date.parse(b.at) - Date.parse(a.at)).slice(0, 10);
+  if (items.length === 0) return '<p class="muted">No status transitions recorded.</p>';
+  return `<ol class="activity-list">${items.map((item) => `<li><strong>${escapeHtml(item.task_id)}</strong> ${escapeHtml(item.from)} → ${escapeHtml(item.to)} · ${escapeHtml(formatDate(item.at))}${item.commit ? ` · ${escapeHtml(item.commit)}` : ''}</li>`).join('')}</ol>`;
 }
 
 export function renderExecutive(summary, projects = [], now = new Date()) {
   const cards = summary.projects.map((project) => {
     const matching = projects.find((item) => item.project_id === project.project_id);
     const blockers = matching?.tasks?.filter((task) => task.status === 'BLOCKED').length ?? 0;
+    const scheduleStates = matching?.tasks?.map((task) => classifySchedule(task, now).state) ?? [];
+    const overdue = scheduleStates.filter((state) => state === 'OVERDUE').length;
+    const onTrack = scheduleStates.filter((state) => state === 'ON_TRACK').length;
     return `<article class="project-card">
       <div class="project-card__head"><h2>${escapeHtml(project.project_name)}</h2>${badge(project.status)}</div>
       <p>${badge(project.evidence, 'evidence')}</p>
@@ -183,6 +219,7 @@ export function renderExecutive(summary, projects = [], now = new Date()) {
       <p><strong>${project.progress.percent}%</strong> · ${project.progress.complete}/${project.progress.total} counted tasks complete</p>
       <p><strong>Current:</strong> ${escapeHtml(project.current_task_id ?? 'UNKNOWN')}</p>
       <p><strong>Blocked tasks:</strong> ${blockers}</p>
+      <p><strong>Timeline:</strong> ${overdue} overdue · ${onTrack} on track</p>
       <p><strong>Next:</strong> ${escapeHtml(project.next_action)}</p>
       <p class="muted">Updated ${escapeHtml(formatDate(project.updated_at))}</p>
       <a class="button" href="${escapeHtml(project.detail_page)}">Open ${escapeHtml(project.project_name)}</a>
@@ -197,18 +234,24 @@ export function renderExecutive(summary, projects = [], now = new Date()) {
 
 export function renderProject(project, now = new Date()) {
   const progress = calculateProgress(project.tasks);
+  const scheduleStates = project.tasks.map((task) => classifySchedule(task, now).state);
+  const overdue = scheduleStates.filter((state) => state === 'OVERDUE').length;
+  const onTrack = scheduleStates.filter((state) => state === 'ON_TRACK').length;
   const milestones = project.milestones.map((milestone) => `
     <section class="milestone">
       <div class="milestone__head"><h2>${escapeHtml(milestone.id)} · ${escapeHtml(milestone.title)}</h2>${badge(milestone.status)}</div>
       <div class="task-list">${milestone.task_ids.map((id) => {
         const task = project.tasks.find((item) => item.id === id);
-        return task ? taskCard(task) : `<article class="task task--unknown"><h3>${escapeHtml(id)}</h3>${badge('UNKNOWN')}</article>`;
+        return task ? taskCard(task, now) : `<article class="task task--unknown"><h3>${escapeHtml(id)}</h3>${badge('UNKNOWN')}</article>`;
       }).join('')}</div>
     </section>`).join('');
+  const filters = ['all','active','complete','blocked','planned'].map((filter) => `<button type="button" class="filter-button" data-filter="${filter}">${escapeHtml(filter[0].toUpperCase() + filter.slice(1))}</button>`).join('');
   return `${freshnessBanner(project.updated_at, project.stale_after_hours, now)}
     <section class="hero"><a href="index.html" class="back-link">← Executive overview</a><p class="eyebrow">Project timeline</p>
     <h1>${escapeHtml(project.project_name)}</h1><p>${badge(project.status)} ${badge(project.evidence, 'evidence')}</p>
     <div class="progress" aria-label="${progress.percent}% complete"><span style="width:${progress.percent}%"></span></div>
-    <p>${progress.complete}/${progress.total} counted tasks complete · Updated ${escapeHtml(formatDate(project.updated_at))}</p>
-    <p><strong>Next:</strong> ${escapeHtml(project.next_action)}</p></section>${milestones}`;
+    <p>${progress.complete}/${progress.total} counted tasks complete · ${overdue} overdue · ${onTrack} on track · Updated ${escapeHtml(formatDate(project.updated_at))}</p>
+    <p><strong>Next:</strong> ${escapeHtml(project.next_action)}</p></section>
+    <nav class="filter-bar" aria-label="Filter tasks">${filters}</nav>${milestones}
+    <section class="milestone"><h2>Recent activity</h2>${renderHistory(project.history)}</section>`;
 }
