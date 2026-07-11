@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-07-11T09:42:29.188Z",
+  "updated_at": "2026-07-11T11:46:21.763Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -19,8 +19,8 @@
         "total": 13,
         "percent": 54
       },
-      "next_action": "Owner resolves the 4 legacy equity items (attribute or close CVX/GOOGL/ORCL; attribute-extra-5 or reduce-to-61 for CRM) so fidelity_reconciled becomes true, OR accepts a separately documented exception; then M2.3 may run in a regular US equity session as a separate packet.",
-      "updated_at": "2026-07-11T09:42:29.188Z"
+      "next_action": "Monday 2026-07-13 RTH: CLOSE CVX/GOOGL/ORCL one-at-a-time via the canonical gateway (cancel protective stop first; close current broker qty; verify terminal fill; reconcile between each). Owner decides CRM (close-66 / repair-to-66 / investigate). When fidelity_reconciled=true + account_truth CURRENT + zero orphans/mismatches → move M2.3 to READY.",
+      "updated_at": "2026-07-11T11:46:21.763Z"
     },
     {
       "project_id": "mission-control",

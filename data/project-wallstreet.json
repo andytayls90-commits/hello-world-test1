@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "BLOCKED",
-  "updated_at": "2026-07-11T09:42:29.188Z",
+  "updated_at": "2026-07-11T11:46:21.763Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Owner resolves the 4 legacy equity items (attribute or close CVX/GOOGL/ORCL; attribute-extra-5 or reduce-to-61 for CRM) so fidelity_reconciled becomes true, OR accepts a separately documented exception; then M2.3 may run in a regular US equity session as a separate packet.",
+  "next_action": "Monday 2026-07-13 RTH: CLOSE CVX/GOOGL/ORCL one-at-a-time via the canonical gateway (cancel protective stop first; close current broker qty; verify terminal fill; reconcile between each). Owner decides CRM (close-66 / repair-to-66 / investigate). When fidelity_reconciled=true + account_truth CURRENT + zero orphans/mismatches → move M2.3 to READY.",
   "milestones": [
     {
       "id": "M0",
@@ -282,11 +282,11 @@
       "completed_at": null,
       "target_at": null,
       "evidence": "BLOCKED",
-      "commit": "766f80f",
-      "summary": "AAPL equity parity canary — BLOCKED on reconciliation fidelity. A strict additive fidelity_reconciled field (book_reconciled AND unresolved==0 AND no error AND broker-contact timestamp) now gates positions/paper-account eligibility + M2.3 go/no-go. Current live state: fidelity_reconciled=FALSE (3 broker orphans CVX/GOOGL/ORCL LEGACY_UNATTRIBUTED + CRM QUANTITY_CONTRADICTED broker 66 vs internal 61). A read-only owner-review packet (private manifest + dry-run rebuild + owner-choices + public-safe summary) is prepared; no broker state altered, no actions applied. Deployed 766f80f; bolt 10/10; PAPER.",
+      "commit": "05a3453",
+      "summary": "AAPL parity BLOCKED on reconciliation fidelity. Authoritative PAPER account truth now established (account_truth_state=CURRENT live from a successful broker read; reconcile persists a BrokerAccountSnapshot each cycle; balances/account-number never exposed). Legacy equity cleanup: owner authorised CLOSE CVX/GOOGL/ORCL — STAGED for next market open (2026-07-13; equity gateway closes need regular hours). CRM=BLOCKED_OWNER_REVIEW: its 66 units are one NON-canonical fill and the rmg1_ buy-61 intent was REJECTED, so neither owner branch (all-66-rmg1 / 61+5) applies. fidelity_reconciled still FALSE (orphans + CRM). Bolt 10/10; gate PAPER; no broker mutation; broker still holds all 6 positions. Commit 05a3453.",
       "blockers": [],
-      "next_action": "Owner resolves the 4 legacy equity items (attribute or close CVX/GOOGL/ORCL; attribute-extra-5 or reduce-to-61 for CRM) so fidelity_reconciled becomes true, OR accepts a separately documented exception; then M2.3 may run in a regular US equity session as a separate packet.",
-      "updated_at": "2026-07-11T09:42:29.188Z"
+      "next_action": "Monday 2026-07-13 RTH: CLOSE CVX/GOOGL/ORCL one-at-a-time via the canonical gateway (cancel protective stop first; close current broker qty; verify terminal fill; reconcile between each). Owner decides CRM (close-66 / repair-to-66 / investigate). When fidelity_reconciled=true + account_truth CURRENT + zero orphans/mismatches → move M2.3 to READY.",
+      "updated_at": "2026-07-11T11:46:21.763Z"
     }
   ],
   "history": [
@@ -471,6 +471,14 @@
       "at": "2026-07-11T09:42:29.188Z",
       "evidence": "BLOCKED",
       "commit": "766f80f"
+    },
+    {
+      "task_id": "M2.3",
+      "from": "BLOCKED",
+      "to": "BLOCKED",
+      "at": "2026-07-11T11:46:21.763Z",
+      "evidence": "BLOCKED",
+      "commit": "05a3453"
     }
   ]
 }
