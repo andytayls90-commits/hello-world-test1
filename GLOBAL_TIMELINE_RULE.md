@@ -2,7 +2,7 @@
 
 **Applies to:** Project Wallstreet, Mission Control, and work that changes their programme state.  
 **Public tracker repository:** `andytayls90-commits/hello-world-test1`  
-**Status:** MANDATORY
+**Status:** MANDATORY / ACTIVE
 
 ## Rule
 
@@ -101,9 +101,11 @@ If the public tracker is unavailable:
 - publish the missed transition as soon as the tracker is restored;
 - mark the interval as `TRACKER_UPDATE_DELAYED` in the public-safe history.
 
-## Bootstrap exception
+## Bootstrap status
 
-The first tracker implementation task may proceed after reviewing the approved design specification because the public JSON files and project pages do not yet exist. That task must create the initial timeline from committed evidence and then activate this rule without further exception.
+The bootstrap exception was consumed by the initial tracker implementation merged as `e30f7620fa1b` on 2026-07-11. The public executive page and both project pages were independently probed from GitHub-hosted infrastructure and classified `SELF-VERIFIED LIVE`.
+
+No further bootstrap exception exists. Normal tracker-first enforcement is active for Project Wallstreet and Mission Control.
 
 ## Enforcement outcome
 
