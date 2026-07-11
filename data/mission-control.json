@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "project_id": "mission-control",
+  "project_name": "Mission Control",
+  "status": "READY",
+  "evidence": "UNKNOWN",
+  "updated_at": "2026-07-11T13:01:00+10:00",
+  "stale_after_hours": 48,
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Reconcile committed Mission Control milestones into the public-safe tracker",
+  "milestones": [
+    {"id":"MC0","title":"Public programme baseline","status":"READY","task_ids":["MC-BASELINE"]}
+  ],
+  "tasks": [
+    {"id":"MC-BASELINE","title":"Establish public Mission Control timeline","project":"Mission Control","status":"READY","owner":"Unassigned","started_at":null,"completed_at":null,"target_at":null,"evidence":"UNKNOWN","commit":null,"summary":"Reconcile committed Mission Control work into a public-safe milestone baseline.","blockers":[],"next_action":"Review committed Mission Control programme evidence.","updated_at":"2026-07-11T13:01:00+10:00"}
+  ],
+  "history": []
+}
