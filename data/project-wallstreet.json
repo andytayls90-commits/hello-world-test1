@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "BLOCKED",
-  "updated_at": "2026-07-11T11:46:21.763Z",
+  "updated_at": "2026-07-11T13:12:53.908Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Monday 2026-07-13 RTH: CLOSE CVX/GOOGL/ORCL one-at-a-time via the canonical gateway (cancel protective stop first; close current broker qty; verify terminal fill; reconcile between each). Owner decides CRM (close-66 / repair-to-66 / investigate). When fidelity_reconciled=true + account_truth CURRENT + zero orphans/mismatches → move M2.3 to READY.",
+  "next_action": "M3.5 (sustained reconciliation) is TIME-GATED (multi-day observation window) so M3 cannot be COMPLETE this session regardless; build the metrics collector + accrue the window, and land M3.2/M3.3-formalise/M3.4-restart/M3.6/UI as separate reviewable packets.",
   "milestones": [
     {
       "id": "M0",
@@ -41,7 +41,7 @@
     {
       "id": "M3",
       "title": "Operational stability",
-      "status": "PLANNED",
+      "status": "IN_PROGRESS",
       "task_ids": [
         "M3"
       ]
@@ -180,17 +180,17 @@
       "id": "M3",
       "title": "Operational stability",
       "project": "Project Wallstreet",
-      "status": "PLANNED",
-      "owner": "Unassigned",
-      "started_at": null,
+      "status": "IN_PROGRESS",
+      "owner": "Claude",
+      "started_at": "2026-07-11T13:12:53.908Z",
       "completed_at": null,
       "target_at": "2026-07-20T22:00:00+10:00",
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "Prove recovery drills, execution costs and continuous reconciliation.",
+      "evidence": "PARTIAL",
+      "commit": "1488c21",
+      "summary": "M3 operational stability — 6-packet PAPER programme opened (docs/programmes/full-operational-trading/M3-OPERATIONAL-STABILITY.md). M3.1 (partial-fill & cancel/replace) VERIFIED: 8/8 failure-injection matrix proves monotonic cumulative fills+avg, duplicate+out-of-order suppression, cancel-after-partial (fill preserved), late-full-fill-after-cancel (FILLED wins), deterministic replace lineage, distinct-terminal preservation — on the M1.2 canonical lifecycle. M3.3 (broker-truth rebuild) + M3.4 (restart/no-duplicate) SUBSTANTIALLY BUILT by M1.2 + the 2026-07-11 reconciliation-fidelity work (~60 existing dedup/recovery assertions; classifications + dry-run/repair manifests). Forward: M3.2 transport state machine, M3.4 restart-phase assertions, M3.6 drills, UI CONTRADICTED/quarantine/recovery states. Bolt 10/10; gate PAPER.",
       "blockers": [],
-      "next_action": "Wait for M2 evidence.",
-      "updated_at": "2026-07-11T13:42:32+10:00"
+      "next_action": "M3.5 (sustained reconciliation) is TIME-GATED (multi-day observation window) so M3 cannot be COMPLETE this session regardless; build the metrics collector + accrue the window, and land M3.2/M3.3-formalise/M3.4-restart/M3.6/UI as separate reviewable packets.",
+      "updated_at": "2026-07-11T13:12:53.908Z"
     },
     {
       "id": "M4",
@@ -479,6 +479,14 @@
       "at": "2026-07-11T11:46:21.763Z",
       "evidence": "BLOCKED",
       "commit": "05a3453"
+    },
+    {
+      "task_id": "M3",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-07-11T13:12:53.908Z",
+      "evidence": "PARTIAL",
+      "commit": "1488c21"
     }
   ]
 }
