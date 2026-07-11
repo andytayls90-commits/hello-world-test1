@@ -1,26 +1,26 @@
 {
   "schema_version": 1,
   "programme_name": "Re-AgentAI",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-07-11T06:47:22.901Z",
+  "updated_at": "2026-07-11T07:59:29.384Z",
   "stale_after_hours": 48,
   "projects": [
     {
       "project_id": "project-wallstreet",
       "project_name": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "project-wallstreet.html",
       "data_file": "data/project-wallstreet.json",
-      "current_task_id": "M2.2",
+      "current_task_id": "M2.3",
       "progress": {
-        "complete": 6,
+        "complete": 7,
         "total": 13,
-        "percent": 46
+        "percent": 54
       },
-      "next_action": "Evaluate the Stage-10 go/no-go (MC + frontend deployed and functioning = met; account flat; bolt 10/10; gate all-false PAPER) then execute the bounded representative PAPER round-trips (Tier-1 major + Tier-2 altcoin, one at a time, long-only, marketable-limit IOC, <=20 USD) + passive GTC cancellation; then close-out.",
-      "updated_at": "2026-07-11T06:47:22.901Z"
+      "next_action": "Owner authorises a separate packet during regular US market hours; then execute one bounded AAPL PAPER round-trip through the gateway with the same go/no-go + flat-state discipline.",
+      "updated_at": "2026-07-11T07:59:29.384Z"
     },
     {
       "project_id": "mission-control",

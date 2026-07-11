@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "project-wallstreet",
   "project_name": "Project Wallstreet",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-07-11T06:47:22.901Z",
+  "updated_at": "2026-07-11T07:59:29.384Z",
   "stale_after_hours": 48,
-  "current_task_id": "M2.2",
-  "next_action": "Evaluate the Stage-10 go/no-go (MC + frontend deployed and functioning = met; account flat; bolt 10/10; gate all-false PAPER) then execute the bounded representative PAPER round-trips (Tier-1 major + Tier-2 altcoin, one at a time, long-only, marketable-limit IOC, <=20 USD) + passive GTC cancellation; then close-out.",
+  "current_task_id": "M2.3",
+  "next_action": "Owner authorises a separate packet during regular US market hours; then execute one bounded AAPL PAPER round-trip through the gateway with the same go/no-go + flat-state discipline.",
   "milestones": [
     {
       "id": "M0",
@@ -31,7 +31,7 @@
     {
       "id": "M2",
       "title": "PAPER execution fidelity",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "task_ids": [
         "M2.1",
         "M2.2",
@@ -260,33 +260,33 @@
       "id": "M2.2",
       "title": "Full Alpaca crypto universe and bounded PAPER execution fidelity",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Claude",
       "started_at": "2026-07-11T14:06:13+10:00",
-      "completed_at": null,
+      "completed_at": "2026-07-11T07:59:29.359Z",
       "target_at": "2026-07-14T22:00:00+10:00",
-      "evidence": "PARTIAL",
-      "commit": "618069b",
-      "summary": "Backend crypto contracts (PW 1a245b3), the Re-AgentTrading operator surface (frontend 39531dc) AND Mission Control read-only oversight (mc 618069b) are all deployed and live. MC consumes PW's 7 versioned /api/crypto/* contracts through a dedicated allowlisted read-only mc-api adapter + a native console Crypto Oversight station: fixed allowlist, no generic proxy, no DB/broker/provider access, no mutation route; fails closed to UNKNOWN/STALE/UNAVAILABLE; UNSUPPORTED not shown as outage. Proven: adapter tests 19/19, MC mutation guard 40/0, live reconciliation MC==PW totals (72; 29 eligible / 43 withheld / 0 unknown), browser render 0 console errors, 0 open crypto positions (flat). No broker mutation; PAPER + bolt unchanged. Remaining: bounded PAPER round-trips behind the Stage-10 go/no-go, then close-out; authenticated frontend screenshot needs a fresh owner Access login (physical constraint).",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "0916362",
+      "summary": "COMPLETE. Full Alpaca crypto universe (72) discovered/mapped/ranked; 7 versioned operator contracts live; Re-AgentTrading /ops/crypto + Mission Control read-only oversight (mc 618069b) deployed. Bounded PAPER execution fidelity PROVEN via a gateway-native runner (broker_gateway.execute, never POST /positions): Tier-1 BTC/USD round-trip (gross -0.049%, 4.9bps cost) and Tier-2 AAVE/USD (gross -0.281%, 28.1bps cost) — both marketable-limit IOC entry, recover_pending+reconcile, CLOSE_POSITION+dust-sweep, broker+internal FLAT, fee OBSERVED; passive-GTC cancel confirmed via the canonical CANCEL_ORDER gateway; fail-closed refusals on ETH/UNI stale quotes. Cost tracks spread. 3 findings (fee-dust flatten, marketable-only crypto entries, post-submit fill lookup). Close-out artefacts committed (CLOSEOUT.md/.html, GO-NO-GO, CRYPTO-UNIVERSE, PROVIDER-COVERAGE, EXECUTION-MANIFEST, per-run JSON). Bolt 10/10, gate all-false PAPER, live-gate + bolt untouched throughout.",
       "blockers": [],
-      "next_action": "Evaluate the Stage-10 go/no-go (MC + frontend deployed and functioning = met; account flat; bolt 10/10; gate all-false PAPER) then execute the bounded representative PAPER round-trips (Tier-1 major + Tier-2 altcoin, one at a time, long-only, marketable-limit IOC, <=20 USD) + passive GTC cancellation; then close-out.",
-      "updated_at": "2026-07-11T06:47:22.901Z"
+      "next_action": "Proceed to M2.3 (AAPL equity parity canary) as a separate owner-authorised packet during a valid regular US equity session.",
+      "updated_at": "2026-07-11T07:59:29.359Z"
     },
     {
       "id": "M2.3",
       "title": "AAPL equity-parity canary",
       "project": "Project Wallstreet",
-      "status": "PLANNED",
+      "status": "READY",
       "owner": "Unassigned",
       "started_at": null,
       "completed_at": null,
       "target_at": null,
       "evidence": "PLANNED",
       "commit": null,
-      "summary": "After M2.2, prove only the equity-specific remainder: broker equity clock, equity quote timestamp, sector gate, regular-session semantics, marketable-limit order, native protective stop, fill, restart, close and reconciliation parity.",
+      "summary": "AAPL equity parity canary — replays the M2.2 lifecycle discipline on the supported Alpaca long-equity/day path to prove equity/crypto parity. All preconditions (mutation gateway, M1.3 preflight, evidence seams, operator + MC oversight) are in place. NOT executed: requires a valid regular US equity session AND a separate owner-authorised packet.",
       "blockers": [],
-      "next_action": "Wait for accepted M2.2 evidence and an eligible regular equity session.",
-      "updated_at": "2026-07-11T14:34:00+10:00"
+      "next_action": "Owner authorises a separate packet during regular US market hours; then execute one bounded AAPL PAPER round-trip through the gateway with the same go/no-go + flat-state discipline.",
+      "updated_at": "2026-07-11T07:59:29.384Z"
     }
   ],
   "history": [
@@ -447,6 +447,22 @@
       "at": "2026-07-11T06:47:22.901Z",
       "evidence": "PARTIAL",
       "commit": "618069b"
+    },
+    {
+      "task_id": "M2.2",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-07-11T07:59:29.359Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "0916362"
+    },
+    {
+      "task_id": "M2.3",
+      "from": "PLANNED",
+      "to": "READY",
+      "at": "2026-07-11T07:59:29.384Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
