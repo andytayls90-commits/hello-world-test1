@@ -1,7 +1,7 @@
 # Re-AgentAI Programme Timeline Tracker — Design
 
 **Date:** 2026-07-11  
-**Status:** APPROVED DESIGN / IMPLEMENTATION PENDING USER REVIEW  
+**Status:** APPROVED DESIGN / IMPLEMENTATION PLANNED  
 **Public repository:** `andytayls90-commits/hello-world-test1`  
 **Private sources:** `andytayls90-commits/Project-wallstreet`, `andytayls90-commits/mission-control`
 
@@ -182,4 +182,4 @@ Restore the previous `gh-pages` commit or revert the tracker implementation comm
 
 ## Implementation boundary
 
-The design and repository rules may be committed now. The webpage, data files and rendering implementation begin only after the user reviews and accepts this written specification.
+The design and repository rules are approved. The webpage, data files and rendering implementation must follow the committed implementation plan and the global tracker rule.
