@@ -4,52 +4,449 @@
   "project_name": "Project Wallstreet",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-07-11T16:28:44+10:00",
+  "updated_at": "2026-07-11T06:47:22.901Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.2",
-  "next_action": "Implement the Mission Control read-only oversight integration (separate repo, allowlisted, consuming the versioned contracts); then run the bounded PAPER round-trips behind the go/no-go gate; then close-out.",
+  "next_action": "Evaluate the Stage-10 go/no-go (MC + frontend deployed and functioning = met; account flat; bolt 10/10; gate all-false PAPER) then execute the bounded representative PAPER round-trips (Tier-1 major + Tier-2 altcoin, one at a time, long-only, marketable-limit IOC, <=20 USD) + passive GTC cancellation; then close-out.",
   "milestones": [
-    {"id":"M0","title":"Baseline and freeze","status":"COMPLETE","task_ids":["M0"]},
-    {"id":"M1","title":"Execution foundation","status":"COMPLETE","task_ids":["M1.1","M1.2","M1.3","M1-REVIEW"]},
-    {"id":"M2","title":"PAPER execution fidelity","status":"IN_PROGRESS","task_ids":["M2.1","M2.2","M2.3"]},
-    {"id":"M3","title":"Operational stability","status":"PLANNED","task_ids":["M3"]},
-    {"id":"M4","title":"Autonomous equities","status":"PLANNED","task_ids":["M4"]},
-    {"id":"M5","title":"Options lifecycle","status":"PLANNED","task_ids":["M5"]},
-    {"id":"M6","title":"Scaling and portfolio","status":"PLANNED","task_ids":["M6"]},
-    {"id":"M7","title":"Full operations","status":"PLANNED","task_ids":["M7"]}
+    {
+      "id": "M0",
+      "title": "Baseline and freeze",
+      "status": "COMPLETE",
+      "task_ids": [
+        "M0"
+      ]
+    },
+    {
+      "id": "M1",
+      "title": "Execution foundation",
+      "status": "COMPLETE",
+      "task_ids": [
+        "M1.1",
+        "M1.2",
+        "M1.3",
+        "M1-REVIEW"
+      ]
+    },
+    {
+      "id": "M2",
+      "title": "PAPER execution fidelity",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "M2.1",
+        "M2.2",
+        "M2.3"
+      ]
+    },
+    {
+      "id": "M3",
+      "title": "Operational stability",
+      "status": "PLANNED",
+      "task_ids": [
+        "M3"
+      ]
+    },
+    {
+      "id": "M4",
+      "title": "Autonomous equities",
+      "status": "PLANNED",
+      "task_ids": [
+        "M4"
+      ]
+    },
+    {
+      "id": "M5",
+      "title": "Options lifecycle",
+      "status": "PLANNED",
+      "task_ids": [
+        "M5"
+      ]
+    },
+    {
+      "id": "M6",
+      "title": "Scaling and portfolio",
+      "status": "PLANNED",
+      "task_ids": [
+        "M6"
+      ]
+    },
+    {
+      "id": "M7",
+      "title": "Full operations",
+      "status": "PLANNED",
+      "task_ids": [
+        "M7"
+      ]
+    }
   ],
   "tasks": [
-    {"id":"M0","title":"Baseline and freeze","project":"Project Wallstreet","status":"COMPLETE","owner":"Claude","started_at":"2026-07-10T18:00:00+10:00","completed_at":"2026-07-10T23:00:00+10:00","target_at":null,"evidence":"SELF-VERIFIED LIVE","commit":"9a96613","summary":"Established the current PAPER baseline, authority map, execution inventory and discrepancy register.","blockers":[],"next_action":"Retain as the programme baseline.","updated_at":"2026-07-10T23:00:00+10:00"},
-    {"id":"M1.1","title":"Mutation gateway and intent ledger","project":"Project Wallstreet","status":"COMPLETE","owner":"Claude","started_at":"2026-07-11T00:00:00+10:00","completed_at":"2026-07-11T05:00:00+10:00","target_at":null,"evidence":"SELF-VERIFIED LIVE","commit":"b6bcae4","summary":"Added one deterministic, idempotent and gated mutation path with append-only intent evidence.","blockers":[],"next_action":"Retain as the canonical mutation foundation.","updated_at":"2026-07-11T05:00:00+10:00"},
-    {"id":"M1.2","title":"Lifecycle normalisation and deterministic recovery","project":"Project Wallstreet","status":"COMPLETE","owner":"Claude","started_at":"2026-07-11T05:00:00+10:00","completed_at":"2026-07-11T10:00:00+10:00","target_at":null,"evidence":"SELF-VERIFIED LIVE","commit":"4525b11","summary":"Added canonical lifecycle evidence, bounded recovery and continuous convergence through the existing reconciliation cycle.","blockers":[],"next_action":"Retain as the restart and recovery foundation.","updated_at":"2026-07-11T10:00:00+10:00"},
-    {"id":"M1.3","title":"Account truth and market-clock preflight","project":"Project Wallstreet","status":"COMPLETE","owner":"Claude","started_at":null,"completed_at":"2026-07-11T13:25:50+10:00","target_at":"2026-07-12T18:00:00+10:00","evidence":"SELF-VERIFIED LIVE","commit":"a219ec2","summary":"Added fresh account and market-clock preflight evidence, conservative affordability checks and terminal broker rejection handling for the supported PAPER long-equity day path.","blockers":[],"next_action":"Retain as the M1 pre-submit truth foundation.","updated_at":"2026-07-11T13:25:50+10:00"},
-    {"id":"M1-REVIEW","title":"Integrated M1 review","project":"Project Wallstreet","status":"COMPLETE","owner":"Claude","started_at":null,"completed_at":"2026-07-11T13:25:50+10:00","target_at":"2026-07-12T22:00:00+10:00","evidence":"IMPLEMENTED / UNVERIFIED","commit":"3e62cb6","summary":"Reviewed M1.1 through M1.3 against seven advance criteria; the committed review records all criteria met and recommends owner-gated entry to M2.","blockers":[],"next_action":"Retain as the M1 programme decision record.","updated_at":"2026-07-11T13:25:50+10:00"},
-    {"id":"M2.1","title":"Hermetic autoexec baseline and clean PAPER suite","project":"Project Wallstreet","status":"COMPLETE","owner":"Claude","started_at":"2026-07-11T13:42:32+10:00","completed_at":"2026-07-11T14:06:13+10:00","target_at":null,"evidence":"SELF-VERIFIED LIVE","commit":"02e922a","summary":"Made the autoexec tests hermetic and established a clean PAPER execution-fidelity baseline; the full backend suite passes in a bare offline checkout.","blockers":[],"next_action":"Retain as the clean PAPER baseline.","updated_at":"2026-07-11T14:06:13+10:00"},
-    {"id":"M3","title":"Operational stability","project":"Project Wallstreet","status":"PLANNED","owner":"Unassigned","started_at":null,"completed_at":null,"target_at":"2026-07-20T22:00:00+10:00","evidence":"PLANNED","commit":null,"summary":"Prove recovery drills, execution costs and continuous reconciliation.","blockers":[],"next_action":"Wait for M2 evidence.","updated_at":"2026-07-11T13:42:32+10:00"},
-    {"id":"M4","title":"Autonomous equities","project":"Project Wallstreet","status":"PLANNED","owner":"Unassigned","started_at":null,"completed_at":null,"target_at":"2026-08-03T22:00:00+10:00","evidence":"PLANNED","commit":null,"summary":"Govern autonomous equity entry, management and exit within explicit owner policy.","blockers":[],"next_action":"Wait for M3 acceptance.","updated_at":"2026-07-11T13:42:32+10:00"},
-    {"id":"M5","title":"Options lifecycle","project":"Project Wallstreet","status":"PLANNED","owner":"Unassigned","started_at":null,"completed_at":null,"target_at":"2026-08-17T22:00:00+10:00","evidence":"PLANNED","commit":null,"summary":"Build a dedicated options lifecycle with expiry and assignment handling.","blockers":[],"next_action":"Wait for governed equity operations.","updated_at":"2026-07-11T13:42:32+10:00"},
-    {"id":"M6","title":"Scaling and portfolio allocation","project":"Project Wallstreet","status":"PLANNED","owner":"Unassigned","started_at":null,"completed_at":null,"target_at":"2026-08-31T22:00:00+10:00","evidence":"PLANNED","commit":null,"summary":"Add audited capital allocation, reservation and conflict control.","blockers":[],"next_action":"Wait for measured execution evidence.","updated_at":"2026-07-11T13:42:32+10:00"},
-    {"id":"M7","title":"Full operations","project":"Project Wallstreet","status":"PLANNED","owner":"Unassigned","started_at":null,"completed_at":null,"target_at":"2026-09-30T22:00:00+10:00","evidence":"PLANNED","commit":null,"summary":"Close governance, recovery, evidence automation and commercial reporting.","blockers":[],"next_action":"Wait for M6 acceptance.","updated_at":"2026-07-11T13:42:32+10:00"},
-    {"id":"M2.2","title":"Full Alpaca crypto universe and bounded PAPER execution fidelity","project":"Project Wallstreet","status":"IN_PROGRESS","owner":"Claude","started_at":"2026-07-11T14:06:13+10:00","completed_at":null,"target_at":"2026-07-14T22:00:00+10:00","evidence":"PARTIAL","commit":"39531dc","summary":"Backend deployed (contracts live) and the Re-AgentTrading crypto operator surface deployed (39531dc): /ops/crypto renders, the operator BFF crypto-contract proxy is auth-gated (401 without operator session), and the public path is Cloudflare-Access gated. Asset-aware universe/eligibility/provider-health views over the 72-pair universe; browser never contacts a broker/provider and cannot override a backend decision. Authenticated screenshot-with-data needs a fresh owner Access login (physical constraint). No broker mutation; PAPER + bolt unchanged. Remaining: Mission Control read-only oversight, then the bounded PAPER round-trips behind the go/no-go, then close-out.","blockers":[],"next_action":"Implement the Mission Control read-only oversight integration (separate repo, allowlisted, consuming the versioned contracts); then run the bounded PAPER round-trips behind the go/no-go gate; then close-out.","updated_at":"2026-07-11T16:28:44+10:00"},
-    {"id":"M2.3","title":"AAPL equity-parity canary","project":"Project Wallstreet","status":"PLANNED","owner":"Unassigned","started_at":null,"completed_at":null,"target_at":null,"evidence":"PLANNED","commit":null,"summary":"After M2.2, prove only the equity-specific remainder: broker equity clock, equity quote timestamp, sector gate, regular-session semantics, marketable-limit order, native protective stop, fill, restart, close and reconciliation parity.","blockers":[],"next_action":"Wait for accepted M2.2 evidence and an eligible regular equity session.","updated_at":"2026-07-11T14:34:00+10:00"}
+    {
+      "id": "M0",
+      "title": "Baseline and freeze",
+      "project": "Project Wallstreet",
+      "status": "COMPLETE",
+      "owner": "Claude",
+      "started_at": "2026-07-10T18:00:00+10:00",
+      "completed_at": "2026-07-10T23:00:00+10:00",
+      "target_at": null,
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "9a96613",
+      "summary": "Established the current PAPER baseline, authority map, execution inventory and discrepancy register.",
+      "blockers": [],
+      "next_action": "Retain as the programme baseline.",
+      "updated_at": "2026-07-10T23:00:00+10:00"
+    },
+    {
+      "id": "M1.1",
+      "title": "Mutation gateway and intent ledger",
+      "project": "Project Wallstreet",
+      "status": "COMPLETE",
+      "owner": "Claude",
+      "started_at": "2026-07-11T00:00:00+10:00",
+      "completed_at": "2026-07-11T05:00:00+10:00",
+      "target_at": null,
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "b6bcae4",
+      "summary": "Added one deterministic, idempotent and gated mutation path with append-only intent evidence.",
+      "blockers": [],
+      "next_action": "Retain as the canonical mutation foundation.",
+      "updated_at": "2026-07-11T05:00:00+10:00"
+    },
+    {
+      "id": "M1.2",
+      "title": "Lifecycle normalisation and deterministic recovery",
+      "project": "Project Wallstreet",
+      "status": "COMPLETE",
+      "owner": "Claude",
+      "started_at": "2026-07-11T05:00:00+10:00",
+      "completed_at": "2026-07-11T10:00:00+10:00",
+      "target_at": null,
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "4525b11",
+      "summary": "Added canonical lifecycle evidence, bounded recovery and continuous convergence through the existing reconciliation cycle.",
+      "blockers": [],
+      "next_action": "Retain as the restart and recovery foundation.",
+      "updated_at": "2026-07-11T10:00:00+10:00"
+    },
+    {
+      "id": "M1.3",
+      "title": "Account truth and market-clock preflight",
+      "project": "Project Wallstreet",
+      "status": "COMPLETE",
+      "owner": "Claude",
+      "started_at": null,
+      "completed_at": "2026-07-11T13:25:50+10:00",
+      "target_at": "2026-07-12T18:00:00+10:00",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "a219ec2",
+      "summary": "Added fresh account and market-clock preflight evidence, conservative affordability checks and terminal broker rejection handling for the supported PAPER long-equity day path.",
+      "blockers": [],
+      "next_action": "Retain as the M1 pre-submit truth foundation.",
+      "updated_at": "2026-07-11T13:25:50+10:00"
+    },
+    {
+      "id": "M1-REVIEW",
+      "title": "Integrated M1 review",
+      "project": "Project Wallstreet",
+      "status": "COMPLETE",
+      "owner": "Claude",
+      "started_at": null,
+      "completed_at": "2026-07-11T13:25:50+10:00",
+      "target_at": "2026-07-12T22:00:00+10:00",
+      "evidence": "IMPLEMENTED / UNVERIFIED",
+      "commit": "3e62cb6",
+      "summary": "Reviewed M1.1 through M1.3 against seven advance criteria; the committed review records all criteria met and recommends owner-gated entry to M2.",
+      "blockers": [],
+      "next_action": "Retain as the M1 programme decision record.",
+      "updated_at": "2026-07-11T13:25:50+10:00"
+    },
+    {
+      "id": "M2.1",
+      "title": "Hermetic autoexec baseline and clean PAPER suite",
+      "project": "Project Wallstreet",
+      "status": "COMPLETE",
+      "owner": "Claude",
+      "started_at": "2026-07-11T13:42:32+10:00",
+      "completed_at": "2026-07-11T14:06:13+10:00",
+      "target_at": null,
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "02e922a",
+      "summary": "Made the autoexec tests hermetic and established a clean PAPER execution-fidelity baseline; the full backend suite passes in a bare offline checkout.",
+      "blockers": [],
+      "next_action": "Retain as the clean PAPER baseline.",
+      "updated_at": "2026-07-11T14:06:13+10:00"
+    },
+    {
+      "id": "M3",
+      "title": "Operational stability",
+      "project": "Project Wallstreet",
+      "status": "PLANNED",
+      "owner": "Unassigned",
+      "started_at": null,
+      "completed_at": null,
+      "target_at": "2026-07-20T22:00:00+10:00",
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "Prove recovery drills, execution costs and continuous reconciliation.",
+      "blockers": [],
+      "next_action": "Wait for M2 evidence.",
+      "updated_at": "2026-07-11T13:42:32+10:00"
+    },
+    {
+      "id": "M4",
+      "title": "Autonomous equities",
+      "project": "Project Wallstreet",
+      "status": "PLANNED",
+      "owner": "Unassigned",
+      "started_at": null,
+      "completed_at": null,
+      "target_at": "2026-08-03T22:00:00+10:00",
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "Govern autonomous equity entry, management and exit within explicit owner policy.",
+      "blockers": [],
+      "next_action": "Wait for M3 acceptance.",
+      "updated_at": "2026-07-11T13:42:32+10:00"
+    },
+    {
+      "id": "M5",
+      "title": "Options lifecycle",
+      "project": "Project Wallstreet",
+      "status": "PLANNED",
+      "owner": "Unassigned",
+      "started_at": null,
+      "completed_at": null,
+      "target_at": "2026-08-17T22:00:00+10:00",
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "Build a dedicated options lifecycle with expiry and assignment handling.",
+      "blockers": [],
+      "next_action": "Wait for governed equity operations.",
+      "updated_at": "2026-07-11T13:42:32+10:00"
+    },
+    {
+      "id": "M6",
+      "title": "Scaling and portfolio allocation",
+      "project": "Project Wallstreet",
+      "status": "PLANNED",
+      "owner": "Unassigned",
+      "started_at": null,
+      "completed_at": null,
+      "target_at": "2026-08-31T22:00:00+10:00",
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "Add audited capital allocation, reservation and conflict control.",
+      "blockers": [],
+      "next_action": "Wait for measured execution evidence.",
+      "updated_at": "2026-07-11T13:42:32+10:00"
+    },
+    {
+      "id": "M7",
+      "title": "Full operations",
+      "project": "Project Wallstreet",
+      "status": "PLANNED",
+      "owner": "Unassigned",
+      "started_at": null,
+      "completed_at": null,
+      "target_at": "2026-09-30T22:00:00+10:00",
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "Close governance, recovery, evidence automation and commercial reporting.",
+      "blockers": [],
+      "next_action": "Wait for M6 acceptance.",
+      "updated_at": "2026-07-11T13:42:32+10:00"
+    },
+    {
+      "id": "M2.2",
+      "title": "Full Alpaca crypto universe and bounded PAPER execution fidelity",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Claude",
+      "started_at": "2026-07-11T14:06:13+10:00",
+      "completed_at": null,
+      "target_at": "2026-07-14T22:00:00+10:00",
+      "evidence": "PARTIAL",
+      "commit": "618069b",
+      "summary": "Backend crypto contracts (PW 1a245b3), the Re-AgentTrading operator surface (frontend 39531dc) AND Mission Control read-only oversight (mc 618069b) are all deployed and live. MC consumes PW's 7 versioned /api/crypto/* contracts through a dedicated allowlisted read-only mc-api adapter + a native console Crypto Oversight station: fixed allowlist, no generic proxy, no DB/broker/provider access, no mutation route; fails closed to UNKNOWN/STALE/UNAVAILABLE; UNSUPPORTED not shown as outage. Proven: adapter tests 19/19, MC mutation guard 40/0, live reconciliation MC==PW totals (72; 29 eligible / 43 withheld / 0 unknown), browser render 0 console errors, 0 open crypto positions (flat). No broker mutation; PAPER + bolt unchanged. Remaining: bounded PAPER round-trips behind the Stage-10 go/no-go, then close-out; authenticated frontend screenshot needs a fresh owner Access login (physical constraint).",
+      "blockers": [],
+      "next_action": "Evaluate the Stage-10 go/no-go (MC + frontend deployed and functioning = met; account flat; bolt 10/10; gate all-false PAPER) then execute the bounded representative PAPER round-trips (Tier-1 major + Tier-2 altcoin, one at a time, long-only, marketable-limit IOC, <=20 USD) + passive GTC cancellation; then close-out.",
+      "updated_at": "2026-07-11T06:47:22.901Z"
+    },
+    {
+      "id": "M2.3",
+      "title": "AAPL equity-parity canary",
+      "project": "Project Wallstreet",
+      "status": "PLANNED",
+      "owner": "Unassigned",
+      "started_at": null,
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "After M2.2, prove only the equity-specific remainder: broker equity clock, equity quote timestamp, sector gate, regular-session semantics, marketable-limit order, native protective stop, fill, restart, close and reconciliation parity.",
+      "blockers": [],
+      "next_action": "Wait for accepted M2.2 evidence and an eligible regular equity session.",
+      "updated_at": "2026-07-11T14:34:00+10:00"
+    }
   ],
   "history": [
-    {"task_id":"M0","from":"IN_PROGRESS","to":"COMPLETE","at":"2026-07-10T23:00:00+10:00","evidence":"SELF-VERIFIED LIVE","commit":"9a96613"},
-    {"task_id":"M1.1","from":"IN_PROGRESS","to":"COMPLETE","at":"2026-07-11T05:00:00+10:00","evidence":"SELF-VERIFIED LIVE","commit":"b6bcae4"},
-    {"task_id":"M1.2","from":"IN_PROGRESS","to":"COMPLETE","at":"2026-07-11T10:00:00+10:00","evidence":"SELF-VERIFIED LIVE","commit":"4525b11"},
-    {"task_id":"M1.3","from":"READY","to":"COMPLETE","at":"2026-07-11T13:25:50+10:00","evidence":"SELF-VERIFIED LIVE","commit":"a219ec2","note":"TRACKER_UPDATE_DELAYED — the task completed while the public tracker data plane was being established."},
-    {"task_id":"M1-REVIEW","from":"PLANNED","to":"COMPLETE","at":"2026-07-11T13:25:50+10:00","evidence":"IMPLEMENTED / UNVERIFIED","commit":"3e62cb6","note":"TRACKER_UPDATE_DELAYED — the review completed before the executing agent had the final public data contract."},
-    {"task_id":"M2","from":"PLANNED","to":"BLOCKED","at":"2026-07-11T13:25:50+10:00","evidence":"BLOCKED","commit":null,"note":"Owner-gated entry decision required."},
-    {"task_id":"M2","from":"BLOCKED","to":"IN_PROGRESS","at":"2026-07-11T13:42:32+10:00","evidence":"PLANNED","commit":null,"note":"Owner authorised M2 as PAPER-only execution fidelity; first packet was hermetic baseline hygiene."},
-    {"task_id":"M2","from":"IN_PROGRESS","to":"IN_PROGRESS","at":"2026-07-11T13:54:47+10:00","evidence":"PARTIAL","commit":"02e922a","note":"M2.1 packet closed: hermetic autoexec baseline established and the PAPER suite passes in a bare offline checkout. M2 milestone remains in progress for the execution-fidelity lifecycle."},
-    {"task_id":"M2.1","from":"IN_PROGRESS","to":"COMPLETE","at":"2026-07-11T14:06:13+10:00","evidence":"SELF-VERIFIED LIVE","commit":"02e922a","note":"M2.1 hermetic baseline packet normalised to its own row."},
-    {"task_id":"M2.2","from":"PLANNED","to":"IN_PROGRESS","at":"2026-07-11T14:06:13+10:00","evidence":"PLANNED","commit":null,"note":"M2.2 canonical PAPER lifecycle evidence spine started; live round-trip initially blocked until the equity market opened."},
-    {"task_id":"M2.2","from":"IN_PROGRESS","to":"IN_PROGRESS","at":"2026-07-11T14:20:00+10:00","evidence":"PLANNED","commit":null,"note":"Owner directed an immediate alternative while equities were closed. Scope pivoted to Alpaca PAPER crypto for the 24/7 common execution-spine proof; a narrow equity-specific parity canary remained outstanding."},
-    {"task_id":"M2.2","from":"IN_PROGRESS","to":"IN_PROGRESS","at":"2026-07-11T14:34:00+10:00","evidence":"PLANNED","commit":"f5cadfb","note":"Scope expanded and programme plans aligned: full current Alpaca crypto-universe data coverage, provider priority Finnhub→Alpaca→yfinance→Kraken, bounded representative major and altcoin PAPER execution, and separate M2.3 equity parity."},
-    {"task_id":"M2.3","from":"PLANNED","to":"PLANNED","at":"2026-07-11T14:34:00+10:00","evidence":"PLANNED","commit":"f5cadfb","note":"Explicit AAPL equity-parity TODO added; crypto evidence cannot close M2 by itself."},
-    {"task_id":"M2.2","from":"IN_PROGRESS","to":"IN_PROGRESS","at":"2026-07-11T14:57:20+10:00","evidence":"IMPLEMENTED / UNVERIFIED","commit":null,"note":"A, B and C-core implemented on branch (universe discovery, provider mapping/resolver, crypto admission engine); unverified until merge; no broker mutation."},
-    {"task_id":"M2.2","from":"IN_PROGRESS","to":"IN_PROGRESS","at":"2026-07-11T15:07:00+10:00","evidence":"IMPLEMENTED / UNVERIFIED","commit":null,"note":"C-integration and the non-mutating universe-wide eligibility pass reported complete on an unmerged branch: 72 pairs observed, 16 eligible, 56 stale-quote withholds, 0 unknown; no broker mutation. Branch is not yet available for independent repository review."},
-    {"task_id":"M2.2","from":"IN_PROGRESS","to":"IN_PROGRESS","at":"2026-07-11T16:14:18+10:00","evidence":"PARTIAL","commit":"1a245b3","note":"Backend Packet A+B merged to master and deployed; 7 operator contracts live; public-denied; no broker mutation. Frontend/MC/round-trips remain."},
-    {"task_id":"M2.2","from":"IN_PROGRESS","to":"IN_PROGRESS","at":"2026-07-11T16:28:44+10:00","evidence":"PARTIAL","commit":"39531dc","note":"Frontend crypto operator surface merged + deployed + route-verified (200/401/302); browser never touches broker/providers. MC + round-trips + close-out remain."}
+    {
+      "task_id": "M0",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-07-10T23:00:00+10:00",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "9a96613"
+    },
+    {
+      "task_id": "M1.1",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-07-11T05:00:00+10:00",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "b6bcae4"
+    },
+    {
+      "task_id": "M1.2",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-07-11T10:00:00+10:00",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "4525b11"
+    },
+    {
+      "task_id": "M1.3",
+      "from": "READY",
+      "to": "COMPLETE",
+      "at": "2026-07-11T13:25:50+10:00",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "a219ec2",
+      "note": "TRACKER_UPDATE_DELAYED — the task completed while the public tracker data plane was being established."
+    },
+    {
+      "task_id": "M1-REVIEW",
+      "from": "PLANNED",
+      "to": "COMPLETE",
+      "at": "2026-07-11T13:25:50+10:00",
+      "evidence": "IMPLEMENTED / UNVERIFIED",
+      "commit": "3e62cb6",
+      "note": "TRACKER_UPDATE_DELAYED — the review completed before the executing agent had the final public data contract."
+    },
+    {
+      "task_id": "M2",
+      "from": "PLANNED",
+      "to": "BLOCKED",
+      "at": "2026-07-11T13:25:50+10:00",
+      "evidence": "BLOCKED",
+      "commit": null,
+      "note": "Owner-gated entry decision required."
+    },
+    {
+      "task_id": "M2",
+      "from": "BLOCKED",
+      "to": "IN_PROGRESS",
+      "at": "2026-07-11T13:42:32+10:00",
+      "evidence": "PLANNED",
+      "commit": null,
+      "note": "Owner authorised M2 as PAPER-only execution fidelity; first packet was hermetic baseline hygiene."
+    },
+    {
+      "task_id": "M2",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-07-11T13:54:47+10:00",
+      "evidence": "PARTIAL",
+      "commit": "02e922a",
+      "note": "M2.1 packet closed: hermetic autoexec baseline established and the PAPER suite passes in a bare offline checkout. M2 milestone remains in progress for the execution-fidelity lifecycle."
+    },
+    {
+      "task_id": "M2.1",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-07-11T14:06:13+10:00",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "02e922a",
+      "note": "M2.1 hermetic baseline packet normalised to its own row."
+    },
+    {
+      "task_id": "M2.2",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-07-11T14:06:13+10:00",
+      "evidence": "PLANNED",
+      "commit": null,
+      "note": "M2.2 canonical PAPER lifecycle evidence spine started; live round-trip initially blocked until the equity market opened."
+    },
+    {
+      "task_id": "M2.2",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-07-11T14:20:00+10:00",
+      "evidence": "PLANNED",
+      "commit": null,
+      "note": "Owner directed an immediate alternative while equities were closed. Scope pivoted to Alpaca PAPER crypto for the 24/7 common execution-spine proof; a narrow equity-specific parity canary remained outstanding."
+    },
+    {
+      "task_id": "M2.2",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-07-11T14:34:00+10:00",
+      "evidence": "PLANNED",
+      "commit": "f5cadfb",
+      "note": "Scope expanded and programme plans aligned: full current Alpaca crypto-universe data coverage, provider priority Finnhub→Alpaca→yfinance→Kraken, bounded representative major and altcoin PAPER execution, and separate M2.3 equity parity."
+    },
+    {
+      "task_id": "M2.3",
+      "from": "PLANNED",
+      "to": "PLANNED",
+      "at": "2026-07-11T14:34:00+10:00",
+      "evidence": "PLANNED",
+      "commit": "f5cadfb",
+      "note": "Explicit AAPL equity-parity TODO added; crypto evidence cannot close M2 by itself."
+    },
+    {
+      "task_id": "M2.2",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-07-11T14:57:20+10:00",
+      "evidence": "IMPLEMENTED / UNVERIFIED",
+      "commit": null,
+      "note": "A, B and C-core implemented on branch (universe discovery, provider mapping/resolver, crypto admission engine); unverified until merge; no broker mutation."
+    },
+    {
+      "task_id": "M2.2",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-07-11T15:07:00+10:00",
+      "evidence": "IMPLEMENTED / UNVERIFIED",
+      "commit": null,
+      "note": "C-integration and the non-mutating universe-wide eligibility pass reported complete on an unmerged branch: 72 pairs observed, 16 eligible, 56 stale-quote withholds, 0 unknown; no broker mutation. Branch is not yet available for independent repository review."
+    },
+    {
+      "task_id": "M2.2",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-07-11T16:14:18+10:00",
+      "evidence": "PARTIAL",
+      "commit": "1a245b3",
+      "note": "Backend Packet A+B merged to master and deployed; 7 operator contracts live; public-denied; no broker mutation. Frontend/MC/round-trips remain."
+    },
+    {
+      "task_id": "M2.2",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-07-11T16:28:44+10:00",
+      "evidence": "PARTIAL",
+      "commit": "39531dc",
+      "note": "Frontend crypto operator surface merged + deployed + route-verified (200/401/302); browser never touches broker/providers. MC + round-trips + close-out remain."
+    },
+    {
+      "task_id": "M2.2",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-07-11T06:47:22.901Z",
+      "evidence": "PARTIAL",
+      "commit": "618069b"
+    }
   ]
 }
