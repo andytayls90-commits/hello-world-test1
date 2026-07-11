@@ -1,16 +1,16 @@
 {
   "schema_version": 1,
   "programme_name": "Re-AgentAI",
-  "status": "READY",
+  "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-07-11T07:59:29.384Z",
+  "updated_at": "2026-07-11T09:42:29.188Z",
   "stale_after_hours": 48,
   "projects": [
     {
       "project_id": "project-wallstreet",
       "project_name": "Project Wallstreet",
-      "status": "READY",
-      "evidence": "PARTIAL",
+      "status": "BLOCKED",
+      "evidence": "BLOCKED",
       "detail_page": "project-wallstreet.html",
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
@@ -19,8 +19,8 @@
         "total": 13,
         "percent": 54
       },
-      "next_action": "Owner authorises a separate packet during regular US market hours; then execute one bounded AAPL PAPER round-trip through the gateway with the same go/no-go + flat-state discipline.",
-      "updated_at": "2026-07-11T07:59:29.384Z"
+      "next_action": "Owner resolves the 4 legacy equity items (attribute or close CVX/GOOGL/ORCL; attribute-extra-5 or reduce-to-61 for CRM) so fidelity_reconciled becomes true, OR accepts a separately documented exception; then M2.3 may run in a regular US equity session as a separate packet.",
+      "updated_at": "2026-07-11T09:42:29.188Z"
     },
     {
       "project_id": "mission-control",

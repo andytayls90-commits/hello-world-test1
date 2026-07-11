@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "project-wallstreet",
   "project_name": "Project Wallstreet",
-  "status": "READY",
-  "evidence": "PARTIAL",
-  "updated_at": "2026-07-11T07:59:29.384Z",
+  "status": "BLOCKED",
+  "evidence": "BLOCKED",
+  "updated_at": "2026-07-11T09:42:29.188Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Owner authorises a separate packet during regular US market hours; then execute one bounded AAPL PAPER round-trip through the gateway with the same go/no-go + flat-state discipline.",
+  "next_action": "Owner resolves the 4 legacy equity items (attribute or close CVX/GOOGL/ORCL; attribute-extra-5 or reduce-to-61 for CRM) so fidelity_reconciled becomes true, OR accepts a separately documented exception; then M2.3 may run in a regular US equity session as a separate packet.",
   "milestones": [
     {
       "id": "M0",
@@ -31,7 +31,7 @@
     {
       "id": "M2",
       "title": "PAPER execution fidelity",
-      "status": "READY",
+      "status": "BLOCKED",
       "task_ids": [
         "M2.1",
         "M2.2",
@@ -276,17 +276,17 @@
       "id": "M2.3",
       "title": "AAPL equity-parity canary",
       "project": "Project Wallstreet",
-      "status": "READY",
+      "status": "BLOCKED",
       "owner": "Unassigned",
       "started_at": null,
       "completed_at": null,
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "AAPL equity parity canary — replays the M2.2 lifecycle discipline on the supported Alpaca long-equity/day path to prove equity/crypto parity. All preconditions (mutation gateway, M1.3 preflight, evidence seams, operator + MC oversight) are in place. NOT executed: requires a valid regular US equity session AND a separate owner-authorised packet.",
+      "evidence": "BLOCKED",
+      "commit": "766f80f",
+      "summary": "AAPL equity parity canary — BLOCKED on reconciliation fidelity. A strict additive fidelity_reconciled field (book_reconciled AND unresolved==0 AND no error AND broker-contact timestamp) now gates positions/paper-account eligibility + M2.3 go/no-go. Current live state: fidelity_reconciled=FALSE (3 broker orphans CVX/GOOGL/ORCL LEGACY_UNATTRIBUTED + CRM QUANTITY_CONTRADICTED broker 66 vs internal 61). A read-only owner-review packet (private manifest + dry-run rebuild + owner-choices + public-safe summary) is prepared; no broker state altered, no actions applied. Deployed 766f80f; bolt 10/10; PAPER.",
       "blockers": [],
-      "next_action": "Owner authorises a separate packet during regular US market hours; then execute one bounded AAPL PAPER round-trip through the gateway with the same go/no-go + flat-state discipline.",
-      "updated_at": "2026-07-11T07:59:29.384Z"
+      "next_action": "Owner resolves the 4 legacy equity items (attribute or close CVX/GOOGL/ORCL; attribute-extra-5 or reduce-to-61 for CRM) so fidelity_reconciled becomes true, OR accepts a separately documented exception; then M2.3 may run in a regular US equity session as a separate packet.",
+      "updated_at": "2026-07-11T09:42:29.188Z"
     }
   ],
   "history": [
@@ -463,6 +463,14 @@
       "at": "2026-07-11T07:59:29.384Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "M2.3",
+      "from": "READY",
+      "to": "BLOCKED",
+      "at": "2026-07-11T09:42:29.188Z",
+      "evidence": "BLOCKED",
+      "commit": "766f80f"
     }
   ]
 }
