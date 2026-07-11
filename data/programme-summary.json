@@ -3,11 +3,11 @@
   "programme_name": "Re-AgentAI",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-07-11T14:06:13+10:00",
+  "updated_at": "2026-07-11T14:20:00+10:00",
   "stale_after_hours": 48,
   "projects": [
     {
-      "project_id":"project-wallstreet","project_name":"Project Wallstreet","status":"IN_PROGRESS","evidence":"PARTIAL","detail_page":"project-wallstreet.html","data_file":"data/project-wallstreet.json","current_task_id":"M2.2","progress":{"complete":6,"total":12,"percent":50},"next_action":"Prove the PAPER equity execution-fidelity lifecycle end to end: signal, intent, preflight, broker response, fill, position, reconciliation and realised PAPER profit and loss, with spread, latency, slippage, partial-fill, reject, cancel and restart evidence.","updated_at":"2026-07-11T14:06:13+10:00"
+      "project_id":"project-wallstreet","project_name":"Project Wallstreet","status":"IN_PROGRESS","evidence":"PARTIAL","detail_page":"project-wallstreet.html","data_file":"data/project-wallstreet.json","current_task_id":"M2.2","progress":{"complete":6,"total":12,"percent":50},"next_action":"Execute the 24/7 common lifecycle proof now on BTC/USD through Alpaca PAPER crypto; retain a narrow AAPL equity-parity canary for the next regular session.","updated_at":"2026-07-11T14:20:00+10:00"
     },
     {
       "project_id":"mission-control","project_name":"Mission Control","status":"READY","evidence":"UNKNOWN","detail_page":"mission-control.html","data_file":"data/mission-control.json","current_task_id":"MC-BASELINE","progress":{"complete":0,"total":1,"percent":0},"next_action":"Reconcile committed Mission Control milestones into the public-safe tracker","updated_at":"2026-07-11T13:01:00+10:00"

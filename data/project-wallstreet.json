@@ -4,17 +4,17 @@
   "project_name": "Project Wallstreet",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-07-11T14:06:13+10:00",
+  "updated_at": "2026-07-11T14:20:00+10:00",
   "stale_after_hours": 48,
   "current_task_id": "M2.2",
-  "next_action": "Prove the PAPER equity execution-fidelity lifecycle end to end: signal, intent, preflight, broker response, fill, position, reconciliation and realised PAPER profit and loss, with spread, latency, slippage, partial-fill, reject, cancel and restart evidence.",
+  "next_action": "Execute the common lifecycle proof now on BTC/USD through Alpaca PAPER crypto: asset and account eligibility, quote truth, preflight, marketable-limit entry, fill, restart, reconciliation, close, cancellation and execution metrics. Retain a narrow AAPL equity-parity canary for the next regular session.",
   "milestones": [
     {"id":"M0","title":"Baseline and freeze","status":"COMPLETE","task_ids":["M0"]},
     {"id":"M1","title":"Execution foundation","status":"COMPLETE","task_ids":["M1.1","M1.2","M1.3","M1-REVIEW"]},
     {"id":"M2","title":"Live equities","status":"IN_PROGRESS","task_ids":["M2.1","M2.2"]},
     {"id":"M3","title":"Operational stability","status":"PLANNED","task_ids":["M3"]},
     {"id":"M4","title":"Autonomous equities","status":"PLANNED","task_ids":["M4"]},
-    {"id":"M5","title":"Options","status":"PLANNED","task_ids":["M5"]},
+    {"id":"M5","title":"Options lifecycle","status":"PLANNED","task_ids":["M5"]},
     {"id":"M6","title":"Scaling and portfolio","status":"PLANNED","task_ids":["M6"]},
     {"id":"M7","title":"Full operations","status":"PLANNED","task_ids":["M7"]}
   ],
@@ -30,7 +30,7 @@
     {"id":"M5","title":"Options lifecycle","project":"Project Wallstreet","status":"PLANNED","owner":"Unassigned","started_at":null,"completed_at":null,"target_at":"2026-08-17T22:00:00+10:00","evidence":"PLANNED","commit":null,"summary":"Build a dedicated options lifecycle with expiry and assignment handling.","blockers":[],"next_action":"Wait for governed equity operations.","updated_at":"2026-07-11T13:42:32+10:00"},
     {"id":"M6","title":"Scaling and portfolio allocation","project":"Project Wallstreet","status":"PLANNED","owner":"Unassigned","started_at":null,"completed_at":null,"target_at":"2026-08-31T22:00:00+10:00","evidence":"PLANNED","commit":null,"summary":"Add audited allocation, capital reservation and strategy conflict control.","blockers":[],"next_action":"Wait for measured execution evidence.","updated_at":"2026-07-11T13:42:32+10:00"},
     {"id":"M7","title":"Full operations","project":"Project Wallstreet","status":"PLANNED","owner":"Unassigned","started_at":null,"completed_at":null,"target_at":"2026-09-30T22:00:00+10:00","evidence":"PLANNED","commit":null,"summary":"Close governance, recovery, evidence automation and commercial reporting.","blockers":[],"next_action":"Wait for M6 acceptance.","updated_at":"2026-07-11T13:42:32+10:00"},
-    {"id":"M2.2","title":"Canonical PAPER lifecycle evidence spine","project":"Project Wallstreet","status":"IN_PROGRESS","owner":"Claude","started_at":"2026-07-11T14:06:13+10:00","completed_at":null,"target_at":"2026-07-14T22:00:00+10:00","evidence":"PLANNED","commit":null,"summary":"Prove one complete AAPL long-only one-share PAPER lifecycle end to end through the canonical path, with actual spread, latency, slippage, reconciliation and realised PAPER profit and loss evidence.","blockers":["Regular-hours market session required: the broker clock is closed until Monday 2026-07-13 09:30 US-Eastern, so the live round-trip and acceptance cannot execute until the market opens."],"next_action":"Complete the evidence-gap inventory and fail-first tests now; execute the live PAPER round-trip and acceptance when the market opens.","updated_at":"2026-07-11T14:06:13+10:00"}
+    {"id":"M2.2","title":"24/7 common execution spine — Alpaca PAPER crypto","project":"Project Wallstreet","status":"IN_PROGRESS","owner":"Claude","started_at":"2026-07-11T14:06:13+10:00","completed_at":null,"target_at":"2026-07-14T22:00:00+10:00","evidence":"PLANNED","commit":null,"summary":"Prove the common canonical lifecycle now on a minimal BTC/USD Alpaca PAPER spot position: quote truth, intent, asset-aware preflight, marketable-limit broker order, fill, position link, restart, reconciliation, close, cancellation, costs and realised PAPER profit and loss. This proves the shared execution spine; a narrow AAPL parity canary remains required for equity-specific clock, sector, order-session and protection semantics.","blockers":[],"next_action":"Verify PAPER account crypto eligibility, BTC/USD active and tradable metadata, venue kill-switch and fresh two-sided quote; then implement only the asset-aware session, quote, order-type and evidence seams needed for the bounded PAPER round trip.","updated_at":"2026-07-11T14:20:00+10:00"}
   ],
   "history": [
     {"task_id":"M0","from":"IN_PROGRESS","to":"COMPLETE","at":"2026-07-10T23:00:00+10:00","evidence":"SELF-VERIFIED LIVE","commit":"9a96613"},
@@ -42,6 +42,7 @@
     {"task_id":"M2","from":"BLOCKED","to":"IN_PROGRESS","at":"2026-07-11T13:42:32+10:00","evidence":"PLANNED","commit":null,"note":"Owner authorised M2 as PAPER-only equity execution fidelity; first packet is hermetic autoexec baseline hygiene."},
     {"task_id":"M2","from":"IN_PROGRESS","to":"IN_PROGRESS","at":"2026-07-11T13:54:47+10:00","evidence":"PARTIAL","commit":"02e922a","note":"M2.1 packet closed: hermetic autoexec baseline established and the PAPER suite passes in a bare offline checkout. M2 milestone remains in progress for the execution-fidelity lifecycle."},
     {"task_id":"M2.1","from":"IN_PROGRESS","to":"COMPLETE","at":"2026-07-11T14:06:13+10:00","evidence":"SELF-VERIFIED LIVE","commit":"02e922a","note":"M2.1 hermetic baseline packet normalised to its own row."},
-    {"task_id":"M2.2","from":"PLANNED","to":"IN_PROGRESS","at":"2026-07-11T14:06:13+10:00","evidence":"PLANNED","commit":null,"note":"M2.2 canonical PAPER lifecycle evidence spine started; live round-trip blocked until market open."}
+    {"task_id":"M2.2","from":"PLANNED","to":"IN_PROGRESS","at":"2026-07-11T14:06:13+10:00","evidence":"PLANNED","commit":null,"note":"M2.2 canonical PAPER lifecycle evidence spine started; live round-trip initially blocked until the equity market opened."},
+    {"task_id":"M2.2","from":"IN_PROGRESS","to":"IN_PROGRESS","at":"2026-07-11T14:20:00+10:00","evidence":"PLANNED","commit":null,"note":"Owner directed an immediate alternative while equities are closed. Scope pivoted to BTC/USD on Alpaca PAPER crypto for the 24/7 common execution-spine proof; a narrow equity-specific parity canary remains outstanding."}
   ]
 }
