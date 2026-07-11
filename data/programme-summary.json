@@ -3,11 +3,11 @@
   "programme_name": "Re-AgentAI",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-07-11T16:14:18+10:00",
+  "updated_at": "2026-07-11T16:28:44+10:00",
   "stale_after_hours": 48,
   "projects": [
     {
-      "project_id":"project-wallstreet","project_name":"Project Wallstreet","status":"IN_PROGRESS","evidence":"PARTIAL","detail_page":"project-wallstreet.html","data_file":"data/project-wallstreet.json","current_task_id":"M2.2","progress":{"complete":6,"total":13,"percent":46},"next_action":"Implement the Re-AgentTrading frontend and Mission Control read-only oversight against the deployed operator contracts, then run the bounded PAPER round-trips behind the go/no-go gate.","updated_at":"2026-07-11T16:14:18+10:00"
+      "project_id":"project-wallstreet","project_name":"Project Wallstreet","status":"IN_PROGRESS","evidence":"PARTIAL","detail_page":"project-wallstreet.html","data_file":"data/project-wallstreet.json","current_task_id":"M2.2","progress":{"complete":6,"total":13,"percent":46},"next_action":"Implement the Mission Control read-only oversight integration (separate repo, allowlisted, consuming the versioned contracts); then run the bounded PAPER round-trips behind the go/no-go gate; then close-out.","updated_at":"2026-07-11T16:28:44+10:00"
     },
     {
       "project_id":"mission-control","project_name":"Mission Control","status":"READY","evidence":"UNKNOWN","detail_page":"mission-control.html","data_file":"data/mission-control.json","current_task_id":"MC-BASELINE","progress":{"complete":0,"total":1,"percent":0},"next_action":"Reconcile committed Mission Control milestones into the public-safe tracker","updated_at":"2026-07-11T13:01:00+10:00"
