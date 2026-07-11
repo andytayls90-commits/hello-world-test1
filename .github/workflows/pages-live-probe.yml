@@ -1,0 +1,29 @@
+name: pages-live-probe
+on:
+  pull_request:
+    branches: [gh-pages]
+permissions:
+  contents: read
+jobs:
+  verify-public-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for and verify public Pages deployment
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://andytayls90-commits.github.io/hello-world-test1"
+          for attempt in $(seq 1 30); do
+            if curl -fsSL --max-time 20 "$base/" | grep -Fq 'Re-AgentAI Programme Tracker' \
+              && curl -fsSL --max-time 20 "$base/project-wallstreet.html" | grep -Fq 'data/project-wallstreet.json' \
+              && curl -fsSL --max-time 20 "$base/mission-control.html" | grep -Fq 'data/mission-control.json' \
+              && curl -fsSL --max-time 20 "$base/data/programme-summary.json" \
+                | python3 -c 'import json,sys; d=json.load(sys.stdin); assert d["programme_name"]=="Re-AgentAI" and len(d["projects"])==2'; then
+              echo "Public Pages deployment verified on attempt $attempt"
+              exit 0
+            fi
+            echo "Pages not current yet; attempt $attempt/30"
+            sleep 10
+          done
+          echo "Public Pages deployment did not converge within the probe window" >&2
+          exit 1
