@@ -1,4 +1,8 @@
-import { assertProjectData, assertSummaryData, renderExecutive, renderProject, escapeHtml } from './tracker-core.mjs';
+import {
+  assertProjectData, assertSummaryData, renderExecutive, renderProject, escapeHtml, statusMatchesFilter
+} from './tracker-core.mjs';
+
+export const AUTO_REFRESH_MS = 60_000;
 
 export async function loadJson(url, fetchImpl = fetch) {
   const separator = url.includes('?') ? '&' : '?';
@@ -9,6 +13,19 @@ export async function loadJson(url, fetchImpl = fetch) {
 
 function renderUnknown(root, message) {
   root.innerHTML = `<section class="notice notice--error" role="alert"><h1>Tracker state UNKNOWN</h1><p>${escapeHtml(message)}</p></section>`;
+}
+
+export function bindTaskFilters(root) {
+  const buttons = [...root.querySelectorAll('[data-filter]')];
+  const tasks = [...root.querySelectorAll('.task[data-status]')];
+  for (const button of buttons) {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+      for (const task of tasks) task.hidden = !statusMatchesFilter(task.dataset.status, filter);
+      for (const candidate of buttons) candidate.setAttribute('aria-pressed', String(candidate === button));
+    });
+  }
+  buttons[0]?.setAttribute('aria-pressed', 'true');
 }
 
 export async function mountTracker(documentRef = document, fetchImpl = fetch) {
@@ -33,6 +50,7 @@ export async function mountTracker(documentRef = document, fetchImpl = fetch) {
       const project = await loadJson(source, fetchImpl);
       assertProjectData(project);
       root.innerHTML = renderProject(project);
+      bindTaskFilters(root);
       return;
     }
     throw new Error(`unknown page mode: ${page}`);
@@ -41,4 +59,10 @@ export async function mountTracker(documentRef = document, fetchImpl = fetch) {
   }
 }
 
-if (typeof document !== 'undefined') mountTracker();
+export function startAutoRefresh(documentRef = document, fetchImpl = fetch, intervalImpl = setInterval) {
+  return intervalImpl(() => mountTracker(documentRef, fetchImpl), AUTO_REFRESH_MS);
+}
+
+if (typeof document !== 'undefined') {
+  mountTracker().finally(() => startAutoRefresh());
+}
