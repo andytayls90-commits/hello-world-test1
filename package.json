@@ -1,0 +1,10 @@
+{
+  "name": "reagent-programme-tracker",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=20"},
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "validate": "node scripts/validate-data.mjs"
+  }
+}

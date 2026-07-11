@@ -58,6 +58,17 @@ The active agent must:
 
 A task is not closed merely because code was committed. The tracker update is part of the completion criteria.
 
+## Phase A update command
+
+Use `node scripts/update-task.mjs` for every task transition, then run:
+
+```bash
+npm test
+npm run validate
+```
+
+Commit the relevant project JSON and `data/programme-summary.json` together. Review the rendered Pages result before beginning the next task.
+
 ## Public information boundary
 
 Tracker updates must never publish:
