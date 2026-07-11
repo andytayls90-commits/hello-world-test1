@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "BLOCKED",
-  "updated_at": "2026-07-11T13:12:53.908Z",
+  "updated_at": "2026-07-11T13:24:08.847Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "M3.5 (sustained reconciliation) is TIME-GATED (multi-day observation window) so M3 cannot be COMPLETE this session regardless; build the metrics collector + accrue the window, and land M3.2/M3.3-formalise/M3.4-restart/M3.6/UI as separate reviewable packets.",
+  "next_action": "M3 NOT COMPLETE — exact blocker: (1) M3.5 acceptance is time-gated (daily broker/internal agreement over a multi-day window + fidelity_reconciled=true, which the Monday legacy cleanup unblocks); (2) UI CONTRADICTED/quarantine/recovery display remaining. Land the UI packet; let the M3.5 window accrue; then flip M3 review to COMPLETE.",
   "milestones": [
     {
       "id": "M0",
@@ -186,11 +186,11 @@
       "completed_at": null,
       "target_at": "2026-07-20T22:00:00+10:00",
       "evidence": "PARTIAL",
-      "commit": "1488c21",
-      "summary": "M3 operational stability — 6-packet PAPER programme opened (docs/programmes/full-operational-trading/M3-OPERATIONAL-STABILITY.md). M3.1 (partial-fill & cancel/replace) VERIFIED: 8/8 failure-injection matrix proves monotonic cumulative fills+avg, duplicate+out-of-order suppression, cancel-after-partial (fill preserved), late-full-fill-after-cancel (FILLED wins), deterministic replace lineage, distinct-terminal preservation — on the M1.2 canonical lifecycle. M3.3 (broker-truth rebuild) + M3.4 (restart/no-duplicate) SUBSTANTIALLY BUILT by M1.2 + the 2026-07-11 reconciliation-fidelity work (~60 existing dedup/recovery assertions; classifications + dry-run/repair manifests). Forward: M3.2 transport state machine, M3.4 restart-phase assertions, M3.6 drills, UI CONTRADICTED/quarantine/recovery states. Bolt 10/10; gate PAPER.",
+      "commit": "c625dcb",
+      "summary": "M3 operational stability — ALL 6 packet implementations shipped + tested (30 M3 tests green): M3.1 lifecycle failure-injection VERIFIED; M3.2 transport_recovery.py (WS-loss/bounded-REST/backfill/CONTRADICTED/TIMEOUT/no-blind-resubmit); M3.3 broker_truth_rebuild.py (6 classifications, dry-run manifests never applied); M3.4 covered by M1.2 gateway tests; M3.5 recon_metrics.py collector + observation window STARTED; M3.6 incident_drills.py (8 fault-injection drills all pass). Machine-readable M3-EVIDENCE-MANIFEST.json + M3-REVIEW.md. Bolt 10/10; gate PAPER; operator-denial 403; pure/read-only modules, no trading-path change.",
       "blockers": [],
-      "next_action": "M3.5 (sustained reconciliation) is TIME-GATED (multi-day observation window) so M3 cannot be COMPLETE this session regardless; build the metrics collector + accrue the window, and land M3.2/M3.3-formalise/M3.4-restart/M3.6/UI as separate reviewable packets.",
-      "updated_at": "2026-07-11T13:12:53.908Z"
+      "next_action": "M3 NOT COMPLETE — exact blocker: (1) M3.5 acceptance is time-gated (daily broker/internal agreement over a multi-day window + fidelity_reconciled=true, which the Monday legacy cleanup unblocks); (2) UI CONTRADICTED/quarantine/recovery display remaining. Land the UI packet; let the M3.5 window accrue; then flip M3 review to COMPLETE.",
+      "updated_at": "2026-07-11T13:24:08.847Z"
     },
     {
       "id": "M4",
@@ -487,6 +487,14 @@
       "at": "2026-07-11T13:12:53.908Z",
       "evidence": "PARTIAL",
       "commit": "1488c21"
+    },
+    {
+      "task_id": "M3",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-07-11T13:24:08.847Z",
+      "evidence": "PARTIAL",
+      "commit": "c625dcb"
     }
   ]
 }

@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-07-11T13:12:53.908Z",
+  "updated_at": "2026-07-11T13:24:08.847Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -19,8 +19,8 @@
         "total": 13,
         "percent": 54
       },
-      "next_action": "M3.5 (sustained reconciliation) is TIME-GATED (multi-day observation window) so M3 cannot be COMPLETE this session regardless; build the metrics collector + accrue the window, and land M3.2/M3.3-formalise/M3.4-restart/M3.6/UI as separate reviewable packets.",
-      "updated_at": "2026-07-11T13:12:53.908Z"
+      "next_action": "M3 NOT COMPLETE — exact blocker: (1) M3.5 acceptance is time-gated (daily broker/internal agreement over a multi-day window + fidelity_reconciled=true, which the Monday legacy cleanup unblocks); (2) UI CONTRADICTED/quarantine/recovery display remaining. Land the UI packet; let the M3.5 window accrue; then flip M3 review to COMPLETE.",
+      "updated_at": "2026-07-11T13:24:08.847Z"
     },
     {
       "project_id": "mission-control",
