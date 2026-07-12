@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "BLOCKED",
-  "updated_at": "2026-07-11T13:24:08.847Z",
+  "updated_at": "2026-07-12T03:38:46.060Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "M3 NOT COMPLETE — exact blocker: (1) M3.5 acceptance is time-gated (daily broker/internal agreement over a multi-day window + fidelity_reconciled=true, which the Monday legacy cleanup unblocks); (2) UI CONTRADICTED/quarantine/recovery display remaining. Land the UI packet; let the M3.5 window accrue; then flip M3 review to COMPLETE.",
+  "next_action": "M4 NOT COMPLETE: (1) M4.6 shadow-window acceptance is time-gated (defensible window across favourable+adverse regimes; withholds all until fidelity_reconciled=true via Monday cleanup); (2) M4.3-M4.5 real-PAPER entry/manage/exit need market-open (Monday) + owner acceptance of the M4 governance; (3) UI policy/authority/reservation/exposure/withhold/audit display remaining. Land the real-path wiring behind owner acceptance + the UI packet; let the shadow window accrue.",
   "milestones": [
     {
       "id": "M0",
@@ -49,7 +49,7 @@
     {
       "id": "M4",
       "title": "Autonomous equities",
-      "status": "PLANNED",
+      "status": "IN_PROGRESS",
       "task_ids": [
         "M4"
       ]
@@ -196,17 +196,17 @@
       "id": "M4",
       "title": "Autonomous equities",
       "project": "Project Wallstreet",
-      "status": "PLANNED",
-      "owner": "Unassigned",
-      "started_at": null,
+      "status": "IN_PROGRESS",
+      "owner": "Claude",
+      "started_at": "2026-07-12T03:38:46.060Z",
       "completed_at": null,
       "target_at": "2026-08-03T22:00:00+10:00",
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "Govern autonomous equity entry, management and exit within explicit owner policy.",
+      "evidence": "PARTIAL",
+      "commit": "9851448",
+      "summary": "M4 governed autonomous equities (PAPER/shadow) — deterministic governance OS built + tested (20 M4 tests green): M4.1 autonomy_policy.py (versioned DEFAULT-DENY policy: permits + position/exposure/concentration/order-rate/loss/notional limits + stale/fidelity-reconciled/kill-switch/restart safety; immutable policy_version; confidence-can't-override); M4.2 strategy_authority.py (registered-versions-only, deterministic proposal identity, capital/symbol reservations, conflict resolution, retained disagreements); M4.6 shadow_autonomy.py runs the intended path vs LIVE signals with NO capital/order — LIVE RUN 20 signals -> 0 authorised / 11 policy withholds (governed path CORRECTLY refuses all autonomy on the unreconciled book); M4.7 control_drills.py (kill/stale/restart/unreconciled/resume/owner-session-failure). M4-GOVERNED-AUTONOMY.md + M4-EVIDENCE/SHADOW manifests. Bolt 10/10; gate PAPER; no order/capital/authority change; real-money autonomy NOT enabled.",
       "blockers": [],
-      "next_action": "Wait for M3 acceptance.",
-      "updated_at": "2026-07-11T13:42:32+10:00"
+      "next_action": "M4 NOT COMPLETE: (1) M4.6 shadow-window acceptance is time-gated (defensible window across favourable+adverse regimes; withholds all until fidelity_reconciled=true via Monday cleanup); (2) M4.3-M4.5 real-PAPER entry/manage/exit need market-open (Monday) + owner acceptance of the M4 governance; (3) UI policy/authority/reservation/exposure/withhold/audit display remaining. Land the real-path wiring behind owner acceptance + the UI packet; let the shadow window accrue.",
+      "updated_at": "2026-07-12T03:38:46.060Z"
     },
     {
       "id": "M5",
@@ -495,6 +495,14 @@
       "at": "2026-07-11T13:24:08.847Z",
       "evidence": "PARTIAL",
       "commit": "c625dcb"
+    },
+    {
+      "task_id": "M4",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-07-12T03:38:46.060Z",
+      "evidence": "PARTIAL",
+      "commit": "9851448"
     }
   ]
 }

@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-07-11T13:24:08.847Z",
+  "updated_at": "2026-07-12T03:38:46.060Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -19,8 +19,8 @@
         "total": 13,
         "percent": 54
       },
-      "next_action": "M3 NOT COMPLETE — exact blocker: (1) M3.5 acceptance is time-gated (daily broker/internal agreement over a multi-day window + fidelity_reconciled=true, which the Monday legacy cleanup unblocks); (2) UI CONTRADICTED/quarantine/recovery display remaining. Land the UI packet; let the M3.5 window accrue; then flip M3 review to COMPLETE.",
-      "updated_at": "2026-07-11T13:24:08.847Z"
+      "next_action": "M4 NOT COMPLETE: (1) M4.6 shadow-window acceptance is time-gated (defensible window across favourable+adverse regimes; withholds all until fidelity_reconciled=true via Monday cleanup); (2) M4.3-M4.5 real-PAPER entry/manage/exit need market-open (Monday) + owner acceptance of the M4 governance; (3) UI policy/authority/reservation/exposure/withhold/audit display remaining. Land the real-path wiring behind owner acceptance + the UI packet; let the shadow window accrue.",
+      "updated_at": "2026-07-12T03:38:46.060Z"
     },
     {
       "project_id": "mission-control",
