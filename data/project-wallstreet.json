@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "BLOCKED",
-  "updated_at": "2026-07-12T03:38:46.060Z",
+  "updated_at": "2026-07-12T07:27:15.220Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "M4 NOT COMPLETE: (1) M4.6 shadow-window acceptance is time-gated (defensible window across favourable+adverse regimes; withholds all until fidelity_reconciled=true via Monday cleanup); (2) M4.3-M4.5 real-PAPER entry/manage/exit need market-open (Monday) + owner acceptance of the M4 governance; (3) UI policy/authority/reservation/exposure/withhold/audit display remaining. Land the real-path wiring behind owner acceptance + the UI packet; let the shadow window accrue.",
+  "next_action": "M5 NOT COMPLETE: real PAPER option execution (M5.3 entry, M5.4 spread) needs market-open (Monday) + an options-enabled account level + owner acceptance (LIVE_OPTIONS_AUTHORITY BLOCKED by design); M5.7 oversight UI (contract/leg/liquidity/max-loss-gain/expiry/exercise/assignment/reconcile display) is the remaining frontend packet. Close on accepted evidence of a real bounded PAPER options round-trip.",
   "milestones": [
     {
       "id": "M0",
@@ -57,7 +57,7 @@
     {
       "id": "M5",
       "title": "Options lifecycle",
-      "status": "PLANNED",
+      "status": "IN_PROGRESS",
       "task_ids": [
         "M5"
       ]
@@ -212,17 +212,17 @@
       "id": "M5",
       "title": "Options lifecycle",
       "project": "Project Wallstreet",
-      "status": "PLANNED",
-      "owner": "Unassigned",
-      "started_at": null,
+      "status": "IN_PROGRESS",
+      "owner": "Claude",
+      "started_at": "2026-07-12T07:27:15.220Z",
       "completed_at": null,
       "target_at": "2026-08-17T22:00:00+10:00",
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "Build a dedicated options lifecycle with expiry and assignment handling.",
+      "evidence": "PARTIAL",
+      "commit": "cf8d229",
+      "summary": "M5 options lifecycle (PAPER/read-only discovery) — dedicated options lifecycle logic built + tested (26 M5 tests): M5.1 option_contract.py (canonical OCC identity + chain discovery), M5.2 option_admission.py (fail-closed admissibility: two-sided quote/spread/OI-vol/DTE/greeks/blackout/UNKNOWN-withhold), M5.3 option_lifecycle.py (long-only intent/affordability/marketable-limit/P&L/no-short), M5.4 option_spread.py (vertical debit spreads: defined-risk max-loss/gain, prevent-naked, broken-leg contingency, deterministic unwind), M5.5 option_expiry.py (expiry/exercise/DNE/assignment/pin-risk/insufficient-BP/reconcile), M5.6 options_risk.py, M5.7 option_incident_drills.py (5 drills). NOT equity-with-symbols; live options authority BLOCKED; no naked shorts. M5-OPTIONS-LIFECYCLE.md + M5-EVIDENCE-MANIFEST.json. Bolt 10/10; gate PAPER.",
       "blockers": [],
-      "next_action": "Wait for governed equity operations.",
-      "updated_at": "2026-07-11T13:42:32+10:00"
+      "next_action": "M5 NOT COMPLETE: real PAPER option execution (M5.3 entry, M5.4 spread) needs market-open (Monday) + an options-enabled account level + owner acceptance (LIVE_OPTIONS_AUTHORITY BLOCKED by design); M5.7 oversight UI (contract/leg/liquidity/max-loss-gain/expiry/exercise/assignment/reconcile display) is the remaining frontend packet. Close on accepted evidence of a real bounded PAPER options round-trip.",
+      "updated_at": "2026-07-12T07:27:15.220Z"
     },
     {
       "id": "M6",
@@ -503,6 +503,14 @@
       "at": "2026-07-12T03:38:46.060Z",
       "evidence": "PARTIAL",
       "commit": "9851448"
+    },
+    {
+      "task_id": "M5",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-07-12T07:27:15.220Z",
+      "evidence": "PARTIAL",
+      "commit": "cf8d229"
     }
   ]
 }
