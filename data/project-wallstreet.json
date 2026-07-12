@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "BLOCKED",
-  "updated_at": "2026-07-12T07:27:15.220Z",
+  "updated_at": "2026-07-12T09:55:00.000Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "M5 NOT COMPLETE: real PAPER option execution (M5.3 entry, M5.4 spread) needs market-open (Monday) + an options-enabled account level + owner acceptance (LIVE_OPTIONS_AUTHORITY BLOCKED by design); M5.7 oversight UI (contract/leg/liquidity/max-loss-gain/expiry/exercise/assignment/reconcile display) is the remaining frontend packet. Close on accepted evidence of a real bounded PAPER options round-trip.",
+  "next_action": "Audit correction applied (2026-07-12): M3 = PARTIAL, M4 = IMPLEMENTED / UNVERIFIED, M5 = IMPLEMENTED / UNVERIFIED, M2.3 = BLOCKED, legacy cleanup HELD. Reconciliation lifecycle renders live. Awaiting Raven review + Monday RTH legacy cleanup. No milestone marked complete.",
   "milestones": [
     {
       "id": "M0",
@@ -187,10 +187,10 @@
       "target_at": "2026-07-20T22:00:00+10:00",
       "evidence": "PARTIAL",
       "commit": "c625dcb",
-      "summary": "M3 operational stability — ALL 6 packet implementations shipped + tested (30 M3 tests green): M3.1 lifecycle failure-injection VERIFIED; M3.2 transport_recovery.py (WS-loss/bounded-REST/backfill/CONTRADICTED/TIMEOUT/no-blind-resubmit); M3.3 broker_truth_rebuild.py (6 classifications, dry-run manifests never applied); M3.4 covered by M1.2 gateway tests; M3.5 recon_metrics.py collector + observation window STARTED; M3.6 incident_drills.py (8 fault-injection drills all pass). Machine-readable M3-EVIDENCE-MANIFEST.json + M3-REVIEW.md. Bolt 10/10; gate PAPER; operator-denial 403; pure/read-only modules, no trading-path change.",
+      "summary": "M3 operational stability — ALL 6 packet implementations shipped + tested (30 M3 tests green): M3.1 lifecycle failure-injection VERIFIED; M3.2 transport_recovery.py (WS-loss/bounded-REST/backfill/CONTRADICTED/TIMEOUT/no-blind-resubmit); M3.3 broker_truth_rebuild.py (6 classifications, dry-run manifests never applied); M3.4 covered by M1.2 gateway tests; M3.5 recon_metrics.py collector + observation window STARTED; M3.6 incident_drills.py (8 fault-injection drills all pass). Machine-readable M3-EVIDENCE-MANIFEST.json + M3-REVIEW.md. Bolt 10/10; gate PAPER; operator-denial 403; pure/read-only modules, no trading-path change. | AUDIT CORRECTION 2026-07-12: reconciliation lifecycle now EMITS + RENDERS end-to-end (CONTRADICTED/QUARANTINED/RECOVERING) — live /api/reconcile/status shows CONTRADICTED for the real CRM 66≠61 discrepancy; oversight desk rolls up CONTRADICTED; operator + MC console render it. M3.3 rebuild + M3.5 record_daily_agreement wired READ-ONLY into the reconcile scheduler (once/day, restart-persistent).",
       "blockers": [],
-      "next_action": "M3 NOT COMPLETE — exact blocker: (1) M3.5 acceptance is time-gated (daily broker/internal agreement over a multi-day window + fidelity_reconciled=true, which the Monday legacy cleanup unblocks); (2) UI CONTRADICTED/quarantine/recovery display remaining. Land the UI packet; let the M3.5 window accrue; then flip M3 review to COMPLETE.",
-      "updated_at": "2026-07-11T13:24:08.847Z"
+      "next_action": "M3 = PARTIAL (NOT complete). DONE: UI CONTRADICTED/QUARANTINED/RECOVERING display shipped; M3.5 daily-agreement wired to the real reconcile scheduler. UNRESOLVED GATES: (1) transport recovery has NO production caller — arch is REST-poll, no live WS client; (2) no live failure-injection harness (submit/partial/cancel/replace/close/reconcile restart injection); (3) no bounded-fallback/no-blind-resubmit proof against the running PAPER path; (4) M3.5 acceptance still time-gated. See docs/evidence/audit-2026-07-12/GAP-AUDIT-AND-ROLLBACK.md.",
+      "updated_at": "2026-07-12T09:55:00.000Z"
     },
     {
       "id": "M4",
@@ -201,12 +201,12 @@
       "started_at": "2026-07-12T03:38:46.060Z",
       "completed_at": null,
       "target_at": "2026-08-03T22:00:00+10:00",
-      "evidence": "PARTIAL",
+      "evidence": "IMPLEMENTED / UNVERIFIED",
       "commit": "9851448",
-      "summary": "M4 governed autonomous equities (PAPER/shadow) — deterministic governance OS built + tested (20 M4 tests green): M4.1 autonomy_policy.py (versioned DEFAULT-DENY policy: permits + position/exposure/concentration/order-rate/loss/notional limits + stale/fidelity-reconciled/kill-switch/restart safety; immutable policy_version; confidence-can't-override); M4.2 strategy_authority.py (registered-versions-only, deterministic proposal identity, capital/symbol reservations, conflict resolution, retained disagreements); M4.6 shadow_autonomy.py runs the intended path vs LIVE signals with NO capital/order — LIVE RUN 20 signals -> 0 authorised / 11 policy withholds (governed path CORRECTLY refuses all autonomy on the unreconciled book); M4.7 control_drills.py (kill/stale/restart/unreconciled/resume/owner-session-failure). M4-GOVERNED-AUTONOMY.md + M4-EVIDENCE/SHADOW manifests. Bolt 10/10; gate PAPER; no order/capital/authority change; real-money autonomy NOT enabled.",
+      "summary": "M4 governed autonomous equities (PAPER/shadow) — deterministic governance OS built + tested (20 M4 tests green): M4.1 autonomy_policy.py (versioned DEFAULT-DENY policy: permits + position/exposure/concentration/order-rate/loss/notional limits + stale/fidelity-reconciled/kill-switch/restart safety; immutable policy_version; confidence-can't-override); M4.2 strategy_authority.py (registered-versions-only, deterministic proposal identity, capital/symbol reservations, conflict resolution, retained disagreements); M4.6 shadow_autonomy.py runs the intended path vs LIVE signals with NO capital/order — LIVE RUN 20 signals -> 0 authorised / 11 policy withholds (governed path CORRECTLY refuses all autonomy on the unreconciled book); M4.7 control_drills.py (kill/stale/restart/unreconciled/resume/owner-session-failure). M4-GOVERNED-AUTONOMY.md + M4-EVIDENCE/SHADOW manifests. Bolt 10/10; gate PAPER; no order/capital/authority change; real-money autonomy NOT enabled. | AUDIT CORRECTION 2026-07-12: reclassified PARTIAL -> IMPLEMENTED / UNVERIFIED. Hard-coded runtime replaced with authoritative contracts or explicit UNKNOWN (UNKNOWN staleness fail-closes); runtime_provenance + runtime_note added; SHADOW-ONLY, never connected to broker execution.",
       "blockers": [],
-      "next_action": "M4 NOT COMPLETE: (1) M4.6 shadow-window acceptance is time-gated (defensible window across favourable+adverse regimes; withholds all until fidelity_reconciled=true via Monday cleanup); (2) M4.3-M4.5 real-PAPER entry/manage/exit need market-open (Monday) + owner acceptance of the M4 governance; (3) UI policy/authority/reservation/exposure/withhold/audit display remaining. Land the real-path wiring behind owner acceptance + the UI packet; let the shadow window accrue.",
-      "updated_at": "2026-07-12T03:38:46.060Z"
+      "next_action": "M4 = IMPLEMENTED / UNVERIFIED (NOT complete). Shadow-only; runtime now authoritative-or-UNKNOWN. Do NOT seek owner acceptance until M2.3 and M3 are accepted. Real-PAPER entry/manage/exit + UI remain; do not connect autonomy to broker execution.",
+      "updated_at": "2026-07-12T09:55:00.000Z"
     },
     {
       "id": "M5",
@@ -217,12 +217,12 @@
       "started_at": "2026-07-12T07:27:15.220Z",
       "completed_at": null,
       "target_at": "2026-08-17T22:00:00+10:00",
-      "evidence": "PARTIAL",
+      "evidence": "IMPLEMENTED / UNVERIFIED",
       "commit": "cf8d229",
-      "summary": "M5 options lifecycle (PAPER/read-only discovery) — dedicated options lifecycle logic built + tested (26 M5 tests): M5.1 option_contract.py (canonical OCC identity + chain discovery), M5.2 option_admission.py (fail-closed admissibility: two-sided quote/spread/OI-vol/DTE/greeks/blackout/UNKNOWN-withhold), M5.3 option_lifecycle.py (long-only intent/affordability/marketable-limit/P&L/no-short), M5.4 option_spread.py (vertical debit spreads: defined-risk max-loss/gain, prevent-naked, broken-leg contingency, deterministic unwind), M5.5 option_expiry.py (expiry/exercise/DNE/assignment/pin-risk/insufficient-BP/reconcile), M5.6 options_risk.py, M5.7 option_incident_drills.py (5 drills). NOT equity-with-symbols; live options authority BLOCKED; no naked shorts. M5-OPTIONS-LIFECYCLE.md + M5-EVIDENCE-MANIFEST.json. Bolt 10/10; gate PAPER.",
+      "summary": "M5 options lifecycle (PAPER/read-only discovery) — dedicated options lifecycle logic built + tested (26 M5 tests): M5.1 option_contract.py (canonical OCC identity + chain discovery), M5.2 option_admission.py (fail-closed admissibility: two-sided quote/spread/OI-vol/DTE/greeks/blackout/UNKNOWN-withhold), M5.3 option_lifecycle.py (long-only intent/affordability/marketable-limit/P&L/no-short), M5.4 option_spread.py (vertical debit spreads: defined-risk max-loss/gain, prevent-naked, broken-leg contingency, deterministic unwind), M5.5 option_expiry.py (expiry/exercise/DNE/assignment/pin-risk/insufficient-BP/reconcile), M5.6 options_risk.py, M5.7 option_incident_drills.py (5 drills). NOT equity-with-symbols; live options authority BLOCKED; no naked shorts. M5-OPTIONS-LIFECYCLE.md + M5-EVIDENCE-MANIFEST.json. Bolt 10/10; gate PAPER. | AUDIT CORRECTION 2026-07-12: reclassified PARTIAL -> IMPLEMENTED / UNVERIFIED. Capability chain labelled explicitly FIXTURE (data_source/providers/invariants) — no live provider, account capability, or executable lifecycle implied. Live options authority BLOCKED by design.",
       "blockers": [],
-      "next_action": "M5 NOT COMPLETE: real PAPER option execution (M5.3 entry, M5.4 spread) needs market-open (Monday) + an options-enabled account level + owner acceptance (LIVE_OPTIONS_AUTHORITY BLOCKED by design); M5.7 oversight UI (contract/leg/liquidity/max-loss-gain/expiry/exercise/assignment/reconcile display) is the remaining frontend packet. Close on accepted evidence of a real bounded PAPER options round-trip.",
-      "updated_at": "2026-07-12T07:27:15.220Z"
+      "next_action": "M5 = IMPLEMENTED / UNVERIFIED (NOT complete). Read-only discovery; chain data is FIXTURE; LIVE_OPTIONS_AUTHORITY BLOCKED. Close only on accepted evidence of a real bounded PAPER options round-trip; do not expand permissions.",
+      "updated_at": "2026-07-12T09:55:00.000Z"
     },
     {
       "id": "M6",
