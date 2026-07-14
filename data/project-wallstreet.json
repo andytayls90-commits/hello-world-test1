@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "project-wallstreet",
   "project_name": "Project Wallstreet",
-  "status": "BLOCKED",
-  "evidence": "BLOCKED",
-  "updated_at": "2026-07-12T09:55:00.000Z",
+  "status": "IN_PROGRESS",
+  "evidence": "PARTIAL",
+  "updated_at": "2026-07-14T10:50:00.000Z",
   "stale_after_hours": 48,
-  "current_task_id": "M2.3",
-  "next_action": "Audit correction applied (2026-07-12): M3 = PARTIAL, M4 = IMPLEMENTED / UNVERIFIED, M5 = IMPLEMENTED / UNVERIFIED, M2.3 = BLOCKED, legacy cleanup HELD. Reconciliation lifecycle renders live. Awaiting Raven review + Monday RTH legacy cleanup. No milestone marked complete.",
+  "current_task_id": "OPS-2",
+  "next_action": "Complete the autonomous-loop single-flight and state-integrity correction, then resolve the contradicted PAPER reconciliation state through an owner-reviewed evidence packet. PAPER and the closed live gate remain non-negotiable.",
   "milestones": [
     {
       "id": "M0",
@@ -48,7 +48,7 @@
     },
     {
       "id": "M4",
-      "title": "Autonomous equities",
+      "title": "Governed autonomous equities",
       "status": "IN_PROGRESS",
       "task_ids": [
         "M4"
@@ -63,6 +63,15 @@
       ]
     },
     {
+      "id": "OPS",
+      "title": "Hermes and autonomous engineering operations",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "OPS-1",
+        "OPS-2"
+      ]
+    },
+    {
       "id": "M6",
       "title": "Scaling and portfolio",
       "status": "PLANNED",
@@ -72,7 +81,7 @@
     },
     {
       "id": "M7",
-      "title": "Full operations",
+      "title": "Full PAPER operations",
       "status": "PLANNED",
       "task_ids": [
         "M7"
@@ -91,7 +100,7 @@
       "target_at": null,
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "9a96613",
-      "summary": "Established the current PAPER baseline, authority map, execution inventory and discrepancy register.",
+      "summary": "Established the PAPER baseline, authority map, execution inventory and discrepancy register.",
       "blockers": [],
       "next_action": "Retain as the programme baseline.",
       "updated_at": "2026-07-10T23:00:00+10:00"
@@ -107,9 +116,9 @@
       "target_at": null,
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "b6bcae4",
-      "summary": "Added one deterministic, idempotent and gated mutation path with append-only intent evidence.",
+      "summary": "Added a deterministic, idempotent and gated PAPER mutation path with append-only intent evidence.",
       "blockers": [],
-      "next_action": "Retain as the canonical mutation foundation.",
+      "next_action": "Retain as the canonical PAPER mutation foundation.",
       "updated_at": "2026-07-11T05:00:00+10:00"
     },
     {
@@ -123,7 +132,7 @@
       "target_at": null,
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "4525b11",
-      "summary": "Added canonical lifecycle evidence, bounded recovery and continuous convergence through the existing reconciliation cycle.",
+      "summary": "Added canonical lifecycle evidence, bounded recovery and continuous convergence through the reconciliation cycle.",
       "blockers": [],
       "next_action": "Retain as the restart and recovery foundation.",
       "updated_at": "2026-07-11T10:00:00+10:00"
@@ -139,9 +148,9 @@
       "target_at": "2026-07-12T18:00:00+10:00",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "a219ec2",
-      "summary": "Added fresh account and market-clock preflight evidence, conservative affordability checks and terminal broker rejection handling for the supported PAPER long-equity day path.",
+      "summary": "Added fresh PAPER account and market-clock preflight evidence, conservative affordability checks and terminal rejection handling.",
       "blockers": [],
-      "next_action": "Retain as the M1 pre-submit truth foundation.",
+      "next_action": "Retain as the pre-submit truth foundation.",
       "updated_at": "2026-07-11T13:25:50+10:00"
     },
     {
@@ -155,7 +164,7 @@
       "target_at": "2026-07-12T22:00:00+10:00",
       "evidence": "IMPLEMENTED / UNVERIFIED",
       "commit": "3e62cb6",
-      "summary": "Reviewed M1.1 through M1.3 against seven advance criteria; the committed review records all criteria met and recommends owner-gated entry to M2.",
+      "summary": "Recorded the integrated M1 review and the owner-gated decision boundary for later work.",
       "blockers": [],
       "next_action": "Retain as the M1 programme decision record.",
       "updated_at": "2026-07-11T13:25:50+10:00"
@@ -171,10 +180,45 @@
       "target_at": null,
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "02e922a",
-      "summary": "Made the autoexec tests hermetic and established a clean PAPER execution-fidelity baseline; the full backend suite passes in a bare offline checkout.",
+      "summary": "Established a hermetic test baseline for the PAPER execution path.",
       "blockers": [],
-      "next_action": "Retain as the clean PAPER baseline.",
+      "next_action": "Retain as the clean PAPER execution baseline.",
       "updated_at": "2026-07-11T14:06:13+10:00"
+    },
+    {
+      "id": "M2.2",
+      "title": "Bounded crypto PAPER execution fidelity",
+      "project": "Project Wallstreet",
+      "status": "COMPLETE",
+      "owner": "Claude",
+      "started_at": "2026-07-11T14:06:13+10:00",
+      "completed_at": "2026-07-11T17:59:29+10:00",
+      "target_at": "2026-07-14T22:00:00+10:00",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "0916362",
+      "summary": "Established bounded PAPER execution evidence across the supported crypto gateway, including admission, cancellation, recovery and reconciliation behaviour. No live authority was enabled.",
+      "blockers": [],
+      "next_action": "Retain as PAPER evidence; do not treat it as proof of equity parity or live readiness.",
+      "updated_at": "2026-07-11T17:59:29+10:00"
+    },
+    {
+      "id": "M2.3",
+      "title": "Equity-parity canary",
+      "project": "Project Wallstreet",
+      "status": "BLOCKED",
+      "owner": "Andrew",
+      "started_at": null,
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "CONTRADICTED",
+      "commit": "05a3453",
+      "summary": "PAPER equity-parity work remains blocked because reconciliation fidelity is false and the authoritative book is CONTRADICTED. New risk must remain withheld until the discrepancy and protective-order state are resolved through owner-reviewed reconciliation.",
+      "blockers": [
+        "Authoritative PAPER book is CONTRADICTED",
+        "Owner reconciliation decision required"
+      ],
+      "next_action": "Preserve evidence, reconstruct the recent PAPER execution path against the exact state consumed by the executor, resolve reconciliation through an owner-approved packet, then re-evaluate parity readiness.",
+      "updated_at": "2026-07-14T10:50:00.000Z"
     },
     {
       "id": "M3",
@@ -182,31 +226,36 @@
       "project": "Project Wallstreet",
       "status": "IN_PROGRESS",
       "owner": "Claude",
-      "started_at": "2026-07-11T13:12:53.908Z",
+      "started_at": "2026-07-11T23:12:53+10:00",
       "completed_at": null,
       "target_at": "2026-07-20T22:00:00+10:00",
       "evidence": "PARTIAL",
-      "commit": "c625dcb",
-      "summary": "M3 operational stability — ALL 6 packet implementations shipped + tested (30 M3 tests green): M3.1 lifecycle failure-injection VERIFIED; M3.2 transport_recovery.py (WS-loss/bounded-REST/backfill/CONTRADICTED/TIMEOUT/no-blind-resubmit); M3.3 broker_truth_rebuild.py (6 classifications, dry-run manifests never applied); M3.4 covered by M1.2 gateway tests; M3.5 recon_metrics.py collector + observation window STARTED; M3.6 incident_drills.py (8 fault-injection drills all pass). Machine-readable M3-EVIDENCE-MANIFEST.json + M3-REVIEW.md. Bolt 10/10; gate PAPER; operator-denial 403; pure/read-only modules, no trading-path change. | AUDIT CORRECTION 2026-07-12: reconciliation lifecycle now EMITS + RENDERS end-to-end (CONTRADICTED/QUARANTINED/RECOVERING) — live /api/reconcile/status shows CONTRADICTED for the real CRM 66≠61 discrepancy; oversight desk rolls up CONTRADICTED; operator + MC console render it. M3.3 rebuild + M3.5 record_daily_agreement wired READ-ONLY into the reconcile scheduler (once/day, restart-persistent).",
-      "blockers": [],
-      "next_action": "M3 = PARTIAL (NOT complete). DONE: UI CONTRADICTED/QUARANTINED/RECOVERING display shipped; M3.5 daily-agreement wired to the real reconcile scheduler. UNRESOLVED GATES: (1) transport recovery has NO production caller — arch is REST-poll, no live WS client; (2) no live failure-injection harness (submit/partial/cancel/replace/close/reconcile restart injection); (3) no bounded-fallback/no-blind-resubmit proof against the running PAPER path; (4) M3.5 acceptance still time-gated. See docs/evidence/audit-2026-07-12/GAP-AUDIT-AND-ROLLBACK.md.",
-      "updated_at": "2026-07-12T09:55:00.000Z"
+      "commit": "5e910d5",
+      "summary": "Operational stability advanced through reconciliation-authority correction, true reduce-only semantics, gap-aware agreement streaks and hermetic restart checkpoints. The system remains PAPER-only and the live gate remains closed.",
+      "blockers": [
+        "Sustained runtime observation remains incomplete",
+        "Production-path restart and failure behaviour is not fully verified"
+      ],
+      "next_action": "Continue bounded runtime evidence and resolve remaining operator and reconciliation defects without expanding authority.",
+      "updated_at": "2026-07-14T10:50:00.000Z"
     },
     {
       "id": "M4",
-      "title": "Autonomous equities",
+      "title": "Governed autonomous equities",
       "project": "Project Wallstreet",
       "status": "IN_PROGRESS",
       "owner": "Claude",
-      "started_at": "2026-07-12T03:38:46.060Z",
+      "started_at": "2026-07-12T13:38:46+10:00",
       "completed_at": null,
       "target_at": "2026-08-03T22:00:00+10:00",
       "evidence": "IMPLEMENTED / UNVERIFIED",
       "commit": "9851448",
-      "summary": "M4 governed autonomous equities (PAPER/shadow) — deterministic governance OS built + tested (20 M4 tests green): M4.1 autonomy_policy.py (versioned DEFAULT-DENY policy: permits + position/exposure/concentration/order-rate/loss/notional limits + stale/fidelity-reconciled/kill-switch/restart safety; immutable policy_version; confidence-can't-override); M4.2 strategy_authority.py (registered-versions-only, deterministic proposal identity, capital/symbol reservations, conflict resolution, retained disagreements); M4.6 shadow_autonomy.py runs the intended path vs LIVE signals with NO capital/order — LIVE RUN 20 signals -> 0 authorised / 11 policy withholds (governed path CORRECTLY refuses all autonomy on the unreconciled book); M4.7 control_drills.py (kill/stale/restart/unreconciled/resume/owner-session-failure). M4-GOVERNED-AUTONOMY.md + M4-EVIDENCE/SHADOW manifests. Bolt 10/10; gate PAPER; no order/capital/authority change; real-money autonomy NOT enabled. | AUDIT CORRECTION 2026-07-12: reclassified PARTIAL -> IMPLEMENTED / UNVERIFIED. Hard-coded runtime replaced with authoritative contracts or explicit UNKNOWN (UNKNOWN staleness fail-closes); runtime_provenance + runtime_note added; SHADOW-ONLY, never connected to broker execution.",
-      "blockers": [],
-      "next_action": "M4 = IMPLEMENTED / UNVERIFIED (NOT complete). Shadow-only; runtime now authoritative-or-UNKNOWN. Do NOT seek owner acceptance until M2.3 and M3 are accepted. Real-PAPER entry/manage/exit + UI remain; do not connect autonomy to broker execution.",
-      "updated_at": "2026-07-12T09:55:00.000Z"
+      "summary": "Implemented a default-deny PAPER/shadow governance layer for strategy authority, exposure limits, reservations and fail-closed withholding. It is not evidence of live readiness.",
+      "blockers": [
+        "Execution fidelity and reconciliation acceptance remain unresolved"
+      ],
+      "next_action": "Keep the capability shadow-only and disconnected from broker execution until owner-approved gates are satisfied.",
+      "updated_at": "2026-07-14T10:50:00.000Z"
     },
     {
       "id": "M5",
@@ -214,15 +263,53 @@
       "project": "Project Wallstreet",
       "status": "IN_PROGRESS",
       "owner": "Claude",
-      "started_at": "2026-07-12T07:27:15.220Z",
+      "started_at": "2026-07-12T17:27:15+10:00",
       "completed_at": null,
       "target_at": "2026-08-17T22:00:00+10:00",
       "evidence": "IMPLEMENTED / UNVERIFIED",
       "commit": "cf8d229",
-      "summary": "M5 options lifecycle (PAPER/read-only discovery) — dedicated options lifecycle logic built + tested (26 M5 tests): M5.1 option_contract.py (canonical OCC identity + chain discovery), M5.2 option_admission.py (fail-closed admissibility: two-sided quote/spread/OI-vol/DTE/greeks/blackout/UNKNOWN-withhold), M5.3 option_lifecycle.py (long-only intent/affordability/marketable-limit/P&L/no-short), M5.4 option_spread.py (vertical debit spreads: defined-risk max-loss/gain, prevent-naked, broken-leg contingency, deterministic unwind), M5.5 option_expiry.py (expiry/exercise/DNE/assignment/pin-risk/insufficient-BP/reconcile), M5.6 options_risk.py, M5.7 option_incident_drills.py (5 drills). NOT equity-with-symbols; live options authority BLOCKED; no naked shorts. M5-OPTIONS-LIFECYCLE.md + M5-EVIDENCE-MANIFEST.json. Bolt 10/10; gate PAPER. | AUDIT CORRECTION 2026-07-12: reclassified PARTIAL -> IMPLEMENTED / UNVERIFIED. Capability chain labelled explicitly FIXTURE (data_source/providers/invariants) — no live provider, account capability, or executable lifecycle implied. Live options authority BLOCKED by design.",
+      "summary": "Implemented fixture-backed, read-only options lifecycle logic and bounded-risk controls. No executable options authority is enabled.",
+      "blockers": [
+        "Real provider and bounded PAPER lifecycle evidence are absent",
+        "Options execution authority remains blocked"
+      ],
+      "next_action": "Do not expand permissions; retain as fixture-backed implementation until a separately approved PAPER evidence packet exists.",
+      "updated_at": "2026-07-14T10:50:00.000Z"
+    },
+    {
+      "id": "OPS-1",
+      "title": "Hermes commissioning",
+      "project": "Project Wallstreet",
+      "status": "COMPLETE",
+      "owner": "Claude",
+      "started_at": null,
+      "completed_at": "2026-07-14T06:15:00+10:00",
+      "target_at": null,
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": null,
+      "summary": "Read-only commissioning observed the active PAPER council substrate, role outputs, handoffs, timers, bolt checks and fail-closed withholding. No code, authority or capital changes were made.",
       "blockers": [],
-      "next_action": "M5 = IMPLEMENTED / UNVERIFIED (NOT complete). Read-only discovery; chain data is FIXTURE; LIVE_OPTIONS_AUTHORITY BLOCKED. Close only on accepted evidence of a real bounded PAPER options round-trip; do not expand permissions.",
-      "updated_at": "2026-07-12T09:55:00.000Z"
+      "next_action": "Retain the commissioning report as a baseline and track unresolved defects as bounded engineering items.",
+      "updated_at": "2026-07-14T06:15:00+10:00"
+    },
+    {
+      "id": "OPS-2",
+      "title": "Autonomous engineering loop v2",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Claude",
+      "started_at": "2026-07-14T20:29:44+10:00",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": "f7b6925",
+      "summary": "Cycle 1 bootstrapped deterministic resume and evidence scaffolding and refreshed the roadmap. Loop-control corrections are now required before prolonged unattended recurrence.",
+      "blockers": [
+        "Single-flight overlap protection is not yet proven",
+        "Cycle-state and commit sequencing require reconciliation"
+      ],
+      "next_action": "Complete the single-flight and cadence-control correction, reconcile Cycle 1 state, and falsify no-overlap behaviour before normal roadmap work resumes.",
+      "updated_at": "2026-07-14T10:50:00.000Z"
     },
     {
       "id": "M6",
@@ -235,14 +322,16 @@
       "target_at": "2026-08-31T22:00:00+10:00",
       "evidence": "PLANNED",
       "commit": null,
-      "summary": "Add audited capital allocation, reservation and conflict control.",
-      "blockers": [],
-      "next_action": "Wait for measured execution evidence.",
-      "updated_at": "2026-07-11T13:42:32+10:00"
+      "summary": "Future PAPER-only portfolio allocation and conflict-control work.",
+      "blockers": [
+        "Execution fidelity and reconciliation have not earned expansion"
+      ],
+      "next_action": "Do not begin until measured execution evidence and owner-approved gates support it.",
+      "updated_at": "2026-07-14T10:50:00.000Z"
     },
     {
       "id": "M7",
-      "title": "Full operations",
+      "title": "Full PAPER operations",
       "project": "Project Wallstreet",
       "status": "PLANNED",
       "owner": "Unassigned",
@@ -251,42 +340,12 @@
       "target_at": "2026-09-30T22:00:00+10:00",
       "evidence": "PLANNED",
       "commit": null,
-      "summary": "Close governance, recovery, evidence automation and commercial reporting.",
-      "blockers": [],
-      "next_action": "Wait for M6 acceptance.",
-      "updated_at": "2026-07-11T13:42:32+10:00"
-    },
-    {
-      "id": "M2.2",
-      "title": "Full Alpaca crypto universe and bounded PAPER execution fidelity",
-      "project": "Project Wallstreet",
-      "status": "COMPLETE",
-      "owner": "Claude",
-      "started_at": "2026-07-11T14:06:13+10:00",
-      "completed_at": "2026-07-11T07:59:29.359Z",
-      "target_at": "2026-07-14T22:00:00+10:00",
-      "evidence": "SELF-VERIFIED LIVE",
-      "commit": "0916362",
-      "summary": "COMPLETE. Full Alpaca crypto universe (72) discovered/mapped/ranked; 7 versioned operator contracts live; Re-AgentTrading /ops/crypto + Mission Control read-only oversight (mc 618069b) deployed. Bounded PAPER execution fidelity PROVEN via a gateway-native runner (broker_gateway.execute, never POST /positions): Tier-1 BTC/USD round-trip (gross -0.049%, 4.9bps cost) and Tier-2 AAVE/USD (gross -0.281%, 28.1bps cost) — both marketable-limit IOC entry, recover_pending+reconcile, CLOSE_POSITION+dust-sweep, broker+internal FLAT, fee OBSERVED; passive-GTC cancel confirmed via the canonical CANCEL_ORDER gateway; fail-closed refusals on ETH/UNI stale quotes. Cost tracks spread. 3 findings (fee-dust flatten, marketable-only crypto entries, post-submit fill lookup). Close-out artefacts committed (CLOSEOUT.md/.html, GO-NO-GO, CRYPTO-UNIVERSE, PROVIDER-COVERAGE, EXECUTION-MANIFEST, per-run JSON). Bolt 10/10, gate all-false PAPER, live-gate + bolt untouched throughout.",
-      "blockers": [],
-      "next_action": "Proceed to M2.3 (AAPL equity parity canary) as a separate owner-authorised packet during a valid regular US equity session.",
-      "updated_at": "2026-07-11T07:59:29.359Z"
-    },
-    {
-      "id": "M2.3",
-      "title": "AAPL equity-parity canary",
-      "project": "Project Wallstreet",
-      "status": "BLOCKED",
-      "owner": "Unassigned",
-      "started_at": null,
-      "completed_at": null,
-      "target_at": null,
-      "evidence": "BLOCKED",
-      "commit": "05a3453",
-      "summary": "AAPL parity BLOCKED on reconciliation fidelity. Authoritative PAPER account truth now established (account_truth_state=CURRENT live from a successful broker read; reconcile persists a BrokerAccountSnapshot each cycle; balances/account-number never exposed). Legacy equity cleanup: owner authorised CLOSE CVX/GOOGL/ORCL — STAGED for next market open (2026-07-13; equity gateway closes need regular hours). CRM=BLOCKED_OWNER_REVIEW: its 66 units are one NON-canonical fill and the rmg1_ buy-61 intent was REJECTED, so neither owner branch (all-66-rmg1 / 61+5) applies. fidelity_reconciled still FALSE (orphans + CRM). Bolt 10/10; gate PAPER; no broker mutation; broker still holds all 6 positions. Commit 05a3453.",
-      "blockers": [],
-      "next_action": "Monday 2026-07-13 RTH: CLOSE CVX/GOOGL/ORCL one-at-a-time via the canonical gateway (cancel protective stop first; close current broker qty; verify terminal fill; reconcile between each). Owner decides CRM (close-66 / repair-to-66 / investigate). When fidelity_reconciled=true + account_truth CURRENT + zero orphans/mismatches → move M2.3 to READY.",
-      "updated_at": "2026-07-11T11:46:21.763Z"
+      "summary": "Future closure of PAPER governance, recovery, evidence automation and operator reporting.",
+      "blockers": [
+        "Earlier PAPER milestones remain incomplete or blocked"
+      ],
+      "next_action": "Wait for owner acceptance of the preceding PAPER milestones.",
+      "updated_at": "2026-07-14T10:50:00.000Z"
     }
   ],
   "history": [
@@ -320,8 +379,7 @@
       "to": "COMPLETE",
       "at": "2026-07-11T13:25:50+10:00",
       "evidence": "SELF-VERIFIED LIVE",
-      "commit": "a219ec2",
-      "note": "TRACKER_UPDATE_DELAYED — the task completed while the public tracker data plane was being established."
+      "commit": "a219ec2"
     },
     {
       "task_id": "M1-REVIEW",
@@ -329,35 +387,7 @@
       "to": "COMPLETE",
       "at": "2026-07-11T13:25:50+10:00",
       "evidence": "IMPLEMENTED / UNVERIFIED",
-      "commit": "3e62cb6",
-      "note": "TRACKER_UPDATE_DELAYED — the review completed before the executing agent had the final public data contract."
-    },
-    {
-      "task_id": "M2",
-      "from": "PLANNED",
-      "to": "BLOCKED",
-      "at": "2026-07-11T13:25:50+10:00",
-      "evidence": "BLOCKED",
-      "commit": null,
-      "note": "Owner-gated entry decision required."
-    },
-    {
-      "task_id": "M2",
-      "from": "BLOCKED",
-      "to": "IN_PROGRESS",
-      "at": "2026-07-11T13:42:32+10:00",
-      "evidence": "PLANNED",
-      "commit": null,
-      "note": "Owner authorised M2 as PAPER-only execution fidelity; first packet was hermetic baseline hygiene."
-    },
-    {
-      "task_id": "M2",
-      "from": "IN_PROGRESS",
-      "to": "IN_PROGRESS",
-      "at": "2026-07-11T13:54:47+10:00",
-      "evidence": "PARTIAL",
-      "commit": "02e922a",
-      "note": "M2.1 packet closed: hermetic autoexec baseline established and the PAPER suite passes in a bare offline checkout. M2 milestone remains in progress for the execution-fidelity lifecycle."
+      "commit": "3e62cb6"
     },
     {
       "task_id": "M2.1",
@@ -365,152 +395,83 @@
       "to": "COMPLETE",
       "at": "2026-07-11T14:06:13+10:00",
       "evidence": "SELF-VERIFIED LIVE",
-      "commit": "02e922a",
-      "note": "M2.1 hermetic baseline packet normalised to its own row."
-    },
-    {
-      "task_id": "M2.2",
-      "from": "PLANNED",
-      "to": "IN_PROGRESS",
-      "at": "2026-07-11T14:06:13+10:00",
-      "evidence": "PLANNED",
-      "commit": null,
-      "note": "M2.2 canonical PAPER lifecycle evidence spine started; live round-trip initially blocked until the equity market opened."
-    },
-    {
-      "task_id": "M2.2",
-      "from": "IN_PROGRESS",
-      "to": "IN_PROGRESS",
-      "at": "2026-07-11T14:20:00+10:00",
-      "evidence": "PLANNED",
-      "commit": null,
-      "note": "Owner directed an immediate alternative while equities were closed. Scope pivoted to Alpaca PAPER crypto for the 24/7 common execution-spine proof; a narrow equity-specific parity canary remained outstanding."
-    },
-    {
-      "task_id": "M2.2",
-      "from": "IN_PROGRESS",
-      "to": "IN_PROGRESS",
-      "at": "2026-07-11T14:34:00+10:00",
-      "evidence": "PLANNED",
-      "commit": "f5cadfb",
-      "note": "Scope expanded and programme plans aligned: full current Alpaca crypto-universe data coverage, provider priority Finnhub→Alpaca→yfinance→Kraken, bounded representative major and altcoin PAPER execution, and separate M2.3 equity parity."
-    },
-    {
-      "task_id": "M2.3",
-      "from": "PLANNED",
-      "to": "PLANNED",
-      "at": "2026-07-11T14:34:00+10:00",
-      "evidence": "PLANNED",
-      "commit": "f5cadfb",
-      "note": "Explicit AAPL equity-parity TODO added; crypto evidence cannot close M2 by itself."
-    },
-    {
-      "task_id": "M2.2",
-      "from": "IN_PROGRESS",
-      "to": "IN_PROGRESS",
-      "at": "2026-07-11T14:57:20+10:00",
-      "evidence": "IMPLEMENTED / UNVERIFIED",
-      "commit": null,
-      "note": "A, B and C-core implemented on branch (universe discovery, provider mapping/resolver, crypto admission engine); unverified until merge; no broker mutation."
-    },
-    {
-      "task_id": "M2.2",
-      "from": "IN_PROGRESS",
-      "to": "IN_PROGRESS",
-      "at": "2026-07-11T15:07:00+10:00",
-      "evidence": "IMPLEMENTED / UNVERIFIED",
-      "commit": null,
-      "note": "C-integration and the non-mutating universe-wide eligibility pass reported complete on an unmerged branch: 72 pairs observed, 16 eligible, 56 stale-quote withholds, 0 unknown; no broker mutation. Branch is not yet available for independent repository review."
-    },
-    {
-      "task_id": "M2.2",
-      "from": "IN_PROGRESS",
-      "to": "IN_PROGRESS",
-      "at": "2026-07-11T16:14:18+10:00",
-      "evidence": "PARTIAL",
-      "commit": "1a245b3",
-      "note": "Backend Packet A+B merged to master and deployed; 7 operator contracts live; public-denied; no broker mutation. Frontend/MC/round-trips remain."
-    },
-    {
-      "task_id": "M2.2",
-      "from": "IN_PROGRESS",
-      "to": "IN_PROGRESS",
-      "at": "2026-07-11T16:28:44+10:00",
-      "evidence": "PARTIAL",
-      "commit": "39531dc",
-      "note": "Frontend crypto operator surface merged + deployed + route-verified (200/401/302); browser never touches broker/providers. MC + round-trips + close-out remain."
-    },
-    {
-      "task_id": "M2.2",
-      "from": "IN_PROGRESS",
-      "to": "IN_PROGRESS",
-      "at": "2026-07-11T06:47:22.901Z",
-      "evidence": "PARTIAL",
-      "commit": "618069b"
+      "commit": "02e922a"
     },
     {
       "task_id": "M2.2",
       "from": "IN_PROGRESS",
       "to": "COMPLETE",
-      "at": "2026-07-11T07:59:29.359Z",
+      "at": "2026-07-11T17:59:29+10:00",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "0916362"
     },
     {
       "task_id": "M2.3",
-      "from": "PLANNED",
-      "to": "READY",
-      "at": "2026-07-11T07:59:29.384Z",
-      "evidence": "PLANNED",
-      "commit": null
-    },
-    {
-      "task_id": "M2.3",
       "from": "READY",
       "to": "BLOCKED",
-      "at": "2026-07-11T09:42:29.188Z",
+      "at": "2026-07-11T19:42:29+10:00",
       "evidence": "BLOCKED",
       "commit": "766f80f"
     },
     {
-      "task_id": "M2.3",
-      "from": "BLOCKED",
-      "to": "BLOCKED",
-      "at": "2026-07-11T11:46:21.763Z",
-      "evidence": "BLOCKED",
-      "commit": "05a3453"
-    },
-    {
       "task_id": "M3",
       "from": "PLANNED",
       "to": "IN_PROGRESS",
-      "at": "2026-07-11T13:12:53.908Z",
+      "at": "2026-07-11T23:12:53+10:00",
       "evidence": "PARTIAL",
       "commit": "1488c21"
-    },
-    {
-      "task_id": "M3",
-      "from": "IN_PROGRESS",
-      "to": "IN_PROGRESS",
-      "at": "2026-07-11T13:24:08.847Z",
-      "evidence": "PARTIAL",
-      "commit": "c625dcb"
     },
     {
       "task_id": "M4",
       "from": "PLANNED",
       "to": "IN_PROGRESS",
-      "at": "2026-07-12T03:38:46.060Z",
-      "evidence": "PARTIAL",
+      "at": "2026-07-12T13:38:46+10:00",
+      "evidence": "IMPLEMENTED / UNVERIFIED",
       "commit": "9851448"
     },
     {
       "task_id": "M5",
       "from": "PLANNED",
       "to": "IN_PROGRESS",
-      "at": "2026-07-12T07:27:15.220Z",
-      "evidence": "PARTIAL",
+      "at": "2026-07-12T17:27:15+10:00",
+      "evidence": "IMPLEMENTED / UNVERIFIED",
       "commit": "cf8d229"
+    },
+    {
+      "task_id": "M3",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-07-14T06:00:00+10:00",
+      "evidence": "PARTIAL",
+      "commit": "5e910d5",
+      "note": "Recent PAPER-only stability packets merged: reconciliation authority, reduce-only semantics, agreement-streak correction and restart checkpoints."
+    },
+    {
+      "task_id": "OPS-1",
+      "from": "PLANNED",
+      "to": "COMPLETE",
+      "at": "2026-07-14T06:15:00+10:00",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": null,
+      "note": "Read-only Hermes commissioning completed with PAPER gate unchanged."
+    },
+    {
+      "task_id": "OPS-2",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-07-14T20:29:44+10:00",
+      "evidence": "PARTIAL",
+      "commit": "f7b6925",
+      "note": "Cycle 1 substrate reported complete; loop-control correction remains active."
+    },
+    {
+      "task_id": "M2.3",
+      "from": "BLOCKED",
+      "to": "BLOCKED",
+      "at": "2026-07-14T10:50:00.000Z",
+      "evidence": "CONTRADICTED",
+      "commit": "05a3453",
+      "note": "The expired 12 July action was superseded. Reconciliation fidelity remains false and requires owner-reviewed resolution."
     }
   ]
 }
