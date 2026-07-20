@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-07-14T10:50:00.000Z",
+  "updated_at": "2026-07-20T08:09:05.000Z",
   "stale_after_hours": 48,
   "current_task_id": "OPS-2",
-  "next_action": "Complete the autonomous-loop single-flight and state-integrity correction, then resolve the contradicted PAPER reconciliation state through an owner-reviewed evidence packet. PAPER and the closed live gate remain non-negotiable.",
+  "next_action": "Complete the autonomous-loop single-flight and state-integrity correction, then resolve the contradicted PAPER reconciliation state through an owner-reviewed evidence packet. Reconcile the 17 July crypto delivery against the canonical backlog and confirm its governance record. PAPER and the closed live gate remain non-negotiable.",
   "milestones": [
     {
       "id": "M0",
@@ -68,7 +68,17 @@
       "status": "IN_PROGRESS",
       "task_ids": [
         "OPS-1",
-        "OPS-2"
+        "OPS-2",
+        "OPS-3"
+      ]
+    },
+    {
+      "id": "CRYPTO",
+      "title": "Crypto market data, signals and bounded venue",
+      "status": "COMPLETE",
+      "task_ids": [
+        "CRYPTO-1",
+        "CRYPTO-2"
       ]
     },
     {
@@ -312,6 +322,57 @@
       "updated_at": "2026-07-14T10:50:00.000Z"
     },
     {
+      "id": "CRYPTO-1",
+      "title": "Kraken market data pipeline and v1 crypto signal scorer",
+      "project": "Project Wallstreet",
+      "status": "COMPLETE",
+      "owner": "Andrew",
+      "started_at": "2026-07-17T11:51:00+00:00",
+      "completed_at": "2026-07-17T14:56:00+00:00",
+      "target_at": null,
+      "evidence": "IMPLEMENTED / UNVERIFIED",
+      "commit": "5c7fee6",
+      "summary": "Delivered a real-time exchange-wide market data stream, a live market board endpoint, a v1 crypto signal scorer on free data dimensions, and a funding/open-interest signal dimension. Read-only market data and scoring; no execution authority involved.",
+      "blockers": [],
+      "next_action": "Confirm sustained runtime behaviour of the stream and scorer on the production host, then record the observation evidence.",
+      "updated_at": "2026-07-20T08:09:05.000Z"
+    },
+    {
+      "id": "CRYPTO-2",
+      "title": "Bounded crypto execution venue (ships disabled, fail-closed)",
+      "project": "Project Wallstreet",
+      "status": "COMPLETE",
+      "owner": "Andrew",
+      "started_at": "2026-07-17T15:19:00+00:00",
+      "completed_at": "2026-07-17T15:20:00+00:00",
+      "target_at": null,
+      "evidence": "IMPLEMENTED / UNVERIFIED",
+      "commit": "d2c0096",
+      "summary": "Added a new, independent, bounded real-money venue that ships disabled and fail-closed: a human-only master switch (default off), an operator halt flag, server-side hard-capped notional and rate bounds, and no autonomous caller wired. The existing PAPER live-gate bolt is untouched and re-verified 10/10 in a clean checkout on 20 July.",
+      "blockers": [
+        "Board (R2) governance record for this venue not yet verified",
+        "No runtime observation evidence recorded"
+      ],
+      "next_action": "Owner to confirm the R2 Board record exists for this venue decision; keep the venue disabled and unwired until a separately approved evidence packet exists.",
+      "updated_at": "2026-07-20T08:09:05.000Z"
+    },
+    {
+      "id": "OPS-3",
+      "title": "Tracker reconciliation from cloud session (20 July)",
+      "project": "Project Wallstreet",
+      "status": "COMPLETE",
+      "owner": "Claude",
+      "started_at": "2026-07-20T08:09:05.000Z",
+      "completed_at": "2026-07-20T08:09:05.000Z",
+      "target_at": null,
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": null,
+      "summary": "Reconciled the public tracker against repository evidence after a six-day gap that exceeded the staleness threshold. The 17 July crypto delivery was recorded, and the live-gate bolt was re-verified 10/10 in a clean cloud checkout. The canonical backlog and production runtime were unreachable from the cloud session, so the reconciliation is repository-evidence-only and the 14-20 July interval is marked TRACKER_UPDATE_DELAYED.",
+      "blockers": [],
+      "next_action": "Reconcile against the canonical backlog and runtime state from the production host, then resume the OPS-2 loop-control correction.",
+      "updated_at": "2026-07-20T08:09:05.000Z"
+    },
+    {
       "id": "M6",
       "title": "Scaling and portfolio allocation",
       "project": "Project Wallstreet",
@@ -472,6 +533,33 @@
       "evidence": "CONTRADICTED",
       "commit": "05a3453",
       "note": "The expired 12 July action was superseded. Reconciliation fidelity remains false and requires owner-reviewed resolution."
+    },
+    {
+      "task_id": "CRYPTO-1",
+      "from": "UNKNOWN",
+      "to": "COMPLETE",
+      "at": "2026-07-17T14:56:00+00:00",
+      "evidence": "IMPLEMENTED / UNVERIFIED",
+      "commit": "5c7fee6",
+      "note": "Recorded retrospectively on 20 July: the 17 July crypto market data and signal delivery was not tracked at the time (TRACKER_UPDATE_DELAYED)."
+    },
+    {
+      "task_id": "CRYPTO-2",
+      "from": "UNKNOWN",
+      "to": "COMPLETE",
+      "at": "2026-07-17T15:20:00+00:00",
+      "evidence": "IMPLEMENTED / UNVERIFIED",
+      "commit": "d2c0096",
+      "note": "Recorded retrospectively on 20 July (TRACKER_UPDATE_DELAYED). Bounded real-money venue ships disabled and fail-closed; R2 Board record verification is an open owner action. The PAPER live-gate bolt is untouched and re-verified 10/10."
+    },
+    {
+      "task_id": "OPS-3",
+      "from": "PLANNED",
+      "to": "COMPLETE",
+      "at": "2026-07-20T08:09:05.000Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": null,
+      "note": "Cloud-session reconciliation from repository evidence only; canonical backlog and runtime were unreachable. M3 remains IN_PROGRESS with its 20 July target at risk pending runtime evidence from the production host."
     }
   ]
 }

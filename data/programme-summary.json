@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-07-14T10:50:00.000Z",
+  "updated_at": "2026-07-20T08:09:05.000Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "OPS-2",
       "progress": {
-        "complete": 8,
-        "total": 15,
-        "percent": 53
+        "complete": 11,
+        "total": 18,
+        "percent": 61
       },
-      "next_action": "Complete the autonomous-loop single-flight and state-integrity correction, then resolve the contradicted PAPER reconciliation state through an owner-reviewed evidence packet. PAPER and the closed live gate remain non-negotiable.",
-      "updated_at": "2026-07-14T10:50:00.000Z"
+      "next_action": "Complete the autonomous-loop single-flight and state-integrity correction, then resolve the contradicted PAPER reconciliation state through an owner-reviewed evidence packet. Reconcile the 17 July crypto delivery against the canonical backlog and confirm its governance record. PAPER and the closed live gate remain non-negotiable.",
+      "updated_at": "2026-07-20T08:09:05.000Z"
     },
     {
       "project_id": "mission-control",
