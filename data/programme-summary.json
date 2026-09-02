@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-02T16:42:20.982Z",
+  "updated_at": "2026-09-02T20:27:58.114Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-CONSOLE-1",
       "progress": {
         "complete": 2,
-        "total": 3,
-        "percent": 67
+        "total": 4,
+        "percent": 50
       },
-      "next_action": "Filed for follow-up: the console's server-side proxy still grants operator authority to anonymous callers (high); the lease-sweep route has no auth (low); the loop's failure path marks a blocked mission with an invalid column (medium). Next cycle: reconcile and pick the highest in-boundary item.",
-      "updated_at": "2026-09-02T16:42:20.982Z"
+      "next_action": "Write failing tests for the session helper and proxy gate, implement, build, restart the console, then probe live: anonymous write refused, signed-in write attributed to the human.",
+      "updated_at": "2026-09-02T20:27:58.114Z"
     }
   ]
 }
