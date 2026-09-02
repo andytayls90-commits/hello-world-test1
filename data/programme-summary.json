@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-02T12:36:10.805Z",
+  "updated_at": "2026-09-02T13:00:10.037Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-1",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 0,
+        "complete": 1,
         "total": 2,
-        "percent": 0
+        "percent": 50
       },
-      "next_action": "Write failing tests for the smoke gate, the outcome ledger and the fast-fail check; implement; verify live with a simulated auth failure.",
-      "updated_at": "2026-09-02T12:36:10.805Z"
+      "next_action": "Observe the 16:20 and 20:20 UTC trigger slots after the token expiry: a failed refresh must now page and file a task instead of silently launching dead cycles. Separate finding filed: mission write routes accept unauthenticated local callers.",
+      "updated_at": "2026-09-02T13:00:10.037Z"
     }
   ]
 }

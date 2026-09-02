@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-02T12:36:10.805Z",
+  "updated_at": "2026-09-02T13:00:10.037Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-1",
-  "next_action": "Write failing tests for the smoke gate, the outcome ledger and the fast-fail check; implement; verify live with a simulated auth failure.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Observe the 16:20 and 20:20 UTC trigger slots after the token expiry: a failed refresh must now page and file a task instead of silently launching dead cycles. Separate finding filed: mission write routes accept unauthenticated local callers.",
   "milestones": [
     {
       "id": "MC0",
@@ -20,7 +20,7 @@
     {
       "id": "MC1",
       "title": "Autonomous loop reliability",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-1"
       ]
@@ -47,17 +47,17 @@
       "id": "MC-LOOP-1",
       "title": "Autonomous loop: pre-flight auth smoke, mechanical cycle-outcome ledger and fast-fail paging",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-02T12:36:10.805Z",
-      "completed_at": null,
+      "completed_at": "2026-09-02T13:00:10.037Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "The autonomous engineering loop ran zero useful cycles for nine days: every headless cycle failed authentication within seconds, before taking its lock, and no monitor treated that as a dead loop. This task adds a pre-flight auth smoke to the trigger, a mechanical per-cycle outcome ledger written by the service manager, and a watchdog page on consecutive fast-fails.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "7e78098",
+      "summary": "Delivered: the loop trigger now runs a bounded one-turn pre-flight smoke of the headless runtime before launching and, on failure, launches nothing, files an alert task and pages; the service manager records every launched cycle's outcome mechanically; the watchdog pages when three consecutive recorded cycles end within seconds. Root cause of the nine-day outage recorded: a stale headless CLI on the service path could not refresh its expired token while interactive use could. Tests 23/23 and 51/51; verified live with a real smoke, a simulated expired-token runtime, and a replay of the real outage.",
       "blockers": [],
-      "next_action": "Write failing tests for the smoke gate, the outcome ledger and the fast-fail check; implement; verify live with a simulated auth failure.",
-      "updated_at": "2026-09-02T12:36:10.805Z"
+      "next_action": "Observe the 16:20 and 20:20 UTC trigger slots after the token expiry: a failed refresh must now page and file a task instead of silently launching dead cycles. Separate finding filed: mission write routes accept unauthenticated local callers.",
+      "updated_at": "2026-09-02T13:00:10.037Z"
     }
   ],
   "history": [
@@ -68,6 +68,14 @@
       "at": "2026-09-02T12:36:10.805Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-1",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-02T13:00:10.037Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "7e78098"
     }
   ]
 }
