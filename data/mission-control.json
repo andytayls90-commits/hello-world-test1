@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-02T20:27:58.114Z",
+  "updated_at": "2026-09-02T20:51:54.593Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-CONSOLE-1",
-  "next_action": "Write failing tests for the session helper and proxy gate, implement, build, restart the console, then probe live: anonymous write refused, signed-in write attributed to the human.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Filed for follow-up: a console rewrite forwards every method to the trading backend without a gate (high); reads through the console proxy still carry operator authority (low); session hardening — revocation on sign-out, stricter origin check (low). Next cycle: reconcile and pick the highest in-boundary item.",
   "milestones": [
     {
       "id": "MC0",
@@ -36,7 +36,7 @@
     {
       "id": "MC3",
       "title": "Console write-path caller gate",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-CONSOLE-1"
       ]
@@ -95,17 +95,17 @@
       "id": "MC-CONSOLE-1",
       "title": "Console: require a verified operator session for every mission-store write made through the console, and name the human in the audit trail",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-02T20:27:58.114Z",
-      "completed_at": null,
+      "completed_at": "2026-09-02T20:51:54.593Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "Started: the console's server-side proxy to the mission store attaches operator authority to every forwarded request without checking who is calling, so an anonymous local, private-network or edge caller could edit missions as the operator (proven read-only against a nonexistent id). Fix: writes through the console require a verified operator session (signed session cookie from an operator sign-in, or a verified edge identity); reads unchanged; the verified identity is forwarded so the audit trail names the person. Mission-store service itself untouched; paper-only boundary; real-money bolt 10/10 at start.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "b1372b9",
+      "summary": "Delivered: every write made through the console to the mission store now requires a verified operator session — an HttpOnly signed cookie from a one-time operator sign-in, or a verified edge-login identity; anonymous, spoofed-identity, forged-cookie and forged-edge-token writes are refused at the console before the store is contacted, and a cross-site browser context is refused even with a session. Reads are unchanged. The audit trail now names the signed-in person instead of a generic operator. New tests 37 (all failed before the fix), console suite 304, real-money bolt 10/10, paper gate confirmed. An independent adversarial verification against the running console (private network and edge included) confirmed every refusal and the attribution; the positive edge-login path is proven in the harness only. Two of its low findings (sign-in lockout, key-set refresh flooding) were fixed in-cycle; the rest filed.",
       "blockers": [],
-      "next_action": "Write failing tests for the session helper and proxy gate, implement, build, restart the console, then probe live: anonymous write refused, signed-in write attributed to the human.",
-      "updated_at": "2026-09-02T20:27:58.114Z"
+      "next_action": "Filed for follow-up: a console rewrite forwards every method to the trading backend without a gate (high); reads through the console proxy still carry operator authority (low); session hardening — revocation on sign-out, stricter origin check (low). Next cycle: reconcile and pick the highest in-boundary item.",
+      "updated_at": "2026-09-02T20:51:54.593Z"
     }
   ],
   "history": [
@@ -148,6 +148,14 @@
       "at": "2026-09-02T20:27:58.114Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-CONSOLE-1",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-02T20:51:54.593Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "b1372b9"
     }
   ]
 }

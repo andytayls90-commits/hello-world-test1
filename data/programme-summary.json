@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-02T20:27:58.114Z",
+  "updated_at": "2026-09-02T20:51:54.593Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-CONSOLE-1",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 2,
+        "complete": 3,
         "total": 4,
-        "percent": 50
+        "percent": 75
       },
-      "next_action": "Write failing tests for the session helper and proxy gate, implement, build, restart the console, then probe live: anonymous write refused, signed-in write attributed to the human.",
-      "updated_at": "2026-09-02T20:27:58.114Z"
+      "next_action": "Filed for follow-up: a console rewrite forwards every method to the trading backend without a gate (high); reads through the console proxy still carry operator authority (low); session hardening — revocation on sign-out, stricter origin check (low). Next cycle: reconcile and pick the highest in-boundary item.",
+      "updated_at": "2026-09-02T20:51:54.593Z"
     }
   ]
 }
