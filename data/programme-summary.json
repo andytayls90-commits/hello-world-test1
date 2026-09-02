@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-07-20T08:09:05.000Z",
+  "updated_at": "2026-09-02T12:36:10.805Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
-      "evidence": "UNKNOWN",
+      "status": "IN_PROGRESS",
+      "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-1",
       "progress": {
         "complete": 0,
-        "total": 1,
+        "total": 2,
         "percent": 0
       },
-      "next_action": "Reconcile committed Mission Control milestones into the public-safe tracker.",
-      "updated_at": "2026-07-11T13:01:00+10:00"
+      "next_action": "Write failing tests for the smoke gate, the outcome ledger and the fast-fail check; implement; verify live with a simulated auth failure.",
+      "updated_at": "2026-09-02T12:36:10.805Z"
     }
   ]
 }
