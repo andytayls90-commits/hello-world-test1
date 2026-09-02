@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-02T16:24:42.666Z",
+  "updated_at": "2026-09-02T16:42:20.982Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-HELM-1",
-  "next_action": "Write failing tests, apply the fix, run the full store suite, verify against the live service, then record completion evidence.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Filed for follow-up: the console's server-side proxy still grants operator authority to anonymous callers (high); the lease-sweep route has no auth (low); the loop's failure path marks a blocked mission with an invalid column (medium). Next cycle: reconcile and pick the highest in-boundary item.",
   "milestones": [
     {
       "id": "MC0",
@@ -28,7 +28,7 @@
     {
       "id": "MC2",
       "title": "Mission store write integrity",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-HELM-1"
       ]
@@ -71,17 +71,17 @@
       "id": "MC-HELM-1",
       "title": "Mission store: authenticate every write route (create, edit, tape, decision ruling) — no unauthenticated local caller",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-02T16:24:42.666Z",
-      "completed_at": null,
+      "completed_at": "2026-09-02T16:42:20.982Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "Claimed by the autonomous loop (cycle 2 of 2 Sep 2026). Reproducing with failing tests: an anonymous or wrongly-tokened local caller can create and edit missions, append tape events and rule decisions. Fix routes every write through the credential check; identity header stays cosmetic.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "6953b0c",
+      "summary": "Delivered: every mission-store write (create, edit, event-tape append, decision ruling) now requires a real credential; anonymous, wrong-token and identity-header-only callers are refused and nothing is written; observers are refused with an audit row; a sandboxed engineering agent may edit only work it currently holds, closing a reword-then-claim escalation; rulings are board-only; rows and audit name the authenticated actor. New tests 27/27 (26 failed before the fix), suite 339, real-money bolt 10/10, paper gate confirmed. An independent adversarial verification against the running service confirmed the refusals and that nothing was written; the observer refusal is proven in the harness only. Every existing writer already sent credentials, so nothing broke.",
       "blockers": [],
-      "next_action": "Write failing tests, apply the fix, run the full store suite, verify against the live service, then record completion evidence.",
-      "updated_at": "2026-09-02T16:24:42.666Z"
+      "next_action": "Filed for follow-up: the console's server-side proxy still grants operator authority to anonymous callers (high); the lease-sweep route has no auth (low); the loop's failure path marks a blocked mission with an invalid column (medium). Next cycle: reconcile and pick the highest in-boundary item.",
+      "updated_at": "2026-09-02T16:42:20.982Z"
     }
   ],
   "history": [
@@ -108,6 +108,14 @@
       "at": "2026-09-02T16:24:42.666Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-HELM-1",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-02T16:42:20.982Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "6953b0c"
     }
   ]
 }
