@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-02T13:00:10.037Z",
+  "updated_at": "2026-09-02T16:24:42.666Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Observe the 16:20 and 20:20 UTC trigger slots after the token expiry: a failed refresh must now page and file a task instead of silently launching dead cycles. Separate finding filed: mission write routes accept unauthenticated local callers.",
+  "current_task_id": "MC-HELM-1",
+  "next_action": "Write failing tests, apply the fix, run the full store suite, verify against the live service, then record completion evidence.",
   "milestones": [
     {
       "id": "MC0",
@@ -23,6 +23,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-1"
+      ]
+    },
+    {
+      "id": "MC2",
+      "title": "Mission store write integrity",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-HELM-1"
       ]
     }
   ],
@@ -58,6 +66,22 @@
       "blockers": [],
       "next_action": "Observe the 16:20 and 20:20 UTC trigger slots after the token expiry: a failed refresh must now page and file a task instead of silently launching dead cycles. Separate finding filed: mission write routes accept unauthenticated local callers.",
       "updated_at": "2026-09-02T13:00:10.037Z"
+    },
+    {
+      "id": "MC-HELM-1",
+      "title": "Mission store: authenticate every write route (create, edit, tape, decision ruling) — no unauthenticated local caller",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-02T16:24:42.666Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "Claimed by the autonomous loop (cycle 2 of 2 Sep 2026). Reproducing with failing tests: an anonymous or wrongly-tokened local caller can create and edit missions, append tape events and rule decisions. Fix routes every write through the credential check; identity header stays cosmetic.",
+      "blockers": [],
+      "next_action": "Write failing tests, apply the fix, run the full store suite, verify against the live service, then record completion evidence.",
+      "updated_at": "2026-09-02T16:24:42.666Z"
     }
   ],
   "history": [
@@ -76,6 +100,14 @@
       "at": "2026-09-02T13:00:10.037Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "7e78098"
+    },
+    {
+      "task_id": "MC-HELM-1",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-02T16:24:42.666Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
