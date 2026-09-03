@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T22:01:24.146Z",
+  "updated_at": "2026-09-03T22:36:15.266Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-6",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 7,
+        "complete": 8,
         "total": 9,
-        "percent": 78
+        "percent": 89
       },
-      "next_action": "Land the store switch and watchdog change with tests, run the independent verification, deploy the store service, record evidence.",
-      "updated_at": "2026-09-03T20:25:15.683Z"
+      "next_action": "Next loop cycle picks the next open item; the store unit's inline environment value (tracked) and the 2026-09-10 watchdog-journal re-checks remain open.",
+      "updated_at": "2026-09-03T22:36:15.266Z"
     }
   ]
 }
