@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T00:41:26.315Z",
+  "updated_at": "2026-09-03T04:23:53.669Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-3",
       "progress": {
         "complete": 4,
-        "total": 5,
-        "percent": 80
+        "total": 6,
+        "percent": 67
       },
-      "next_action": "Next cycle: reconcile and pick the highest in-boundary item — candidates: loop finish negative-path hardening (re-claim on a reaped lease, idempotent comment, reason on the row), console session hardening, reads through the console proxy carrying operator authority.",
-      "updated_at": "2026-09-03T00:41:26.315Z"
+      "next_action": "Write failing tests (harness, store contract, watchdog digest), fix the finish path, verify on a scratch store copy, independent verification, promote.",
+      "updated_at": "2026-09-03T04:23:53.669Z"
     }
   ]
 }

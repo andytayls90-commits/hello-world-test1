@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T00:41:26.315Z",
+  "updated_at": "2026-09-03T04:23:53.669Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next cycle: reconcile and pick the highest in-boundary item — candidates: loop finish negative-path hardening (re-claim on a reaped lease, idempotent comment, reason on the row), console session hardening, reads through the console proxy carrying operator authority.",
+  "current_task_id": "MC-LOOP-3",
+  "next_action": "Write failing tests (harness, store contract, watchdog digest), fix the finish path, verify on a scratch store copy, independent verification, promote.",
   "milestones": [
     {
       "id": "MC0",
@@ -47,6 +47,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-2"
+      ]
+    },
+    {
+      "id": "MC5",
+      "title": "Loop blocked-outcome recovery hardening",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-3"
       ]
     }
   ],
@@ -130,6 +138,22 @@
       "blockers": [],
       "next_action": "Next cycle: reconcile and pick the highest in-boundary item — candidates: loop finish negative-path hardening (re-claim on a reaped lease, idempotent comment, reason on the row), console session hardening, reads through the console proxy carrying operator authority.",
       "updated_at": "2026-09-03T00:41:26.315Z"
+    },
+    {
+      "id": "MC-LOOP-3",
+      "title": "Autonomous loop: a blocked cycle must still land on the board when its work lease has lapsed, must not duplicate its record on retry, and must show the reason",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-03T04:23:53.669Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: the loop's blocked-outcome step can still fail to land when the cycle's work lease has lapsed before it finishes (the store refuses the edit, the loop keeps its lock, and a retry can never succeed), it posts a duplicate record on every retry, and neither the board nor the watchdog digest shows why the item is blocked. Fix: re-claim the work once and retry; record only after the state change lands and never twice; put the reason on the item and in the digest.",
+      "blockers": [],
+      "next_action": "Write failing tests (harness, store contract, watchdog digest), fix the finish path, verify on a scratch store copy, independent verification, promote.",
+      "updated_at": "2026-09-03T04:23:53.669Z"
     }
   ],
   "history": [
@@ -196,6 +220,14 @@
       "at": "2026-09-03T00:41:26.315Z",
       "evidence": "VERIFIED LIVE",
       "commit": "a12c75b"
+    },
+    {
+      "task_id": "MC-LOOP-3",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-03T04:23:53.669Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
