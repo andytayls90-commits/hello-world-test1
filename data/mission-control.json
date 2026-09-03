@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T18:39:48.719Z",
+  "updated_at": "2026-09-03T19:24:36.299Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Re-check the watchdog journal around 2026-09-10 for the seven-day success criterion; next loop cycle picks the next open item.",
+  "current_task_id": "MC-LOOP-5",
+  "next_action": "Fix + tests, scratch-store verification, independent verification, merge, then record completion.",
   "milestones": [
     {
       "id": "MC0",
@@ -170,6 +170,22 @@
       "blockers": [],
       "next_action": "Re-check the watchdog journal around 2026-09-10 for the seven-day success criterion; next loop cycle picks the next open item.",
       "updated_at": "2026-09-03T18:39:48.719Z"
+    },
+    {
+      "id": "MC-LOOP-5",
+      "title": "Autonomous loop: the shared-checkout git guard must never fail closed when the home directory variable is missing, and the watchdog must page again for a build workspace that reappears at a path it already retired",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-03T19:24:36.299Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress (2026-09-03 cycle4): claimed the item, baseline recorded (paper only, safety checks unchanged, all suites green). Writing failing tests for both findings first, then the fixes.",
+      "blockers": [],
+      "next_action": "Fix + tests, scratch-store verification, independent verification, merge, then record completion.",
+      "updated_at": "2026-09-03T19:24:36.299Z"
     }
   ],
   "history": [
@@ -268,6 +284,14 @@
       "at": "2026-09-03T18:39:48.719Z",
       "evidence": "VERIFIED LIVE",
       "commit": "72ccc90"
+    },
+    {
+      "task_id": "MC-LOOP-5",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-03T19:24:36.299Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
