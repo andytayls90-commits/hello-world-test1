@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-09-03T20:08:38.769Z",
+  "updated_at": "2026-09-03T20:10:36.574Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Merge, deploy and re-verify the export fix; then hand the execute-versus-gate decision and the pending data-corrections ledger commit to the owner.",
+  "next_action": "Owner decision required: execute the crypto lane on the PAPER venue or keep it gated (no crypto execution since 23 June). Owner also to commit the pending data-corrections ledger line so the applied backfill can be ledgered.",
   "milestones": [
     {
       "id": "M0",
@@ -75,7 +75,7 @@
     {
       "id": "CRYPTO",
       "title": "Crypto market data, signals and bounded venue",
-      "status": "IN_PROGRESS",
+      "status": "BLOCKED",
       "task_ids": [
         "CRYPTO-1",
         "CRYPTO-2",
@@ -413,17 +413,19 @@
       "id": "WS-EDGE-1",
       "title": "Crypto signal executability: stablecoins and thin-coverage signals forced to HOLD and marked non-executable; execute-versus-gate decision for the crypto lane",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
-      "owner": "Autonomous trading-lane engineer (Claude)",
+      "status": "BLOCKED",
+      "owner": "Andrew",
       "started_at": "2026-09-03T20:04:00.522Z",
       "completed_at": null,
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "Part (a) verified live: stablecoins and thin-coverage blends are forced to HOLD, capped and marked non-executable; the historical stablecoin rows are already backfilled. Scope change: while verifying, the signal export endpoints were found returning server errors for rows whose stored payload carries a non-numeric float from the vendor sector analyzer; fixed end-to-end (storage boundary writes strict JSON, export sanitises existing rows, batch export gains an optional symbol/limit filter). Promotion and post-deploy verification in progress.",
-      "blockers": [],
-      "next_action": "Merge, deploy and re-verify the export fix; then hand the execute-versus-gate decision and the pending data-corrections ledger commit to the owner.",
-      "updated_at": "2026-09-03T20:08:38.769Z"
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "42df1d0",
+      "summary": "Part (a) is verified live: stablecoins (deny-list plus a 30-day peg detector) and thin-coverage blends are forced to HOLD, confidence-capped and marked non-executable, surfaced on the signal and export APIs, refused by auto-execution, and the historical stablecoin rows are backfilled. The signal export server error found during verification (a non-numeric float stored from the vendor sector analyzer) is fixed end-to-end, deployed and re-verified with pasted evidence: the storage boundary now writes strict JSON, the export sanitises existing rows, and the batch export accepts an optional symbol/limit filter. Real-money bolt and PAPER gate unchanged. Two follow-ups filed on the board (unbounded batch export default; neutral sector score on missing data).",
+      "blockers": [
+        "Board decision on crypto execute-versus-gate is owner-only; the data-corrections ledger file holds an uncommitted owner change that agents must not modify."
+      ],
+      "next_action": "Owner decision required: execute the crypto lane on the PAPER venue or keep it gated (no crypto execution since 23 June). Owner also to commit the pending data-corrections ledger line so the applied backfill can be ledgered.",
+      "updated_at": "2026-09-03T20:10:36.574Z"
     }
   ],
   "history": [
@@ -593,6 +595,14 @@
       "at": "2026-09-03T20:08:38.769Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-EDGE-1",
+      "from": "IN_PROGRESS",
+      "to": "BLOCKED",
+      "at": "2026-09-03T20:10:36.574Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "42df1d0"
     }
   ]
 }

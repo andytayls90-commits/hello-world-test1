@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T20:08:38.769Z",
+  "updated_at": "2026-09-03T20:10:36.574Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -19,8 +19,8 @@
         "total": 19,
         "percent": 58
       },
-      "next_action": "Merge, deploy and re-verify the export fix; then hand the execute-versus-gate decision and the pending data-corrections ledger commit to the owner.",
-      "updated_at": "2026-09-03T20:08:38.769Z"
+      "next_action": "Owner decision required: execute the crypto lane on the PAPER venue or keep it gated (no crypto execution since 23 June). Owner also to commit the pending data-corrections ledger line so the applied backfill can be ledgered.",
+      "updated_at": "2026-09-03T20:10:36.574Z"
     },
     {
       "project_id": "mission-control",
