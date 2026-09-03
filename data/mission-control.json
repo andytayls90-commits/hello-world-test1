@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T19:24:36.299Z",
+  "updated_at": "2026-09-03T19:47:14.727Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-5",
-  "next_action": "Fix + tests, scratch-store verification, independent verification, merge, then record completion.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next loop cycle picks the next open item; the archived-page gap needs a small store-API change in lock-step (tracked).",
   "milestones": [
     {
       "id": "MC0",
@@ -175,17 +175,17 @@
       "id": "MC-LOOP-5",
       "title": "Autonomous loop: the shared-checkout git guard must never fail closed when the home directory variable is missing, and the watchdog must page again for a build workspace that reappears at a path it already retired",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-03T19:24:36.299Z",
-      "completed_at": null,
+      "completed_at": "2026-09-03T19:47:14.727Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress (2026-09-03 cycle4): claimed the item, baseline recorded (paper only, safety checks unchanged, all suites green). Writing failing tests for both findings first, then the fixes.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "500bea4",
+      "summary": "Complete: the shared-checkout git guard now hands through to real git when the home directory variable is missing (it previously aborted every governed command with a shell error) while still refusing destructive operations in the protected checkout; the loop watchdog now re-opens its own retired page, under the same identifier and with refreshed details, when a build workspace reappears at a path it had already retired, on every filing path, and never forces open a record it did not file. Both failures were reproduced on the previous code before fixing. Landed on master 500bea4; live watchdog run clean; installed guard proven live; independent verification holds with findings, the actionable ones fixed before merge and two pre-existing gaps tracked as new items; safety checks unchanged (paper only).",
       "blockers": [],
-      "next_action": "Fix + tests, scratch-store verification, independent verification, merge, then record completion.",
-      "updated_at": "2026-09-03T19:24:36.299Z"
+      "next_action": "Next loop cycle picks the next open item; the archived-page gap needs a small store-API change in lock-step (tracked).",
+      "updated_at": "2026-09-03T19:47:14.727Z"
     }
   ],
   "history": [
@@ -292,6 +292,14 @@
       "at": "2026-09-03T19:24:36.299Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-5",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-03T19:47:14.727Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "500bea4"
     }
   ]
 }

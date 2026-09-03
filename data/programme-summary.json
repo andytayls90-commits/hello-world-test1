@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T19:24:36.299Z",
+  "updated_at": "2026-09-03T19:47:14.727Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-5",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 6,
+        "complete": 7,
         "total": 8,
-        "percent": 75
+        "percent": 88
       },
-      "next_action": "Fix + tests, scratch-store verification, independent verification, merge, then record completion.",
-      "updated_at": "2026-09-03T19:24:36.299Z"
+      "next_action": "Next loop cycle picks the next open item; the archived-page gap needs a small store-API change in lock-step (tracked).",
+      "updated_at": "2026-09-03T19:47:14.727Z"
     }
   ]
 }
