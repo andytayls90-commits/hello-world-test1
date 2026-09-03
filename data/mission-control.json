@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T17:25:58.351Z",
+  "updated_at": "2026-09-03T18:14:37.967Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next loop cycle picks the next open item from the missions store.",
+  "current_task_id": "MC-LOOP-4",
+  "next_action": "Ship guard, watchdog, prompt and doc changes with tests; independent verification; complete on the board.",
   "milestones": [
     {
       "id": "MC0",
@@ -154,6 +154,22 @@
       "blockers": [],
       "next_action": "Next loop cycle picks the next open item from the missions store.",
       "updated_at": "2026-09-03T17:25:58.351Z"
+    },
+    {
+      "id": "MC-LOOP-4",
+      "title": "Autonomous loop: the operator bypass for creating a build workspace must leave a durable audit trail and must not page the watchdog eleven times a day",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-03T18:14:37.950Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "Root cause proven (2026-09-03 cycle3): the day's eleven watchdog pages came from an interactive session using the documented operator bypass for creating a build workspace; the bypass leaves no durable audit, is never acknowledged by the watchdog, and is still offered as a fallback to the second loop lane whose branches the watchdog does not scan. Fix in progress.",
+      "blockers": [],
+      "next_action": "Ship guard, watchdog, prompt and doc changes with tests; independent verification; complete on the board.",
+      "updated_at": "2026-09-03T18:14:37.967Z"
     }
   ],
   "history": [
@@ -236,6 +252,14 @@
       "at": "2026-09-03T17:25:58.351Z",
       "evidence": "VERIFIED LIVE",
       "commit": "2e9bfd0"
+    },
+    {
+      "task_id": "MC-LOOP-4",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-03T18:14:37.967Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
