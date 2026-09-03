@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T22:36:15.266Z",
+  "updated_at": "2026-09-03T23:24:23.819Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next loop cycle picks the next open item; the store unit's inline environment value (tracked) and the 2026-09-10 watchdog-journal re-checks remain open.",
+  "current_task_id": "MC-LOOP-7",
+  "next_action": "Reproduce the stale-record behaviour in the trigger test suite first, implement the auto-close, verify live against the store, independent verification, then close the live record.",
   "milestones": [
     {
       "id": "MC0",
@@ -55,6 +55,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-3"
+      ]
+    },
+    {
+      "id": "MC6",
+      "title": "Loop alert self-resolution",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-7"
       ]
     }
   ],
@@ -202,6 +210,22 @@
       "blockers": [],
       "next_action": "Next loop cycle picks the next open item; the store unit's inline environment value (tracked) and the 2026-09-10 watchdog-journal re-checks remain open.",
       "updated_at": "2026-09-03T22:36:15.266Z"
+    },
+    {
+      "id": "MC-LOOP-7",
+      "title": "Autonomous loop: the launch trigger must clear its own runtime-health alert page once the runtime is proven healthy again, and label a temporary usage-limit failure as temporary",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-03T23:30:00.000Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: the loop's pre-launch runtime check failed once on a temporary usage limit and filed a high-priority alert record; the check has passed on every slot since, but nothing closes the record, so it sits at the top of the work queue and would page again. Change: the trigger closes its own open alert records (runtime-check and identity families) on the first passing check, records why on the record, and words a usage-limit failure as temporary with the reset time instead of asking for a re-login.",
+      "blockers": [],
+      "next_action": "Reproduce the stale-record behaviour in the trigger test suite first, implement the auto-close, verify live against the store, independent verification, then close the live record.",
+      "updated_at": "2026-09-03T23:24:23.819Z"
     }
   ],
   "history": [
@@ -332,6 +356,14 @@
       "at": "2026-09-03T22:36:15.266Z",
       "evidence": "VERIFIED LIVE",
       "commit": "355effa"
+    },
+    {
+      "task_id": "MC-LOOP-7",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-03T23:24:23.819Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }

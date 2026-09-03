@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T22:56:48.362Z",
+  "updated_at": "2026-09-03T23:24:23.819Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-7",
       "progress": {
         "complete": 8,
-        "total": 9,
-        "percent": 89
+        "total": 10,
+        "percent": 80
       },
-      "next_action": "Next loop cycle picks the next open item; the store unit's inline environment value (tracked) and the 2026-09-10 watchdog-journal re-checks remain open.",
-      "updated_at": "2026-09-03T22:36:15.266Z"
+      "next_action": "Reproduce the stale-record behaviour in the trigger test suite first, implement the auto-close, verify live against the store, independent verification, then close the live record.",
+      "updated_at": "2026-09-03T23:24:23.819Z"
     }
   ]
 }
