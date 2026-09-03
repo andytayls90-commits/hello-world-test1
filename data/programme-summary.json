@@ -1,26 +1,26 @@
 {
   "schema_version": 1,
   "programme_name": "Re-AgentAI",
-  "status": "IN_PROGRESS",
+  "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T19:47:14.727Z",
+  "updated_at": "2026-09-03T20:04:00.522Z",
   "stale_after_hours": 48,
   "projects": [
     {
       "project_id": "project-wallstreet",
       "project_name": "Project Wallstreet",
-      "status": "IN_PROGRESS",
-      "evidence": "PARTIAL",
+      "status": "BLOCKED",
+      "evidence": "CONTRADICTED",
       "detail_page": "project-wallstreet.html",
       "data_file": "data/project-wallstreet.json",
-      "current_task_id": "OPS-2",
+      "current_task_id": "M2.3",
       "progress": {
         "complete": 11,
-        "total": 18,
-        "percent": 61
+        "total": 19,
+        "percent": 58
       },
-      "next_action": "Complete the autonomous-loop single-flight and state-integrity correction, then resolve the contradicted PAPER reconciliation state through an owner-reviewed evidence packet. Reconcile the 17 July crypto delivery against the canonical backlog and confirm its governance record. PAPER and the closed live gate remain non-negotiable.",
-      "updated_at": "2026-07-20T08:09:05.000Z"
+      "next_action": "Owner decision: execute the crypto lane on a PAPER venue or keep it gated; also commit the pending data-corrections ledger so the applied backfill can be ledgered.",
+      "updated_at": "2026-09-03T20:04:00.522Z"
     },
     {
       "project_id": "mission-control",

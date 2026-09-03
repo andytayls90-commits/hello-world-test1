@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "project-wallstreet",
   "project_name": "Project Wallstreet",
-  "status": "IN_PROGRESS",
-  "evidence": "PARTIAL",
-  "updated_at": "2026-07-20T08:09:05.000Z",
+  "status": "BLOCKED",
+  "evidence": "CONTRADICTED",
+  "updated_at": "2026-09-03T20:04:00.522Z",
   "stale_after_hours": 48,
-  "current_task_id": "OPS-2",
-  "next_action": "Complete the autonomous-loop single-flight and state-integrity correction, then resolve the contradicted PAPER reconciliation state through an owner-reviewed evidence packet. Reconcile the 17 July crypto delivery against the canonical backlog and confirm its governance record. PAPER and the closed live gate remain non-negotiable.",
+  "current_task_id": "M2.3",
+  "next_action": "Owner decision: execute the crypto lane on a PAPER venue or keep it gated; also commit the pending data-corrections ledger so the applied backfill can be ledgered.",
   "milestones": [
     {
       "id": "M0",
@@ -75,10 +75,11 @@
     {
       "id": "CRYPTO",
       "title": "Crypto market data, signals and bounded venue",
-      "status": "COMPLETE",
+      "status": "IN_PROGRESS",
       "task_ids": [
         "CRYPTO-1",
-        "CRYPTO-2"
+        "CRYPTO-2",
+        "WS-EDGE-1"
       ]
     },
     {
@@ -407,6 +408,22 @@
       ],
       "next_action": "Wait for owner acceptance of the preceding PAPER milestones.",
       "updated_at": "2026-07-14T10:50:00.000Z"
+    },
+    {
+      "id": "WS-EDGE-1",
+      "title": "Crypto signal executability: stablecoins and thin-coverage signals forced to HOLD and marked non-executable; execute-versus-gate decision for the crypto lane",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane engineer (Claude)",
+      "started_at": "2026-09-03T20:04:00.522Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "Part (a) shipped and deployed earlier today: stablecoins (deny-list plus a 30-day peg detector) and thin-coverage blends are forced to HOLD, confidence-capped and marked non-executable at the scorer, surfaced on the signal and export APIs, refused by the auto-execution parameter derivation, and the historical stablecoin rows were backfilled. This cycle independently verifies that live behaviour, records the evidence, and hands part (b) to the owner.",
+      "blockers": [],
+      "next_action": "Owner decision: execute the crypto lane on a PAPER venue or keep it gated; also commit the pending data-corrections ledger so the applied backfill can be ledgered.",
+      "updated_at": "2026-09-03T20:04:00.522Z"
     }
   ],
   "history": [
@@ -560,6 +577,14 @@
       "evidence": "SELF-VERIFIED LIVE",
       "commit": null,
       "note": "Cloud-session reconciliation from repository evidence only; canonical backlog and runtime were unreachable. M3 remains IN_PROGRESS with its 20 July target at risk pending runtime evidence from the production host."
+    },
+    {
+      "task_id": "WS-EDGE-1",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-03T20:04:00.522Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
