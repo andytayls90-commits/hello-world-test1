@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T20:10:36.574Z",
+  "updated_at": "2026-09-03T20:20:58.802Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 11,
-        "total": 19,
-        "percent": 58
+        "complete": 12,
+        "total": 20,
+        "percent": 60
       },
-      "next_action": "Owner decision required: execute the crypto lane on the PAPER venue or keep it gated (no crypto execution since 23 June). Owner also to commit the pending data-corrections ledger line so the applied backfill can be ledgered.",
-      "updated_at": "2026-09-03T20:10:36.574Z"
+      "next_action": "None for this task. Follow-ups on the board: persona documentation names the export date parameters incorrectly; neutral sector score on missing data.",
+      "updated_at": "2026-09-03T20:20:58.802Z"
     },
     {
       "project_id": "mission-control",

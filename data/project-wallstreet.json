@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-09-03T20:10:36.574Z",
+  "updated_at": "2026-09-03T20:20:58.802Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Owner decision required: execute the crypto lane on the PAPER venue or keep it gated (no crypto execution since 23 June). Owner also to commit the pending data-corrections ledger line so the applied backfill can be ledgered.",
+  "next_action": "None for this task. Follow-ups on the board: persona documentation names the export date parameters incorrectly; neutral sector score on missing data.",
   "milestones": [
     {
       "id": "M0",
@@ -79,7 +79,8 @@
       "task_ids": [
         "CRYPTO-1",
         "CRYPTO-2",
-        "WS-EDGE-1"
+        "WS-EDGE-1",
+        "WS-EXPORT-1"
       ]
     },
     {
@@ -426,6 +427,22 @@
       ],
       "next_action": "Owner decision required: execute the crypto lane on the PAPER venue or keep it gated (no crypto execution since 23 June). Owner also to commit the pending data-corrections ledger line so the applied backfill can be ledgered.",
       "updated_at": "2026-09-03T20:10:36.574Z"
+    },
+    {
+      "id": "WS-EXPORT-1",
+      "title": "Signal batch export bounded by default: newest five hundred rows unless a limit is given, explicit all-rows escape, truncation headers",
+      "project": "Project Wallstreet",
+      "status": "COMPLETE",
+      "owner": "Autonomous trading-lane engineer (Claude)",
+      "started_at": "2026-09-03T20:20:58.779Z",
+      "completed_at": "2026-09-03T20:20:58.802Z",
+      "target_at": null,
+      "evidence": "VERIFIED LIVE",
+      "commit": "f7fa151",
+      "summary": "Deployed and re-verified live. With no limit the batch export now returns the newest five hundred rows (about three megabytes in a third of a second) instead of the whole table (two hundred sixty-nine megabytes in twelve seconds). An explicit all-rows flag is the deliberate unbounded escape; combining it with a limit is refused with a structured validation error; every response carries limit, count and truncated headers so a cut is never silent. Consumer check found no live caller of the unbounded form. Eight new tests red then green, full backend suite green, real-money bolt ten of ten four times, PAPER gate unchanged. Board record captured.",
+      "blockers": [],
+      "next_action": "None for this task. Follow-ups on the board: persona documentation names the export date parameters incorrectly; neutral sector score on missing data.",
+      "updated_at": "2026-09-03T20:20:58.802Z"
     }
   ],
   "history": [
@@ -603,6 +620,22 @@
       "at": "2026-09-03T20:10:36.574Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "42df1d0"
+    },
+    {
+      "task_id": "WS-EXPORT-1",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-03T20:20:58.779Z",
+      "evidence": "PARTIAL",
+      "commit": null
+    },
+    {
+      "task_id": "WS-EXPORT-1",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-03T20:20:58.802Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "f7fa151"
     }
   ]
 }
