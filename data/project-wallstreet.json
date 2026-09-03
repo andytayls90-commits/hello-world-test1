@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-09-03T20:04:00.522Z",
+  "updated_at": "2026-09-03T20:08:38.769Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Owner decision: execute the crypto lane on a PAPER venue or keep it gated; also commit the pending data-corrections ledger so the applied backfill can be ledgered.",
+  "next_action": "Merge, deploy and re-verify the export fix; then hand the execute-versus-gate decision and the pending data-corrections ledger commit to the owner.",
   "milestones": [
     {
       "id": "M0",
@@ -420,10 +420,10 @@
       "target_at": null,
       "evidence": "PARTIAL",
       "commit": null,
-      "summary": "Part (a) shipped and deployed earlier today: stablecoins (deny-list plus a 30-day peg detector) and thin-coverage blends are forced to HOLD, confidence-capped and marked non-executable at the scorer, surfaced on the signal and export APIs, refused by the auto-execution parameter derivation, and the historical stablecoin rows were backfilled. This cycle independently verifies that live behaviour, records the evidence, and hands part (b) to the owner.",
+      "summary": "Part (a) verified live: stablecoins and thin-coverage blends are forced to HOLD, capped and marked non-executable; the historical stablecoin rows are already backfilled. Scope change: while verifying, the signal export endpoints were found returning server errors for rows whose stored payload carries a non-numeric float from the vendor sector analyzer; fixed end-to-end (storage boundary writes strict JSON, export sanitises existing rows, batch export gains an optional symbol/limit filter). Promotion and post-deploy verification in progress.",
       "blockers": [],
-      "next_action": "Owner decision: execute the crypto lane on a PAPER venue or keep it gated; also commit the pending data-corrections ledger so the applied backfill can be ledgered.",
-      "updated_at": "2026-09-03T20:04:00.522Z"
+      "next_action": "Merge, deploy and re-verify the export fix; then hand the execute-versus-gate decision and the pending data-corrections ledger commit to the owner.",
+      "updated_at": "2026-09-03T20:08:38.769Z"
     }
   ],
   "history": [
@@ -583,6 +583,14 @@
       "from": "PLANNED",
       "to": "IN_PROGRESS",
       "at": "2026-09-03T20:04:00.522Z",
+      "evidence": "PARTIAL",
+      "commit": null
+    },
+    {
+      "task_id": "WS-EDGE-1",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-03T20:08:38.769Z",
       "evidence": "PARTIAL",
       "commit": null
     }
