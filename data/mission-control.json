@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-02T20:51:54.593Z",
+  "updated_at": "2026-09-03T00:24:20.534Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Filed for follow-up: a console rewrite forwards every method to the trading backend without a gate (high); reads through the console proxy still carry operator authority (low); session hardening — revocation on sign-out, stricter origin check (low). Next cycle: reconcile and pick the highest in-boundary item.",
+  "current_task_id": "MC-LOOP-2",
+  "next_action": "Write failing tests (harness + store contract), fix the blocked path, verify on a scratch store copy, independent verification, promote.",
   "milestones": [
     {
       "id": "MC0",
@@ -39,6 +39,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-CONSOLE-1"
+      ]
+    },
+    {
+      "id": "MC4",
+      "title": "Loop blocked-outcome recording",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-2"
       ]
     }
   ],
@@ -106,6 +114,22 @@
       "blockers": [],
       "next_action": "Filed for follow-up: a console rewrite forwards every method to the trading backend without a gate (high); reads through the console proxy still carry operator authority (low); session hardening — revocation on sign-out, stricter origin check (low). Next cycle: reconcile and pick the highest in-boundary item.",
       "updated_at": "2026-09-02T20:51:54.593Z"
+    },
+    {
+      "id": "MC-LOOP-2",
+      "title": "Autonomous loop: a blocked cycle outcome must be recorded on the mission board (the store refused the marker the loop sent)",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-03T00:24:20.534Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: the loop's blocked-outcome step sent a board column the mission store rejects, so a failed cycle never marked its mission (it stayed claimed with a live lease and no blocked marker). Fix: send the store's supported paused marker on the held mission, keep the reason comment, release the lease; harness fake store now enforces the real column contract; store-level tests prove it.",
+      "blockers": [],
+      "next_action": "Write failing tests (harness + store contract), fix the blocked path, verify on a scratch store copy, independent verification, promote.",
+      "updated_at": "2026-09-03T00:24:20.534Z"
     }
   ],
   "history": [
@@ -156,6 +180,14 @@
       "at": "2026-09-02T20:51:54.593Z",
       "evidence": "VERIFIED LIVE",
       "commit": "b1372b9"
+    },
+    {
+      "task_id": "MC-LOOP-2",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-03T00:24:20.534Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }

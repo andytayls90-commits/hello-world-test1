@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-02T20:51:54.593Z",
+  "updated_at": "2026-09-03T00:24:20.534Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-2",
       "progress": {
         "complete": 3,
-        "total": 4,
-        "percent": 75
+        "total": 5,
+        "percent": 60
       },
-      "next_action": "Filed for follow-up: a console rewrite forwards every method to the trading backend without a gate (high); reads through the console proxy still carry operator authority (low); session hardening — revocation on sign-out, stricter origin check (low). Next cycle: reconcile and pick the highest in-boundary item.",
-      "updated_at": "2026-09-02T20:51:54.593Z"
+      "next_action": "Write failing tests (harness + store contract), fix the blocked path, verify on a scratch store copy, independent verification, promote.",
+      "updated_at": "2026-09-03T00:24:20.534Z"
     }
   ]
 }
