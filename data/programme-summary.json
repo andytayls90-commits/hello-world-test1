@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T23:54:14.884Z",
+  "updated_at": "2026-09-03T23:59:48.063Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-7",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 8,
+        "complete": 9,
         "total": 10,
-        "percent": 80
+        "percent": 90
       },
-      "next_action": "Reproduce the stale-record behaviour in the trigger test suite first, implement the auto-close, verify live against the store, independent verification, then close the live record.",
-      "updated_at": "2026-09-03T23:24:23.819Z"
+      "next_action": "Next loop cycle picks the next open item; follow-ups recorded for a lock-suite false positive when run inside an agent session and for alert-record wording that hides some records from sandboxed agents.",
+      "updated_at": "2026-09-03T23:59:48.063Z"
     }
   ]
 }

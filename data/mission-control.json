@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T23:24:23.819Z",
+  "updated_at": "2026-09-03T23:59:48.063Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-7",
-  "next_action": "Reproduce the stale-record behaviour in the trigger test suite first, implement the auto-close, verify live against the store, independent verification, then close the live record.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next loop cycle picks the next open item; follow-ups recorded for a lock-suite false positive when run inside an agent session and for alert-record wording that hides some records from sandboxed agents.",
   "milestones": [
     {
       "id": "MC0",
@@ -60,7 +60,7 @@
     {
       "id": "MC6",
       "title": "Loop alert self-resolution",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-7"
       ]
@@ -101,7 +101,7 @@
     },
     {
       "id": "MC-HELM-1",
-      "title": "Mission store: authenticate every write route (create, edit, tape, decision ruling) — no unauthenticated local caller",
+      "title": "Mission store: authenticate every write route (create, edit, tape, decision ruling) \u2014 no unauthenticated local caller",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -126,9 +126,9 @@
       "target_at": null,
       "evidence": "VERIFIED LIVE",
       "commit": "b1372b9",
-      "summary": "Delivered: every write made through the console to the mission store now requires a verified operator session — an HttpOnly signed cookie from a one-time operator sign-in, or a verified edge-login identity; anonymous, spoofed-identity, forged-cookie and forged-edge-token writes are refused at the console before the store is contacted, and a cross-site browser context is refused even with a session. Reads are unchanged. The audit trail now names the signed-in person instead of a generic operator. New tests 37 (all failed before the fix), console suite 304, real-money bolt 10/10, paper gate confirmed. An independent adversarial verification against the running console (private network and edge included) confirmed every refusal and the attribution; the positive edge-login path is proven in the harness only. Two of its low findings (sign-in lockout, key-set refresh flooding) were fixed in-cycle; the rest filed.",
+      "summary": "Delivered: every write made through the console to the mission store now requires a verified operator session \u2014 an HttpOnly signed cookie from a one-time operator sign-in, or a verified edge-login identity; anonymous, spoofed-identity, forged-cookie and forged-edge-token writes are refused at the console before the store is contacted, and a cross-site browser context is refused even with a session. Reads are unchanged. The audit trail now names the signed-in person instead of a generic operator. New tests 37 (all failed before the fix), console suite 304, real-money bolt 10/10, paper gate confirmed. An independent adversarial verification against the running console (private network and edge included) confirmed every refusal and the attribution; the positive edge-login path is proven in the harness only. Two of its low findings (sign-in lockout, key-set refresh flooding) were fixed in-cycle; the rest filed.",
       "blockers": [],
-      "next_action": "Filed for follow-up: a console rewrite forwards every method to the trading backend without a gate (high); reads through the console proxy still carry operator authority (low); session hardening — revocation on sign-out, stricter origin check (low). Next cycle: reconcile and pick the highest in-boundary item.",
+      "next_action": "Filed for follow-up: a console rewrite forwards every method to the trading backend without a gate (high); reads through the console proxy still carry operator authority (low); session hardening \u2014 revocation on sign-out, stricter origin check (low). Next cycle: reconcile and pick the highest in-boundary item.",
       "updated_at": "2026-09-02T20:51:54.593Z"
     },
     {
@@ -144,7 +144,7 @@
       "commit": "a12c75b",
       "summary": "Delivered: a blocked cycle outcome now lands on the mission board. The loop's finish step marks the held mission with the store's supported paused flag, keeps the reason comment, and hands the lease back, so the item shows as paused, is skipped by the work queue and the watchdog digest names it instead of paging. The test harness's fake store now enforces the real column contract and pagination (it previously accepted a value the real store rejects), and store-level tests pin the contract. Proven on a scratch copy of the real store (old path refused with an error and wedged; new path lands), then independently verified: holds with caveats. Two follow-ups fixed in-cycle (paged revision lookup, fixture label); negative-path hardening filed.",
       "blockers": [],
-      "next_action": "Next cycle: reconcile and pick the highest in-boundary item — candidates: loop finish negative-path hardening (re-claim on a reaped lease, idempotent comment, reason on the row), console session hardening, reads through the console proxy carrying operator authority.",
+      "next_action": "Next cycle: reconcile and pick the highest in-boundary item \u2014 candidates: loop finish negative-path hardening (re-claim on a reaped lease, idempotent comment, reason on the row), console session hardening, reads through the console proxy carrying operator authority.",
       "updated_at": "2026-09-03T00:41:26.315Z"
     },
     {
@@ -215,17 +215,17 @@
       "id": "MC-LOOP-7",
       "title": "Autonomous loop: the launch trigger must clear its own runtime-health alert page once the runtime is proven healthy again, and label a temporary usage-limit failure as temporary",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-03T23:30:00.000Z",
-      "completed_at": null,
+      "completed_at": "2026-09-03T23:59:48.063Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress: the loop's pre-launch runtime check failed once on a temporary usage limit and filed a high-priority alert record; the check has passed on every slot since, but nothing closes the record, so it sits at the top of the work queue and would page again. Change: the trigger closes its own open alert records (runtime-check and identity families) on the first passing check, records why on the record, and words a usage-limit failure as temporary with the reset time instead of asking for a re-login.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "8b71afe",
+      "summary": "Complete: the loop's launch trigger now closes its own runtime-check and identity alert records on the first slot where the check passes again (only records it filed, never one another worker is actively holding, with a note explaining why), labels a temporary usage-limit failure as temporary with its reset time instead of asking for a re-login, treats alert records as never being work for a cycle, and re-checks a timed-out close before calling it a failure. Reproduced first in the trigger's test suite (nine new cases red on the previous code), then verified against the real record store: the stale record from earlier today closed itself on the first passing check. Independent verification held with findings; the actionable ones were fixed before merge and two lower-priority follow-ups were recorded. Landed on master 8b71afe; the timer picks up the merged script on its next slot with no restart; safety checks unchanged (paper only).",
       "blockers": [],
-      "next_action": "Reproduce the stale-record behaviour in the trigger test suite first, implement the auto-close, verify live against the store, independent verification, then close the live record.",
-      "updated_at": "2026-09-03T23:24:23.819Z"
+      "next_action": "Next loop cycle picks the next open item; follow-ups recorded for a lock-suite false positive when run inside an agent session and for alert-record wording that hides some records from sandboxed agents.",
+      "updated_at": "2026-09-03T23:59:48.063Z"
     }
   ],
   "history": [
@@ -364,6 +364,14 @@
       "at": "2026-09-03T23:24:23.819Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-7",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-03T23:59:48.063Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "8b71afe"
     }
   ]
 }
