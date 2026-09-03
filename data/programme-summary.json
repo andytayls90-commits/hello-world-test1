@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T22:36:15.266Z",
+  "updated_at": "2026-09-03T22:54:40.516Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 13,
-        "total": 21,
-        "percent": 62
+        "total": 22,
+        "percent": 59
       },
-      "next_action": "Follow-up on the board: root-cause the intermittent missing close bar in the price history feed.",
-      "updated_at": "2026-09-03T22:01:24.146Z"
+      "next_action": "Make the red test green with the narrowed ignore rule, run the real-money bolt, merge with no fast-forward, push, re-verify (docs-only: no service restart), record the board action.",
+      "updated_at": "2026-09-03T22:54:40.516Z"
     },
     {
       "project_id": "mission-control",
