@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T20:25:15.683Z",
+  "updated_at": "2026-09-03T21:54:16.007Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 12,
-        "total": 20,
-        "percent": 60
+        "total": 21,
+        "percent": 57
       },
-      "next_action": "None for this task. Follow-ups on the board: persona documentation names the export date parameters incorrectly; neutral sector score on missing data.",
-      "updated_at": "2026-09-03T20:20:58.802Z"
+      "next_action": "Write the failing test, fix the analyzer, run the real-money bolt, promote, re-verify live.",
+      "updated_at": "2026-09-03T21:54:16.007Z"
     },
     {
       "project_id": "mission-control",
