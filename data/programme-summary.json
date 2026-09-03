@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T04:23:53.669Z",
+  "updated_at": "2026-09-03T17:25:58.351Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-3",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 4,
+        "complete": 5,
         "total": 6,
-        "percent": 67
+        "percent": 83
       },
-      "next_action": "Write failing tests (harness, store contract, watchdog digest), fix the finish path, verify on a scratch store copy, independent verification, promote.",
-      "updated_at": "2026-09-03T04:23:53.669Z"
+      "next_action": "Next loop cycle picks the next open item from the missions store.",
+      "updated_at": "2026-09-03T17:25:58.351Z"
     }
   ]
 }
