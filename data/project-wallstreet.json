@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-09-03T22:54:40.516Z",
+  "updated_at": "2026-09-03T22:56:48.362Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Make the red test green with the narrowed ignore rule, run the real-money bolt, merge with no fast-forward, push, re-verify (docs-only: no service restart), record the board action.",
+  "next_action": "Next trading-lane cycle picks the next open board item: the batch-export doc drift, or the intermittent missing close bar in the price history feed.",
   "milestones": [
     {
       "id": "M0",
@@ -466,17 +466,17 @@
       "id": "WS-HYGIENE-1",
       "title": "Trading-lane evidence packets committable without force-add: narrow the evidence ignore rule to generated artifacts only",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane engineer (Claude)",
       "started_at": "2026-09-03T22:54:40.516Z",
-      "completed_at": null,
+      "completed_at": "2026-09-03T22:56:48.362Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress by the autonomous trading-lane cycle: a regression test written first (red), then the ignore rule narrowed so markdown evidence packets under the trading-lane folder are added normally while screenshots, captures and the operator-visual bundle stay ignored. Docs and ignore rule only; no trading path, gate or bolt surface.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "db7d62a",
+      "summary": "Merged and pushed by the autonomous cycle. The repository ignore rule now excludes only generated evidence artifacts: markdown assurance and verification packets under the trading-lane evidence folder are added normally, while screenshots, captures and the operator-visual bundle stay ignored. A twelve-case regression test was written first (red) and is green in the normal backend suite. Docs and ignore rule only: no service restart, PAPER gate unchanged, real-money bolt ten of ten four times, pre-existing working-tree changes untouched.",
       "blockers": [],
-      "next_action": "Make the red test green with the narrowed ignore rule, run the real-money bolt, merge with no fast-forward, push, re-verify (docs-only: no service restart), record the board action.",
-      "updated_at": "2026-09-03T22:54:40.516Z"
+      "next_action": "Next trading-lane cycle picks the next open board item: the batch-export doc drift, or the intermittent missing close bar in the price history feed.",
+      "updated_at": "2026-09-03T22:56:48.362Z"
     }
   ],
   "history": [
@@ -694,6 +694,14 @@
       "at": "2026-09-03T22:54:40.516Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-HYGIENE-1",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-03T22:56:48.362Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "db7d62a"
     }
   ]
 }
