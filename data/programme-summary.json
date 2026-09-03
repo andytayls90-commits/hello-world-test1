@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T18:14:37.967Z",
+  "updated_at": "2026-09-03T18:39:48.719Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-4",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 5,
+        "complete": 6,
         "total": 7,
-        "percent": 71
+        "percent": 86
       },
-      "next_action": "Ship guard, watchdog, prompt and doc changes with tests; independent verification; complete on the board.",
-      "updated_at": "2026-09-03T18:14:37.967Z"
+      "next_action": "Re-check the watchdog journal around 2026-09-10 for the seven-day success criterion; next loop cycle picks the next open item.",
+      "updated_at": "2026-09-03T18:39:48.719Z"
     }
   ]
 }

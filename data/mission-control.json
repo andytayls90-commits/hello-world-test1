@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T18:14:37.967Z",
+  "updated_at": "2026-09-03T18:39:48.719Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-4",
-  "next_action": "Ship guard, watchdog, prompt and doc changes with tests; independent verification; complete on the board.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Re-check the watchdog journal around 2026-09-10 for the seven-day success criterion; next loop cycle picks the next open item.",
   "milestones": [
     {
       "id": "MC0",
@@ -159,17 +159,17 @@
       "id": "MC-LOOP-4",
       "title": "Autonomous loop: the operator bypass for creating a build workspace must leave a durable audit trail and must not page the watchdog eleven times a day",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-03T18:14:37.950Z",
-      "completed_at": null,
+      "completed_at": "2026-09-03T18:39:48.719Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "Root cause proven (2026-09-03 cycle3): the day's eleven watchdog pages came from an interactive session using the documented operator bypass for creating a build workspace; the bypass leaves no durable audit, is never acknowledged by the watchdog, and is still offered as a fallback to the second loop lane whose branches the watchdog does not scan. Fix in progress.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "72ccc90",
+      "summary": "Complete: the operator bypass for creating a build workspace now leaves a durable audit record that names the caller (an automated session versus a person), the watchdog acknowledges such workspaces as a digest line instead of paging and filing a rectify item each time, audits every loop lane's workspace registry and scans the second lane's branches, and the second lane's instructions use the sanctioned path only. Landed on master 72ccc90; live watchdog run clean; independent verification holds with findings, the actionable ones fixed before merge and the two pre-existing ones tracked; safety checks unchanged (paper only).",
       "blockers": [],
-      "next_action": "Ship guard, watchdog, prompt and doc changes with tests; independent verification; complete on the board.",
-      "updated_at": "2026-09-03T18:14:37.967Z"
+      "next_action": "Re-check the watchdog journal around 2026-09-10 for the seven-day success criterion; next loop cycle picks the next open item.",
+      "updated_at": "2026-09-03T18:39:48.719Z"
     }
   ],
   "history": [
@@ -260,6 +260,14 @@
       "at": "2026-09-03T18:14:37.967Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-4",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-03T18:39:48.719Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "72ccc90"
     }
   ]
 }
