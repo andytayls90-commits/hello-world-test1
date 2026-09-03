@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T21:54:16.007Z",
+  "updated_at": "2026-09-03T22:01:24.146Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 12,
+        "complete": 13,
         "total": 21,
-        "percent": 57
+        "percent": 62
       },
-      "next_action": "Write the failing test, fix the analyzer, run the real-money bolt, promote, re-verify live.",
-      "updated_at": "2026-09-03T21:54:16.007Z"
+      "next_action": "Follow-up on the board: root-cause the intermittent missing close bar in the price history feed.",
+      "updated_at": "2026-09-03T22:01:24.146Z"
     },
     {
       "project_id": "mission-control",
