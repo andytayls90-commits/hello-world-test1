@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T19:47:14.727Z",
+  "updated_at": "2026-09-03T20:25:15.683Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next loop cycle picks the next open item; the archived-page gap needs a small store-API change in lock-step (tracked).",
+  "current_task_id": "MC-LOOP-6",
+  "next_action": "Land the store switch and watchdog change with tests, run the independent verification, deploy the store service, record evidence.",
   "milestones": [
     {
       "id": "MC0",
@@ -186,6 +186,22 @@
       "blockers": [],
       "next_action": "Next loop cycle picks the next open item; the archived-page gap needs a small store-API change in lock-step (tracked).",
       "updated_at": "2026-09-03T19:47:14.727Z"
+    },
+    {
+      "id": "MC-LOOP-6",
+      "title": "Autonomous loop: the watchdog must re-open its own archived page for a build workspace that reappears, instead of failing to file a duplicate every run",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-03T20:25:15.000Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: the mission store's list view hides archived records and offers no way to include them, so the loop watchdog cannot see an archived page it retired earlier; when a build workspace reappears at that path it tries to file the same identifier again, the store rejects the duplicate, and the watchdog pages 'auto-file failed' on every run without ever re-opening the record. Fix in lock-step: the store's list view gains an opt-in switch to include archived records (default unchanged), and the watchdog uses it to look up its own retired pages, re-opening them under the same identifier. Same gap closed for the other two self-filed deterministic identifiers.",
+      "blockers": [],
+      "next_action": "Land the store switch and watchdog change with tests, run the independent verification, deploy the store service, record evidence.",
+      "updated_at": "2026-09-03T20:25:15.683Z"
     }
   ],
   "history": [
@@ -300,6 +316,14 @@
       "at": "2026-09-03T19:47:14.727Z",
       "evidence": "VERIFIED LIVE",
       "commit": "500bea4"
+    },
+    {
+      "task_id": "MC-LOOP-6",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-03T20:25:15.683Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
