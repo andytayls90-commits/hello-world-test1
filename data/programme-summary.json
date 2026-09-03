@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T23:24:23.819Z",
+  "updated_at": "2026-09-03T23:54:14.884Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 14,
-        "total": 22,
-        "percent": 64
+        "total": 23,
+        "percent": 61
       },
-      "next_action": "Next trading-lane cycle picks the next open board item: the batch-export doc drift, or the intermittent missing close bar in the price history feed.",
-      "updated_at": "2026-09-03T22:56:48.362Z"
+      "next_action": "Write failing doc-drift guard and dashboard helper tests, correct the docs, extend the helper with the bound and all-rows flag, merge with no fast-forward, push, re-verify gate and bolt.",
+      "updated_at": "2026-09-03T23:54:14.884Z"
     },
     {
       "project_id": "mission-control",
