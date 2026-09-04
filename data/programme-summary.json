@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-04T21:07:55.354Z",
+  "updated_at": "2026-09-04T21:29:14.418Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-8",
       "progress": {
         "complete": 9,
-        "total": 10,
-        "percent": 90
+        "total": 11,
+        "percent": 82
       },
-      "next_action": "Next loop cycle picks the next open item; follow-ups recorded for a lock-suite false positive when run inside an agent session and for alert-record wording that hides some records from sandboxed agents.",
-      "updated_at": "2026-09-03T23:59:48.063Z"
+      "next_action": "Write failing tests, fix the bridge, close the seven open duplicates with evidence, verify on the live store, independent verification, tracker complete.",
+      "updated_at": "2026-09-04T21:29:14.418Z"
     }
   ]
 }
