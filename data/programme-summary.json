@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-04T21:29:14.418Z",
+  "updated_at": "2026-09-04T21:42:00.580Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 15,
-        "total": 24,
-        "percent": 63
+        "complete": 16,
+        "total": 25,
+        "percent": 64
       },
-      "next_action": "Implement with failing tests first, run the bolt after every change, merge with a no-fast-forward merge, restart the backend by scope, re-verify, record the board action.",
-      "updated_at": "2026-09-04T21:07:55.354Z"
+      "next_action": "Cherry-pick the residual fix into the bound worktree, red then green tests, bolt ten of ten, no-fast-forward merge and push, no service restart, re-verify, record the board action.",
+      "updated_at": "2026-09-04T21:42:00.580Z"
     },
     {
       "project_id": "mission-control",
