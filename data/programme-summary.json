@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-04T21:50:37.229Z",
+  "updated_at": "2026-09-04T22:00:13.618Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 17,
-        "total": 25,
-        "percent": 68
+        "total": 26,
+        "percent": 65
       },
-      "next_action": "Next eligible trading-lane mission: root-cause the day-clustered missing close bar in the price history feed at fetch time.",
-      "updated_at": "2026-09-04T21:46:48.975Z"
+      "next_action": "Write failing tests, implement the fetch-time guard and the sweep-level coverage warning, run the bolt, promote by scope.",
+      "updated_at": "2026-09-04T22:00:13.618Z"
     },
     {
       "project_id": "mission-control",
