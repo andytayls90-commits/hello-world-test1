@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-09-04T22:00:13.618Z",
+  "updated_at": "2026-09-04T22:11:59.618Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Write failing tests, implement the fetch-time guard and the sweep-level coverage warning, run the bolt, promote by scope.",
+  "next_action": "Watch the next affected pre-market sweep for the new fetch-time warning naming the bar; consider the paid price-group flip through the parity gate as the structural remedy.",
   "milestones": [
     {
       "id": "M0",
@@ -534,17 +534,17 @@
       "id": "WS-DATA-1",
       "title": "Intermittent missing close bar in the equity price-history feed: root-cause at fetch time, guard the bar, warn when sector coverage collapses across a sweep",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane engineer (Claude)",
       "started_at": "2026-09-04T22:00:13.618Z",
-      "completed_at": null,
+      "completed_at": "2026-09-04T22:11:59.618Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "Claimed by the autonomous trading-lane cycle. Stored sweep evidence shows the missing close is the last complete session bar of the vendor daily history (volume intact, price blank) during vendor pre-market processing windows, across every symbol at once; a weekend-long episode on 29 to 31 August. Plan: drop non-finite close bars at fetch time with a warning naming the bar, and warn at sweep level when a dimension's coverage collapses.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "eda98c3",
+      "summary": "Deployed and re-verified live by the autonomous cycle. Root cause proven from stored sweep evidence: the vendor served the last complete session bar with blank prices but intact volume during its overnight processing windows, across every symbol at once, and the vendor library keeps such a bar. Bars with a non-finite close are now dropped at fetch time for every bar source with a warning naming the bar, a sweep-level warning fires when a weighted dimension goes unscored across most of a sweep, and the pre-earnings proximity dimension, which had never scored because its calendar request carried no date range, now scores. Twenty new tests red then green, full backend suite green, real-money bolt ten of ten, PAPER gate unchanged, service restarted and healthy.",
       "blockers": [],
-      "next_action": "Write failing tests, implement the fetch-time guard and the sweep-level coverage warning, run the bolt, promote by scope.",
-      "updated_at": "2026-09-04T22:00:13.618Z"
+      "next_action": "Watch the next affected pre-market sweep for the new fetch-time warning naming the bar; consider the paid price-group flip through the parity gate as the structural remedy.",
+      "updated_at": "2026-09-04T22:11:59.618Z"
     }
   ],
   "history": [
@@ -826,6 +826,14 @@
       "at": "2026-09-04T22:00:13.618Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "WS-DATA-1",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-04T22:11:59.618Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "eda98c3"
     }
   ]
 }
