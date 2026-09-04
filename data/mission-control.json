@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-04T21:50:37.229Z",
+  "updated_at": "2026-09-04T22:27:22.225Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next loop cycle picks the next open item; the research-lane follow-up is queued for its own executor.",
+  "current_task_id": "MC-LOOP-9",
+  "next_action": "Write the failing unit tests, implement, build and restart the console, probe live, independent verification, merge.",
   "milestones": [
     {
       "id": "MC0",
@@ -71,6 +71,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-8"
+      ]
+    },
+    {
+      "id": "MC8",
+      "title": "Console operator session hardening",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-9"
       ]
     }
   ],
@@ -250,6 +258,22 @@
       "blockers": [],
       "next_action": "Next loop cycle picks the next open item; the research-lane follow-up is queued for its own executor.",
       "updated_at": "2026-09-04T21:50:37.229Z"
+    },
+    {
+      "id": "MC-LOOP-9",
+      "title": "Autonomous loop: console operator sign-in hardening — a sign-out must invalidate the session on the server, the browser-origin check must use a fixed allowlist rather than caller-set headers, sign-out itself must be same-origin, and a bad audit label must be rejected rather than silently replaced",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-04T22:27:00.000Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress: hardening follow-ups from the 2026-09-02 independent verification of the console write gate (all rated low): a signed-out session value currently keeps working until it expires; the browser-origin check trusts two headers a non-browser caller can set; sign-out has no origin check; an invalid audit label is silently replaced with a default. Approach: session identifiers with a persisted server-side revocation list and a sign-out-everywhere watermark, an explicit allowlist of console host names, the same origin check on sign-out, and a 400 for a bad label. Test-first in the console unit suite, then build, restart and probe live; independent verification before merge; safety checks unchanged (paper only).",
+      "blockers": [],
+      "next_action": "Write the failing unit tests, implement, build and restart the console, probe live, independent verification, merge.",
+      "updated_at": "2026-09-04T22:27:22.225Z"
     }
   ],
   "history": [
@@ -412,6 +436,14 @@
       "at": "2026-09-04T21:50:37.229Z",
       "evidence": "VERIFIED LIVE",
       "commit": "f9fb8a9"
+    },
+    {
+      "task_id": "MC-LOOP-9",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-04T22:27:22.225Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
