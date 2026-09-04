@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-04T22:55:09.169Z",
+  "updated_at": "2026-09-04T23:27:59.333Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next loop cycle picks the next open item; the read-side operator-token injection through the console proxy remains a separate open item.",
+  "current_task_id": "MC-LOOP-10",
+  "next_action": "Write the failing unit tests, implement, build and restart the console, probe live, independent verification, merge.",
   "milestones": [
     {
       "id": "MC0",
@@ -79,6 +79,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-9"
+      ]
+    },
+    {
+      "id": "MC9",
+      "title": "Console read-path least privilege",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-10"
       ]
     }
   ],
@@ -274,6 +282,22 @@
       "blockers": [],
       "next_action": "Next loop cycle picks the next open item; the read-side operator-token injection through the console proxy remains a separate open item.",
       "updated_at": "2026-09-04T22:55:09.169Z"
+    },
+    {
+      "id": "MC-LOOP-10",
+      "title": "Autonomous loop: the console's read path must stop granting operator-level access to anonymous readers — the server-side operator credential is attached to a read only when the caller holds a verified console session",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-04T23:27:40.000Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress: the console's server-side proxy to the mission store still attaches the operator credential to every read, so anyone who can reach the console reads the store as the operator (proven live: an anonymous identity check reports operator-level access through the console but no principal when asked directly). Audit of the store's own read policy: nearly every view the deck shows is public at the store; only the council lock, agent soul/memory, the agent queue, token accounting and the paid-service control plane require the credential. Approach: attach the credential on reads only when the caller holds a verified console session (sign-in cookie or edge login); anonymous readers get the store's public read surface; the fleet view asks for council locks only when signed in; the acceptance suite signs in when the credential is available. Test-first in the console unit suite, proven on a scratch server, then build, restart and probe live; independent verification before merge; safety checks unchanged (paper only).",
+      "blockers": [],
+      "next_action": "Write the failing unit tests, implement, build and restart the console, probe live, independent verification, merge.",
+      "updated_at": "2026-09-04T23:27:59.333Z"
     }
   ],
   "history": [
@@ -452,6 +476,22 @@
       "at": "2026-09-04T22:55:09.169Z",
       "evidence": "VERIFIED LIVE",
       "commit": "942803f"
+    },
+    {
+      "task_id": "MC-LOOP-10",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-04T23:27:40.000Z",
+      "evidence": "PARTIAL",
+      "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-10",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-04T23:27:59.333Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }

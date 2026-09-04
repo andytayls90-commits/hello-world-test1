@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-04T22:55:09.169Z",
+  "updated_at": "2026-09-04T23:27:59.333Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-10",
       "progress": {
         "complete": 11,
-        "total": 12,
-        "percent": 92
+        "total": 13,
+        "percent": 85
       },
-      "next_action": "Next loop cycle picks the next open item; the read-side operator-token injection through the console proxy remains a separate open item.",
-      "updated_at": "2026-09-04T22:55:09.169Z"
+      "next_action": "Write the failing unit tests, implement, build and restart the console, probe live, independent verification, merge.",
+      "updated_at": "2026-09-04T23:27:59.333Z"
     }
   ]
 }
