@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-04T21:46:48.975Z",
+  "updated_at": "2026-09-04T21:50:37.229Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-8",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 9,
+        "complete": 10,
         "total": 11,
-        "percent": 82
+        "percent": 91
       },
-      "next_action": "Write failing tests, fix the bridge, close the seven open duplicates with evidence, verify on the live store, independent verification, tracker complete.",
-      "updated_at": "2026-09-04T21:29:14.418Z"
+      "next_action": "Next loop cycle picks the next open item; the research-lane follow-up is queued for its own executor.",
+      "updated_at": "2026-09-04T21:50:37.229Z"
     }
   ]
 }

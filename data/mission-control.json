@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-04T21:29:14.418Z",
+  "updated_at": "2026-09-04T21:50:37.229Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-8",
-  "next_action": "Write failing tests, fix the bridge, close the seven open duplicates with evidence, verify on the live store, independent verification, tracker complete.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next loop cycle picks the next open item; the research-lane follow-up is queued for its own executor.",
   "milestones": [
     {
       "id": "MC0",
@@ -68,7 +68,7 @@
     {
       "id": "MC7",
       "title": "Research-recommendation bridge de-duplication",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-8"
       ]
@@ -239,17 +239,17 @@
       "id": "MC-LOOP-8",
       "title": "Autonomous loop: the research-recommendation bridge must stop re-filing already-delivered recommendations under new wording, keep the full recommendation on the record it files, and verify delivery against durable evidence",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-04T21:29:14.418Z",
-      "completed_at": null,
+      "completed_at": "2026-09-04T21:50:37.229Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress: the previous attempt at this item crashed before any change landed; resumed 2026-09-04 21:23Z. Root causes proven against the live bridge and record store: the create call sends fields the store ignores (so the de-dup marker never persists and the record lands unscoped), the record list is read without a page size (truncated), matching keys on exact wording that the research agent rephrases each note, and the delivery check reads a field the knowledge store does not return. Three more duplicates were filed this morning while the loop was down.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "f9fb8a9",
+      "summary": "Complete: the bridge that turns research notes into board records now keeps its de-duplication text on the record it files (using the fields the store actually keeps), reads the whole record list including archived rows, recognises a recommendation by the concrete artifacts it names so rewording no longer creates a new record (a recommendation adding a genuinely new artifact is still filed), skips past-tense reports to the board, and verifies delivered work against durable, fresh evidence rather than a liveness probe. Reproduced first in a new test suite (red on the previous code), then proven against the real record store: the merged script ran live and filed nothing for the six current restatements while verifying every delivered record. Six open duplicate records were closed with evidence; one follow-up was recorded for the research agent's own lane (it cannot see the delivered files from its sandbox). Independent verification held with findings; seven were fixed before merge. Landed on master f9fb8a9; no restart needed; safety checks unchanged (paper only).",
       "blockers": [],
-      "next_action": "Write failing tests, fix the bridge, close the seven open duplicates with evidence, verify on the live store, independent verification, tracker complete.",
-      "updated_at": "2026-09-04T21:29:14.418Z"
+      "next_action": "Next loop cycle picks the next open item; the research-lane follow-up is queued for its own executor.",
+      "updated_at": "2026-09-04T21:50:37.229Z"
     }
   ],
   "history": [
@@ -404,6 +404,14 @@
       "at": "2026-09-04T21:29:14.418Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-8",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-04T21:50:37.229Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "f9fb8a9"
     }
   ]
 }
