@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-04T21:42:00.580Z",
+  "updated_at": "2026-09-04T21:46:48.975Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 16,
+        "complete": 17,
         "total": 25,
-        "percent": 64
+        "percent": 68
       },
-      "next_action": "Cherry-pick the residual fix into the bound worktree, red then green tests, bolt ten of ten, no-fast-forward merge and push, no service restart, re-verify, record the board action.",
-      "updated_at": "2026-09-04T21:42:00.580Z"
+      "next_action": "Next eligible trading-lane mission: root-cause the day-clustered missing close bar in the price history feed at fetch time.",
+      "updated_at": "2026-09-04T21:46:48.975Z"
     },
     {
       "project_id": "mission-control",
