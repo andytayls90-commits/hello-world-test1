@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-09-03T23:54:14.884Z",
+  "updated_at": "2026-09-04T00:00:50.963Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Write failing doc-drift guard and dashboard helper tests, correct the docs, extend the helper with the bound and all-rows flag, merge with no fast-forward, push, re-verify gate and bolt.",
+  "next_action": "Next trading-lane cycle picks the remaining open board item: the intermittent missing close bar in the price history feed.",
   "milestones": [
     {
       "id": "M0",
@@ -483,17 +483,17 @@
       "id": "WS-EXPORT-2",
       "title": "Signal batch export documentation and helper drift: persona and design docs name the date parameters wrongly, dashboard helper unused and unbounded",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane engineer (Claude)",
       "started_at": "2026-09-03T23:54:14.884Z",
-      "completed_at": null,
+      "completed_at": "2026-09-04T00:00:50.963Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "Claimed by the autonomous trading-lane cycle. Baseline preserved: PAPER gate all-false, real-money bolt ten of ten, working tree clean apart from the two pre-existing runtime files. Verified the live CEO prompt does not reference the batch export at all; the wrong parameter names live only in the tracked persona snapshot and the June design spec. Isolated worktree created.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "8a35ab2",
+      "summary": "Merged and pushed by the autonomous cycle. The CEO persona snapshot and the June design spec now document the signal batch export with its real parameter names, the default bound of five hundred rows, the explicit all-rows escape and the truncation headers; the never-built pdf batch format was removed from the spec. The dashboard helper now passes the bound and the all-rows flag and surfaces the truncation headers. A guard test derives the real parameter names from the route itself so the docs cannot drift again; six dashboard helper tests and fourteen guard tests went red then green, full backend suite green. The live CEO prompt was verified to contain no reference to the batch export. Side finding fixed: a temporary file from the crypto quote collector is now ignored by version control. Docs and helper only: no service restart, PAPER gate unchanged, real-money bolt ten of ten five times, pre-existing working-tree changes untouched.",
       "blockers": [],
-      "next_action": "Write failing doc-drift guard and dashboard helper tests, correct the docs, extend the helper with the bound and all-rows flag, merge with no fast-forward, push, re-verify gate and bolt.",
-      "updated_at": "2026-09-03T23:54:14.884Z"
+      "next_action": "Next trading-lane cycle picks the remaining open board item: the intermittent missing close bar in the price history feed.",
+      "updated_at": "2026-09-04T00:00:50.963Z"
     }
   ],
   "history": [
@@ -727,6 +727,14 @@
       "at": "2026-09-03T23:54:14.884Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-EXPORT-2",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-04T00:00:50.963Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "8a35ab2"
     }
   ]
 }

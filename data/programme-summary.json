@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-03T23:59:48.063Z",
+  "updated_at": "2026-09-04T00:00:50.963Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 14,
+        "complete": 15,
         "total": 23,
-        "percent": 61
+        "percent": 65
       },
-      "next_action": "Write failing doc-drift guard and dashboard helper tests, correct the docs, extend the helper with the bound and all-rows flag, merge with no fast-forward, push, re-verify gate and bolt.",
-      "updated_at": "2026-09-03T23:54:14.884Z"
+      "next_action": "Next trading-lane cycle picks the remaining open board item: the intermittent missing close bar in the price history feed.",
+      "updated_at": "2026-09-04T00:00:50.963Z"
     },
     {
       "project_id": "mission-control",
