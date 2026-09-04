@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-04T22:27:22.225Z",
+  "updated_at": "2026-09-04T22:55:09.169Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-9",
-  "next_action": "Write the failing unit tests, implement, build and restart the console, probe live, independent verification, merge.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next loop cycle picks the next open item; the read-side operator-token injection through the console proxy remains a separate open item.",
   "milestones": [
     {
       "id": "MC0",
@@ -76,7 +76,7 @@
     {
       "id": "MC8",
       "title": "Console operator session hardening",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-9"
       ]
@@ -263,17 +263,17 @@
       "id": "MC-LOOP-9",
       "title": "Autonomous loop: console operator sign-in hardening — a sign-out must invalidate the session on the server, the browser-origin check must use a fixed allowlist rather than caller-set headers, sign-out itself must be same-origin, and a bad audit label must be rejected rather than silently replaced",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-04T22:27:00.000Z",
-      "completed_at": null,
+      "completed_at": "2026-09-04T22:55:09.169Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress: hardening follow-ups from the 2026-09-02 independent verification of the console write gate (all rated low): a signed-out session value currently keeps working until it expires; the browser-origin check trusts two headers a non-browser caller can set; sign-out has no origin check; an invalid audit label is silently replaced with a default. Approach: session identifiers with a persisted server-side revocation list and a sign-out-everywhere watermark, an explicit allowlist of console host names, the same origin check on sign-out, and a 400 for a bad label. Test-first in the console unit suite, then build, restart and probe live; independent verification before merge; safety checks unchanged (paper only).",
+      "evidence": "VERIFIED LIVE",
+      "commit": "942803f",
+      "summary": "Complete: a console sign-out now invalidates the session on the server (a copied session value stops working at once, and a sign-out-everywhere option retires every earlier session without rotating any credential); the browser-origin check for writes uses an exact, explicit allowlist of the console's own addresses instead of headers a caller can set, so other services on the same host name are no longer acceptable origins; sign-in and sign-out refuse cross-site requests; an invalid audit label is rejected with a clear message rather than silently replaced. Test-first in the console unit suite (319 cases), proven on a scratch server, then landed on master 942803f, built and deployed with one restart, and re-proven live. Independent verification held with findings; a multi-process lost-write race, the port-less allowlist and eleven unlocked test properties were fixed before merge. Existing console sessions were invalidated by design (one re-sign-in). Safety checks unchanged (paper only).",
       "blockers": [],
-      "next_action": "Write the failing unit tests, implement, build and restart the console, probe live, independent verification, merge.",
-      "updated_at": "2026-09-04T22:27:22.225Z"
+      "next_action": "Next loop cycle picks the next open item; the read-side operator-token injection through the console proxy remains a separate open item.",
+      "updated_at": "2026-09-04T22:55:09.169Z"
     }
   ],
   "history": [
@@ -444,6 +444,14 @@
       "at": "2026-09-04T22:27:22.225Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-9",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-04T22:55:09.169Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "942803f"
     }
   ]
 }
