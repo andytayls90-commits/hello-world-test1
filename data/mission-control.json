@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T10:22:39.268Z",
+  "updated_at": "2026-09-05T11:26:15.811Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-LOOP-21",
-  "next_action": "Failing tests first, then the fix, independent verification rounds, no-fast-forward merge to master.",
+  "next_action": "Close the look-then-open race test-first; independent verification round 3; merge; re-prove on the live host.",
   "milestones": [
     {
       "id": "MC0",
@@ -556,12 +556,12 @@
       "started_at": "2026-09-05T10:22:39.268Z",
       "completed_at": null,
       "target_at": null,
-      "evidence": "PLANNED",
+      "evidence": "PARTIAL",
       "commit": null,
-      "summary": "In progress: the loop's independent watchdog is being changed so an unreadable primary-lane progress log (missing, a directory, or unreadable) raises the same digest-only warning the extra lanes already raise, instead of silently auditing nothing. Test-first in an isolated worktree; independent verification before merge.",
+      "summary": "In progress (resumed): the loop's independent watchdog is being changed so an unreadable primary-lane progress log (missing, a directory, unreadable, or a special file) raises the same digest-only warning the extra lanes already raise, instead of silently auditing nothing. The first attempt shipped the fix test-first and passed one adversarial verification round with three follow-up fixes, then the runtime hit a usage limit mid second round; the work resumed in the next cycle from the same isolated branch. One remaining gap from the second round's probes (a file swapped for a pipe between the look and the open could still stall the watchdog) is being closed test-first before a further independent round and the merge.",
       "blockers": [],
-      "next_action": "Failing tests first, then the fix, independent verification rounds, no-fast-forward merge to master.",
-      "updated_at": "2026-09-05T10:22:39.268Z"
+      "next_action": "Close the look-then-open race test-first; independent verification round 3; merge; re-prove on the live host.",
+      "updated_at": "2026-09-05T11:26:15.811Z"
     }
   ],
   "history": [
@@ -931,6 +931,14 @@
       "to": "IN_PROGRESS",
       "at": "2026-09-05T10:22:39.268Z",
       "evidence": "PLANNED",
+      "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-21",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-05T11:26:15.811Z",
+      "evidence": "PARTIAL",
       "commit": null
     }
   ]

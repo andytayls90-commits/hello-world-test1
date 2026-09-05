@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T10:22:39.268Z",
+  "updated_at": "2026-09-05T11:26:15.811Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -35,8 +35,8 @@
         "total": 24,
         "percent": 92
       },
-      "next_action": "Failing tests first, then the fix, independent verification rounds, no-fast-forward merge to master.",
-      "updated_at": "2026-09-05T10:22:39.268Z"
+      "next_action": "Close the look-then-open race test-first; independent verification round 3; merge; re-prove on the live host.",
+      "updated_at": "2026-09-05T11:26:15.811Z"
     }
   ]
 }
