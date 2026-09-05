@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T07:53:04.074Z",
+  "updated_at": "2026-09-05T08:26:09.982Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next loop cycle picks the next open item; the first live watchdog tick after the merge is recorded in the cycle evidence.",
+  "current_task_id": "MC-LOOP-19",
+  "next_action": "Red test, fix, suite green, independent verification, merge, live tick.",
   "milestones": [
     {
       "id": "MC0",
@@ -151,6 +151,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-18"
+      ]
+    },
+    {
+      "id": "MC18",
+      "title": "Watchdog reads the real cycle ledger",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-19"
       ]
     }
   ],
@@ -490,6 +498,22 @@
       "blockers": [],
       "next_action": "Next loop cycle picks the next open item; the first live watchdog tick after the merge is recorded in the cycle evidence.",
       "updated_at": "2026-09-05T07:53:04.074Z"
+    },
+    {
+      "id": "MC-LOOP-19",
+      "title": "Autonomous loop: the independent watchdog's lost-action check must read the ledger lines the loop actually writes — today its line filter drops every bulleted entry, and both lanes write every cycle record as a bullet, so a finding described in a cycle record can never page",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-05T08:26:09.982Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: the watchdog's lost-action scan skips every bulleted line of the progress ledgers, but the loop's own finish tool writes every cycle record as a bullet (both lanes), so the check audits only stale pre-bullet lines and a finding recorded in a cycle line can never page. Fix: admit dated bulleted ledger entries (never undated preamble prose), count them toward the recency window, and treat archived mission ids as tracked; red test first, then independent verification on the real ledgers.",
+      "blockers": [],
+      "next_action": "Red test, fix, suite green, independent verification, merge, live tick.",
+      "updated_at": "2026-09-05T08:26:09.982Z"
     }
   ],
   "history": [
@@ -820,6 +844,14 @@
       "at": "2026-09-05T07:53:04.074Z",
       "evidence": "VERIFIED LIVE",
       "commit": "9b968c7"
+    },
+    {
+      "task_id": "MC-LOOP-19",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-05T08:26:09.982Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
