@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T02:28:52.032Z",
+  "updated_at": "2026-09-05T02:55:35.364Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-13",
-  "next_action": "Write the failing trigger-suite case (active stand-in unit, no lock → must SKIP), implement the probe, independent verification, merge and record.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next loop cycle picks the next open item; the watchdog blind spot for a long-running cycle that never locks and the dispatcher's keyword routing are queued as their own items.",
   "milestones": [
     {
       "id": "MC0",
@@ -108,7 +108,7 @@
     {
       "id": "MC12",
       "title": "Loop trigger launch guard",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-13"
       ]
@@ -359,17 +359,17 @@
       "id": "MC-LOOP-13",
       "title": "Autonomous loop: the loop trigger must treat a launched-but-not-yet-locked cycle as running — its running-cycle check only looked for the lock file, so a second trigger run in the minutes before a cycle locks started a second concurrent cycle on the same lane (observed twice in four minutes on the trading lane)",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-05T02:28:52.032Z",
-      "completed_at": null,
+      "completed_at": "2026-09-05T02:55:35.364Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress (loop cycle 2026-09-05-cycle2): mission claimed and re-routed to the Mission Control lane (the trigger script is shared lane tooling in this repository). Root cause confirmed in source: the trigger's running-cycle gate consults only the single-flight lock file, which a launched cycle creates minutes later; the trigger's own mutex only serialises two simultaneous trigger runs. Building the fix test-first: lane-scoped active-unit probe in the gate, per-cycle output files, both-lane test coverage, header documentation.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "3ad5e45",
+      "summary": "Complete: the loop trigger's running-cycle gate now asks the service manager whether any cycle unit of its own lane is already active before it looks at the lock file, and stands down while one exists — read-only, time-bounded, fail-closed on a probe error, lane-scoped, and stateless (a crashed cycle simply is not active). Root cause: the gate keyed only on the single-flight lock, which a launched cycle creates minutes later, so a second trigger run inside that window started a second concurrent cycle. Each launched cycle now writes its own output file (a stable link points at the latest) so duplicate or killed cycles stay attributable. Proven test-first (14 new cases, suite 68 to 82; the same cases fail 12 times against the old script), independently verified (held with findings, all addressed; the verifier reproduced the double launch on the old script and saw exactly one launch under concurrent triggers on the new), landed on master 3ad5e45 with no restart needed, and re-proven with the deployed script against this cycle's own live unit. Safety checks unchanged (paper only).",
       "blockers": [],
-      "next_action": "Write the failing trigger-suite case (active stand-in unit, no lock → must SKIP), implement the probe, independent verification, merge and record.",
-      "updated_at": "2026-09-05T02:28:52.032Z"
+      "next_action": "Next loop cycle picks the next open item; the watchdog blind spot for a long-running cycle that never locks and the dispatcher's keyword routing are queued as their own items.",
+      "updated_at": "2026-09-05T02:55:35.364Z"
     }
   ],
   "history": [
@@ -612,6 +612,14 @@
       "at": "2026-09-05T02:28:52.032Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-13",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-05T02:55:35.364Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "3ad5e45"
     }
   ]
 }

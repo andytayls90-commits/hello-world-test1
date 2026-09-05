@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T02:28:52.032Z",
+  "updated_at": "2026-09-05T02:55:35.364Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-13",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 14,
+        "complete": 15,
         "total": 16,
-        "percent": 88
+        "percent": 94
       },
-      "next_action": "Write the failing trigger-suite case (active stand-in unit, no lock → must SKIP), implement the probe, independent verification, merge and record.",
-      "updated_at": "2026-09-05T02:28:52.032Z"
+      "next_action": "Next loop cycle picks the next open item; the watchdog blind spot for a long-running cycle that never locks and the dispatcher's keyword routing are queued as their own items.",
+      "updated_at": "2026-09-05T02:55:35.364Z"
     }
   ]
 }
