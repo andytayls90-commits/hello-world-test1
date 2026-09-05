@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T12:26:04.033Z",
+  "updated_at": "2026-09-05T13:16:49.177Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-22",
-  "next_action": "Prove the hang on the current code (red), land the helper at every read site, run the suite, independent verification, merge, confirm the first live watchdog tick is clean.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Adjacent follow-up filed: a broken symbolic link at the lane lock path currently reads as no lock; name that state in the digest.",
   "milestones": [
     {
       "id": "MC0",
@@ -180,7 +180,7 @@
     {
       "id": "MC21",
       "title": "Watchdog never stalls on a special file at any input",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-22"
       ]
@@ -575,17 +575,17 @@
       "id": "MC-LOOP-22",
       "title": "Autonomous loop: the independent watchdog can still stall forever when one of its OTHER input files (the single-flight lock, the cycle outcome ledger, a run's output file, the worktree registry or grandfather list, the override audit, the operator environment file) is a pipe, socket or device — only the progress log was made safe; route every input read through the same non-blocking regular-file open and warn once per input",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-05T12:26:04.033Z",
-      "completed_at": null,
+      "completed_at": "2026-09-05T13:16:49.177Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "Started 2026-09-05 mc cycle12. The previous task made the progress-log read non-blocking; the independent verifier then showed the SAME stall at the watchdog's other inputs: a pipe or device at the lock file, cycle ledger, run output file, worktree registry/grandfather list, override audit or operator environment file blocks the auditor forever with no page (the unit has no start timeout and no failure hook). Fix: one helper that opens non-blocking, decides the file kind on the open handle and reads only a regular file, used at every input; each site keeps its existing degraded behaviour (unreadable lock still pages, missing ledger stays silent) plus one digest warning naming the path and kind; writes to the scratch mission file and grandfather list guarded the same way. Test-first: a pipe at each input must warn within seconds instead of hanging; independent verification to follow.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "9130a45",
+      "summary": "Complete: the loop's independent watchdog can no longer stall on a special file at ANY of its inputs. Root cause: only the progress-log read had been made non-blocking; the single-flight lock, the cycle outcome ledger, a run's output file, the worktree registry and grandfather list, the override audit, the operator environment file and the scratch mission store were still opened the ordinary way, so a pipe or device at any of them blocked the auditor forever (the unit has no start timeout and its failure hook only fires on a failed exit, never on a hang); two write sites blocked the same way. Now every read goes through one helper that opens non-blocking, decides the kind on the open handle and reads only a regular file; writes truncate only a regular file; each input keeps its previous degraded behaviour and one digest warning per resolved path names the path and kind. Proven test-first (12 new cases, 8 of which hung the old code), two independent verification rounds converged (two low findings fixed test-first, one adjacent broken-link case filed), production inputs silent before and after, first live run on the merged code clean.",
       "blockers": [],
-      "next_action": "Prove the hang on the current code (red), land the helper at every read site, run the suite, independent verification, merge, confirm the first live watchdog tick is clean.",
-      "updated_at": "2026-09-05T12:26:04.033Z"
+      "next_action": "Adjacent follow-up filed: a broken symbolic link at the lane lock path currently reads as no lock; name that state in the digest.",
+      "updated_at": "2026-09-05T13:16:49.177Z"
     }
   ],
   "history": [
@@ -980,6 +980,14 @@
       "at": "2026-09-05T12:26:04.033Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-22",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-05T13:16:49.177Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "9130a45"
     }
   ]
 }
