@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T12:01:42.912Z",
+  "updated_at": "2026-09-05T12:26:04.033Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-22",
       "progress": {
         "complete": 23,
-        "total": 24,
-        "percent": 96
+        "total": 25,
+        "percent": 92
       },
-      "next_action": "Follow-up filed: the same stall class at the watchdog's other input files (lock, ledger, unit output, registry) — route those reads through the same non-blocking open.",
-      "updated_at": "2026-09-05T12:01:42.912Z"
+      "next_action": "Prove the hang on the current code (red), land the helper at every read site, run the suite, independent verification, merge, confirm the first live watchdog tick is clean.",
+      "updated_at": "2026-09-05T12:26:04.033Z"
     }
   ]
 }
