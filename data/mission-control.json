@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T09:09:44.877Z",
+  "updated_at": "2026-09-05T09:25:41.781Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next loop cycle picks the next open item; the first live watchdog tick after the merge is recorded in the cycle evidence.",
+  "current_task_id": "MC-LOOP-20",
+  "next_action": "Red test on the old code, fix, independent verification, merge.",
   "milestones": [
     {
       "id": "MC0",
@@ -159,6 +159,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-19"
+      ]
+    },
+    {
+      "id": "MC19",
+      "title": "Watchdog lost-action window is time-based",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-20"
       ]
     }
   ],
@@ -514,6 +522,22 @@
       "blockers": [],
       "next_action": "Next loop cycle picks the next open item; the first live watchdog tick after the merge is recorded in the cycle evidence.",
       "updated_at": "2026-09-05T09:09:44.877Z"
+    },
+    {
+      "id": "MC-LOOP-20",
+      "title": "Autonomous loop: the independent watchdog's lost-action window must be time-based, not count-based — today it audits only the six newest ledger lines, so a finding recorded in a cycle line that the watchdog could not read for about six hours (timer down, store unreachable) ages out silently and is never paged",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-05T09:25:41.781Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress: the loop's independent watchdog audits only the six newest ledger lines per lane for lost actions; because every cycle now writes one line, a finding the watchdog could not read for about six hours ages out of the window and is never paged. Replacing the count window with a time window keyed on each line's own timestamp, proven test-first and verified independently.",
+      "blockers": [],
+      "next_action": "Red test on the old code, fix, independent verification, merge.",
+      "updated_at": "2026-09-05T09:25:41.781Z"
     }
   ],
   "history": [
@@ -860,6 +884,14 @@
       "at": "2026-09-05T09:09:44.877Z",
       "evidence": "VERIFIED LIVE",
       "commit": "0ec41d5"
+    },
+    {
+      "task_id": "MC-LOOP-20",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-05T09:25:41.781Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
