@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T03:52:51.985Z",
+  "updated_at": "2026-09-05T04:23:50.075Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next loop cycle picks the next open item; the automation-assistant pass-through gate and the retired fleet path are queued as their own items.",
+  "current_task_id": "MC-LOOP-15",
+  "next_action": "Write the contract tests RED, implement the gated handler, remove the rewrite, independent verification, build + one restart, live proof.",
   "milestones": [
     {
       "id": "MC0",
@@ -119,6 +119,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-14"
+      ]
+    },
+    {
+      "id": "MC14",
+      "title": "Console assistant pass-through gated",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-15"
       ]
     }
   ],
@@ -394,6 +402,22 @@
       "blockers": [],
       "next_action": "Next loop cycle picks the next open item; the automation-assistant pass-through gate and the retired fleet path are queued as their own items.",
       "updated_at": "2026-09-05T03:52:51.985Z"
+    },
+    {
+      "id": "MC-LOOP-15",
+      "title": "Autonomous loop: the console's pass-through to the automation assistant must gate writes — the path-level rewrite forwarded every HTTP method with no caller gate, so an anonymous caller who could reach the console could invoke the assistant's decision and tuning routes (paper only; the real-money bolt and live gate were never reachable)",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-05T04:23:50.075Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: root cause reproduced (the assistant's own log shows the console-relayed write reaching it); building the gated handler test-first.",
+      "blockers": [],
+      "next_action": "Write the contract tests RED, implement the gated handler, remove the rewrite, independent verification, build + one restart, live proof.",
+      "updated_at": "2026-09-05T04:23:50.075Z"
     }
   ],
   "history": [
@@ -660,6 +684,14 @@
       "at": "2026-09-05T03:52:51.985Z",
       "evidence": "VERIFIED LIVE",
       "commit": "7930c5e"
+    },
+    {
+      "task_id": "MC-LOOP-15",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-05T04:23:50.075Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }

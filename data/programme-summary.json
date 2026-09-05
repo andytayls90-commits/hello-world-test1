@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T03:52:51.985Z",
+  "updated_at": "2026-09-05T04:23:50.075Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-15",
       "progress": {
         "complete": 16,
-        "total": 17,
-        "percent": 94
+        "total": 18,
+        "percent": 89
       },
-      "next_action": "Next loop cycle picks the next open item; the automation-assistant pass-through gate and the retired fleet path are queued as their own items.",
-      "updated_at": "2026-09-05T03:52:51.985Z"
+      "next_action": "Write the contract tests RED, implement the gated handler, remove the rewrite, independent verification, build + one restart, live proof.",
+      "updated_at": "2026-09-05T04:23:50.075Z"
     }
   ]
 }
