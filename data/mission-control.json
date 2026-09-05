@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T04:23:50.075Z",
+  "updated_at": "2026-09-05T04:53:51.564Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-15",
-  "next_action": "Write the contract tests RED, implement the gated handler, remove the rewrite, independent verification, build + one restart, live proof.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next loop cycle picks the next open item (the retired fleet path rewrite is queued as its own item).",
   "milestones": [
     {
       "id": "MC0",
@@ -124,7 +124,7 @@
     {
       "id": "MC14",
       "title": "Console assistant pass-through gated",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-15"
       ]
@@ -407,17 +407,17 @@
       "id": "MC-LOOP-15",
       "title": "Autonomous loop: the console's pass-through to the automation assistant must gate writes — the path-level rewrite forwarded every HTTP method with no caller gate, so an anonymous caller who could reach the console could invoke the assistant's decision and tuning routes (paper only; the real-money bolt and live gate were never reachable)",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-05T04:23:50.075Z",
-      "completed_at": null,
+      "completed_at": "2026-09-05T04:53:51.564Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress: root cause reproduced (the assistant's own log shows the console-relayed write reaching it); building the gated handler test-first.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "0ee203d",
+      "summary": "Complete: the console's pass-through to the automation assistant is now gated — a dedicated handler forwards reads without credentials, allows exactly the three deck actions (chat, conductor dispatch, policy save) only for a verified operator session in a same-origin context, refuses every other write path (decision, tuning, propose, mission-event) even when signed in, and answers every other method 405, all before any upstream contact — replacing the method-agnostic rewrite (now guarded against reappearing by text and by source-pattern evaluation). Root cause: a framework-level rewrite forwards whatever method arrives and the assistant has no caller authentication of its own. Proven test-first (31 contract cases, suite 348 to 379; a request-level exit-gate spec runs behind a fail-safe canary that aborts on an ungated build), independently verified (held with findings, all addressed: a recording upstream saw only the allowed writes and never a credential header across a 75-probe path/protocol battery; re-adding the rewrite was shown to bypass the handler; the deck's own actions were driven in a headless browser), landed on master 0ee203d, built and restarted once, and re-proven live: every anonymous write refused with zero upstream lines, reads byte-identical, full deck exit gate 222 of 222 signed-in. Disclosed: the cycle's first negative proof ran the spec against the old build and so exercised the exposure itself (inert outcomes; the spec is now fail-safe). Safety checks unchanged (paper only, real-money bolt tests pass before and after).",
       "blockers": [],
-      "next_action": "Write the contract tests RED, implement the gated handler, remove the rewrite, independent verification, build + one restart, live proof.",
-      "updated_at": "2026-09-05T04:23:50.075Z"
+      "next_action": "Next loop cycle picks the next open item (the retired fleet path rewrite is queued as its own item).",
+      "updated_at": "2026-09-05T04:53:51.564Z"
     }
   ],
   "history": [
@@ -692,6 +692,14 @@
       "at": "2026-09-05T04:23:50.075Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-15",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-05T04:53:51.564Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "0ee203d"
     }
   ]
 }
