@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T10:09:50.071Z",
+  "updated_at": "2026-09-05T10:22:39.268Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next mc-lane mission from the store; the next watchdog tick runs the merged code.",
+  "current_task_id": "MC-LOOP-21",
+  "next_action": "Failing tests first, then the fix, independent verification rounds, no-fast-forward merge to master.",
   "milestones": [
     {
       "id": "MC0",
@@ -167,6 +167,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-20"
+      ]
+    },
+    {
+      "id": "MC20",
+      "title": "Watchdog warns on an unreadable primary progress log",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-21"
       ]
     }
   ],
@@ -538,6 +546,22 @@
       "blockers": [],
       "next_action": "Next mc-lane mission from the store; the next watchdog tick runs the merged code.",
       "updated_at": "2026-09-05T10:09:50.071Z"
+    },
+    {
+      "id": "MC-LOOP-21",
+      "title": "Autonomous loop: the independent watchdog stays silent when the primary lane's progress log is unreadable (missing, a directory, or no read permission) — only the extra lanes warn, so the primary lane's lost-action audit can go blind with no signal in the digest",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-05T10:22:39.268Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: the loop's independent watchdog is being changed so an unreadable primary-lane progress log (missing, a directory, or unreadable) raises the same digest-only warning the extra lanes already raise, instead of silently auditing nothing. Test-first in an isolated worktree; independent verification before merge.",
+      "blockers": [],
+      "next_action": "Failing tests first, then the fix, independent verification rounds, no-fast-forward merge to master.",
+      "updated_at": "2026-09-05T10:22:39.268Z"
     }
   ],
   "history": [
@@ -900,6 +924,14 @@
       "at": "2026-09-05T10:09:50.071Z",
       "evidence": "VERIFIED LIVE",
       "commit": "1e2a7d4"
+    },
+    {
+      "task_id": "MC-LOOP-21",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-05T10:22:39.268Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
