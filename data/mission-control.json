@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T00:16:13.966Z",
+  "updated_at": "2026-09-05T01:24:59.770Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next loop cycle picks the next open item; the stale acceptance specs and the store precondition-header error are queued as their own items.",
+  "current_task_id": "MC-LOOP-11",
+  "next_action": "Implement the flag-aware helpers with unit coverage, run the suite green in both modes, independent verification, then merge and record evidence.",
   "milestones": [
     {
       "id": "MC0",
@@ -87,6 +87,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-10"
+      ]
+    },
+    {
+      "id": "MC10",
+      "title": "Console acceptance gate restored",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-11"
       ]
     }
   ],
@@ -298,6 +306,22 @@
       "blockers": [],
       "next_action": "Next loop cycle picks the next open item; the stale acceptance specs and the store precondition-header error are queued as their own items.",
       "updated_at": "2026-09-05T00:16:13.966Z"
+    },
+    {
+      "id": "MC-LOOP-11",
+      "title": "Autonomous loop: the console's read-only acceptance gate must reflect the de-scoped shell — expected stations and legacy redirects derive from the platform's plugin flags, and the retired desk routes are asserted as not-found when the plugin is off",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-05T01:24:59.770Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: making the console's read-only browser acceptance suite derive its expected station strip and legacy-redirect map from the platform's plugin flags, asserting the retired desk routes render the not-found recovery card when the plugin is off, and proving the suite green against the live console in both anonymous and signed-in modes. Test-first: the unmodified suite is being run against the live console first to record the failing baseline.",
+      "blockers": [],
+      "next_action": "Implement the flag-aware helpers with unit coverage, run the suite green in both modes, independent verification, then merge and record evidence.",
+      "updated_at": "2026-09-05T01:24:59.770Z"
     }
   ],
   "history": [
@@ -500,6 +524,14 @@
       "at": "2026-09-05T00:16:13.966Z",
       "evidence": "VERIFIED LIVE",
       "commit": "8e03da4"
+    },
+    {
+      "task_id": "MC-LOOP-11",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-05T01:24:59.770Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
