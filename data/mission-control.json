@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T01:57:22.419Z",
+  "updated_at": "2026-09-05T02:14:28.233Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-12",
-  "next_action": "Independent verification, merge, rebuild, one console restart, post-deploy proof that connections track live viewers.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next loop cycle picks the next open item; the build-flag caveat and the lock-release-at-cycle-end gap are queued as their own items.",
   "milestones": [
     {
       "id": "MC0",
@@ -100,7 +100,7 @@
     {
       "id": "MC11",
       "title": "Console proxy stream hygiene",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-12"
       ]
@@ -335,17 +335,17 @@
       "id": "MC-LOOP-12",
       "title": "Autonomous loop: the console's proxy must pass live-status streams through and close the upstream connection when the viewer disconnects — every page view was leaving a permanent connection open to the mission store until it ran out of file handles",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-05T01:57:22.419Z",
-      "completed_at": null,
+      "completed_at": "2026-09-05T02:14:28.233Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress: the console proxy buffered the mission store's never-ending live-status stream in memory and never released the upstream connection when a viewer left, so each page view leaked one connection; the store ran out of file handles and answered server errors during the acceptance run. Mitigated with one console restart; fix streams the body through and ties the upstream request to the viewer's connection, proven test-first on a scratch build (frames flow, connections released), now under independent verification before deploy.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "b25fe81",
+      "summary": "Complete: the console proxy now relays the mission store's live-status stream to the browser as a stream and tears the upstream request down when the viewer disconnects; every other response is proxied exactly as before and the access gate is unchanged. Root cause: the proxy buffered the never-ending stream in memory and never aborted it, so each page view leaked one upstream connection until the store ran out of file handles and answered server errors (seen during the first post-merge acceptance run). Proven test-first on a scratch build (frames flow, connections released even under thirty concurrent viewers and abrupt disconnects), covered by a new browser exit-gate test that fails on the old build, independently verified (held with findings, all addressed), landed on master b25fe81, built and deployed with one restart, and re-proven live: frames flow, connections track live viewers, both acceptance modes pass all 150 checks with zero store errors. Safety checks unchanged (paper only).",
       "blockers": [],
-      "next_action": "Independent verification, merge, rebuild, one console restart, post-deploy proof that connections track live viewers.",
-      "updated_at": "2026-09-05T01:57:22.419Z"
+      "next_action": "Next loop cycle picks the next open item; the build-flag caveat and the lock-release-at-cycle-end gap are queued as their own items.",
+      "updated_at": "2026-09-05T02:14:28.233Z"
     }
   ],
   "history": [
@@ -572,6 +572,14 @@
       "at": "2026-09-05T01:57:22.419Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-12",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-05T02:14:28.233Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "b25fe81"
     }
   ]
 }

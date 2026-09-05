@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T01:57:22.419Z",
+  "updated_at": "2026-09-05T02:14:28.233Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-12",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 13,
+        "complete": 14,
         "total": 15,
-        "percent": 87
+        "percent": 93
       },
-      "next_action": "Independent verification, merge, rebuild, one console restart, post-deploy proof that connections track live viewers.",
-      "updated_at": "2026-09-05T01:57:22.419Z"
+      "next_action": "Next loop cycle picks the next open item; the build-flag caveat and the lock-release-at-cycle-end gap are queued as their own items.",
+      "updated_at": "2026-09-05T02:14:28.233Z"
     }
   ]
 }
