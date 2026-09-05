@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T09:25:41.781Z",
+  "updated_at": "2026-09-05T10:09:50.071Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-20",
-  "next_action": "Red test on the old code, fix, independent verification, merge.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next mc-lane mission from the store; the next watchdog tick runs the merged code.",
   "milestones": [
     {
       "id": "MC0",
@@ -164,7 +164,7 @@
     {
       "id": "MC19",
       "title": "Watchdog lost-action window is time-based",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-20"
       ]
@@ -527,17 +527,17 @@
       "id": "MC-LOOP-20",
       "title": "Autonomous loop: the independent watchdog's lost-action window must be time-based, not count-based — today it audits only the six newest ledger lines, so a finding recorded in a cycle line that the watchdog could not read for about six hours (timer down, store unreachable) ages out silently and is never paged",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-05T09:25:41.781Z",
-      "completed_at": null,
+      "completed_at": "2026-09-05T10:09:50.071Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress: the loop's independent watchdog audits only the six newest ledger lines per lane for lost actions; because every cycle now writes one line, a finding the watchdog could not read for about six hours ages out of the window and is never paged. Replacing the count window with a time window keyed on each line's own timestamp, proven test-first and verified independently.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "1e2a7d4",
+      "summary": "Complete: the loop's independent watchdog now audits lost actions by time, not by count. Root cause: the check read only the six newest ledger lines per lane, and since every cycle writes one line, a finding the watchdog could not read for about six hours aged out of the window and was never paged. Now a line is audited when it is one of the six newest or its own timestamp is within the last seventy-two hours; undated lines stay tail-only; a per-tick cap bounds a formatting storm with the newest lines filed first and a near-edge bypass so a deferred line is never lost over the edge; malformed timestamps warn instead of silently losing their age. Proven test-first (four cases red on the old code), twenty-four new assertions, suite 130 to 154 passing normally and under a bare environment; independently verified over four adversarial rounds until converged (eleven findings fixed test-first, five disclosed); the live ledgers raise no page before or after the merge.",
       "blockers": [],
-      "next_action": "Red test on the old code, fix, independent verification, merge.",
-      "updated_at": "2026-09-05T09:25:41.781Z"
+      "next_action": "Next mc-lane mission from the store; the next watchdog tick runs the merged code.",
+      "updated_at": "2026-09-05T10:09:50.071Z"
     }
   ],
   "history": [
@@ -892,6 +892,14 @@
       "at": "2026-09-05T09:25:41.781Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-20",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-05T10:09:50.071Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "1e2a7d4"
     }
   ]
 }
