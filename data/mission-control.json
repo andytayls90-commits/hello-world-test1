@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T07:26:28.144Z",
+  "updated_at": "2026-09-05T07:53:04.074Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-18",
-  "next_action": "Write red tests, implement, verify independently, merge, confirm the first live watchdog tick.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next loop cycle picks the next open item; the first live watchdog tick after the merge is recorded in the cycle evidence.",
   "milestones": [
     {
       "id": "MC0",
@@ -148,7 +148,7 @@
     {
       "id": "MC17",
       "title": "Watchdog pages a wedged launch",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-18"
       ]
@@ -479,17 +479,17 @@
       "id": "MC-LOOP-18",
       "title": "Autonomous loop: the independent watchdog must page when a launched cycle unit stays active for hours without ever taking the lane lock — today a runtime that hangs before orientation blocks its lane at every trigger slot with nothing paging, until a human stops the unit",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-05T07:26:28.144Z",
-      "completed_at": null,
+      "completed_at": "2026-09-05T07:53:04.074Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress: the loop watchdog gains a per-lane stuck-launch check. Since the launch guard (MC-LOOP-13) the trigger correctly skips while any cycle unit of its lane is active, but a unit whose runtime hangs before acquiring the lock produces no lock, no heartbeat and no outcome record, so no existing check can see it and the lane wedges silently. The watchdog will list the lane's active cycle units, attribute the lane lock to a unit by run identity, and page when an unattributed unit is older than the lease window. Test-first with a fake systemd probe plus one real transient unit, independently verified before merge.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "9b968c7",
+      "summary": "Complete: the loop's independent watchdog now pages when a launched cycle unit stays active past the lease window without its run holding the lane lock, for every lane. Root cause: the launch guard correctly skips while a cycle unit is active, but a runtime that hangs before acquiring the lock leaves no lock, no heartbeat and no outcome record, so every existing check was blind and the lane wedged silently until a human stopped the unit. The watchdog lists the lane's active cycle units with the same systemd probe the trigger uses, attributes the lock to a unit by run identity (systemd invocation id, main process, or cgroup membership), and pages with the unit name, age, lock state and a matching diagnosis, the tail of its output file and the operator recipe. It never stops a unit. A failed or hanging probe degrades to a digest warning, bounded once per lane, never a false page; it also works from an environment without the user bus variables. Proven test-first (nine cases red on the old code), twenty new cases including a real transient systemd unit, suite 94 to 114 passing in both normal and stripped environments; independently verified (holds with findings: seven fixed, three disclosed); merged as 9b968c7 and re-proven from the deployed checkout, where a positive control pages the live cycle unit through the real systemd. The watchdog service needs no change or restart. Safety checks unchanged (paper only, real-money bolt tests pass before and after).",
       "blockers": [],
-      "next_action": "Write red tests, implement, verify independently, merge, confirm the first live watchdog tick.",
-      "updated_at": "2026-09-05T07:26:28.144Z"
+      "next_action": "Next loop cycle picks the next open item; the first live watchdog tick after the merge is recorded in the cycle evidence.",
+      "updated_at": "2026-09-05T07:53:04.074Z"
     }
   ],
   "history": [
@@ -812,6 +812,14 @@
       "at": "2026-09-05T07:26:28.144Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-18",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-05T07:53:04.074Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "9b968c7"
     }
   ]
 }

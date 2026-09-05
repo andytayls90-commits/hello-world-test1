@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T07:26:28.144Z",
+  "updated_at": "2026-09-05T07:53:04.074Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-18",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 19,
+        "complete": 20,
         "total": 21,
-        "percent": 90
+        "percent": 95
       },
-      "next_action": "Write red tests, implement, verify independently, merge, confirm the first live watchdog tick.",
-      "updated_at": "2026-09-05T07:26:28.144Z"
+      "next_action": "Next loop cycle picks the next open item; the first live watchdog tick after the merge is recorded in the cycle evidence.",
+      "updated_at": "2026-09-05T07:53:04.074Z"
     }
   ]
 }
