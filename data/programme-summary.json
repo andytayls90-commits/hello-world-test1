@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T06:26:41.317Z",
+  "updated_at": "2026-09-05T06:52:56.526Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-17",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 18,
+        "complete": 19,
         "total": 20,
-        "percent": 90
+        "percent": 95
       },
-      "next_action": "Prove the gap red with a second-lane fixture, implement lane iteration, independent verification, then complete.",
-      "updated_at": "2026-09-05T06:26:41.317Z"
+      "next_action": "Next loop cycle picks the next open item; the filed follow-up for the progress-log line filter is queued.",
+      "updated_at": "2026-09-05T06:52:56.526Z"
     }
   ]
 }
