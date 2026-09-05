@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T08:26:09.982Z",
+  "updated_at": "2026-09-05T09:09:44.877Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-19",
-  "next_action": "Red test, fix, suite green, independent verification, merge, live tick.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next loop cycle picks the next open item; the first live watchdog tick after the merge is recorded in the cycle evidence.",
   "milestones": [
     {
       "id": "MC0",
@@ -156,7 +156,7 @@
     {
       "id": "MC18",
       "title": "Watchdog reads the real cycle ledger",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-19"
       ]
@@ -503,17 +503,17 @@
       "id": "MC-LOOP-19",
       "title": "Autonomous loop: the independent watchdog's lost-action check must read the ledger lines the loop actually writes — today its line filter drops every bulleted entry, and both lanes write every cycle record as a bullet, so a finding described in a cycle record can never page",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-05T08:26:09.982Z",
-      "completed_at": null,
+      "completed_at": "2026-09-05T09:09:44.877Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress: the watchdog's lost-action scan skips every bulleted line of the progress ledgers, but the loop's own finish tool writes every cycle record as a bullet (both lanes), so the check audits only stale pre-bullet lines and a finding recorded in a cycle line can never page. Fix: admit dated bulleted ledger entries (never undated preamble prose), count them toward the recency window, and treat archived mission ids as tracked; red test first, then independent verification on the real ledgers.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "0ec41d5",
+      "summary": "Complete: the loop's independent watchdog now audits the cycle ledger lines the loop actually writes. Root cause: the lost-action check skipped every bulleted line, while the loop's own finish tool records every cycle as a bullet on both lanes, so the check audited only stale pre-bullet lines on one lane and four lines of preamble prose on the other; a finding recorded in a real cycle line could never page. The fix admits a list item (any marker, any indent) only when its text leads with an ISO date, never undated preamble items or fenced examples; a stray unterminated fence is ignored with a digest warning instead of silently blinding the rest of the ledger; archived mission ids count as tracked; when the store cannot expose archived rows the check only warns on candidates instead of paging. Proven test-first (five cases red on the old code), sixteen new cases, suite 114 to 130 passing in normal and stripped environments; independently verified across four adversarial rounds (holds with findings: seven fixed and re-verified, two filed as follow-ups, the rest disclosed); merged as 0ec41d5 and re-proven from the deployed checkout on the real ledgers with zero false pages and a positive control that pages on a scratch copy. The watchdog service needs no change or restart. Safety checks unchanged (paper only, real-money bolt tests pass before and after).",
       "blockers": [],
-      "next_action": "Red test, fix, suite green, independent verification, merge, live tick.",
-      "updated_at": "2026-09-05T08:26:09.982Z"
+      "next_action": "Next loop cycle picks the next open item; the first live watchdog tick after the merge is recorded in the cycle evidence.",
+      "updated_at": "2026-09-05T09:09:44.877Z"
     }
   ],
   "history": [
@@ -852,6 +852,14 @@
       "at": "2026-09-05T08:26:09.982Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-19",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-05T09:09:44.877Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "0ec41d5"
     }
   ]
 }
