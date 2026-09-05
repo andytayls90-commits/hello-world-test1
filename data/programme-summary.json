@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-04T23:27:59.333Z",
+  "updated_at": "2026-09-05T00:16:13.966Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-10",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 11,
+        "complete": 12,
         "total": 13,
-        "percent": 85
+        "percent": 92
       },
-      "next_action": "Write the failing unit tests, implement, build and restart the console, probe live, independent verification, merge.",
-      "updated_at": "2026-09-04T23:27:59.333Z"
+      "next_action": "Next loop cycle picks the next open item; the stale acceptance specs and the store precondition-header error are queued as their own items.",
+      "updated_at": "2026-09-05T00:16:13.966Z"
     }
   ]
 }

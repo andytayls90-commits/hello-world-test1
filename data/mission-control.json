@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-04T23:27:59.333Z",
+  "updated_at": "2026-09-05T00:16:13.966Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-10",
-  "next_action": "Write the failing unit tests, implement, build and restart the console, probe live, independent verification, merge.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next loop cycle picks the next open item; the stale acceptance specs and the store precondition-header error are queued as their own items.",
   "milestones": [
     {
       "id": "MC0",
@@ -84,7 +84,7 @@
     {
       "id": "MC9",
       "title": "Console read-path least privilege",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-10"
       ]
@@ -287,17 +287,17 @@
       "id": "MC-LOOP-10",
       "title": "Autonomous loop: the console's read path must stop granting operator-level access to anonymous readers — the server-side operator credential is attached to a read only when the caller holds a verified console session",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-04T23:27:40.000Z",
-      "completed_at": null,
+      "completed_at": "2026-09-05T00:16:13.966Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress: the console's server-side proxy to the mission store still attaches the operator credential to every read, so anyone who can reach the console reads the store as the operator (proven live: an anonymous identity check reports operator-level access through the console but no principal when asked directly). Audit of the store's own read policy: nearly every view the deck shows is public at the store; only the council lock, agent soul/memory, the agent queue, token accounting and the paid-service control plane require the credential. Approach: attach the credential on reads only when the caller holds a verified console session (sign-in cookie or edge login); anonymous readers get the store's public read surface; the fleet view asks for council locks only when signed in; the acceptance suite signs in when the credential is available. Test-first in the console unit suite, proven on a scratch server, then build, restart and probe live; independent verification before merge; safety checks unchanged (paper only).",
+      "evidence": "VERIFIED LIVE",
+      "commit": "8e03da4",
+      "summary": "Complete: the console's server-side proxy now attaches the operator credential to a read only when the caller holds a verified console session (sign-in cookie or edge login); an anonymous reader gets the mission store's own public read surface and the store's own refusal on the few privileged reads (council lock, agent soul/memory, agent queue, token accounting, paid-service control plane). The fleet view asks for council locks only when signed in, so anonymous viewers see the roster without a failed request on every refresh; the read-only acceptance suite now signs in when the credential is available and signs out afterwards. Test-first in the console unit suite (323 cases), proven on a scratch server with forged cookies, spoofed headers, signed-in, cross-site and revoked-session probes plus a headless-browser check of the fleet view, then landed on master 8e03da4, built and deployed with one restart, and re-proven live: an anonymous identity check through the console now reports no principal. Independent verification held with findings; an acceptance-session leak on overlapping runs, a file-mode window, a log-noise regression and a timer edge were fixed before merge; two pre-existing items were recorded separately (the acceptance specs are stale since the shell de-scoping; a store edit with a quoted precondition header errors). Safety checks unchanged (paper only).",
       "blockers": [],
-      "next_action": "Write the failing unit tests, implement, build and restart the console, probe live, independent verification, merge.",
-      "updated_at": "2026-09-04T23:27:59.333Z"
+      "next_action": "Next loop cycle picks the next open item; the stale acceptance specs and the store precondition-header error are queued as their own items.",
+      "updated_at": "2026-09-05T00:16:13.966Z"
     }
   ],
   "history": [
@@ -492,6 +492,14 @@
       "at": "2026-09-04T23:27:59.333Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-10",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-05T00:16:13.966Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "8e03da4"
     }
   ]
 }
