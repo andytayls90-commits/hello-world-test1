@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T01:24:59.770Z",
+  "updated_at": "2026-09-05T01:51:42.487Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-11",
-  "next_action": "Implement the flag-aware helpers with unit coverage, run the suite green in both modes, independent verification, then merge and record evidence.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Fix the console proxy so live-status streams are passed through and closed when the viewer disconnects (second item of this cycle).",
   "milestones": [
     {
       "id": "MC0",
@@ -92,7 +92,7 @@
     {
       "id": "MC10",
       "title": "Console acceptance gate restored",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-11"
       ]
@@ -311,17 +311,17 @@
       "id": "MC-LOOP-11",
       "title": "Autonomous loop: the console's read-only acceptance gate must reflect the de-scoped shell — expected stations and legacy redirects derive from the platform's plugin flags, and the retired desk routes are asserted as not-found when the plugin is off",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-05T01:24:59.770Z",
-      "completed_at": null,
+      "completed_at": "2026-09-05T01:51:42.487Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress: making the console's read-only browser acceptance suite derive its expected station strip and legacy-redirect map from the platform's plugin flags, asserting the retired desk routes render the not-found recovery card when the plugin is off, and proving the suite green against the live console in both anonymous and signed-in modes. Test-first: the unmodified suite is being run against the live console first to record the failing baseline.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "b631c0c",
+      "summary": "Complete: the console's read-only browser acceptance suite now derives its expected station strip, mast segments, legacy-redirect map and retired trading routes from the same configuration the shell uses, keyed on the platform's plugin flag, so it matches the de-scoped deck instead of the pre-de-scoping layout. Retired trading routes are asserted to render the not-found recovery card with the address untouched; the schedules negative asserts the current audited pause gate instead of self-skipping. Proven test-first: the unmodified suite failed 57 of 135 checks on the live console; the updated suite passes all 147 checks in both anonymous and signed-in modes, and a deliberate flag mismatch fails loudly with a one-line hint. Independent verification held with findings, all fixed before merge except one pre-existing build-flag caveat recorded as its own item. Landed on master b631c0c; test harness and runbook only, no runtime change, safety checks unchanged (paper only). While proving the merge the gate caught a real upstream fault: the console's proxy kept every live-status stream open forever, exhausting the mission store's file handles; mitigated with one console restart and taken up as the next item.",
       "blockers": [],
-      "next_action": "Implement the flag-aware helpers with unit coverage, run the suite green in both modes, independent verification, then merge and record evidence.",
-      "updated_at": "2026-09-05T01:24:59.770Z"
+      "next_action": "Fix the console proxy so live-status streams are passed through and closed when the viewer disconnects (second item of this cycle).",
+      "updated_at": "2026-09-05T01:51:42.487Z"
     }
   ],
   "history": [
@@ -532,6 +532,14 @@
       "at": "2026-09-05T01:24:59.770Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-11",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-05T01:51:42.487Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "b631c0c"
     }
   ]
 }
