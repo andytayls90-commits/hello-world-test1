@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T04:53:51.564Z",
+  "updated_at": "2026-09-05T05:28:21.746Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next loop cycle picks the next open item (the retired fleet path rewrite is queued as its own item).",
+  "current_task_id": "MC-LOOP-16",
+  "next_action": "Prove root cause on the recorded incident, write the failing tests, implement the post-exit release, verify end-to-end through a real transient unit.",
   "milestones": [
     {
       "id": "MC0",
@@ -127,6 +127,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-15"
+      ]
+    },
+    {
+      "id": "MC15",
+      "title": "Loop lock released on cycle exit",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-16"
       ]
     }
   ],
@@ -418,6 +426,22 @@
       "blockers": [],
       "next_action": "Next loop cycle picks the next open item (the retired fleet path rewrite is queued as its own item).",
       "updated_at": "2026-09-05T04:53:51.564Z"
+    },
+    {
+      "id": "MC-LOOP-16",
+      "title": "Autonomous loop: the single-flight lock must be released mechanically when a cycle's process exits — a cycle that spent its last turn on the handover text left the lock held, so the next scheduled slot skipped and the following cycle only started an hour later via stale-owner recovery",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-05T05:28:21.746Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress: the loop's single-flight lock stayed held after a cycle's process had already exited (the cycle ended its final turn before the explicit release), so the scheduler skipped a slot and recovery waited on the stale-owner timeout. Fix: the service manager's post-exit hook releases the lock when it can prove the lock belongs to the run that just ended (same run identity, owning process gone), with durable evidence; test-first, then independent verification.",
+      "blockers": [],
+      "next_action": "Prove root cause on the recorded incident, write the failing tests, implement the post-exit release, verify end-to-end through a real transient unit.",
+      "updated_at": "2026-09-05T05:28:21.746Z"
     }
   ],
   "history": [
@@ -700,6 +724,14 @@
       "at": "2026-09-05T04:53:51.564Z",
       "evidence": "VERIFIED LIVE",
       "commit": "0ee203d"
+    },
+    {
+      "task_id": "MC-LOOP-16",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-05T05:28:21.746Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
