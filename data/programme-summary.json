@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T11:26:15.811Z",
+  "updated_at": "2026-09-05T12:01:42.912Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-21",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 22,
+        "complete": 23,
         "total": 24,
-        "percent": 92
+        "percent": 96
       },
-      "next_action": "Close the look-then-open race test-first; independent verification round 3; merge; re-prove on the live host.",
-      "updated_at": "2026-09-05T11:26:15.811Z"
+      "next_action": "Follow-up filed: the same stall class at the watchdog's other input files (lock, ledger, unit output, registry) — route those reads through the same non-blocking open.",
+      "updated_at": "2026-09-05T12:01:42.912Z"
     }
   ]
 }
