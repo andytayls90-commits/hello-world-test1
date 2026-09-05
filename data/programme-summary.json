@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T02:55:35.364Z",
+  "updated_at": "2026-09-05T03:24:03.829Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-14",
       "progress": {
         "complete": 15,
-        "total": 16,
-        "percent": 94
+        "total": 17,
+        "percent": 88
       },
-      "next_action": "Next loop cycle picks the next open item; the watchdog blind spot for a long-running cycle that never locks and the dispatcher's keyword routing are queued as their own items.",
-      "updated_at": "2026-09-05T02:55:35.364Z"
+      "next_action": "Write the failing route-handler tests, implement, verify on a scratch console, independent verification, merge, build, restart, record.",
+      "updated_at": "2026-09-05T03:24:03.829Z"
     }
   ]
 }

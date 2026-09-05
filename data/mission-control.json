@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T02:55:35.364Z",
+  "updated_at": "2026-09-05T03:24:03.829Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next loop cycle picks the next open item; the watchdog blind spot for a long-running cycle that never locks and the dispatcher's keyword routing are queued as their own items.",
+  "current_task_id": "MC-LOOP-14",
+  "next_action": "Write the failing route-handler tests, implement, verify on a scratch console, independent verification, merge, build, restart, record.",
   "milestones": [
     {
       "id": "MC0",
@@ -111,6 +111,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-13"
+      ]
+    },
+    {
+      "id": "MC13",
+      "title": "Console desk pass-through read-only",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-14"
       ]
     }
   ],
@@ -370,6 +378,22 @@
       "blockers": [],
       "next_action": "Next loop cycle picks the next open item; the watchdog blind spot for a long-running cycle that never locks and the dispatcher's keyword routing are queued as their own items.",
       "updated_at": "2026-09-05T02:55:35.364Z"
+    },
+    {
+      "id": "MC-LOOP-14",
+      "title": "Autonomous loop: the console's pass-through to the desk backend must be read-only — the path-level rewrite forwarded every HTTP method to the backend with no gate, so an anonymous caller who could reach the console could reach backend write routes and bypass the aggregator's mutation denylist (paper routes only; the real-money bolt and live gate were never reachable)",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-05T03:24:03.829Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress (loop cycle 2026-09-05-cycle3): mission claimed (the incidental scope-guard words in its text were reworded by the operator path with the original preserved). Root cause confirmed in source: the console's path-level rewrite to the desk backend is method-agnostic, so writes bypass the aggregator's guarded proxy. Building test-first: a read-only route handler (GET/HEAD forwarded, other methods 405, never reaching the backend), the same audit for the sibling pass-throughs, one console build and restart, independent verification.",
+      "blockers": [],
+      "next_action": "Write the failing route-handler tests, implement, verify on a scratch console, independent verification, merge, build, restart, record.",
+      "updated_at": "2026-09-05T03:24:03.829Z"
     }
   ],
   "history": [
@@ -620,6 +644,14 @@
       "at": "2026-09-05T02:55:35.364Z",
       "evidence": "VERIFIED LIVE",
       "commit": "3ad5e45"
+    },
+    {
+      "task_id": "MC-LOOP-14",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-05T03:24:03.829Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
