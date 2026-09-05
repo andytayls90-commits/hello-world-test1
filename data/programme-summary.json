@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T05:28:21.746Z",
+  "updated_at": "2026-09-05T06:04:48.240Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-16",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 17,
+        "complete": 18,
         "total": 19,
-        "percent": 89
+        "percent": 95
       },
-      "next_action": "Prove root cause on the recorded incident, write the failing tests, implement the post-exit release, verify end-to-end through a real transient unit.",
-      "updated_at": "2026-09-05T05:28:21.746Z"
+      "next_action": "Next loop cycle picks the next open item and confirms this run's ledger line carries the lock-release outcome.",
+      "updated_at": "2026-09-05T06:04:48.240Z"
     }
   ]
 }

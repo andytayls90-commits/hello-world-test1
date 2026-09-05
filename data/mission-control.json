@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T05:28:21.746Z",
+  "updated_at": "2026-09-05T06:04:48.240Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-16",
-  "next_action": "Prove root cause on the recorded incident, write the failing tests, implement the post-exit release, verify end-to-end through a real transient unit.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next loop cycle picks the next open item and confirms this run's ledger line carries the lock-release outcome.",
   "milestones": [
     {
       "id": "MC0",
@@ -132,7 +132,7 @@
     {
       "id": "MC15",
       "title": "Loop lock released on cycle exit",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-16"
       ]
@@ -431,17 +431,17 @@
       "id": "MC-LOOP-16",
       "title": "Autonomous loop: the single-flight lock must be released mechanically when a cycle's process exits — a cycle that spent its last turn on the handover text left the lock held, so the next scheduled slot skipped and the following cycle only started an hour later via stale-owner recovery",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-05T05:28:21.746Z",
-      "completed_at": null,
+      "completed_at": "2026-09-05T06:04:48.240Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress: the loop's single-flight lock stayed held after a cycle's process had already exited (the cycle ended its final turn before the explicit release), so the scheduler skipped a slot and recovery waited on the stale-owner timeout. Fix: the service manager's post-exit hook releases the lock when it can prove the lock belongs to the run that just ended (same run identity, owning process gone), with durable evidence; test-first, then independent verification.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "e6e7086",
+      "summary": "Complete: the loop's single-flight lock is now released mechanically when a cycle's service run ends without the explicit release. The lock records the service manager's run identity at acquire time, and the run's post-exit hook releases the lock only when that identity matches its own and the owning process is proven gone by its start-time fingerprint; a live holder, another run's lock, a legacy or corrupt lock, or a hook with no run identity leaves the lock untouched, byte-identical. Every release writes an evidence file, stamps the outcome on the per-cycle ledger line and logs it next to the cycle-end record. Root cause: release was a caller action with nothing running it on process exit, and the post-exit hook had no way to attribute a holder to its own run (the manager's main-process variable is empty by then; the run identity is the key, proven identical across start and post-exit). Proven test-first (14 new cases including an end-to-end run through a real transient service unit; suite 53 of 54 with the one known runtime-dependent false-fail; trigger 82 of 82; watchdog 71 of 71), independently verified (held with findings: 32 live-holder and other-run shapes kept byte-identical, five real units released, twelve hook fault injections all exit clean, 90 race rounds with zero robbed, mutants caught; three findings fixed, six disclosed), merged as e6e7086 and re-proven from the deployed checkout. No service restart needed. Disclosed: the positive path for a real headless cycle is first exercised by the next cycle that acquires with the new field; this cycle's own holder predates it. Safety checks unchanged (paper only, real-money bolt tests pass before and after).",
       "blockers": [],
-      "next_action": "Prove root cause on the recorded incident, write the failing tests, implement the post-exit release, verify end-to-end through a real transient unit.",
-      "updated_at": "2026-09-05T05:28:21.746Z"
+      "next_action": "Next loop cycle picks the next open item and confirms this run's ledger line carries the lock-release outcome.",
+      "updated_at": "2026-09-05T06:04:48.240Z"
     }
   ],
   "history": [
@@ -732,6 +732,14 @@
       "at": "2026-09-05T05:28:21.746Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-16",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-05T06:04:48.240Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "e6e7086"
     }
   ]
 }
