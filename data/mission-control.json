@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T02:14:28.233Z",
+  "updated_at": "2026-09-05T02:28:52.032Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next loop cycle picks the next open item; the build-flag caveat and the lock-release-at-cycle-end gap are queued as their own items.",
+  "current_task_id": "MC-LOOP-13",
+  "next_action": "Write the failing trigger-suite case (active stand-in unit, no lock → must SKIP), implement the probe, independent verification, merge and record.",
   "milestones": [
     {
       "id": "MC0",
@@ -103,6 +103,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-12"
+      ]
+    },
+    {
+      "id": "MC12",
+      "title": "Loop trigger launch guard",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-13"
       ]
     }
   ],
@@ -346,6 +354,22 @@
       "blockers": [],
       "next_action": "Next loop cycle picks the next open item; the build-flag caveat and the lock-release-at-cycle-end gap are queued as their own items.",
       "updated_at": "2026-09-05T02:14:28.233Z"
+    },
+    {
+      "id": "MC-LOOP-13",
+      "title": "Autonomous loop: the loop trigger must treat a launched-but-not-yet-locked cycle as running — its running-cycle check only looked for the lock file, so a second trigger run in the minutes before a cycle locks started a second concurrent cycle on the same lane (observed twice in four minutes on the trading lane)",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-05T02:28:52.032Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress (loop cycle 2026-09-05-cycle2): mission claimed and re-routed to the Mission Control lane (the trigger script is shared lane tooling in this repository). Root cause confirmed in source: the trigger's running-cycle gate consults only the single-flight lock file, which a launched cycle creates minutes later; the trigger's own mutex only serialises two simultaneous trigger runs. Building the fix test-first: lane-scoped active-unit probe in the gate, per-cycle output files, both-lane test coverage, header documentation.",
+      "blockers": [],
+      "next_action": "Write the failing trigger-suite case (active stand-in unit, no lock → must SKIP), implement the probe, independent verification, merge and record.",
+      "updated_at": "2026-09-05T02:28:52.032Z"
     }
   ],
   "history": [
@@ -580,6 +604,14 @@
       "at": "2026-09-05T02:14:28.233Z",
       "evidence": "VERIFIED LIVE",
       "commit": "b25fe81"
+    },
+    {
+      "task_id": "MC-LOOP-13",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-05T02:28:52.032Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }

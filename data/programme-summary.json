@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T02:14:28.233Z",
+  "updated_at": "2026-09-05T02:28:52.032Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-13",
       "progress": {
         "complete": 14,
-        "total": 15,
-        "percent": 93
+        "total": 16,
+        "percent": 88
       },
-      "next_action": "Next loop cycle picks the next open item; the build-flag caveat and the lock-release-at-cycle-end gap are queued as their own items.",
-      "updated_at": "2026-09-05T02:14:28.233Z"
+      "next_action": "Write the failing trigger-suite case (active stand-in unit, no lock → must SKIP), implement the probe, independent verification, merge and record.",
+      "updated_at": "2026-09-05T02:28:52.032Z"
     }
   ]
 }
