@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T03:24:03.829Z",
+  "updated_at": "2026-09-05T03:52:51.985Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-14",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 15,
+        "complete": 16,
         "total": 17,
-        "percent": 88
+        "percent": 94
       },
-      "next_action": "Write the failing route-handler tests, implement, verify on a scratch console, independent verification, merge, build, restart, record.",
-      "updated_at": "2026-09-05T03:24:03.829Z"
+      "next_action": "Next loop cycle picks the next open item; the automation-assistant pass-through gate and the retired fleet path are queued as their own items.",
+      "updated_at": "2026-09-05T03:52:51.985Z"
     }
   ]
 }
