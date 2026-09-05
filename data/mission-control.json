@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T06:04:48.240Z",
+  "updated_at": "2026-09-05T06:26:41.317Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next loop cycle picks the next open item and confirms this run's ledger line carries the lock-release outcome.",
+  "current_task_id": "MC-LOOP-17",
+  "next_action": "Prove the gap red with a second-lane fixture, implement lane iteration, independent verification, then complete.",
   "milestones": [
     {
       "id": "MC0",
@@ -135,6 +135,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-16"
+      ]
+    },
+    {
+      "id": "MC16",
+      "title": "Watchdog audits every loop lane",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-17"
       ]
     }
   ],
@@ -442,6 +450,22 @@
       "blockers": [],
       "next_action": "Next loop cycle picks the next open item and confirms this run's ledger line carries the lock-release outcome.",
       "updated_at": "2026-09-05T06:04:48.240Z"
+    },
+    {
+      "id": "MC-LOOP-17",
+      "title": "Autonomous loop: the independent watchdog must audit the second autonomous lane too — today its stale-lock, fast-fail, stall and lost-finding checks read only the first lane's lock, ledger and progress log, so a wedged or dying second lane is never paged",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-05T06:26:41.317Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: the loop watchdog audits only the first autonomous lane's lock, outcome ledger and progress log; the second lane (own lock root, ledger, registry, hourly since 2026-09-03) has no stale-lock, fast-fail, stall or lost-finding coverage. Making the watchdog lane-aware, test-first, with lane-named findings; first-lane behaviour preserved.",
+      "blockers": [],
+      "next_action": "Prove the gap red with a second-lane fixture, implement lane iteration, independent verification, then complete.",
+      "updated_at": "2026-09-05T06:26:41.317Z"
     }
   ],
   "history": [
@@ -740,6 +764,14 @@
       "at": "2026-09-05T06:04:48.240Z",
       "evidence": "VERIFIED LIVE",
       "commit": "e6e7086"
+    },
+    {
+      "task_id": "MC-LOOP-17",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-05T06:26:41.317Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
