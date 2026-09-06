@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-06T20:23:20.610Z",
+  "updated_at": "2026-09-06T20:54:17.599Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-26",
-  "next_action": "Reproduce, RED test, fix, independent verification, merge.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next cycle pulls the next mission from the queue; follow-ups filed for an empty progress-log path and a colon inside a progress-log path.",
   "milestones": [
     {
       "id": "MC0",
@@ -212,7 +212,7 @@
     {
       "id": "MC25",
       "title": "Watchdog refuses to guess a relative lane progress path silently",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-26"
       ]
@@ -671,17 +671,17 @@
       "id": "MC-LOOP-26",
       "title": "Autonomous loop: an extra lane whose progress-log path is relative is accepted silently — the watchdog resolves it against whatever directory it happens to run from, so the same lane list audits the log under the service and nothing from a shell; make a relative progress path loud (own warning naming the directory it resolved against) while the lane's lock and ledger stay audited",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-06T20:23:20.610Z",
-      "completed_at": null,
+      "completed_at": "2026-09-06T20:54:17.599Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress (2026-09-06 mc cycle4): reproducing on the unmodified watchdog, then a test-first fix so a relative progress-log path in an extra lane is never silent.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "cd30a83",
+      "summary": "Complete: the loop's independent watchdog no longer accepts a relative progress-log path silently. Any lane (extra lanes and the primary) resolves a relative path against the directory the watchdog runs from exactly once, keeps the lane so its lock and outcome ledger stay audited, reads and reports the resolved absolute path everywhere, and raises one digest warning per tick naming the raw path, the directory and the resolved path, with a truthful variant when the directory itself has vanished. Test-first (suite 222 to 229; the old script fails exactly the new cases), two rounds of independent verification converged (round one found a wording defect in the vanished-directory case, fixed test-first; two pre-existing lane-grammar gaps were filed as follow-ups). Production runs with the default absolute paths, so live behaviour is unchanged today.",
       "blockers": [],
-      "next_action": "Reproduce, RED test, fix, independent verification, merge.",
-      "updated_at": "2026-09-06T20:23:20.610Z"
+      "next_action": "Next cycle pulls the next mission from the queue; follow-ups filed for an empty progress-log path and a colon inside a progress-log path.",
+      "updated_at": "2026-09-06T20:54:17.599Z"
     }
   ],
   "history": [
@@ -1140,6 +1140,14 @@
       "at": "2026-09-06T20:23:20.610Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-26",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-06T20:54:17.599Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "cd30a83"
     }
   ]
 }
