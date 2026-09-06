@@ -192,6 +192,14 @@
       "task_ids": [
         "MC-LOOP-23"
       ]
+    },
+    {
+      "id": "MC23",
+      "title": "Watchdog names a broken link at a lane lock path",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-24"
+      ]
     }
   ],
   "tasks": [
@@ -610,6 +618,22 @@
       "blockers": [],
       "next_action": "Next cycle pulls the next mission from the queue; the watchdog runs on the merged script with no unit change.",
       "updated_at": "2026-09-06T18:16:29.573Z"
+    },
+    {
+      "id": "MC-LOOP-24",
+      "title": "Autonomous loop: the independent watchdog reads a broken link at a lane's single-flight lock path (a dangling symbolic link, or a link loop) as 'no lock, lane free' with no signal in the digest — name the state as a warning so an odd lock path is never mistaken for a free lane",
+      "project": "Mission Control",
+      "status": "PLANNED",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": null,
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "Planned: found by the independent verifier of MC-LOOP-22. A broken link at the lock path cannot prove a cycle absent; the auditor should say what it found instead of reading it as free.",
+      "blockers": [],
+      "next_action": "Claim, reproduce test-first, fix in the watchdog, independent verification, merge.",
+      "updated_at": null
     }
   ],
   "history": [
