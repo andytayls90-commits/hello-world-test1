@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-06T22:45:52.520Z",
+  "updated_at": "2026-09-06T23:28:31.151Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-28",
       "progress": {
         "complete": 29,
-        "total": 30,
-        "percent": 97
+        "total": 31,
+        "percent": 94
       },
-      "next_action": "Follow-ups filed: empty lock/ledger knobs stay silent; a newline inside a relative progress path splits the digest line; undecodable bytes in the path crash the digest printer.",
-      "updated_at": "2026-09-06T22:45:52.520Z"
+      "next_action": "Red-first harness cases, fix, independent verification, merge and first live tick.",
+      "updated_at": "2026-09-06T23:28:31.151Z"
     }
   ]
 }
