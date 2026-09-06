@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-06T19:01:09.195Z",
+  "updated_at": "2026-09-06T19:25:07.213Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next cycle pulls the next mission from the queue; follow-ups filed for the lock tool's broken-link crash and a lane-list delimiter gap.",
+  "current_task_id": "MC-LOOP-25",
+  "next_action": "RED harness case, fix, independent verification, merge.",
   "milestones": [
     {
       "id": "MC0",
@@ -199,6 +199,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-24"
+      ]
+    },
+    {
+      "id": "MC24",
+      "title": "Watchdog recovers comma-delimited lanes and warns",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-25"
       ]
     }
   ],
@@ -634,6 +642,22 @@
       "blockers": [],
       "next_action": "Next cycle pulls the next mission from the queue; follow-ups filed for the lock tool's broken-link crash and a lane-list delimiter gap.",
       "updated_at": "2026-09-06T19:01:09.195Z"
+    },
+    {
+      "id": "MC-LOOP-25",
+      "title": "Autonomous loop: a lane list joined with commas instead of semicolons silently collapses into one lane whose title tag swallows the rest, so the other lanes are never audited and no warning is raised — recover every lane and warn once that the delimiter is wrong",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-06T19:25:07.213Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: reproducing the comma-joined lane list collapse in the watchdog harness, then fixing test-first so every lane is recovered and audited and one digest warning names the wrong delimiter.",
+      "blockers": [],
+      "next_action": "RED harness case, fix, independent verification, merge.",
+      "updated_at": "2026-09-06T19:25:07.213Z"
     }
   ],
   "history": [
@@ -1068,6 +1092,14 @@
       "at": "2026-09-06T19:01:09.195Z",
       "evidence": "VERIFIED LIVE",
       "commit": "9085ce3"
+    },
+    {
+      "task_id": "MC-LOOP-25",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-06T19:25:07.213Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
