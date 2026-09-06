@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-05T13:16:49.177Z",
+  "updated_at": "2026-09-06T17:27:26.933Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-23",
       "progress": {
         "complete": 24,
-        "total": 25,
-        "percent": 96
+        "total": 26,
+        "percent": 92
       },
-      "next_action": "Adjacent follow-up filed: a broken symbolic link at the lane lock path currently reads as no lock; name that state in the digest.",
-      "updated_at": "2026-09-05T13:16:49.177Z"
+      "next_action": "RED tests, fix, independent verification, --no-ff merge, first live tick closes the 26 open pages.",
+      "updated_at": "2026-09-06T17:27:26.933Z"
     }
   ]
 }
