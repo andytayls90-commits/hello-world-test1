@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-06T17:27:26.933Z",
+  "updated_at": "2026-09-06T18:16:29.573Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-23",
-  "next_action": "RED tests, fix, independent verification, --no-ff merge, first live tick closes the 26 open pages.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next cycle pulls the next mission from the queue; the watchdog runs on the merged script with no unit change.",
   "milestones": [
     {
       "id": "MC0",
@@ -188,7 +188,7 @@
     {
       "id": "MC22",
       "title": "Watchdog files one fast-fail page per outage and closes it on recovery",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-23"
       ]
@@ -599,17 +599,17 @@
       "id": "MC-LOOP-23",
       "title": "Autonomous loop: the independent watchdog files a NEW fast-fail rectify page every hour while a runtime outage lasts (the page id is keyed on the exact last-three-cycle window, which slides each slot) and never retires them once the loop recovers — key the page on the outage episode, file one page per lane per outage, and auto-close every open page with a comment when a real cycle is recorded again",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-06T17:27:26.933Z",
-      "completed_at": null,
+      "completed_at": "2026-09-06T18:16:29.573Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress: reproducing the sliding-window duplicate page in the watchdog suite, then episode-keyed page id + auto-close on recovery, test-first.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "c056e3b",
+      "summary": "Complete: the loop's independent watchdog now files one fast-fail page per outage episode (the page id follows the outage, not the sliding window) and closes every open page itself, with a comment, once a real cycle runs again or the lane lock is held by a live cycle; a page someone is working on is left alone. Test-first (suite 182 to 203, old script fails 18 of them), two rounds of independent verification converged with one pre-existing stall-clock bug fixed on the way; the first live tick after the merge closed all 26 open pages with no alert.",
       "blockers": [],
-      "next_action": "RED tests, fix, independent verification, --no-ff merge, first live tick closes the 26 open pages.",
-      "updated_at": "2026-09-06T17:27:26.933Z"
+      "next_action": "Next cycle pulls the next mission from the queue; the watchdog runs on the merged script with no unit change.",
+      "updated_at": "2026-09-06T18:16:29.573Z"
     }
   ],
   "history": [
@@ -1020,6 +1020,14 @@
       "at": "2026-09-06T17:27:26.933Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-23",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-06T18:16:29.573Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "c056e3b"
     }
   ]
 }
