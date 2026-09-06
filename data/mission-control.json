@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-06T20:54:17.599Z",
+  "updated_at": "2026-09-06T21:25:32.232Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next cycle pulls the next mission from the queue; follow-ups filed for an empty progress-log path and a colon inside a progress-log path.",
+  "current_task_id": "MC-LOOP-27",
+  "next_action": "Prove the defect on the unmodified auditor, write the failing harness cases, fix, run independent verification, merge and confirm the first live tick.",
   "milestones": [
     {
       "id": "MC0",
@@ -215,6 +215,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-26"
+      ]
+    },
+    {
+      "id": "MC26",
+      "title": "Watchdog names an empty progress-log knob and falls back to the documented default",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-27"
       ]
     }
   ],
@@ -682,6 +690,22 @@
       "blockers": [],
       "next_action": "Next cycle pulls the next mission from the queue; follow-ups filed for an empty progress-log path and a colon inside a progress-log path.",
       "updated_at": "2026-09-06T20:54:17.599Z"
+    },
+    {
+      "id": "MC-LOOP-27",
+      "title": "Autonomous loop: an empty progress-log path knob (exported as an empty string by a unit) yields a nameless warning that cannot say what was looked for — treat the empty value like an unset one (use the documented default, matching the trigger's own fallback) and warn once naming the knob and the default that was used",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-06T21:25:32.232Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: the loop's independent watchdog treats an empty progress-log path knob as a bare path and warns 'progress log  does not exist' with nothing named. Fix: an empty or whitespace-only value is treated like an unset one (the documented default path is used, the same fallback the trigger applies), with one digest warning per tick naming the knob, the literal empty value and the default used; the lane table shows the fallback. Test-first, independent verification to follow.",
+      "blockers": [],
+      "next_action": "Prove the defect on the unmodified auditor, write the failing harness cases, fix, run independent verification, merge and confirm the first live tick.",
+      "updated_at": "2026-09-06T21:25:32.232Z"
     }
   ],
   "history": [
@@ -1148,6 +1172,14 @@
       "at": "2026-09-06T20:54:17.599Z",
       "evidence": "VERIFIED LIVE",
       "commit": "cd30a83"
+    },
+    {
+      "task_id": "MC-LOOP-27",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-06T21:25:32.232Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
