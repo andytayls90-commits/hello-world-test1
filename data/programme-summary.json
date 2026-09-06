@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-06T18:24:07.482Z",
+  "updated_at": "2026-09-06T19:01:09.195Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-24",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 25,
+        "complete": 26,
         "total": 27,
-        "percent": 93
+        "percent": 96
       },
-      "next_action": "Reproduce on the current script (red), fix, green, verifier round(s), merge to master, first live tick.",
-      "updated_at": "2026-09-06T18:24:07.482Z"
+      "next_action": "Next cycle pulls the next mission from the queue; follow-ups filed for the lock tool's broken-link crash and a lane-list delimiter gap.",
+      "updated_at": "2026-09-06T19:01:09.195Z"
     }
   ]
 }

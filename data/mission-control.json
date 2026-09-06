@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-06T18:24:07.482Z",
+  "updated_at": "2026-09-06T19:01:09.195Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-24",
-  "next_action": "Reproduce on the current script (red), fix, green, verifier round(s), merge to master, first live tick.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next cycle pulls the next mission from the queue; follow-ups filed for the lock tool's broken-link crash and a lane-list delimiter gap.",
   "milestones": [
     {
       "id": "MC0",
@@ -196,7 +196,7 @@
     {
       "id": "MC23",
       "title": "Watchdog names a broken link at a lane lock path",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-24"
       ]
@@ -623,17 +623,17 @@
       "id": "MC-LOOP-24",
       "title": "Autonomous loop: the independent watchdog reads a broken link at a lane's single-flight lock path (a dangling symbolic link, or a link loop) as 'no lock, lane free' with no signal in the digest — name the state as a warning so an odd lock path is never mistaken for a free lane",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-06T18:24:07.482Z",
-      "completed_at": null,
+      "completed_at": "2026-09-06T19:01:09.195Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress (2026-09-06 mc cycle2): the watchdog's lock check will classify a broken link at the lock path (dangling link or link loop) by inspecting the link itself and raise one digest-only warning naming the lane, the path and the link target; no page, since a dead cycle cannot hold a lock through a broken link. Test-first in the watchdog suite, then independent verification.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "9085ce3",
+      "summary": "Complete: the loop's independent watchdog now names a broken link at a lane's lock path (a dangling link, a link loop, or a parent directory it cannot search) as a digest warning that says the lane is not free but un-acquirable, instead of reading it as a free lane with no signal; a working link that points at another lane's lock is named as a cross-lane alias. Nothing on the lock path is ever touched and no page is raised. Test-first (suite 203 to 215, the old script fails exactly the new cases), two rounds of independent verification converged with two adjacent findings fixed on the way; the first live tick after the merge was silent on production inputs. The lock tool's own crash on a broken link was filed as a follow-up.",
       "blockers": [],
-      "next_action": "Reproduce on the current script (red), fix, green, verifier round(s), merge to master, first live tick.",
-      "updated_at": "2026-09-06T18:24:07.482Z"
+      "next_action": "Next cycle pulls the next mission from the queue; follow-ups filed for the lock tool's broken-link crash and a lane-list delimiter gap.",
+      "updated_at": "2026-09-06T19:01:09.195Z"
     }
   ],
   "history": [
@@ -1060,6 +1060,14 @@
       "at": "2026-09-06T18:24:07.482Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-24",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-06T19:01:09.195Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "9085ce3"
     }
   ]
 }
