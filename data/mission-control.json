@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-07T00:22:29.425Z",
+  "updated_at": "2026-09-07T01:00:59.769Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-29",
-  "next_action": "Reproduce on the unmodified auditor in a scratch environment; red-first harness cases; fix; independent verification; merge.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next cycle takes the queue head. Follow-ups filed: a clean-but-absent registry or scan root is still silent; an unparseable override-audit line is dropped without being named.",
   "milestones": [
     {
       "id": "MC0",
@@ -236,7 +236,7 @@
     {
       "id": "MC28",
       "title": "Watchdog worktree audit never silently blind on a bad configuration value or malformed registry",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-29"
       ]
@@ -743,17 +743,17 @@
       "id": "MC-LOOP-29",
       "title": "Autonomous loop: the watchdog's worktree audit goes blind without a warning when one of its own configuration values holds bytes that are not valid text, or when its registry file is present but unreadable as data — name the knob, the bytes or the parse error once per tick",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-07T00:22:29.425Z",
-      "completed_at": null,
+      "completed_at": "2026-09-07T01:00:59.769Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress: the loop's independent watchdog audits build workspaces against a registry and a few path knobs; today a knob holding bytes that are not valid text, or a registry file that is present but not parseable, leaves that audit silently blind. This cycle reproduces the gap on the unmodified auditor, adds red-first harness cases, then makes the auditor name the knob and the bytes or the parse error once per tick (a digest warning, never a page) and verifies independently before merging.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "d3bb5c4",
+      "summary": "Complete: the loop's independent watchdog can no longer be silently blind to its own worktree-audit inputs. A configuration value holding bytes that are not valid text is now named once per tick with the raw bytes (a default inherited from the home directory is attributed as such); a registry file that is present but unusable is named with its parse error (its bindings are skipped, the bypass scan still runs, so nothing fails toward silence); a present but unusable allow-list is named, left untouched instead of being silently rewritten, and the bypass scan pauses for that tick rather than flooding pages; two pre-existing crash shapes found by the verifier (a non-text entry in either file) are handled the same way instead of losing the whole tick. Test-first (fourteen new harness cases, red on the old auditor then green, deltas matched by name; mutants each fail by name); two rounds of independent verification converged (one crash class fixed test-first, one gap pinned, wording tightened, informational items disclosed); two follow-ups filed. Merged and pushed; post-merge suite green in the main checkout; the live tick on the new code reads the store once and writes nothing; no restart needed.",
       "blockers": [],
-      "next_action": "Reproduce on the unmodified auditor in a scratch environment; red-first harness cases; fix; independent verification; merge.",
-      "updated_at": "2026-09-07T00:22:29.425Z"
+      "next_action": "Next cycle takes the queue head. Follow-ups filed: a clean-but-absent registry or scan root is still silent; an unparseable override-audit line is dropped without being named.",
+      "updated_at": "2026-09-07T01:00:59.769Z"
     }
   ],
   "history": [
@@ -1260,6 +1260,14 @@
       "at": "2026-09-07T00:22:29.425Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-29",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-07T01:00:59.769Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "d3bb5c4"
     }
   ]
 }
