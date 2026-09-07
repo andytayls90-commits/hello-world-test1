@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-07T01:27:11.547Z",
+  "updated_at": "2026-09-07T02:15:51.308Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-30",
-  "next_action": "Write the red harness cases, fix the reader, green, independent verification, merge, post-merge proof on the live tick.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next cycle takes the queue head. Follow-up filed: the acknowledgement file's location pointing at a dangling link, an empty value, or a relative missing path is still silent.",
   "milestones": [
     {
       "id": "MC0",
@@ -244,7 +244,7 @@
     {
       "id": "MC29",
       "title": "Watchdog names an unusable operator-acknowledgement line instead of silently paging",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-30"
       ]
@@ -767,17 +767,17 @@
       "id": "MC-LOOP-30",
       "title": "Autonomous loop: the watchdog's record of operator-acknowledged worktrees can hold a line it cannot read (not valid data, a non-numeric time, a missing path, a byte that is not valid text, or an unreadable file) — the acknowledgement is dropped and the worktree pages as unclaimed with no hint why; name the unusable lines once per tick",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-07T01:27:11.547Z",
-      "completed_at": null,
+      "completed_at": "2026-09-07T02:15:51.308Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress: root cause confirmed on the unmodified watchdog with a scratch probe (fourteen shapes): every unusable line in the operator-acknowledgement record is skipped without being named, and one byte that is not valid text loses every record in the file. Fix is test-first: one digest warning per tick naming the file, the count of unusable lines and the first bad line with its reason; paging behaviour unchanged; a bad byte no longer discards the readable records.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "e56ef5d",
+      "summary": "Complete: the loop's independent watchdog now names an operator-acknowledgement line it cannot use instead of silently dropping it. Each unusable line (not valid data, not an object, no path, a non-numeric or boolean time, an unresolvable path, or bytes that are not valid text) is counted and the first is named with its reason; the file is read line by line so one bad byte no longer discards every record; a file that cannot be opened is told apart from a read that failed part-way, with the kind carried as data rather than inferred from text; every value embedded in a digest line is bounded. Paging behaviour is unchanged. Test-first across three rounds (fifteen new harness cases, red on the old auditor then green, deltas matched by name; mutants each fail by name); three rounds of independent verification converged; post-merge suite green in the main checkout; real inputs one read only; first live tick on the merged auditor clean; no restart needed.",
       "blockers": [],
-      "next_action": "Write the red harness cases, fix the reader, green, independent verification, merge, post-merge proof on the live tick.",
-      "updated_at": "2026-09-07T01:27:11.547Z"
+      "next_action": "Next cycle takes the queue head. Follow-up filed: the acknowledgement file's location pointing at a dangling link, an empty value, or a relative missing path is still silent.",
+      "updated_at": "2026-09-07T02:15:51.308Z"
     }
   ],
   "history": [
@@ -1300,6 +1300,14 @@
       "at": "2026-09-07T01:27:11.547Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-30",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-07T02:15:51.308Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "e56ef5d"
     }
   ]
 }

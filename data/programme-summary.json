@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-07T01:27:11.547Z",
+  "updated_at": "2026-09-07T02:15:51.308Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-30",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 31,
+        "complete": 32,
         "total": 33,
-        "percent": 94
+        "percent": 97
       },
-      "next_action": "Write the red harness cases, fix the reader, green, independent verification, merge, post-merge proof on the live tick.",
-      "updated_at": "2026-09-07T01:27:11.547Z"
+      "next_action": "Next cycle takes the queue head. Follow-up filed: the acknowledgement file's location pointing at a dangling link, an empty value, or a relative missing path is still silent.",
+      "updated_at": "2026-09-07T02:15:51.308Z"
     }
   ]
 }
