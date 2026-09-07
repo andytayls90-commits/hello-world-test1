@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-07T08:30:55.000Z",
+  "updated_at": "2026-09-07T09:26:32.964Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -35,8 +35,8 @@
         "total": 36,
         "percent": 94
       },
-      "next_action": "Resumed in cycle7 after the runtime limit: green suites, round-2 independent verification, merge, post-merge suites, record.",
-      "updated_at": "2026-09-07T08:30:55.000Z"
+      "next_action": "Mutant kills by name, round-3 independent verification, merge --no-ff from the main checkout, post-merge suites, evidence and record.",
+      "updated_at": "2026-09-07T09:26:32.964Z"
     }
   ]
 }

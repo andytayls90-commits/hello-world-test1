@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-07T08:30:55.000Z",
+  "updated_at": "2026-09-07T09:26:32.964Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-LOOP-33",
-  "next_action": "Failing tests first in the watchdog suite (dangling root, uncreatable root, lane variant, link loop, regular-file root wording, first-run control), then the fix, the lock-tool verdict flip and its tests, independent verification, merge, post-merge suites.",
+  "next_action": "Mutant kills by name, round-3 independent verification, merge --no-ff from the main checkout, post-merge suites, evidence and record.",
   "milestones": [
     {
       "id": "MC0",
@@ -844,12 +844,12 @@
       "started_at": "2026-09-07T07:26:24.893Z",
       "completed_at": null,
       "target_at": null,
-      "evidence": "PLANNED",
+      "evidence": "PARTIAL",
       "commit": null,
-      "summary": "In progress (2026-09-07 cycle6): root cause reproduced on the unmodified watchdog — a dangling-link lock root and an absent root under an unwritable parent produce no finding at all (rc 0), while a regular-file or link-loop root is named with a misleading 'parent cannot be searched' sentence; the lock tool already refuses all four by name. Fix: classify the ROOT first the way the lock tool does, one lane-prefixed lock_path_broken finding naming the root kind and target with the operator avenue; the lock tool's watchdog verdict for those two shapes flips from silent to lock_path_broken so its refusal sentence stays true. RESUMED 2026-09-07 cycle7: the first attempt ended on the runtime's monthly spend limit while its independent verification was mid-way (lock released by the unit-exit safety net, no state lost). Round 1 dispositioned from its transcripts: two real findings fixed test-first — an absent lock root under a dangling intermediate link still read as free in both tools (the ancestor walk now stops at the nearest name that exists and classifies it), and the watchdog embedded link targets unescaped and unbounded (one newline forged a digest line; now escaped and cut, closing the separately filed sibling too); an existing unwritable root with no lock filed as its own item; one surviving mutant shown equivalent.",
+      "summary": "In progress (2026-09-07 cycle8, second resume): round-2 independent verification held with findings — the ancestor-target escaping and the ancestor-worded refusal were implemented but unpinned by any test (four mutants survived), and an ancestor that is a link loop or a plain file was still named as an unreachable root. Fixed test-first: both tools now walk the ancestors for those error kinds too and name the offending ancestor by kind; new cases pin the escaping and the refusal wording; RED exactly the new cases, GREEN 292/292 + 84/84. The cycle7 attempt ended before its mutant runs finished; cycle8 re-runs them and takes a round-3 independent verification before merge.",
       "blockers": [],
-      "next_action": "Green suites in the worktree, fresh independent verification (round 2), merge, post-merge suites in the main checkout, evidence and record.",
-      "updated_at": "2026-09-07T08:30:55.000Z"
+      "next_action": "Mutant kills by name, round-3 independent verification, merge --no-ff from the main checkout, post-merge suites, evidence and record.",
+      "updated_at": "2026-09-07T09:26:32.964Z"
     }
   ],
   "history": [
@@ -1419,6 +1419,14 @@
       "to": "IN_PROGRESS",
       "at": "2026-09-07T07:26:24.893Z",
       "evidence": "PLANNED",
+      "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-33",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-07T09:26:32.964Z",
+      "evidence": "PARTIAL",
       "commit": null
     }
   ]
