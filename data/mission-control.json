@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-07T02:29:01.355Z",
+  "updated_at": "2026-09-07T04:48:44.850Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-31",
-  "next_action": "Failing harness cases first, then the fix, then independent verification rounds.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Siblings filed for later cycles: a FIFO at the lock path hangs the status probe; heartbeat/reclaim through a working link replaces the link; the watchdog's broken-path phrase is unbounded.",
   "milestones": [
     {
       "id": "MC0",
@@ -252,7 +252,7 @@
     {
       "id": "MC30",
       "title": "Lock tool names a broken lock path instead of crashing; trigger skips fail-closed",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-31"
       ]
@@ -791,17 +791,17 @@
       "id": "MC-LOOP-31",
       "title": "Autonomous loop: the single-flight lock tool crashes with a raw traceback when its lock path is a broken symbolic link (a dangling link reads as a free lane that can never be acquired; a link loop crashes the status probe itself) and the trigger can launch a cycle that dies at acquire every slot — name the broken path, refuse cleanly, skip fail-closed",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-07T02:29:01.355Z",
-      "completed_at": null,
+      "completed_at": "2026-09-07T04:48:44.850Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress: the lock tool will classify its lock path before any read or link, report a broken path in its status verdict, refuse with a named message and distinct exit code, and the trigger will skip fail-closed naming why; the operator's link is never removed.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "61a554e",
+      "summary": "Done (2026-09-07 cycle3 + resume cycle4; merge 61a554e): the single-flight lock tool classifies its lock root and path before any read or link — a link that resolves to nothing, or a root that is a dangling link / loop / regular file / empty / uncreatable / unreachable, is reported as a broken path in the status verdict, refused by name with a distinct exit code by acquire/heartbeat/release, kept by the unit-exit hook, never removed or replaced; link targets are escaped and bounded in every message; an unwritable root is a named error; the trigger checks the root before touching it and skips fail-closed naming why. Lock suite 54 -> 71, trigger suite 83 -> 90 (RED-first by name); watchdog suite 273/273; independent verification 3 rounds CONVERGED; real lock root probed read-only; no unit change, no restart. Three pre-existing siblings filed.",
       "blockers": [],
-      "next_action": "Failing harness cases first, then the fix, then independent verification rounds.",
-      "updated_at": "2026-09-07T02:29:01.355Z"
+      "next_action": "Siblings filed for later cycles: a FIFO at the lock path hangs the status probe; heartbeat/reclaim through a working link replaces the link; the watchdog's broken-path phrase is unbounded.",
+      "updated_at": "2026-09-07T04:48:44.850Z"
     }
   ],
   "history": [
@@ -1340,6 +1340,14 @@
       "at": "2026-09-07T02:29:01.355Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-31",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-07T04:48:44.850Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "61a554e"
     }
   ]
 }
