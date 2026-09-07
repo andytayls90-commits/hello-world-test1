@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-06T23:28:31.151Z",
+  "updated_at": "2026-09-07T00:01:26.358Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-28",
-  "next_action": "Red-first harness cases, fix, independent verification, merge and first live tick.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Follow-ups filed: worktree-audit knobs and a malformed registry stay silent; a lane title tag holding a bad byte is silently accepted.",
   "milestones": [
     {
       "id": "MC0",
@@ -228,7 +228,7 @@
     {
       "id": "MC27",
       "title": "Watchdog output survives undecodable bytes in a path knob and names them",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-28"
       ]
@@ -719,17 +719,17 @@
       "id": "MC-LOOP-28",
       "title": "Autonomous loop: a path knob holding bytes that are not valid text (for example a pasted stray byte in the progress-log path) crashes the watchdog's report printer under the service locale, so the tick ends in a traceback instead of a digest — print escaped, locale-independent output and warn once per lane naming the knob and the bad bytes",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-06T23:28:31.151Z",
-      "completed_at": null,
+      "completed_at": "2026-09-07T00:01:26.358Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress: reproducing on the unmodified watchdog (confirmed: every path knob and the lane table crash the printer under the service locale; a present file with the bad byte is audited silently), then red-first harness cases, the fix, independent verification and merge.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "f7be286",
+      "summary": "Complete: the loop's independent watchdog can no longer lose a tick's digest to a text-encoding crash caused by a configuration value holding bytes that are not valid text — its report streams now print such bytes escaped in every locale, and one digest warning per lane names the affected field, the knob and the raw bytes (a value whose file happens to exist is no longer passed silently). Test-first (nine new harness cases, red on the old auditor then green, deltas matched by name; three single-edit mutants each fail by name); two rounds of independent verification converged (one attribution gap fixed test-first, two pre-existing siblings filed as follow-ups, informational items disclosed or corrected). Merged and pushed; post-merge suite green in the main checkout; the live tick on the new code reads the store once and writes nothing; no service restart was needed.",
       "blockers": [],
-      "next_action": "Red-first harness cases, fix, independent verification, merge and first live tick.",
-      "updated_at": "2026-09-06T23:28:31.151Z"
+      "next_action": "Follow-ups filed: worktree-audit knobs and a malformed registry stay silent; a lane title tag holding a bad byte is silently accepted.",
+      "updated_at": "2026-09-07T00:01:26.358Z"
     }
   ],
   "history": [
@@ -1220,6 +1220,14 @@
       "at": "2026-09-06T23:28:31.151Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-28",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-07T00:01:26.358Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "f7be286"
     }
   ]
 }
