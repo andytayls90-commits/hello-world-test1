@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-07T02:15:51.308Z",
+  "updated_at": "2026-09-07T02:29:01.355Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next cycle takes the queue head. Follow-up filed: the acknowledgement file's location pointing at a dangling link, an empty value, or a relative missing path is still silent.",
+  "current_task_id": "MC-LOOP-31",
+  "next_action": "Failing harness cases first, then the fix, then independent verification rounds.",
   "milestones": [
     {
       "id": "MC0",
@@ -247,6 +247,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-30"
+      ]
+    },
+    {
+      "id": "MC30",
+      "title": "Lock tool names a broken lock path instead of crashing; trigger skips fail-closed",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-31"
       ]
     }
   ],
@@ -778,6 +786,22 @@
       "blockers": [],
       "next_action": "Next cycle takes the queue head. Follow-up filed: the acknowledgement file's location pointing at a dangling link, an empty value, or a relative missing path is still silent.",
       "updated_at": "2026-09-07T02:15:51.308Z"
+    },
+    {
+      "id": "MC-LOOP-31",
+      "title": "Autonomous loop: the single-flight lock tool crashes with a raw traceback when its lock path is a broken symbolic link (a dangling link reads as a free lane that can never be acquired; a link loop crashes the status probe itself) and the trigger can launch a cycle that dies at acquire every slot — name the broken path, refuse cleanly, skip fail-closed",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-07T02:29:01.355Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: the lock tool will classify its lock path before any read or link, report a broken path in its status verdict, refuse with a named message and distinct exit code, and the trigger will skip fail-closed naming why; the operator's link is never removed.",
+      "blockers": [],
+      "next_action": "Failing harness cases first, then the fix, then independent verification rounds.",
+      "updated_at": "2026-09-07T02:29:01.355Z"
     }
   ],
   "history": [
@@ -1308,6 +1332,14 @@
       "at": "2026-09-07T02:15:51.308Z",
       "evidence": "VERIFIED LIVE",
       "commit": "e56ef5d"
+    },
+    {
+      "task_id": "MC-LOOP-31",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-07T02:29:01.355Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
