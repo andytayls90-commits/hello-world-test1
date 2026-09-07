@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-07T01:00:59.769Z",
+  "updated_at": "2026-09-07T01:27:11.547Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next cycle takes the queue head. Follow-ups filed: a clean-but-absent registry or scan root is still silent; an unparseable override-audit line is dropped without being named.",
+  "current_task_id": "MC-LOOP-30",
+  "next_action": "Write the red harness cases, fix the reader, green, independent verification, merge, post-merge proof on the live tick.",
   "milestones": [
     {
       "id": "MC0",
@@ -239,6 +239,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-29"
+      ]
+    },
+    {
+      "id": "MC29",
+      "title": "Watchdog names an unusable operator-acknowledgement line instead of silently paging",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-30"
       ]
     }
   ],
@@ -754,6 +762,22 @@
       "blockers": [],
       "next_action": "Next cycle takes the queue head. Follow-ups filed: a clean-but-absent registry or scan root is still silent; an unparseable override-audit line is dropped without being named.",
       "updated_at": "2026-09-07T01:00:59.769Z"
+    },
+    {
+      "id": "MC-LOOP-30",
+      "title": "Autonomous loop: the watchdog's record of operator-acknowledged worktrees can hold a line it cannot read (not valid data, a non-numeric time, a missing path, a byte that is not valid text, or an unreadable file) — the acknowledgement is dropped and the worktree pages as unclaimed with no hint why; name the unusable lines once per tick",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-07T01:27:11.547Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: root cause confirmed on the unmodified watchdog with a scratch probe (fourteen shapes): every unusable line in the operator-acknowledgement record is skipped without being named, and one byte that is not valid text loses every record in the file. Fix is test-first: one digest warning per tick naming the file, the count of unusable lines and the first bad line with its reason; paging behaviour unchanged; a bad byte no longer discards the readable records.",
+      "blockers": [],
+      "next_action": "Write the red harness cases, fix the reader, green, independent verification, merge, post-merge proof on the live tick.",
+      "updated_at": "2026-09-07T01:27:11.547Z"
     }
   ],
   "history": [
@@ -1268,6 +1292,14 @@
       "at": "2026-09-07T01:00:59.769Z",
       "evidence": "VERIFIED LIVE",
       "commit": "d3bb5c4"
+    },
+    {
+      "task_id": "MC-LOOP-30",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-07T01:27:11.547Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }

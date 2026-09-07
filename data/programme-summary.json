@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-07T01:00:59.769Z",
+  "updated_at": "2026-09-07T01:27:11.547Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-30",
       "progress": {
         "complete": 31,
-        "total": 32,
-        "percent": 97
+        "total": 33,
+        "percent": 94
       },
-      "next_action": "Next cycle takes the queue head. Follow-ups filed: a clean-but-absent registry or scan root is still silent; an unparseable override-audit line is dropped without being named.",
-      "updated_at": "2026-09-07T01:00:59.769Z"
+      "next_action": "Write the red harness cases, fix the reader, green, independent verification, merge, post-merge proof on the live tick.",
+      "updated_at": "2026-09-07T01:27:11.547Z"
     }
   ]
 }
