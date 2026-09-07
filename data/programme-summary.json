@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-07T00:01:26.358Z",
+  "updated_at": "2026-09-07T00:22:29.425Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-29",
       "progress": {
         "complete": 30,
-        "total": 31,
-        "percent": 97
+        "total": 32,
+        "percent": 94
       },
-      "next_action": "Follow-ups filed: worktree-audit knobs and a malformed registry stay silent; a lane title tag holding a bad byte is silently accepted.",
-      "updated_at": "2026-09-07T00:01:26.358Z"
+      "next_action": "Reproduce on the unmodified auditor in a scratch environment; red-first harness cases; fix; independent verification; merge.",
+      "updated_at": "2026-09-07T00:22:29.425Z"
     }
   ]
 }
