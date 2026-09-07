@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-07T06:24:59.730Z",
+  "updated_at": "2026-09-07T07:26:24.893Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Siblings filed for later cycles: align the watchdog's naming of a non-regular lock occupant with the lock tool; make the watchdog name a dangling or uncreatable lock root instead of reading the lane as free; make the lock tool's messages safe under an ASCII-only output.",
+  "current_task_id": "MC-LOOP-33",
+  "next_action": "Failing tests first in the watchdog suite (dangling root, uncreatable root, lane variant, link loop, regular-file root wording, first-run control), then the fix, the lock-tool verdict flip and its tests, independent verification, merge, post-merge suites.",
   "milestones": [
     {
       "id": "MC0",
@@ -263,6 +263,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-32"
+      ]
+    },
+    {
+      "id": "MC32",
+      "title": "Loop watchdog names a broken or uncreatable lock root (2026-09-07 cycle6)",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-33"
       ]
     }
   ],
@@ -826,6 +834,22 @@
       "blockers": [],
       "next_action": "Siblings filed for later cycles: align the watchdog's naming of a non-regular lock occupant with the lock tool; make the watchdog name a dangling or uncreatable lock root instead of reading the lane as free; make the lock tool's messages safe under an ASCII-only output.",
       "updated_at": "2026-09-07T06:24:59.730Z"
+    },
+    {
+      "id": "MC-LOOP-33",
+      "title": "Autonomous loop: the lane watchdog reads a lane whose lock root is a dangling symbolic link, or an absent root that cannot be created, as a FREE lane and raises nothing, while the lock tool refuses that root by name and the trigger skips every slot — a silently wedged lane with no page; classify the lock root first and name it",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-07T07:26:24.893Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress (2026-09-07 cycle6): root cause reproduced on the unmodified watchdog — a dangling-link lock root and an absent root under an unwritable parent produce no finding at all (rc 0), while a regular-file or link-loop root is named with a misleading 'parent cannot be searched' sentence; the lock tool already refuses all four by name. Fix: classify the ROOT first the way the lock tool does, one lane-prefixed lock_path_broken finding naming the root kind and target with the operator avenue; the lock tool's watchdog verdict for those two shapes flips from silent to lock_path_broken so its refusal sentence stays true.",
+      "blockers": [],
+      "next_action": "Failing tests first in the watchdog suite (dangling root, uncreatable root, lane variant, link loop, regular-file root wording, first-run control), then the fix, the lock-tool verdict flip and its tests, independent verification, merge, post-merge suites.",
+      "updated_at": "2026-09-07T07:26:24.893Z"
     }
   ],
   "history": [
@@ -1388,6 +1412,14 @@
       "at": "2026-09-07T06:24:59.730Z",
       "evidence": "VERIFIED LIVE",
       "commit": "2f9f055"
+    },
+    {
+      "task_id": "MC-LOOP-33",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-07T07:26:24.893Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }

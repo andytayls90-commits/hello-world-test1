@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-07T06:24:59.730Z",
+  "updated_at": "2026-09-07T07:26:24.893Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-33",
       "progress": {
         "complete": 34,
-        "total": 35,
-        "percent": 97
+        "total": 36,
+        "percent": 94
       },
-      "next_action": "Siblings filed for later cycles: align the watchdog's naming of a non-regular lock occupant with the lock tool; make the watchdog name a dangling or uncreatable lock root instead of reading the lane as free; make the lock tool's messages safe under an ASCII-only output.",
-      "updated_at": "2026-09-07T06:24:59.730Z"
+      "next_action": "Failing tests first in the watchdog suite (dangling root, uncreatable root, lane variant, link loop, regular-file root wording, first-run control), then the fix, the lock-tool verdict flip and its tests, independent verification, merge, post-merge suites.",
+      "updated_at": "2026-09-07T07:26:24.893Z"
     }
   ]
 }
