@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-07T09:26:32.964Z",
+  "updated_at": "2026-09-07T09:51:31.932Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-33",
-  "next_action": "Mutant kills by name, round-3 independent verification, merge --no-ff from the main checkout, post-merge suites, evidence and record.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next queued item from the missions store.",
   "milestones": [
     {
       "id": "MC0",
@@ -268,7 +268,7 @@
     {
       "id": "MC32",
       "title": "Loop watchdog names a broken or uncreatable lock root (2026-09-07 cycle6)",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-33"
       ]
@@ -839,17 +839,17 @@
       "id": "MC-LOOP-33",
       "title": "Autonomous loop: the lane watchdog reads a lane whose lock root is a dangling symbolic link, or an absent root that cannot be created, as a FREE lane and raises nothing, while the lock tool refuses that root by name and the trigger skips every slot — a silently wedged lane with no page; classify the lock root first and name it",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-07T07:26:24.893Z",
-      "completed_at": null,
+      "completed_at": "2026-09-07T09:51:31.932Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress (2026-09-07 cycle8, second resume): round-2 independent verification held with findings — the ancestor-target escaping and the ancestor-worded refusal were implemented but unpinned by any test (four mutants survived), and an ancestor that is a link loop or a plain file was still named as an unreachable root. Fixed test-first: both tools now walk the ancestors for those error kinds too and name the offending ancestor by kind; new cases pin the escaping and the refusal wording; RED exactly the new cases, GREEN 292/292 + 84/84. The cycle7 attempt ended before its mutant runs finished; cycle8 re-runs them and takes a round-3 independent verification before merge.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "72bb9c3",
+      "summary": "Complete (2026-09-07, cycles 6 to 8): the lane watchdog now classifies a lane's lock root and its ancestors before reading the lock — a dangling or looping link, a non-directory, an unreachable or uncreatable root or ancestor (any error while looking the root up) is one named warning with the kind, an escaped and bounded target, the consequence and an operator avenue, never a silently free lane; the lock tool names the same states with a matching verdict, so its refusal sentence is always true. Three independent verification rounds, each finding fixed test-first with named red-then-green cases; the final round converged (no shape reads a broken lane as free in any tool); sixteen mutants killed by name, two proven equivalent. Suites grew from 273 to 294, 80 to 88 and 96 to 99 cases and pass from the main checkout after the merge; the real lock root is proven read-only; no service restart was needed. Two sibling items filed for their own cycles (an existing unwritable root with no lock; the operator-configured lock path embedded raw).",
       "blockers": [],
-      "next_action": "Mutant kills by name, round-3 independent verification, merge --no-ff from the main checkout, post-merge suites, evidence and record.",
-      "updated_at": "2026-09-07T09:26:32.964Z"
+      "next_action": "Next queued item from the missions store.",
+      "updated_at": "2026-09-07T09:51:31.932Z"
     }
   ],
   "history": [
@@ -1428,6 +1428,14 @@
       "at": "2026-09-07T09:26:32.964Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-33",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-07T09:51:31.932Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "72bb9c3"
     }
   ]
 }

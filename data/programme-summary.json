@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-07T09:26:32.964Z",
+  "updated_at": "2026-09-07T09:51:31.932Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-33",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 34,
+        "complete": 35,
         "total": 36,
-        "percent": 94
+        "percent": 97
       },
-      "next_action": "Mutant kills by name, round-3 independent verification, merge --no-ff from the main checkout, post-merge suites, evidence and record.",
-      "updated_at": "2026-09-07T09:26:32.964Z"
+      "next_action": "Next queued item from the missions store.",
+      "updated_at": "2026-09-07T09:51:31.932Z"
     }
   ]
 }
