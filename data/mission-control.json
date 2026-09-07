@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-07T04:48:44.850Z",
+  "updated_at": "2026-09-07T04:58:17.183Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Siblings filed for later cycles: a FIFO at the lock path hangs the status probe; heartbeat/reclaim through a working link replaces the link; the watchdog's broken-path phrase is unbounded.",
+  "current_task_id": "MC-LOOP-32",
+  "next_action": "RED-first harness cases, fix, independent verification, merge --no-ff, post-merge suites.",
   "milestones": [
     {
       "id": "MC0",
@@ -255,6 +255,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-31"
+      ]
+    },
+    {
+      "id": "MC31",
+      "title": "Lock tool never blocks on a non-regular lock target; names it and refuses",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-32"
       ]
     }
   ],
@@ -802,6 +810,22 @@
       "blockers": [],
       "next_action": "Siblings filed for later cycles: a FIFO at the lock path hangs the status probe; heartbeat/reclaim through a working link replaces the link; the watchdog's broken-path phrase is unbounded.",
       "updated_at": "2026-09-07T04:48:44.850Z"
+    },
+    {
+      "id": "MC-LOOP-32",
+      "title": "Autonomous loop: the single-flight lock tool hangs forever (status probe, acquire, heartbeat, release and the unit-exit hook alike) when its lock path is, or links to, a named pipe — the trigger's lane probe never returns; a socket, device or directory at the path is misreported as a corrupt lock — name a non-regular lock target, refuse cleanly, never block, skip fail-closed",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-07T04:58:17.183Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress (2026-09-07 cycle5, m-766d852ede): a named pipe at or behind the lock path blocks the lock tool's read forever, so the lane probe, acquire, heartbeat, release and the unit-exit hook all hang; a socket, device or directory there is misreported as a corrupt lock. Fix test-first: classify a non-regular lock target by kind, refuse by name without blocking, trigger probes bounded by a timeout.",
+      "blockers": [],
+      "next_action": "RED-first harness cases, fix, independent verification, merge --no-ff, post-merge suites.",
+      "updated_at": "2026-09-07T04:58:17.183Z"
     }
   ],
   "history": [
@@ -1348,6 +1372,14 @@
       "at": "2026-09-07T04:48:44.850Z",
       "evidence": "VERIFIED LIVE",
       "commit": "61a554e"
+    },
+    {
+      "task_id": "MC-LOOP-32",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-07T04:58:17.183Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }

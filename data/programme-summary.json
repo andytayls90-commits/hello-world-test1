@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-07T04:48:44.850Z",
+  "updated_at": "2026-09-07T04:58:17.183Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-32",
       "progress": {
         "complete": 33,
-        "total": 34,
-        "percent": 97
+        "total": 35,
+        "percent": 94
       },
-      "next_action": "Siblings filed for later cycles: a FIFO at the lock path hangs the status probe; heartbeat/reclaim through a working link replaces the link; the watchdog's broken-path phrase is unbounded.",
-      "updated_at": "2026-09-07T04:48:44.850Z"
+      "next_action": "RED-first harness cases, fix, independent verification, merge --no-ff, post-merge suites.",
+      "updated_at": "2026-09-07T04:58:17.183Z"
     }
   ]
 }
