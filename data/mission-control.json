@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-07T04:58:17.183Z",
+  "updated_at": "2026-09-07T06:24:59.730Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-32",
-  "next_action": "RED-first harness cases, fix, independent verification, merge --no-ff, post-merge suites.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Siblings filed for later cycles: align the watchdog's naming of a non-regular lock occupant with the lock tool; make the watchdog name a dangling or uncreatable lock root instead of reading the lane as free; make the lock tool's messages safe under an ASCII-only output.",
   "milestones": [
     {
       "id": "MC0",
@@ -260,7 +260,7 @@
     {
       "id": "MC31",
       "title": "Lock tool never blocks on a non-regular lock target; names it and refuses",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-32"
       ]
@@ -815,17 +815,17 @@
       "id": "MC-LOOP-32",
       "title": "Autonomous loop: the single-flight lock tool hangs forever (status probe, acquire, heartbeat, release and the unit-exit hook alike) when its lock path is, or links to, a named pipe — the trigger's lane probe never returns; a socket, device or directory at the path is misreported as a corrupt lock — name a non-regular lock target, refuse cleanly, never block, skip fail-closed",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-07T04:58:17.183Z",
-      "completed_at": null,
+      "completed_at": "2026-09-07T06:24:59.730Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress (2026-09-07 cycle5, m-766d852ede): a named pipe at or behind the lock path blocks the lock tool's read forever, so the lane probe, acquire, heartbeat, release and the unit-exit hook all hang; a socket, device or directory there is misreported as a corrupt lock. Fix test-first: classify a non-regular lock target by kind, refuse by name without blocking, trigger probes bounded by a timeout.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "2f9f055",
+      "summary": "Done (2026-09-07 cycle5; merge 2f9f055): the single-flight lock tool classifies a named pipe, socket, device or directory at or behind its lock path by kind before any read and refuses by name with its distinct exit code (status reports it as a broken path, the unit-exit hook keeps, nothing is removed); its read primitive opens non-blocking and checks the kind on the open descriptor, so no target can block it; the trigger bounds its lock probes with a timeout, treats any non-zero probe exit as not a verdict, and states which watchdog finding covers the state from data rather than a fixed sentence. Lock suite 71 -> 80, trigger suite 90 -> 96, RED-first by name; watchdog suite 273/273; three independent verification rounds converged with twelve mutants killed by name; the live lock root was read-only under tracing; post-merge suites green in the main checkout; no unit change, no restart. Three watchdog/message siblings filed.",
       "blockers": [],
-      "next_action": "RED-first harness cases, fix, independent verification, merge --no-ff, post-merge suites.",
-      "updated_at": "2026-09-07T04:58:17.183Z"
+      "next_action": "Siblings filed for later cycles: align the watchdog's naming of a non-regular lock occupant with the lock tool; make the watchdog name a dangling or uncreatable lock root instead of reading the lane as free; make the lock tool's messages safe under an ASCII-only output.",
+      "updated_at": "2026-09-07T06:24:59.730Z"
     }
   ],
   "history": [
@@ -1380,6 +1380,14 @@
       "at": "2026-09-07T04:58:17.183Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-32",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-07T06:24:59.730Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "2f9f055"
     }
   ]
 }
