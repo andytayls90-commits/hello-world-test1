@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-07T09:51:31.932Z",
+  "updated_at": "2026-09-10T09:26:41.000Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next queued item from the missions store.",
+  "current_task_id": "MC-LOOP-34",
+  "next_action": "Red-then-green harness cases, fix, independent verification, merge --no-ff from the main checkout, post-merge suites, evidence and record.",
   "milestones": [
     {
       "id": "MC0",
@@ -271,6 +271,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-33"
+      ]
+    },
+    {
+      "id": "MC33",
+      "title": "Loop pre-flight smoke proves the cycle's own model (2026-09-10 cycle1)",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-34"
       ]
     }
   ],
@@ -850,6 +858,22 @@
       "blockers": [],
       "next_action": "Next queued item from the missions store.",
       "updated_at": "2026-09-07T09:51:31.932Z"
+    },
+    {
+      "id": "MC-LOOP-34",
+      "title": "Autonomous loop: the pre-flight smoke that gates every launch ran on a cheaper model than the cycle it launches, so a model-scoped monthly spend limit passed the gate and seventy-two consecutive launches over three days each died within seconds while the gate reported the runtime healthy; smoke the model the cycle will run, and classify a spend limit by name",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-10T09:26:41.000Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress (2026-09-10 cycle1): reconciled the outcome ledger at cycle start — every hourly launch since the 2026-09-07 cycle8 record died in four seconds on a model-scoped spend limit while the pre-flight smoke, run on a different model, kept passing; the watchdog paged but the gate never filed its own page. Also closing out cycle8's record, which its spend-limit death left uncommitted. Fix test-first: the smoke runs on the launch model, a spend limit is a named self-resolving page kind, harness cases pin both; then independent verification, merge from the main checkout, post-merge suites.",
+      "blockers": [],
+      "next_action": "Red-then-green harness cases, fix, independent verification, merge --no-ff from the main checkout, post-merge suites, evidence and record.",
+      "updated_at": "2026-09-10T09:26:41.000Z"
     }
   ],
   "history": [
@@ -1436,6 +1460,14 @@
       "at": "2026-09-07T09:51:31.932Z",
       "evidence": "VERIFIED LIVE",
       "commit": "72bb9c3"
+    },
+    {
+      "task_id": "MC-LOOP-34",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-10T09:26:41.000Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
