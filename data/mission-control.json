@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-10T09:26:41.000Z",
+  "updated_at": "2026-09-10T10:20:36.000Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-34",
-  "next_action": "Red-then-green harness cases, fix, independent verification, merge --no-ff from the main checkout, post-merge suites, evidence and record.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next queued item from the missions store.",
   "milestones": [
     {
       "id": "MC0",
@@ -276,7 +276,7 @@
     {
       "id": "MC33",
       "title": "Loop pre-flight smoke proves the cycle's own model (2026-09-10 cycle1)",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-34"
       ]
@@ -863,17 +863,17 @@
       "id": "MC-LOOP-34",
       "title": "Autonomous loop: the pre-flight smoke that gates every launch ran on a cheaper model than the cycle it launches, so a model-scoped monthly spend limit passed the gate and seventy-two consecutive launches over three days each died within seconds while the gate reported the runtime healthy; smoke the model the cycle will run, and classify a spend limit by name",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-10T09:26:41.000Z",
-      "completed_at": null,
+      "completed_at": "2026-09-10T10:20:36.000Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress (2026-09-10 cycle1): reconciled the outcome ledger at cycle start — every hourly launch since the 2026-09-07 cycle8 record died in four seconds on a model-scoped spend limit while the pre-flight smoke, run on a different model, kept passing; the watchdog paged but the gate never filed its own page. Also closing out cycle8's record, which its spend-limit death left uncommitted. Fix test-first: the smoke runs on the launch model, a spend limit is a named self-resolving page kind, harness cases pin both; then independent verification, merge from the main checkout, post-merge suites.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "9e09ee2",
+      "summary": "Complete (2026-09-10 cycle1): the pre-flight smoke that gates every launch now runs on the model the cycle will run, with a budget cap sized to that model (a cold one-turn probe on the cycle model was measured and the old cap sat below it, which the first fix would have tripped on every slot; the live proof caught it before merge). A limit scoped to the cycle model is now caught before launch and paged by name as a spend limit with the right remedy (raise the limit or add credits or wait for the reset, no re-login); a cap that is too low is paged as the gate's own misconfiguration; a deliberate split between smoke and cycle model is warned every slot; the pages the new kinds file resolve themselves on the next healthy probe. Harness grew from 99 to 118 named cases, each red before the fix; three independent verification rounds converged with 26 mutants killed by name; the merged script passes its suite from the main checkout and a real-runtime dry run; no service restart was needed (the timer picks the script up at its next slot). Also closed out the previous cycle's record, which its spend-limit death had left uncommitted. Two sibling items filed for their own cycles (the watchdog's fast-fail page should quote the dead unit's own output; the trigger harness leaks test lines into the live log).",
       "blockers": [],
-      "next_action": "Red-then-green harness cases, fix, independent verification, merge --no-ff from the main checkout, post-merge suites, evidence and record.",
-      "updated_at": "2026-09-10T09:26:41.000Z"
+      "next_action": "Next queued item from the missions store.",
+      "updated_at": "2026-09-10T10:20:36.000Z"
     }
   ],
   "history": [
@@ -1468,6 +1468,14 @@
       "at": "2026-09-10T09:26:41.000Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-34",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-10T10:20:36.000Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "9e09ee2"
     }
   ]
 }
