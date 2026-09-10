@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-10T10:20:36.000Z",
+  "updated_at": "2026-09-10T11:25:28.331Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next queued item from the missions store.",
+  "current_task_id": "MC-LOOP-35",
+  "next_action": "Red-first harness cases for the quoted tail + kind, then the fix in the watchdog.",
   "milestones": [
     {
       "id": "MC0",
@@ -279,6 +279,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-34"
+      ]
+    },
+    {
+      "id": "MC34",
+      "title": "Loop fast-fail page names the dead unit's own cause (2026-09-10 cycle2)",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-35"
       ]
     }
   ],
@@ -874,6 +882,22 @@
       "blockers": [],
       "next_action": "Next queued item from the missions store.",
       "updated_at": "2026-09-10T10:20:36.000Z"
+    },
+    {
+      "id": "MC-LOOP-35",
+      "title": "Autonomous loop: the watchdog's fast-fail page and alert say only that the headless runtime fails before it can acquire the lock and list generic causes, while the dead unit's own output file holds the exact reason (a model-scoped monthly spend limit sat there unread for three days) — quote the newest dead unit's output, bounded and escaped, and name the classified failure kind in the page and the alert",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-10T11:25:28.331Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress (2026-09-10 cycle2, started 11:24Z): the loop watchdog's fast-fail page and alert will quote the newest dead unit's own output (bounded, escaped) and name the classified failure kind, using the same kinds as the launch gate's pre-flight smoke; harness cases red-first, then fix, independent verification, merge from the main checkout.",
+      "blockers": [],
+      "next_action": "Red-first harness cases for the quoted tail + kind, then the fix in the watchdog.",
+      "updated_at": "2026-09-10T11:25:28.331Z"
     }
   ],
   "history": [
@@ -1476,6 +1500,14 @@
       "at": "2026-09-10T10:20:36.000Z",
       "evidence": "VERIFIED LIVE",
       "commit": "9e09ee2"
+    },
+    {
+      "task_id": "MC-LOOP-35",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-10T11:25:28.331Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
