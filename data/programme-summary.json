@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-13T17:32:26.697Z",
+  "updated_at": "2026-09-13T18:13:09.010Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-35",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 36,
+        "complete": 37,
         "total": 38,
-        "percent": 95
+        "percent": 97
       },
-      "next_action": "Round-two independent verification, merge --no-ff from the main checkout, post-merge suite, evidence and record.",
-      "updated_at": "2026-09-13T17:32:26.697Z"
+      "next_action": "Next queued item from the missions store.",
+      "updated_at": "2026-09-13T18:13:09.010Z"
     }
   ]
 }

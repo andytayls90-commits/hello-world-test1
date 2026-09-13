@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-13T17:32:26.697Z",
+  "updated_at": "2026-09-13T18:13:09.010Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-35",
-  "next_action": "Round-two independent verification, merge --no-ff from the main checkout, post-merge suite, evidence and record.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next queued item from the missions store.",
   "milestones": [
     {
       "id": "MC0",
@@ -284,7 +284,7 @@
     {
       "id": "MC34",
       "title": "Loop fast-fail page names the dead unit's own cause (2026-09-10 cycle2)",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-35"
       ]
@@ -887,17 +887,17 @@
       "id": "MC-LOOP-35",
       "title": "Autonomous loop: the watchdog's fast-fail page and alert say only that the headless runtime fails before it can acquire the lock and list generic causes, while the dead unit's own output file holds the exact reason (a model-scoped monthly spend limit sat there unread for three days) — quote the newest dead unit's output, bounded and escaped, and name the classified failure kind in the page and the alert",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-10T11:25:28.331Z",
-      "completed_at": null,
+      "completed_at": "2026-09-13T18:13:09.010Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress, resumed 2026-09-13 (cycle1) after the 2026-09-10 cycle2 session died on the runtime's monthly spend limit mid independent-verification and the loop was blocked by that limit for three days (TRACKER_UPDATE_DELAYED 2026-09-10T11:54Z to 2026-09-13T17:21Z, no state change in the interval). Round one of verification finished from its probe transcripts: a raw newline in a recorded unit name could forge extra alert lines, and a malformed read-size setting crashed the auditor; both fixed test-first (harness 312 to 316 cases, green), a real-data dry run on the actual outage names the spend limit as the cause. The wider setting-parse pattern is filed separately.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "0666031",
+      "summary": "Complete (2026-09-13 cycle1, resumed from the 2026-09-10 cycle2 that died on the runtime's monthly spend limit): the loop watchdog's fast-fail page and alert now quote why the newest dead cycle died, from that cycle's own output file (bounded, escaped, the last line kept), and name the classified kind with the same table the launch gate uses, kept in step by test. During the 2026-09-07 to 09-10 outage the page said 'expired token or stale CLI' for seventy-two hourly slots while every dead cycle had printed 'monthly spend limit'. Three independent verification rounds on frozen copies converged: recorded unit names and exit statuses are escaped wherever quoted, a malformed read-size setting is named instead of crashing the auditor, a blank tail is reported honestly. Harness grew from 294 to 325 cases, red first by name; 31 mutants killed. Merged --no-ff and pushed; post-merge suite green from the main checkout, the unit runs the merged script, the real outage episode reproduces the spend-limit cause from a scratch copy, paper gate and bolt unchanged. Five follow-ups filed.",
       "blockers": [],
-      "next_action": "Round-two independent verification, merge --no-ff from the main checkout, post-merge suite, evidence and record.",
-      "updated_at": "2026-09-13T17:32:26.697Z"
+      "next_action": "Next queued item from the missions store.",
+      "updated_at": "2026-09-13T18:13:09.010Z"
     }
   ],
   "history": [
@@ -1516,6 +1516,14 @@
       "at": "2026-09-13T17:32:26.697Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-35",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-13T18:13:09.010Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "0666031"
     }
   ]
 }
