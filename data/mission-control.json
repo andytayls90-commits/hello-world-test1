@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-13T20:23:38.691Z",
+  "updated_at": "2026-09-13T20:46:40.245Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-LOOP-37",
-  "next_action": "RED by name, fix, GREEN + full harness, independent verification on a frozen copy, merge, post-merge proof on the live ledger copy.",
+  "next_action": "Independent verification round, fix-or-file its findings, merge --no-ff, post-merge proof on a copy of the live ledger.",
   "milestones": [
     {
       "id": "MC0",
@@ -933,7 +933,7 @@
     },
     {
       "id": "MC-LOOP-37",
-      "title": "Autonomous loop: the watchdog's shared text escaper crashes the whole audit on a lone surrogate code point in any quoted datum (a hand-edited ledger unit name, exit status, or lock field) — escape every code point instead of crashing, in both the watchdog and the lock tool",
+      "title": "Autonomous loop: the watchdog's shared text escaper crashes the whole audit on a lone surrogate code point in any quoted datum (a hand-edited ledger unit name or exit status), and the lock file's own fields are quoted raw so a newline forges an alert line and a multi-line page comment — escape every code point instead of crashing (watchdog + lock tool), quote the lock fields through the escaper",
       "project": "Mission Control",
       "status": "IN_PROGRESS",
       "owner": "Autonomous staff engineer (Claude)",
@@ -942,10 +942,10 @@
       "target_at": null,
       "evidence": "PLANNED",
       "commit": null,
-      "summary": "In progress (2026-09-13 cycle3): reproducing the escaper crash test-first by name (a lone surrogate in a ledger unit name, exit status and lock field), then fixing the escaper in both the watchdog and the lock tool so every code point escapes instead of raising.",
+      "summary": "In progress (2026-09-13 cycle3): scope widened to the sibling item (the lock file's fields quoted raw) because this item's own test list needs that fix; reproduced test-first by name (13 new failing cases), escaper fixed in both tools and the lock fields quoted through it, full harness green, independent verification on a frozen copy running.",
       "blockers": [],
-      "next_action": "RED by name, fix, GREEN + full harness, independent verification on a frozen copy, merge, post-merge proof on the live ledger copy.",
-      "updated_at": "2026-09-13T20:23:38.691Z"
+      "next_action": "Independent verification round, fix-or-file its findings, merge --no-ff, post-merge proof on a copy of the live ledger.",
+      "updated_at": "2026-09-13T20:46:40.245Z"
     }
   ],
   "history": [
@@ -1594,6 +1594,14 @@
       "from": "PLANNED",
       "to": "IN_PROGRESS",
       "at": "2026-09-13T20:23:38.691Z",
+      "evidence": "PLANNED",
+      "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-37",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-13T20:46:40.245Z",
       "evidence": "PLANNED",
       "commit": null
     }
