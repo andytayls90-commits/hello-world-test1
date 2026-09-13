@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-10T11:25:28.331Z",
+  "updated_at": "2026-09-13T17:32:26.697Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-LOOP-35",
-  "next_action": "Red-first harness cases for the quoted tail + kind, then the fix in the watchdog.",
+  "next_action": "Round-two independent verification, merge --no-ff from the main checkout, post-merge suite, evidence and record.",
   "milestones": [
     {
       "id": "MC0",
@@ -892,12 +892,12 @@
       "started_at": "2026-09-10T11:25:28.331Z",
       "completed_at": null,
       "target_at": null,
-      "evidence": "PLANNED",
+      "evidence": "PARTIAL",
       "commit": null,
-      "summary": "In progress (2026-09-10 cycle2, started 11:24Z): the loop watchdog's fast-fail page and alert will quote the newest dead unit's own output (bounded, escaped) and name the classified failure kind, using the same kinds as the launch gate's pre-flight smoke; harness cases red-first, then fix, independent verification, merge from the main checkout.",
+      "summary": "In progress, resumed 2026-09-13 (cycle1) after the 2026-09-10 cycle2 session died on the runtime's monthly spend limit mid independent-verification and the loop was blocked by that limit for three days (TRACKER_UPDATE_DELAYED 2026-09-10T11:54Z to 2026-09-13T17:21Z, no state change in the interval). Round one of verification finished from its probe transcripts: a raw newline in a recorded unit name could forge extra alert lines, and a malformed read-size setting crashed the auditor; both fixed test-first (harness 312 to 316 cases, green), a real-data dry run on the actual outage names the spend limit as the cause. The wider setting-parse pattern is filed separately.",
       "blockers": [],
-      "next_action": "Red-first harness cases for the quoted tail + kind, then the fix in the watchdog.",
-      "updated_at": "2026-09-10T11:25:28.331Z"
+      "next_action": "Round-two independent verification, merge --no-ff from the main checkout, post-merge suite, evidence and record.",
+      "updated_at": "2026-09-13T17:32:26.697Z"
     }
   ],
   "history": [
@@ -1507,6 +1507,14 @@
       "to": "IN_PROGRESS",
       "at": "2026-09-10T11:25:28.331Z",
       "evidence": "PLANNED",
+      "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-35",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-13T17:32:26.697Z",
+      "evidence": "PARTIAL",
       "commit": null
     }
   ]

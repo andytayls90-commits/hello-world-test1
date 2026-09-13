@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-10T11:25:28.331Z",
+  "updated_at": "2026-09-13T17:32:26.697Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -35,8 +35,8 @@
         "total": 38,
         "percent": 95
       },
-      "next_action": "Red-first harness cases for the quoted tail + kind, then the fix in the watchdog.",
-      "updated_at": "2026-09-10T11:25:28.331Z"
+      "next_action": "Round-two independent verification, merge --no-ff from the main checkout, post-merge suite, evidence and record.",
+      "updated_at": "2026-09-13T17:32:26.697Z"
     }
   ]
 }
