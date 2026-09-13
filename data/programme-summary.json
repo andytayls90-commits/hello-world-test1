@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-13T18:13:09.010Z",
+  "updated_at": "2026-09-13T18:23:30.080Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-36",
       "progress": {
         "complete": 37,
-        "total": 38,
-        "percent": 97
+        "total": 39,
+        "percent": 95
       },
-      "next_action": "Next queued item from the missions store.",
-      "updated_at": "2026-09-13T18:13:09.010Z"
+      "next_action": "Red-first harness cases for the per-line decode, non-finite rejection and age clamp, then the fix.",
+      "updated_at": "2026-09-13T18:23:30.080Z"
     }
   ]
 }

@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-13T18:13:09.010Z",
+  "updated_at": "2026-09-13T18:23:30.080Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next queued item from the missions store.",
+  "current_task_id": "MC-LOOP-36",
+  "next_action": "Red-first harness cases for the per-line decode, non-finite rejection and age clamp, then the fix.",
   "milestones": [
     {
       "id": "MC0",
@@ -287,6 +287,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-35"
+      ]
+    },
+    {
+      "id": "MC35",
+      "title": "Loop watchdog's outcome-ledger reader never crashes or goes blind on its own input (2026-09-13 cycle2)",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-36"
       ]
     }
   ],
@@ -898,6 +906,22 @@
       "blockers": [],
       "next_action": "Next queued item from the missions store.",
       "updated_at": "2026-09-13T18:13:09.010Z"
+    },
+    {
+      "id": "MC-LOOP-36",
+      "title": "Autonomous loop: the watchdog's outcome-ledger reader crashes the whole audit on a non-finite number (NaN/Infinity), counts a NaN duration as a real cycle and so auto-resolves an open fast-fail page, prints a negative age for an end time in the future, and goes blind on one undecodable byte anywhere in the file — decode per line, reject non-finite numbers, name the bad line once, clamp the age",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-13T18:23:30.080Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress (2026-09-13 cycle2, started 18:22Z): the loop watchdog's reader of the cycle-outcome ledger will decode per line (one undecodable byte no longer blinds the whole fast-fail check), reject non-finite numbers (a NaN/Infinity no longer crashes the audit or passes as a real cycle), name a bad line once, and clamp a negative age; harness cases red-first, then fix, independent verification, merge from the main checkout.",
+      "blockers": [],
+      "next_action": "Red-first harness cases for the per-line decode, non-finite rejection and age clamp, then the fix.",
+      "updated_at": "2026-09-13T18:23:30.080Z"
     }
   ],
   "history": [
@@ -1524,6 +1548,14 @@
       "at": "2026-09-13T18:13:09.010Z",
       "evidence": "VERIFIED LIVE",
       "commit": "0666031"
+    },
+    {
+      "task_id": "MC-LOOP-36",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-13T18:23:30.080Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
