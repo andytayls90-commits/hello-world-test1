@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-13T19:41:09.391Z",
+  "updated_at": "2026-09-13T20:23:38.691Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next queued item from the missions store (follow-ups filed: unit-name length classification, the shared digest escaper's lone-surrogate hole, a dangling parent link at the ledger path).",
+  "current_task_id": "MC-LOOP-37",
+  "next_action": "RED by name, fix, GREEN + full harness, independent verification on a frozen copy, merge, post-merge proof on the live ledger copy.",
   "milestones": [
     {
       "id": "MC0",
@@ -295,6 +295,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-36"
+      ]
+    },
+    {
+      "id": "MC36",
+      "title": "Loop watchdog's digest escaper never crashes the audit on its own input (2026-09-13 cycle3)",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-37"
       ]
     }
   ],
@@ -922,6 +930,22 @@
       "blockers": [],
       "next_action": "Next queued item from the missions store (follow-ups filed: unit-name length classification, the shared digest escaper's lone-surrogate hole, a dangling parent link at the ledger path).",
       "updated_at": "2026-09-13T19:41:09.391Z"
+    },
+    {
+      "id": "MC-LOOP-37",
+      "title": "Autonomous loop: the watchdog's shared text escaper crashes the whole audit on a lone surrogate code point in any quoted datum (a hand-edited ledger unit name, exit status, or lock field) — escape every code point instead of crashing, in both the watchdog and the lock tool",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-13T20:23:38.691Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress (2026-09-13 cycle3): reproducing the escaper crash test-first by name (a lone surrogate in a ledger unit name, exit status and lock field), then fixing the escaper in both the watchdog and the lock tool so every code point escapes instead of raising.",
+      "blockers": [],
+      "next_action": "RED by name, fix, GREEN + full harness, independent verification on a frozen copy, merge, post-merge proof on the live ledger copy.",
+      "updated_at": "2026-09-13T20:23:38.691Z"
     }
   ],
   "history": [
@@ -1564,6 +1588,14 @@
       "at": "2026-09-13T19:41:09.391Z",
       "evidence": "VERIFIED LIVE",
       "commit": "4fcd514"
+    },
+    {
+      "task_id": "MC-LOOP-37",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-13T20:23:38.691Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
