@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-13T20:46:40.245Z",
+  "updated_at": "2026-09-13T22:41:12.982Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-LOOP-37",
-  "next_action": "Independent verification round, fix-or-file its findings, merge --no-ff, post-merge proof on a copy of the live ledger.",
+  "next_action": "Mutants by name, real-data dry run on copies, second independent verification round on a frozen copy, merge --no-ff, post-merge proof.",
   "milestones": [
     {
       "id": "MC0",
@@ -940,12 +940,12 @@
       "started_at": "2026-09-13T20:23:38.691Z",
       "completed_at": null,
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress (2026-09-13 cycle3): scope widened to the sibling item (the lock file's fields quoted raw) because this item's own test list needs that fix; reproduced test-first by name (13 new failing cases), escaper fixed in both tools and the lock fields quoted through it, full harness green, independent verification on a frozen copy running.",
+      "evidence": "PARTIAL",
+      "commit": "3be3029",
+      "summary": "In progress (2026-09-13 cycle3, resumed after the first run stopped on an account usage limit mid-verification): the first independent verification round returned holds-with-findings, not converged — the fast-fail page id still crashed on a lone surrogate in the episode's first row, and a very deeply nested value still crashed the escaper (the folded round-3 class). Both fixed test-first by name (sixteen new cases, eleven red first), the store's agent/id/priority quotes escaped as well, four unpinned quotes pinned, wording corrected; full harness green; one out-of-seam finding filed, one folded onto an open item.",
       "blockers": [],
-      "next_action": "Independent verification round, fix-or-file its findings, merge --no-ff, post-merge proof on a copy of the live ledger.",
-      "updated_at": "2026-09-13T20:46:40.245Z"
+      "next_action": "Mutants by name, real-data dry run on copies, second independent verification round on a frozen copy, merge --no-ff, post-merge proof.",
+      "updated_at": "2026-09-13T22:41:12.982Z"
     }
   ],
   "history": [
@@ -1604,6 +1604,14 @@
       "at": "2026-09-13T20:46:40.245Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-37",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-13T22:41:12.982Z",
+      "evidence": "PARTIAL",
+      "commit": "3be3029"
     }
   ]
 }
