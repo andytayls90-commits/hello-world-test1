@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-14T04:15:22.091Z",
+  "updated_at": "2026-09-14T04:40:32.947Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-39",
-  "next_action": "Third independent verification round, then merge, service restart, live proof, close both missions.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Follow-ups filed for the remaining out-of-seam surrogate bodies (agents register/heartbeat, decisions) and the events-cursor bound.",
   "milestones": [
     {
       "id": "MC0",
@@ -316,7 +316,7 @@
     {
       "id": "MC38",
       "title": "Operations tape boundary refuses non-finite payloads and the tape list survives a poisoned row (2026-09-14 cycle2)",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-39"
       ]
@@ -983,17 +983,17 @@
       "id": "MC-LOOP-39",
       "title": "Autonomous loop: the operations tape's append endpoint accepts an event payload holding a non-finite number and commits it before the response fails, after which every tape read (and the console's sessions view) fails until the row is deleted by hand — validate the payload before the write (4xx with a reason), never store a value the API cannot serve, and serve a pre-poisoned tape row named instead of failing the whole list",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-14T01:23:01.560Z",
-      "completed_at": null,
+      "completed_at": "2026-09-14T04:40:32.947Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress (2026-09-14 cycle2, resumed): round-1 findings fixed red-first (a lone surrogate code point in any string, a stored out-of-range literal, one depth cap, list bounds, CLI naming, string columns) and the sibling mission-store finding folded in; the second independent round found one HIGH gap (a lone surrogate used as a JSON KEY passed every layer) — fixed red-first on every layer, 12 more mutants killed by name, real-data proof on frozen copies; a third independent round is running before merge.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "270b07e",
+      "summary": "Shipped (2026-09-14 cycle2, resumed after the runtime stopped on an account spend limit): the operations tape's append endpoint now refuses, before any write and with a bounded named reason, a non-finite number, an integer the store cannot hold, a body nested too deeply, a lone surrogate code point in any string (as a value or as a JSON key) and a non-string in a string column; the tape store and the audit writer never persist an unservable payload; a tape row or audit record already holding a bad value is served with it named instead of failing every read; list bounds are validated; the command-line and MCP tape tools name a bad payload instead of crashing. The same string rule closes the sibling mission-store finding (a lone surrogate in a comment or mission field answered 500) and a list-in-a-scalar-field crash; the legacy backlog view also survives a bad stored blob. Three independent verification rounds on frozen copies over a copy of the live store: round 1 found a HIGH gap (surrogate strings), round 2 a HIGH gap (surrogate JSON keys), round 3 converged with four LOWs closed as guards. Test suite 454 to 580, red-first by name; 48 mutants killed by name; live proof after deploy: every bad write refused, healthy rows served unchanged, zero server errors.",
       "blockers": [],
-      "next_action": "Third independent verification round, then merge, service restart, live proof, close both missions.",
-      "updated_at": "2026-09-14T04:15:22.091Z"
+      "next_action": "Follow-ups filed for the remaining out-of-seam surrogate bodies (agents register/heartbeat, decisions) and the events-cursor bound.",
+      "updated_at": "2026-09-14T04:40:32.947Z"
     }
   ],
   "history": [
@@ -1716,6 +1716,14 @@
       "at": "2026-09-14T04:15:22.091Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-39",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-14T04:40:32.947Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "270b07e"
     }
   ]
 }
