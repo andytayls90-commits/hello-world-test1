@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-14T04:40:32.947Z",
+  "updated_at": "2026-09-14T05:25:55.363Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-40",
       "progress": {
         "complete": 41,
-        "total": 42,
-        "percent": 98
+        "total": 43,
+        "percent": 95
       },
-      "next_action": "Follow-ups filed for the remaining out-of-seam surrogate bodies (agents register/heartbeat, decisions) and the events-cursor bound.",
-      "updated_at": "2026-09-14T04:40:32.947Z"
+      "next_action": "RED tests by name, then the fix, then independent verification rounds on frozen copies",
+      "updated_at": "2026-09-14T05:25:55.363Z"
     }
   ]
 }

@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-14T04:40:32.947Z",
+  "updated_at": "2026-09-14T05:25:55.363Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Follow-ups filed for the remaining out-of-seam surrogate bodies (agents register/heartbeat, decisions) and the events-cursor bound.",
+  "current_task_id": "MC-LOOP-40",
+  "next_action": "RED tests by name, then the fix, then independent verification rounds on frozen copies",
   "milestones": [
     {
       "id": "MC0",
@@ -319,6 +319,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-39"
+      ]
+    },
+    {
+      "id": "MC39",
+      "title": "One store boundary on every write route of the mission-control API (2026-09-14 cycle3)",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-40"
       ]
     }
   ],
@@ -994,6 +1002,22 @@
       "blockers": [],
       "next_action": "Follow-ups filed for the remaining out-of-seam surrogate bodies (agents register/heartbeat, decisions) and the events-cursor bound.",
       "updated_at": "2026-09-14T04:40:32.947Z"
+    },
+    {
+      "id": "MC-LOOP-40",
+      "title": "Autonomous loop: every remaining write endpoint of the mission-control API (agent registration and heartbeat, agent memory and persona, token cost, council convene/adjourn, message send, decisions create/rule, event cursors, timer control, re-home dossiers) still accepted a value the store cannot hold or the API cannot serve back — a lone surrogate code point, a non-finite number, an integer beyond 64 bits, a list in a text field — and answered 500, some after a partial write; apply the one shared boundary to all of them after auth and before the write, guard coverage with a test so no route can bypass it again, and serve a pre-poisoned council row named",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-14T05:25:55.363Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress (2026-09-14 cycle3): reproducing each route's failure with failing tests first (a lone surrogate, a non-finite number, an out-of-range integer, a list in a text field, an out-of-range cursor), then applying the shared store boundary after auth and before any write, a static coverage guard over every body-taking write route, store belts and a named reader for legacy council rows; independent verification follows.",
+      "blockers": [],
+      "next_action": "RED tests by name, then the fix, then independent verification rounds on frozen copies",
+      "updated_at": "2026-09-14T05:25:55.363Z"
     }
   ],
   "history": [
@@ -1724,6 +1748,14 @@
       "at": "2026-09-14T04:40:32.947Z",
       "evidence": "VERIFIED LIVE",
       "commit": "270b07e"
+    },
+    {
+      "task_id": "MC-LOOP-40",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-14T05:25:55.363Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
