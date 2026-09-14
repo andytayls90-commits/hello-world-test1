@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-14T00:25:50.211Z",
+  "updated_at": "2026-09-14T01:16:52.573Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-38",
-  "next_action": "RED tests by name on a scratch store, boundary validator + transaction belt + list recovery, independent verification, merge --no-ff, restart helm-api, re-verify.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Loop continues: next cycle pulls the next mission from the helm store.",
   "milestones": [
     {
       "id": "MC0",
@@ -308,7 +308,7 @@
     {
       "id": "MC37",
       "title": "Mission store edit boundary refuses non-finite / non-flag values and the list survives a poisoned row (2026-09-14 cycle1)",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-38"
       ]
@@ -959,17 +959,17 @@
       "id": "MC-LOOP-38",
       "title": "Autonomous loop: the mission store's edit endpoint accepts a non-finite number for a flag field (paused/rework/archived) and commits it before the response fails, after which every mission list read fails until the row is repaired by hand — validate every flag and non-finite value before the write (4xx with a reason), never let a failed response leave a committed row, and serve a pre-poisoned row instead of failing the whole list",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-14T00:25:50.211Z",
-      "completed_at": null,
+      "completed_at": "2026-09-14T01:16:52.573Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "Claimed 2026-09-14 00:21Z (mc lane, cycle1). Root cause located in the store's edit and create handlers: the parsed request body is merged into the UPDATE unvalidated, the write commits, and only the response serialisation refuses the non-finite value; every later list read then fails on that row. Building red-first on a scratch store.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "bebf541",
+      "summary": "Shipped (2026-09-14 cycle1): the mission store's edit, create and comment endpoints now refuse a non-finite number, an integer the store cannot hold, a non-flag value for a flag field, or a body nested too deeply BEFORE any write, with a bounded named reason and the row untouched; the store itself refuses to commit a row that would introduce an unservable value; a row already holding a bad flag is served with that field named instead of failing every list read, is withheld from the agent queue, and is repaired by an ordinary edit. The first independent verification round found that editing such a row wrote the unservable value into the audit trail and broke the event feed for its consumers permanently; that was fixed (the audit records the sanitised row, the audit writer scrubs, the feed serves legacy bad blobs named) and a second round converged, with its remaining findings closed as guards or filed. Test suite 354 to 454, every case red first by name; 27 mutants killed by name; live proof after deploy: a bad edit is refused with the row unchanged, the list and the event feed answer normally, the relay delivers, and no new unservable audit rows exist. Four follow-ups filed, one folded.",
       "blockers": [],
-      "next_action": "RED tests by name on a scratch store, boundary validator + transaction belt + list recovery, independent verification, merge --no-ff, restart helm-api, re-verify.",
-      "updated_at": "2026-09-14T00:25:50.211Z"
+      "next_action": "Loop continues: next cycle pulls the next mission from the helm store.",
+      "updated_at": "2026-09-14T01:16:52.573Z"
     }
   ],
   "history": [
@@ -1660,6 +1660,14 @@
       "at": "2026-09-14T00:25:50.211Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-38",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-14T01:16:52.573Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "bebf541"
     }
   ]
 }
