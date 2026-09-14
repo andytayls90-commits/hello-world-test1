@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-14T05:25:55.363Z",
+  "updated_at": "2026-09-14T07:07:52.295Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-40",
-  "next_action": "RED tests by name, then the fix, then independent verification rounds on frozen copies",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next cycle picks the next queue item; filed follow-ups: legacy bytes values in other list readers, 64-bit bounds on list query parameters.",
   "milestones": [
     {
       "id": "MC0",
@@ -324,7 +324,7 @@
     {
       "id": "MC39",
       "title": "One store boundary on every write route of the mission-control API (2026-09-14 cycle3)",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-40"
       ]
@@ -1007,17 +1007,17 @@
       "id": "MC-LOOP-40",
       "title": "Autonomous loop: every remaining write endpoint of the mission-control API (agent registration and heartbeat, agent memory and persona, token cost, council convene/adjourn, message send, decisions create/rule, event cursors, timer control, re-home dossiers) still accepted a value the store cannot hold or the API cannot serve back — a lone surrogate code point, a non-finite number, an integer beyond 64 bits, a list in a text field — and answered 500, some after a partial write; apply the one shared boundary to all of them after auth and before the write, guard coverage with a test so no route can bypass it again, and serve a pre-poisoned council row named",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-14T05:25:55.363Z",
-      "completed_at": null,
+      "completed_at": "2026-09-14T07:07:52.295Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress (2026-09-14 cycle3): reproducing each route's failure with failing tests first (a lone surrogate, a non-finite number, an out-of-range integer, a list in a text field, an out-of-range cursor), then applying the shared store boundary after auth and before any write, a static coverage guard over every body-taking write route, store belts and a named reader for legacy council rows; independent verification follows.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "57f6b60",
+      "summary": "Shipped (2026-09-14 cycle3): one shared store boundary now runs on every write endpoint of the mission-control API that accepts a JSON body (twenty routes, including three paid-service routes the first coverage guard had missed because it keyed on a parameter name) — after the caller's authority is decided and before anything is written — refusing a lone surrogate, a non-finite number, an integer the store cannot hold, an over-nested body, a non-string in a text column and a non-number in a numeric column with a bounded named reason; the heartbeat no longer commits its audit before failing; the council ledger, token aggregate and agent roster serve legacy poisoned values named instead of failing every read; two coverage guards (a syntax-tree scan of every router and a probe of every body route of the running app) fail as soon as a new route bypasses the boundary. Two independent verification rounds on frozen copies over a copy of the live store: round 1 found the guard gap (fixed), round 2 converged with only low findings closed as guards; two out-of-scope items filed, one recorded on an existing item. Test suite 577 to 1040, 81 named mutants killed, live proof after restart with zero server errors, paper gate and bolt unchanged.",
       "blockers": [],
-      "next_action": "RED tests by name, then the fix, then independent verification rounds on frozen copies",
-      "updated_at": "2026-09-14T05:25:55.363Z"
+      "next_action": "Next cycle picks the next queue item; filed follow-ups: legacy bytes values in other list readers, 64-bit bounds on list query parameters.",
+      "updated_at": "2026-09-14T07:07:52.295Z"
     }
   ],
   "history": [
@@ -1756,6 +1756,14 @@
       "at": "2026-09-14T05:25:55.363Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-40",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-14T07:07:52.295Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "57f6b60"
     }
   ]
 }
