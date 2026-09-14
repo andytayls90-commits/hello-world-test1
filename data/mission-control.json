@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-14T01:16:52.573Z",
+  "updated_at": "2026-09-14T01:23:01.560Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Loop continues: next cycle pulls the next mission from the helm store.",
+  "current_task_id": "MC-LOOP-39",
+  "next_action": "Red-first reproduction, fix, mutants, independent verification, merge, live proof.",
   "milestones": [
     {
       "id": "MC0",
@@ -311,6 +311,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-38"
+      ]
+    },
+    {
+      "id": "MC38",
+      "title": "Operations tape boundary refuses non-finite payloads and the tape list survives a poisoned row (2026-09-14 cycle2)",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-39"
       ]
     }
   ],
@@ -970,6 +978,22 @@
       "blockers": [],
       "next_action": "Loop continues: next cycle pulls the next mission from the helm store.",
       "updated_at": "2026-09-14T01:16:52.573Z"
+    },
+    {
+      "id": "MC-LOOP-39",
+      "title": "Autonomous loop: the operations tape's append endpoint accepts an event payload holding a non-finite number and commits it before the response fails, after which every tape read (and the console's sessions view) fails until the row is deleted by hand — validate the payload before the write (4xx with a reason), never store a value the API cannot serve, and serve a pre-poisoned tape row named instead of failing the whole list",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-14T01:23:01.560Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress (2026-09-14 cycle2): reproducing red-first on a scratch store, then boundary validation before the tape write, a store belt that never commits an unservable payload, and read-side recovery so a legacy bad payload is served named; independent verification before merge.",
+      "blockers": [],
+      "next_action": "Red-first reproduction, fix, mutants, independent verification, merge, live proof.",
+      "updated_at": "2026-09-14T01:23:01.560Z"
     }
   ],
   "history": [
@@ -1668,6 +1692,14 @@
       "at": "2026-09-14T01:16:52.573Z",
       "evidence": "VERIFIED LIVE",
       "commit": "bebf541"
+    },
+    {
+      "task_id": "MC-LOOP-39",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-14T01:23:01.560Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
