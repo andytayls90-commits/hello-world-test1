@@ -4,7 +4,7 @@
   "project_name": "Mission Control",
   "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-14T00:15:37.283Z",
+  "updated_at": "2026-09-14T00:19:19.022Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-BASELINE",
   "next_action": "Loop continues: next cycle pulls the next mission from the helm store.",
@@ -938,14 +938,14 @@
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-13T20:23:38.691Z",
-      "completed_at": "2026-09-14T00:15:37.283Z",
+      "completed_at": "2026-09-14T00:19:19.022Z",
       "target_at": null,
       "evidence": "VERIFIED LIVE",
-      "commit": "6874962",
-      "summary": "Shipped (2026-09-13 cycle3, resumed twice after the runtime stopped mid-verification): the loop watchdog's shared text escaper never crashes the audit on its own input. A lone surrogate code point in a hand-edited ledger unit name or exit status used to raise inside the escaper and lose the whole digest (no page for a 72-cycle-deep dead loop); it now renders as its escape. A value too deeply nested to render becomes a short placeholder at every quote, in the fast-fail page id (existing ids unchanged, new shapes pinned exactly), in the cause classifier and in the lock attribution. Every lock-file field the digest or a page comment quotes (cycle id, pid, invocation id, owner identity, heartbeat) is escaped and bounded, so a newline can no longer forge an alert line or a multi-line page comment; a non-finite number in the lock or a ledger exit status names itself instead of crashing; a boolean heartbeat reads as invalid; the store's agent, id and priority quotes are escaped. Three independent verification rounds on frozen copies, the third converged; harness 355 to 398 cases, every one red first by name; 30 mutants, 29 killed by name and one predicted survivor disclosed; post-merge proof from the main checkout on copies of the live ledger and lock. Five follow-ups filed and one folded.",
+      "commit": "2635a15",
+      "summary": "Shipped (2026-09-13 cycle3, resumed twice after the runtime stopped mid-verification): the loop watchdog's shared text escaper never crashes the audit on its own input. A lone surrogate code point in a hand-edited ledger unit name or exit status used to raise inside the escaper and lose the whole digest (no page for a 72-cycle-deep dead loop); it now renders as its escape. A value too deeply nested to render becomes a short placeholder at every quote, in the fast-fail page id (existing ids unchanged, new shapes pinned exactly), in the cause classifier and in the lock attribution. Every lock-file field the digest or a page comment quotes (cycle id, pid, invocation id, owner identity, heartbeat) is escaped and bounded, so a newline can no longer forge an alert line or a multi-line page comment; a non-finite number in the lock or a ledger exit status names itself instead of crashing; a boolean heartbeat reads as invalid; the store's agent, id and priority quotes are escaped. Three independent verification rounds on frozen copies, the third converged; harness 355 to 398 cases, every one red first by name; 30 mutants, 29 killed by name and one predicted survivor disclosed; post-merge proof from the main checkout on copies of the live ledger and lock. Five follow-ups filed and one folded. (Merge sha 2635a15 on origin/master; 6874962 was the pre-push sha before an author-email rewrite.)",
       "blockers": [],
       "next_action": "Loop continues: next cycle pulls the next mission from the helm store.",
-      "updated_at": "2026-09-14T00:15:37.283Z"
+      "updated_at": "2026-09-14T00:19:19.022Z"
     }
   ],
   "history": [
@@ -1620,6 +1620,14 @@
       "at": "2026-09-14T00:15:37.283Z",
       "evidence": "VERIFIED LIVE",
       "commit": "6874962"
+    },
+    {
+      "task_id": "MC-LOOP-37",
+      "from": "COMPLETE",
+      "to": "COMPLETE",
+      "at": "2026-09-14T00:19:19.022Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "2635a15"
     }
   ]
 }

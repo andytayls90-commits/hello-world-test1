@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-14T00:15:37.283Z",
+  "updated_at": "2026-09-14T00:19:19.022Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -36,7 +36,7 @@
         "percent": 98
       },
       "next_action": "Loop continues: next cycle pulls the next mission from the helm store.",
-      "updated_at": "2026-09-14T00:15:37.283Z"
+      "updated_at": "2026-09-14T00:19:19.022Z"
     }
   ]
 }
