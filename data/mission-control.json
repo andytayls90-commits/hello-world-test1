@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-14T01:23:01.560Z",
+  "updated_at": "2026-09-14T03:27:33.316Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-LOOP-39",
-  "next_action": "Red-first reproduction, fix, mutants, independent verification, merge, live proof.",
+  "next_action": "Fix round-1 findings red-first, second independent verification, merge, service restart, live proof, close both missions.",
   "milestones": [
     {
       "id": "MC0",
@@ -988,12 +988,12 @@
       "started_at": "2026-09-14T01:23:01.560Z",
       "completed_at": null,
       "target_at": null,
-      "evidence": "PLANNED",
+      "evidence": "PARTIAL",
       "commit": null,
-      "summary": "In progress (2026-09-14 cycle2): reproducing red-first on a scratch store, then boundary validation before the tape write, a store belt that never commits an unservable payload, and read-side recovery so a legacy bad payload is served named; independent verification before merge.",
+      "summary": "In progress (2026-09-14 cycle2, RESUMED 03:21Z after the runtime stopped on an account spend limit at 01:48Z): the tape write boundary, store belt and read-side recovery are built and red-first proven; the first independent verification round completed (holds with findings: a lone surrogate code point in a payload string is committed and then fails every tape read; a stored out-of-range numeric literal is served as a real infinity; the depth cap is off by one across layers; the CLI crashes client-side on a bad payload). Disposition in progress: every finding fixed red-first or filed, then a second independent round before merge. The sibling finding (a raw lone surrogate in any mission-store body field answers 500) is folded in via the shared validator.",
       "blockers": [],
-      "next_action": "Red-first reproduction, fix, mutants, independent verification, merge, live proof.",
-      "updated_at": "2026-09-14T01:23:01.560Z"
+      "next_action": "Fix round-1 findings red-first, second independent verification, merge, service restart, live proof, close both missions.",
+      "updated_at": "2026-09-14T03:27:33.316Z"
     }
   ],
   "history": [
@@ -1699,6 +1699,14 @@
       "to": "IN_PROGRESS",
       "at": "2026-09-14T01:23:01.560Z",
       "evidence": "PLANNED",
+      "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-39",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-14T03:27:33.316Z",
+      "evidence": "PARTIAL",
       "commit": null
     }
   ]
