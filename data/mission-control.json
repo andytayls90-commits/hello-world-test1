@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-14T07:07:52.295Z",
+  "updated_at": "2026-09-14T07:23:26.324Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next cycle picks the next queue item; filed follow-ups: legacy bytes values in other list readers, 64-bit bounds on list query parameters.",
+  "current_task_id": "MC-LOOP-41",
+  "next_action": "Reproduce on a scratch copy of the store; write failing tests by name; fix; independent verification.",
   "milestones": [
     {
       "id": "MC0",
@@ -327,6 +327,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-40"
+      ]
+    },
+    {
+      "id": "MC40",
+      "title": "Bounded paging and named legacy cells on every list route of the mission-control API (2026-09-14 cycle4)",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-41"
       ]
     }
   ],
@@ -1018,6 +1026,22 @@
       "blockers": [],
       "next_action": "Next cycle picks the next queue item; filed follow-ups: legacy bytes values in other list readers, 64-bit bounds on list query parameters.",
       "updated_at": "2026-09-14T07:07:52.295Z"
+    },
+    {
+      "id": "MC-LOOP-41",
+      "title": "Autonomous loop: six list endpoints of the mission-control API (missions, backlog, agents, decisions, audit, queue) answer 500 when a caller passes a page-size or page-offset integer beyond 64 bits or negative; and every list reader answers 500 forever if a legacy text cell holds raw bytes — bound the paging parameters on every list route and serve a legacy bytes cell named, guarded so no list route can regress",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-14T07:23:26.324Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress (2026-09-14 cycle4): reproduce the overflow and the legacy-bytes failures on a scratch copy, write the failing tests first, bound the paging parameters on every list route with a shared dependency and a coverage guard, run every list reader's rows through the shared scrub so a legacy bytes cell is served named, then independent verification, merge, restart and live proof.",
+      "blockers": [],
+      "next_action": "Reproduce on a scratch copy of the store; write failing tests by name; fix; independent verification.",
+      "updated_at": "2026-09-14T07:23:26.324Z"
     }
   ],
   "history": [
@@ -1764,6 +1788,14 @@
       "at": "2026-09-14T07:07:52.295Z",
       "evidence": "VERIFIED LIVE",
       "commit": "57f6b60"
+    },
+    {
+      "task_id": "MC-LOOP-41",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-14T07:23:26.324Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }

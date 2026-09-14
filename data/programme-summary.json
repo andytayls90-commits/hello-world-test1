@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-14T07:07:52.295Z",
+  "updated_at": "2026-09-14T07:23:26.324Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-41",
       "progress": {
         "complete": 42,
-        "total": 43,
-        "percent": 98
+        "total": 44,
+        "percent": 95
       },
-      "next_action": "Next cycle picks the next queue item; filed follow-ups: legacy bytes values in other list readers, 64-bit bounds on list query parameters.",
-      "updated_at": "2026-09-14T07:07:52.295Z"
+      "next_action": "Reproduce on a scratch copy of the store; write failing tests by name; fix; independent verification.",
+      "updated_at": "2026-09-14T07:23:26.324Z"
     }
   ]
 }
