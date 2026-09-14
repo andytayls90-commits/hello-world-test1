@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-14T03:27:33.316Z",
+  "updated_at": "2026-09-14T04:15:22.091Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-LOOP-39",
-  "next_action": "Fix round-1 findings red-first, second independent verification, merge, service restart, live proof, close both missions.",
+  "next_action": "Third independent verification round, then merge, service restart, live proof, close both missions.",
   "milestones": [
     {
       "id": "MC0",
@@ -990,10 +990,10 @@
       "target_at": null,
       "evidence": "PARTIAL",
       "commit": null,
-      "summary": "In progress (2026-09-14 cycle2, RESUMED 03:21Z after the runtime stopped on an account spend limit at 01:48Z): the tape write boundary, store belt and read-side recovery are built and red-first proven; the first independent verification round completed (holds with findings: a lone surrogate code point in a payload string is committed and then fails every tape read; a stored out-of-range numeric literal is served as a real infinity; the depth cap is off by one across layers; the CLI crashes client-side on a bad payload). Disposition in progress: every finding fixed red-first or filed, then a second independent round before merge. The sibling finding (a raw lone surrogate in any mission-store body field answers 500) is folded in via the shared validator.",
+      "summary": "In progress (2026-09-14 cycle2, resumed): round-1 findings fixed red-first (a lone surrogate code point in any string, a stored out-of-range literal, one depth cap, list bounds, CLI naming, string columns) and the sibling mission-store finding folded in; the second independent round found one HIGH gap (a lone surrogate used as a JSON KEY passed every layer) — fixed red-first on every layer, 12 more mutants killed by name, real-data proof on frozen copies; a third independent round is running before merge.",
       "blockers": [],
-      "next_action": "Fix round-1 findings red-first, second independent verification, merge, service restart, live proof, close both missions.",
-      "updated_at": "2026-09-14T03:27:33.316Z"
+      "next_action": "Third independent verification round, then merge, service restart, live proof, close both missions.",
+      "updated_at": "2026-09-14T04:15:22.091Z"
     }
   ],
   "history": [
@@ -1706,6 +1706,14 @@
       "from": "IN_PROGRESS",
       "to": "IN_PROGRESS",
       "at": "2026-09-14T03:27:33.316Z",
+      "evidence": "PARTIAL",
+      "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-39",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-14T04:15:22.091Z",
       "evidence": "PARTIAL",
       "commit": null
     }
