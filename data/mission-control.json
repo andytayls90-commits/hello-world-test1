@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-13T22:41:12.982Z",
+  "updated_at": "2026-09-14T00:15:37.283Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-37",
-  "next_action": "Mutants by name, real-data dry run on copies, second independent verification round on a frozen copy, merge --no-ff, post-merge proof.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Loop continues: next cycle pulls the next mission from the helm store.",
   "milestones": [
     {
       "id": "MC0",
@@ -300,7 +300,7 @@
     {
       "id": "MC36",
       "title": "Loop watchdog's digest escaper never crashes the audit on its own input (2026-09-13 cycle3)",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-37"
       ]
@@ -935,17 +935,17 @@
       "id": "MC-LOOP-37",
       "title": "Autonomous loop: the watchdog's shared text escaper crashes the whole audit on a lone surrogate code point in any quoted datum (a hand-edited ledger unit name or exit status), and the lock file's own fields are quoted raw so a newline forges an alert line and a multi-line page comment — escape every code point instead of crashing (watchdog + lock tool), quote the lock fields through the escaper",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-13T20:23:38.691Z",
-      "completed_at": null,
+      "completed_at": "2026-09-14T00:15:37.283Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": "3be3029",
-      "summary": "In progress (2026-09-13 cycle3, resumed after the first run stopped on an account usage limit mid-verification): the first independent verification round returned holds-with-findings, not converged — the fast-fail page id still crashed on a lone surrogate in the episode's first row, and a very deeply nested value still crashed the escaper (the folded round-3 class). Both fixed test-first by name (sixteen new cases, eleven red first), the store's agent/id/priority quotes escaped as well, four unpinned quotes pinned, wording corrected; full harness green; one out-of-seam finding filed, one folded onto an open item.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "6874962",
+      "summary": "Shipped (2026-09-13 cycle3, resumed twice after the runtime stopped mid-verification): the loop watchdog's shared text escaper never crashes the audit on its own input. A lone surrogate code point in a hand-edited ledger unit name or exit status used to raise inside the escaper and lose the whole digest (no page for a 72-cycle-deep dead loop); it now renders as its escape. A value too deeply nested to render becomes a short placeholder at every quote, in the fast-fail page id (existing ids unchanged, new shapes pinned exactly), in the cause classifier and in the lock attribution. Every lock-file field the digest or a page comment quotes (cycle id, pid, invocation id, owner identity, heartbeat) is escaped and bounded, so a newline can no longer forge an alert line or a multi-line page comment; a non-finite number in the lock or a ledger exit status names itself instead of crashing; a boolean heartbeat reads as invalid; the store's agent, id and priority quotes are escaped. Three independent verification rounds on frozen copies, the third converged; harness 355 to 398 cases, every one red first by name; 30 mutants, 29 killed by name and one predicted survivor disclosed; post-merge proof from the main checkout on copies of the live ledger and lock. Five follow-ups filed and one folded.",
       "blockers": [],
-      "next_action": "Mutants by name, real-data dry run on copies, second independent verification round on a frozen copy, merge --no-ff, post-merge proof.",
-      "updated_at": "2026-09-13T22:41:12.982Z"
+      "next_action": "Loop continues: next cycle pulls the next mission from the helm store.",
+      "updated_at": "2026-09-14T00:15:37.283Z"
     }
   ],
   "history": [
@@ -1612,6 +1612,14 @@
       "at": "2026-09-13T22:41:12.982Z",
       "evidence": "PARTIAL",
       "commit": "3be3029"
+    },
+    {
+      "task_id": "MC-LOOP-37",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-14T00:15:37.283Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "6874962"
     }
   ]
 }

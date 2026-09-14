@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-13T22:41:12.982Z",
+  "updated_at": "2026-09-14T00:15:37.283Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-37",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 38,
+        "complete": 39,
         "total": 40,
-        "percent": 95
+        "percent": 98
       },
-      "next_action": "Mutants by name, real-data dry run on copies, second independent verification round on a frozen copy, merge --no-ff, post-merge proof.",
-      "updated_at": "2026-09-13T22:41:12.982Z"
+      "next_action": "Loop continues: next cycle pulls the next mission from the helm store.",
+      "updated_at": "2026-09-14T00:15:37.283Z"
     }
   ]
 }
