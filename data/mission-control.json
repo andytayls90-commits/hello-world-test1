@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-14T07:23:26.324Z",
+  "updated_at": "2026-09-20T17:23:30.720Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-LOOP-41",
-  "next_action": "Reproduce on a scratch copy of the store; write failing tests by name; fix; independent verification.",
+  "next_action": "Commit the round-2 fixes and pins; scratch real-data proof; round-3 independent verification; merge; restart; live proof.",
   "milestones": [
     {
       "id": "MC0",
@@ -1038,10 +1038,10 @@
       "target_at": null,
       "evidence": "PARTIAL",
       "commit": null,
-      "summary": "In progress (2026-09-14 cycle4): reproduce the overflow and the legacy-bytes failures on a scratch copy, write the failing tests first, bound the paging parameters on every list route with a shared dependency and a coverage guard, run every list reader's rows through the shared scrub so a legacy bytes cell is served named, then independent verification, merge, restart and live proof.",
+      "summary": "In progress (2026-09-14 cycle4, resumed 2026-09-20): the paging bounds and the named-legacy-cell readers are built with failing-first tests, guards and two independent verification rounds; round 2 found the event-feed marker was still not consumable by the downstream relay, a raw-bytes credential cell answered 500 instead of 401, and the coverage guard was blind to some handler shapes — all three fixed in the worktree. The loop stalled on a monthly usage limit from 2026-09-14 to 2026-09-20 (TRACKER_UPDATE_DELAYED for that interval); resumed under the same task. Remaining: commit the round-2 fixes, scratch proof, round-3 independent verification, merge, restart, live proof.",
       "blockers": [],
-      "next_action": "Reproduce on a scratch copy of the store; write failing tests by name; fix; independent verification.",
-      "updated_at": "2026-09-14T07:23:26.324Z"
+      "next_action": "Commit the round-2 fixes and pins; scratch real-data proof; round-3 independent verification; merge; restart; live proof.",
+      "updated_at": "2026-09-20T17:23:30.720Z"
     }
   ],
   "history": [
@@ -1794,6 +1794,14 @@
       "from": "PLANNED",
       "to": "IN_PROGRESS",
       "at": "2026-09-14T07:23:26.324Z",
+      "evidence": "PARTIAL",
+      "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-41",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-20T17:23:30.720Z",
       "evidence": "PARTIAL",
       "commit": null
     }
