@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-20T20:33:55.071Z",
+  "updated_at": "2026-09-20T21:25:52.484Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-42",
       "progress": {
         "complete": 43,
-        "total": 44,
-        "percent": 98
+        "total": 45,
+        "percent": 96
       },
-      "next_action": "Follow-ups filed: refuse unknown query keys by construction after fixing the callers that send undeclared filters; three write routes that fail on a pre-existing raw-bytes cell; filter-column raw-bytes cells that silently change behaviour.",
-      "updated_at": "2026-09-20T20:33:55.071Z"
+      "next_action": "Fix the three endpoints and add the sweep guard; independent verification before merge.",
+      "updated_at": "2026-09-20T21:25:52.484Z"
     }
   ]
 }

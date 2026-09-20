@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-20T20:33:55.071Z",
+  "updated_at": "2026-09-20T21:25:52.484Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Follow-ups filed: refuse unknown query keys by construction after fixing the callers that send undeclared filters; three write routes that fail on a pre-existing raw-bytes cell; filter-column raw-bytes cells that silently change behaviour.",
+  "current_task_id": "MC-LOOP-42",
+  "next_action": "Fix the three endpoints and add the sweep guard; independent verification before merge.",
   "milestones": [
     {
       "id": "MC0",
@@ -336,6 +336,14 @@
       "task_ids": [
         "MC-LOOP-41"
       ]
+    },
+    {
+      "id": "MC41",
+      "title": "No write endpoint of the mission-control API fails on a legacy raw-bytes cell (2026-09-20 cycle1)",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-42"
+      ]
     }
   ],
   "tasks": [
@@ -373,7 +381,7 @@
     },
     {
       "id": "MC-HELM-1",
-      "title": "Mission store: authenticate every write route (create, edit, tape, decision ruling) \u2014 no unauthenticated local caller",
+      "title": "Mission store: authenticate every write route (create, edit, tape, decision ruling) — no unauthenticated local caller",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -398,9 +406,9 @@
       "target_at": null,
       "evidence": "VERIFIED LIVE",
       "commit": "b1372b9",
-      "summary": "Delivered: every write made through the console to the mission store now requires a verified operator session \u2014 an HttpOnly signed cookie from a one-time operator sign-in, or a verified edge-login identity; anonymous, spoofed-identity, forged-cookie and forged-edge-token writes are refused at the console before the store is contacted, and a cross-site browser context is refused even with a session. Reads are unchanged. The audit trail now names the signed-in person instead of a generic operator. New tests 37 (all failed before the fix), console suite 304, real-money bolt 10/10, paper gate confirmed. An independent adversarial verification against the running console (private network and edge included) confirmed every refusal and the attribution; the positive edge-login path is proven in the harness only. Two of its low findings (sign-in lockout, key-set refresh flooding) were fixed in-cycle; the rest filed.",
+      "summary": "Delivered: every write made through the console to the mission store now requires a verified operator session — an HttpOnly signed cookie from a one-time operator sign-in, or a verified edge-login identity; anonymous, spoofed-identity, forged-cookie and forged-edge-token writes are refused at the console before the store is contacted, and a cross-site browser context is refused even with a session. Reads are unchanged. The audit trail now names the signed-in person instead of a generic operator. New tests 37 (all failed before the fix), console suite 304, real-money bolt 10/10, paper gate confirmed. An independent adversarial verification against the running console (private network and edge included) confirmed every refusal and the attribution; the positive edge-login path is proven in the harness only. Two of its low findings (sign-in lockout, key-set refresh flooding) were fixed in-cycle; the rest filed.",
       "blockers": [],
-      "next_action": "Filed for follow-up: a console rewrite forwards every method to the trading backend without a gate (high); reads through the console proxy still carry operator authority (low); session hardening \u2014 revocation on sign-out, stricter origin check (low). Next cycle: reconcile and pick the highest in-boundary item.",
+      "next_action": "Filed for follow-up: a console rewrite forwards every method to the trading backend without a gate (high); reads through the console proxy still carry operator authority (low); session hardening — revocation on sign-out, stricter origin check (low). Next cycle: reconcile and pick the highest in-boundary item.",
       "updated_at": "2026-09-02T20:51:54.593Z"
     },
     {
@@ -416,7 +424,7 @@
       "commit": "a12c75b",
       "summary": "Delivered: a blocked cycle outcome now lands on the mission board. The loop's finish step marks the held mission with the store's supported paused flag, keeps the reason comment, and hands the lease back, so the item shows as paused, is skipped by the work queue and the watchdog digest names it instead of paging. The test harness's fake store now enforces the real column contract and pagination (it previously accepted a value the real store rejects), and store-level tests pin the contract. Proven on a scratch copy of the real store (old path refused with an error and wedged; new path lands), then independently verified: holds with caveats. Two follow-ups fixed in-cycle (paged revision lookup, fixture label); negative-path hardening filed.",
       "blockers": [],
-      "next_action": "Next cycle: reconcile and pick the highest in-boundary item \u2014 candidates: loop finish negative-path hardening (re-claim on a reaped lease, idempotent comment, reason on the row), console session hardening, reads through the console proxy carrying operator authority.",
+      "next_action": "Next cycle: reconcile and pick the highest in-boundary item — candidates: loop finish negative-path hardening (re-claim on a reaped lease, idempotent comment, reason on the row), console session hardening, reads through the console proxy carrying operator authority.",
       "updated_at": "2026-09-03T00:41:26.315Z"
     },
     {
@@ -517,7 +525,7 @@
     },
     {
       "id": "MC-LOOP-9",
-      "title": "Autonomous loop: console operator sign-in hardening \u2014 a sign-out must invalidate the session on the server, the browser-origin check must use a fixed allowlist rather than caller-set headers, sign-out itself must be same-origin, and a bad audit label must be rejected rather than silently replaced",
+      "title": "Autonomous loop: console operator sign-in hardening — a sign-out must invalidate the session on the server, the browser-origin check must use a fixed allowlist rather than caller-set headers, sign-out itself must be same-origin, and a bad audit label must be rejected rather than silently replaced",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -533,7 +541,7 @@
     },
     {
       "id": "MC-LOOP-10",
-      "title": "Autonomous loop: the console's read path must stop granting operator-level access to anonymous readers \u2014 the server-side operator credential is attached to a read only when the caller holds a verified console session",
+      "title": "Autonomous loop: the console's read path must stop granting operator-level access to anonymous readers — the server-side operator credential is attached to a read only when the caller holds a verified console session",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -549,7 +557,7 @@
     },
     {
       "id": "MC-LOOP-11",
-      "title": "Autonomous loop: the console's read-only acceptance gate must reflect the de-scoped shell \u2014 expected stations and legacy redirects derive from the platform's plugin flags, and the retired desk routes are asserted as not-found when the plugin is off",
+      "title": "Autonomous loop: the console's read-only acceptance gate must reflect the de-scoped shell — expected stations and legacy redirects derive from the platform's plugin flags, and the retired desk routes are asserted as not-found when the plugin is off",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -565,7 +573,7 @@
     },
     {
       "id": "MC-LOOP-12",
-      "title": "Autonomous loop: the console's proxy must pass live-status streams through and close the upstream connection when the viewer disconnects \u2014 every page view was leaving a permanent connection open to the mission store until it ran out of file handles",
+      "title": "Autonomous loop: the console's proxy must pass live-status streams through and close the upstream connection when the viewer disconnects — every page view was leaving a permanent connection open to the mission store until it ran out of file handles",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -581,7 +589,7 @@
     },
     {
       "id": "MC-LOOP-13",
-      "title": "Autonomous loop: the loop trigger must treat a launched-but-not-yet-locked cycle as running \u2014 its running-cycle check only looked for the lock file, so a second trigger run in the minutes before a cycle locks started a second concurrent cycle on the same lane (observed twice in four minutes on the trading lane)",
+      "title": "Autonomous loop: the loop trigger must treat a launched-but-not-yet-locked cycle as running — its running-cycle check only looked for the lock file, so a second trigger run in the minutes before a cycle locks started a second concurrent cycle on the same lane (observed twice in four minutes on the trading lane)",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -590,14 +598,14 @@
       "target_at": null,
       "evidence": "VERIFIED LIVE",
       "commit": "3ad5e45",
-      "summary": "Complete: the loop trigger's running-cycle gate now asks the service manager whether any cycle unit of its own lane is already active before it looks at the lock file, and stands down while one exists \u2014 read-only, time-bounded, fail-closed on a probe error, lane-scoped, and stateless (a crashed cycle simply is not active). Root cause: the gate keyed only on the single-flight lock, which a launched cycle creates minutes later, so a second trigger run inside that window started a second concurrent cycle. Each launched cycle now writes its own output file (a stable link points at the latest) so duplicate or killed cycles stay attributable. Proven test-first (14 new cases, suite 68 to 82; the same cases fail 12 times against the old script), independently verified (held with findings, all addressed; the verifier reproduced the double launch on the old script and saw exactly one launch under concurrent triggers on the new), landed on master 3ad5e45 with no restart needed, and re-proven with the deployed script against this cycle's own live unit. Safety checks unchanged (paper only).",
+      "summary": "Complete: the loop trigger's running-cycle gate now asks the service manager whether any cycle unit of its own lane is already active before it looks at the lock file, and stands down while one exists — read-only, time-bounded, fail-closed on a probe error, lane-scoped, and stateless (a crashed cycle simply is not active). Root cause: the gate keyed only on the single-flight lock, which a launched cycle creates minutes later, so a second trigger run inside that window started a second concurrent cycle. Each launched cycle now writes its own output file (a stable link points at the latest) so duplicate or killed cycles stay attributable. Proven test-first (14 new cases, suite 68 to 82; the same cases fail 12 times against the old script), independently verified (held with findings, all addressed; the verifier reproduced the double launch on the old script and saw exactly one launch under concurrent triggers on the new), landed on master 3ad5e45 with no restart needed, and re-proven with the deployed script against this cycle's own live unit. Safety checks unchanged (paper only).",
       "blockers": [],
       "next_action": "Next loop cycle picks the next open item; the watchdog blind spot for a long-running cycle that never locks and the dispatcher's keyword routing are queued as their own items.",
       "updated_at": "2026-09-05T02:55:35.364Z"
     },
     {
       "id": "MC-LOOP-14",
-      "title": "Autonomous loop: the console's pass-through to the desk backend must be read-only \u2014 the path-level rewrite forwarded every HTTP method to the backend with no gate, so an anonymous caller who could reach the console could reach backend write routes and bypass the aggregator's mutation denylist (paper routes only; the real-money bolt and live gate were never reachable)",
+      "title": "Autonomous loop: the console's pass-through to the desk backend must be read-only — the path-level rewrite forwarded every HTTP method to the backend with no gate, so an anonymous caller who could reach the console could reach backend write routes and bypass the aggregator's mutation denylist (paper routes only; the real-money bolt and live gate were never reachable)",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -606,14 +614,14 @@
       "target_at": null,
       "evidence": "VERIFIED LIVE",
       "commit": "7930c5e",
-      "summary": "Complete: the console's pass-through to the desk backend is now read-only \u2014 a dedicated handler forwards GET and HEAD and answers every other method 405 before any upstream contact, replacing the method-agnostic path rewrite (which is now guarded against reappearing in any form). Root cause: a framework-level rewrite forwards whatever method arrives, so the client-side read-only guarantee never constrained the server path and the aggregator's mutation denylist was not in the loop. Proven test-first (15 contract cases, suite 333 to 348; a request-level exit-gate spec fails 15 times against the old build and passes 21 of 21 on the new), independently verified (held with findings, all addressed: a recording upstream saw only reads across a 50-probe battery of method, smuggling and path tricks, and re-adding the rewrite was shown to bypass the handler), landed on master 7930c5e, built and restarted once, and re-proven live: every write 405 with zero bytes, reads byte-identical, the backend's own log shows zero writes and eleven reads from the proof run. Safety checks unchanged (paper only, real-money bolt tests pass before and after). Two sibling pass-throughs were audited and queued as their own items (the automation assistant's path forwards every method with no caller gate; the fleet path points at a retired upstream).",
+      "summary": "Complete: the console's pass-through to the desk backend is now read-only — a dedicated handler forwards GET and HEAD and answers every other method 405 before any upstream contact, replacing the method-agnostic path rewrite (which is now guarded against reappearing in any form). Root cause: a framework-level rewrite forwards whatever method arrives, so the client-side read-only guarantee never constrained the server path and the aggregator's mutation denylist was not in the loop. Proven test-first (15 contract cases, suite 333 to 348; a request-level exit-gate spec fails 15 times against the old build and passes 21 of 21 on the new), independently verified (held with findings, all addressed: a recording upstream saw only reads across a 50-probe battery of method, smuggling and path tricks, and re-adding the rewrite was shown to bypass the handler), landed on master 7930c5e, built and restarted once, and re-proven live: every write 405 with zero bytes, reads byte-identical, the backend's own log shows zero writes and eleven reads from the proof run. Safety checks unchanged (paper only, real-money bolt tests pass before and after). Two sibling pass-throughs were audited and queued as their own items (the automation assistant's path forwards every method with no caller gate; the fleet path points at a retired upstream).",
       "blockers": [],
       "next_action": "Next loop cycle picks the next open item; the automation-assistant pass-through gate and the retired fleet path are queued as their own items.",
       "updated_at": "2026-09-05T03:52:51.985Z"
     },
     {
       "id": "MC-LOOP-15",
-      "title": "Autonomous loop: the console's pass-through to the automation assistant must gate writes \u2014 the path-level rewrite forwarded every HTTP method with no caller gate, so an anonymous caller who could reach the console could invoke the assistant's decision and tuning routes (paper only; the real-money bolt and live gate were never reachable)",
+      "title": "Autonomous loop: the console's pass-through to the automation assistant must gate writes — the path-level rewrite forwarded every HTTP method with no caller gate, so an anonymous caller who could reach the console could invoke the assistant's decision and tuning routes (paper only; the real-money bolt and live gate were never reachable)",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -622,14 +630,14 @@
       "target_at": null,
       "evidence": "VERIFIED LIVE",
       "commit": "0ee203d",
-      "summary": "Complete: the console's pass-through to the automation assistant is now gated \u2014 a dedicated handler forwards reads without credentials, allows exactly the three deck actions (chat, conductor dispatch, policy save) only for a verified operator session in a same-origin context, refuses every other write path (decision, tuning, propose, mission-event) even when signed in, and answers every other method 405, all before any upstream contact \u2014 replacing the method-agnostic rewrite (now guarded against reappearing by text and by source-pattern evaluation). Root cause: a framework-level rewrite forwards whatever method arrives and the assistant has no caller authentication of its own. Proven test-first (31 contract cases, suite 348 to 379; a request-level exit-gate spec runs behind a fail-safe canary that aborts on an ungated build), independently verified (held with findings, all addressed: a recording upstream saw only the allowed writes and never a credential header across a 75-probe path/protocol battery; re-adding the rewrite was shown to bypass the handler; the deck's own actions were driven in a headless browser), landed on master 0ee203d, built and restarted once, and re-proven live: every anonymous write refused with zero upstream lines, reads byte-identical, full deck exit gate 222 of 222 signed-in. Disclosed: the cycle's first negative proof ran the spec against the old build and so exercised the exposure itself (inert outcomes; the spec is now fail-safe). Safety checks unchanged (paper only, real-money bolt tests pass before and after).",
+      "summary": "Complete: the console's pass-through to the automation assistant is now gated — a dedicated handler forwards reads without credentials, allows exactly the three deck actions (chat, conductor dispatch, policy save) only for a verified operator session in a same-origin context, refuses every other write path (decision, tuning, propose, mission-event) even when signed in, and answers every other method 405, all before any upstream contact — replacing the method-agnostic rewrite (now guarded against reappearing by text and by source-pattern evaluation). Root cause: a framework-level rewrite forwards whatever method arrives and the assistant has no caller authentication of its own. Proven test-first (31 contract cases, suite 348 to 379; a request-level exit-gate spec runs behind a fail-safe canary that aborts on an ungated build), independently verified (held with findings, all addressed: a recording upstream saw only the allowed writes and never a credential header across a 75-probe path/protocol battery; re-adding the rewrite was shown to bypass the handler; the deck's own actions were driven in a headless browser), landed on master 0ee203d, built and restarted once, and re-proven live: every anonymous write refused with zero upstream lines, reads byte-identical, full deck exit gate 222 of 222 signed-in. Disclosed: the cycle's first negative proof ran the spec against the old build and so exercised the exposure itself (inert outcomes; the spec is now fail-safe). Safety checks unchanged (paper only, real-money bolt tests pass before and after).",
       "blockers": [],
       "next_action": "Next loop cycle picks the next open item (the retired fleet path rewrite is queued as its own item).",
       "updated_at": "2026-09-05T04:53:51.564Z"
     },
     {
       "id": "MC-LOOP-16",
-      "title": "Autonomous loop: the single-flight lock must be released mechanically when a cycle's process exits \u2014 a cycle that spent its last turn on the handover text left the lock held, so the next scheduled slot skipped and the following cycle only started an hour later via stale-owner recovery",
+      "title": "Autonomous loop: the single-flight lock must be released mechanically when a cycle's process exits — a cycle that spent its last turn on the handover text left the lock held, so the next scheduled slot skipped and the following cycle only started an hour later via stale-owner recovery",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -645,7 +653,7 @@
     },
     {
       "id": "MC-LOOP-17",
-      "title": "Autonomous loop: the independent watchdog must audit the second autonomous lane too \u2014 today its stale-lock, fast-fail, stall and lost-finding checks read only the first lane's lock, ledger and progress log, so a wedged or dying second lane is never paged",
+      "title": "Autonomous loop: the independent watchdog must audit the second autonomous lane too — today its stale-lock, fast-fail, stall and lost-finding checks read only the first lane's lock, ledger and progress log, so a wedged or dying second lane is never paged",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -661,7 +669,7 @@
     },
     {
       "id": "MC-LOOP-18",
-      "title": "Autonomous loop: the independent watchdog must page when a launched cycle unit stays active for hours without ever taking the lane lock \u2014 today a runtime that hangs before orientation blocks its lane at every trigger slot with nothing paging, until a human stops the unit",
+      "title": "Autonomous loop: the independent watchdog must page when a launched cycle unit stays active for hours without ever taking the lane lock — today a runtime that hangs before orientation blocks its lane at every trigger slot with nothing paging, until a human stops the unit",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -677,7 +685,7 @@
     },
     {
       "id": "MC-LOOP-19",
-      "title": "Autonomous loop: the independent watchdog's lost-action check must read the ledger lines the loop actually writes \u2014 today its line filter drops every bulleted entry, and both lanes write every cycle record as a bullet, so a finding described in a cycle record can never page",
+      "title": "Autonomous loop: the independent watchdog's lost-action check must read the ledger lines the loop actually writes — today its line filter drops every bulleted entry, and both lanes write every cycle record as a bullet, so a finding described in a cycle record can never page",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -693,7 +701,7 @@
     },
     {
       "id": "MC-LOOP-20",
-      "title": "Autonomous loop: the independent watchdog's lost-action window must be time-based, not count-based \u2014 today it audits only the six newest ledger lines, so a finding recorded in a cycle line that the watchdog could not read for about six hours (timer down, store unreachable) ages out silently and is never paged",
+      "title": "Autonomous loop: the independent watchdog's lost-action window must be time-based, not count-based — today it audits only the six newest ledger lines, so a finding recorded in a cycle line that the watchdog could not read for about six hours (timer down, store unreachable) ages out silently and is never paged",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -709,7 +717,7 @@
     },
     {
       "id": "MC-LOOP-21",
-      "title": "Autonomous loop: the independent watchdog stays silent when the primary lane's progress log is unreadable (missing, a directory, or no read permission) \u2014 only the extra lanes warn, so the primary lane's lost-action audit can go blind with no signal in the digest",
+      "title": "Autonomous loop: the independent watchdog stays silent when the primary lane's progress log is unreadable (missing, a directory, or no read permission) — only the extra lanes warn, so the primary lane's lost-action audit can go blind with no signal in the digest",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -720,12 +728,12 @@
       "commit": "df0ed6f",
       "summary": "Complete: the loop's independent watchdog now warns when the primary lane's progress log cannot be read, instead of silently auditing nothing. Root cause: the lost-action check only warned for the extra lanes when their log was missing or unreadable; the primary lane kept a legacy silence, so a moved or unreadable log blinded the main lane's scan indefinitely with no signal. Now a missing, directory, unreadable, unsearchable-parent, dangling-link, pipe, socket or device path all raise one digest-only warning naming the state and the setting to fix; the log is opened in a non-blocking way and its kind is decided on the open handle, so a pipe or device can no longer stall the watchdog forever (the old code hung with no page), and a look-then-open swap cannot reintroduce the stall; an invalid byte in the log is replaced and every line still audited with a separate formatting warning. Proven test-first (four cases red on the old code, then further red cases for each verifier finding), fourteen new cases, suite 154 to 168 passing normally and under a bare environment; independently verified over three adversarial rounds until converged (five findings fixed test-first, one out-of-scope sibling stall filed as a follow-up, the rest disclosed); the live ledgers raise no page before or after the merge and the first live run on the merged code was clean. The work spanned two cycles: the first stopped mid-verification on a runtime usage limit and its lock was released automatically by the safety net shipped earlier; the next cycle resumed from the same branch. Safety checks unchanged (paper only, real-money bolt tests pass before and after). No service change needed.",
       "blockers": [],
-      "next_action": "Follow-up filed: the same stall class at the watchdog's other input files (lock, ledger, unit output, registry) \u2014 route those reads through the same non-blocking open.",
+      "next_action": "Follow-up filed: the same stall class at the watchdog's other input files (lock, ledger, unit output, registry) — route those reads through the same non-blocking open.",
       "updated_at": "2026-09-05T12:01:42.912Z"
     },
     {
       "id": "MC-LOOP-22",
-      "title": "Autonomous loop: the independent watchdog can still stall forever when one of its OTHER input files (the single-flight lock, the cycle outcome ledger, a run's output file, the worktree registry or grandfather list, the override audit, the operator environment file) is a pipe, socket or device \u2014 only the progress log was made safe; route every input read through the same non-blocking regular-file open and warn once per input",
+      "title": "Autonomous loop: the independent watchdog can still stall forever when one of its OTHER input files (the single-flight lock, the cycle outcome ledger, a run's output file, the worktree registry or grandfather list, the override audit, the operator environment file) is a pipe, socket or device — only the progress log was made safe; route every input read through the same non-blocking regular-file open and warn once per input",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -741,7 +749,7 @@
     },
     {
       "id": "MC-LOOP-23",
-      "title": "Autonomous loop: the independent watchdog files a NEW fast-fail rectify page every hour while a runtime outage lasts (the page id is keyed on the exact last-three-cycle window, which slides each slot) and never retires them once the loop recovers \u2014 key the page on the outage episode, file one page per lane per outage, and auto-close every open page with a comment when a real cycle is recorded again",
+      "title": "Autonomous loop: the independent watchdog files a NEW fast-fail rectify page every hour while a runtime outage lasts (the page id is keyed on the exact last-three-cycle window, which slides each slot) and never retires them once the loop recovers — key the page on the outage episode, file one page per lane per outage, and auto-close every open page with a comment when a real cycle is recorded again",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -757,7 +765,7 @@
     },
     {
       "id": "MC-LOOP-24",
-      "title": "Autonomous loop: the independent watchdog reads a broken link at a lane's single-flight lock path (a dangling symbolic link, or a link loop) as 'no lock, lane free' with no signal in the digest \u2014 name the state as a warning so an odd lock path is never mistaken for a free lane",
+      "title": "Autonomous loop: the independent watchdog reads a broken link at a lane's single-flight lock path (a dangling symbolic link, or a link loop) as 'no lock, lane free' with no signal in the digest — name the state as a warning so an odd lock path is never mistaken for a free lane",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -773,7 +781,7 @@
     },
     {
       "id": "MC-LOOP-25",
-      "title": "Autonomous loop: a lane list joined with commas instead of semicolons silently collapses into one lane whose title tag swallows the rest, so the other lanes are never audited and no warning is raised \u2014 recover every lane and warn once that the delimiter is wrong",
+      "title": "Autonomous loop: a lane list joined with commas instead of semicolons silently collapses into one lane whose title tag swallows the rest, so the other lanes are never audited and no warning is raised — recover every lane and warn once that the delimiter is wrong",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -789,7 +797,7 @@
     },
     {
       "id": "MC-LOOP-26",
-      "title": "Autonomous loop: an extra lane whose progress-log path is relative is accepted silently \u2014 the watchdog resolves it against whatever directory it happens to run from, so the same lane list audits the log under the service and nothing from a shell; make a relative progress path loud (own warning naming the directory it resolved against) while the lane's lock and ledger stay audited",
+      "title": "Autonomous loop: an extra lane whose progress-log path is relative is accepted silently — the watchdog resolves it against whatever directory it happens to run from, so the same lane list audits the log under the service and nothing from a shell; make a relative progress path loud (own warning naming the directory it resolved against) while the lane's lock and ledger stay audited",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -805,7 +813,7 @@
     },
     {
       "id": "MC-LOOP-27",
-      "title": "Autonomous loop: an empty progress-log path knob (exported as an empty string by a unit) yields a nameless warning that cannot say what was looked for \u2014 treat the empty value like an unset one (use the documented default, matching the trigger's own fallback) and warn once naming the knob and the default that was used",
+      "title": "Autonomous loop: an empty progress-log path knob (exported as an empty string by a unit) yields a nameless warning that cannot say what was looked for — treat the empty value like an unset one (use the documented default, matching the trigger's own fallback) and warn once naming the knob and the default that was used",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -814,14 +822,14 @@
       "target_at": null,
       "evidence": "VERIFIED LIVE",
       "commit": "c866b79",
-      "summary": "Complete: the loop's independent watchdog now treats an empty or whitespace-only progress-log path knob like an unset one \u2014 it audits the documented default log and emits one digest warning per tick naming the knob, the literal value and the default used (never a page); every downstream message names the default path, so the nameless warning is gone. Test-first (six new harness cases, red on the old auditor then green); two rounds of independent verification converged (one wording finding and one test-pin finding fixed test-first, two pre-existing siblings filed as follow-ups). Merged and pushed; the first live watchdog tick on the new code reported no alerts or warnings; no service restart was needed. The cycle was resumed after a runtime usage limit interrupted it mid-verification; the lock safety net released cleanly.",
+      "summary": "Complete: the loop's independent watchdog now treats an empty or whitespace-only progress-log path knob like an unset one — it audits the documented default log and emits one digest warning per tick naming the knob, the literal value and the default used (never a page); every downstream message names the default path, so the nameless warning is gone. Test-first (six new harness cases, red on the old auditor then green); two rounds of independent verification converged (one wording finding and one test-pin finding fixed test-first, two pre-existing siblings filed as follow-ups). Merged and pushed; the first live watchdog tick on the new code reported no alerts or warnings; no service restart was needed. The cycle was resumed after a runtime usage limit interrupted it mid-verification; the lock safety net released cleanly.",
       "blockers": [],
       "next_action": "Follow-ups filed: empty lock/ledger knobs stay silent; a newline inside a relative progress path splits the digest line; undecodable bytes in the path crash the digest printer.",
       "updated_at": "2026-09-06T22:45:52.520Z"
     },
     {
       "id": "MC-LOOP-28",
-      "title": "Autonomous loop: a path knob holding bytes that are not valid text (for example a pasted stray byte in the progress-log path) crashes the watchdog's report printer under the service locale, so the tick ends in a traceback instead of a digest \u2014 print escaped, locale-independent output and warn once per lane naming the knob and the bad bytes",
+      "title": "Autonomous loop: a path knob holding bytes that are not valid text (for example a pasted stray byte in the progress-log path) crashes the watchdog's report printer under the service locale, so the tick ends in a traceback instead of a digest — print escaped, locale-independent output and warn once per lane naming the knob and the bad bytes",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -830,14 +838,14 @@
       "target_at": null,
       "evidence": "VERIFIED LIVE",
       "commit": "f7be286",
-      "summary": "Complete: the loop's independent watchdog can no longer lose a tick's digest to a text-encoding crash caused by a configuration value holding bytes that are not valid text \u2014 its report streams now print such bytes escaped in every locale, and one digest warning per lane names the affected field, the knob and the raw bytes (a value whose file happens to exist is no longer passed silently). Test-first (nine new harness cases, red on the old auditor then green, deltas matched by name; three single-edit mutants each fail by name); two rounds of independent verification converged (one attribution gap fixed test-first, two pre-existing siblings filed as follow-ups, informational items disclosed or corrected). Merged and pushed; post-merge suite green in the main checkout; the live tick on the new code reads the store once and writes nothing; no service restart was needed.",
+      "summary": "Complete: the loop's independent watchdog can no longer lose a tick's digest to a text-encoding crash caused by a configuration value holding bytes that are not valid text — its report streams now print such bytes escaped in every locale, and one digest warning per lane names the affected field, the knob and the raw bytes (a value whose file happens to exist is no longer passed silently). Test-first (nine new harness cases, red on the old auditor then green, deltas matched by name; three single-edit mutants each fail by name); two rounds of independent verification converged (one attribution gap fixed test-first, two pre-existing siblings filed as follow-ups, informational items disclosed or corrected). Merged and pushed; post-merge suite green in the main checkout; the live tick on the new code reads the store once and writes nothing; no service restart was needed.",
       "blockers": [],
       "next_action": "Follow-ups filed: worktree-audit knobs and a malformed registry stay silent; a lane title tag holding a bad byte is silently accepted.",
       "updated_at": "2026-09-07T00:01:26.358Z"
     },
     {
       "id": "MC-LOOP-29",
-      "title": "Autonomous loop: the watchdog's worktree audit goes blind without a warning when one of its own configuration values holds bytes that are not valid text, or when its registry file is present but unreadable as data \u2014 name the knob, the bytes or the parse error once per tick",
+      "title": "Autonomous loop: the watchdog's worktree audit goes blind without a warning when one of its own configuration values holds bytes that are not valid text, or when its registry file is present but unreadable as data — name the knob, the bytes or the parse error once per tick",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -853,7 +861,7 @@
     },
     {
       "id": "MC-LOOP-30",
-      "title": "Autonomous loop: the watchdog's record of operator-acknowledged worktrees can hold a line it cannot read (not valid data, a non-numeric time, a missing path, a byte that is not valid text, or an unreadable file) \u2014 the acknowledgement is dropped and the worktree pages as unclaimed with no hint why; name the unusable lines once per tick",
+      "title": "Autonomous loop: the watchdog's record of operator-acknowledged worktrees can hold a line it cannot read (not valid data, a non-numeric time, a missing path, a byte that is not valid text, or an unreadable file) — the acknowledgement is dropped and the worktree pages as unclaimed with no hint why; name the unusable lines once per tick",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -869,7 +877,7 @@
     },
     {
       "id": "MC-LOOP-31",
-      "title": "Autonomous loop: the single-flight lock tool crashes with a raw traceback when its lock path is a broken symbolic link (a dangling link reads as a free lane that can never be acquired; a link loop crashes the status probe itself) and the trigger can launch a cycle that dies at acquire every slot \u2014 name the broken path, refuse cleanly, skip fail-closed",
+      "title": "Autonomous loop: the single-flight lock tool crashes with a raw traceback when its lock path is a broken symbolic link (a dangling link reads as a free lane that can never be acquired; a link loop crashes the status probe itself) and the trigger can launch a cycle that dies at acquire every slot — name the broken path, refuse cleanly, skip fail-closed",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -878,14 +886,14 @@
       "target_at": null,
       "evidence": "VERIFIED LIVE",
       "commit": "61a554e",
-      "summary": "Done (2026-09-07 cycle3 + resume cycle4; merge 61a554e): the single-flight lock tool classifies its lock root and path before any read or link \u2014 a link that resolves to nothing, or a root that is a dangling link / loop / regular file / empty / uncreatable / unreachable, is reported as a broken path in the status verdict, refused by name with a distinct exit code by acquire/heartbeat/release, kept by the unit-exit hook, never removed or replaced; link targets are escaped and bounded in every message; an unwritable root is a named error; the trigger checks the root before touching it and skips fail-closed naming why. Lock suite 54 -> 71, trigger suite 83 -> 90 (RED-first by name); watchdog suite 273/273; independent verification 3 rounds CONVERGED; real lock root probed read-only; no unit change, no restart. Three pre-existing siblings filed.",
+      "summary": "Done (2026-09-07 cycle3 + resume cycle4; merge 61a554e): the single-flight lock tool classifies its lock root and path before any read or link — a link that resolves to nothing, or a root that is a dangling link / loop / regular file / empty / uncreatable / unreachable, is reported as a broken path in the status verdict, refused by name with a distinct exit code by acquire/heartbeat/release, kept by the unit-exit hook, never removed or replaced; link targets are escaped and bounded in every message; an unwritable root is a named error; the trigger checks the root before touching it and skips fail-closed naming why. Lock suite 54 -> 71, trigger suite 83 -> 90 (RED-first by name); watchdog suite 273/273; independent verification 3 rounds CONVERGED; real lock root probed read-only; no unit change, no restart. Three pre-existing siblings filed.",
       "blockers": [],
       "next_action": "Siblings filed for later cycles: a FIFO at the lock path hangs the status probe; heartbeat/reclaim through a working link replaces the link; the watchdog's broken-path phrase is unbounded.",
       "updated_at": "2026-09-07T04:48:44.850Z"
     },
     {
       "id": "MC-LOOP-32",
-      "title": "Autonomous loop: the single-flight lock tool hangs forever (status probe, acquire, heartbeat, release and the unit-exit hook alike) when its lock path is, or links to, a named pipe \u2014 the trigger's lane probe never returns; a socket, device or directory at the path is misreported as a corrupt lock \u2014 name a non-regular lock target, refuse cleanly, never block, skip fail-closed",
+      "title": "Autonomous loop: the single-flight lock tool hangs forever (status probe, acquire, heartbeat, release and the unit-exit hook alike) when its lock path is, or links to, a named pipe — the trigger's lane probe never returns; a socket, device or directory at the path is misreported as a corrupt lock — name a non-regular lock target, refuse cleanly, never block, skip fail-closed",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -901,7 +909,7 @@
     },
     {
       "id": "MC-LOOP-33",
-      "title": "Autonomous loop: the lane watchdog reads a lane whose lock root is a dangling symbolic link, or an absent root that cannot be created, as a FREE lane and raises nothing, while the lock tool refuses that root by name and the trigger skips every slot \u2014 a silently wedged lane with no page; classify the lock root first and name it",
+      "title": "Autonomous loop: the lane watchdog reads a lane whose lock root is a dangling symbolic link, or an absent root that cannot be created, as a FREE lane and raises nothing, while the lock tool refuses that root by name and the trigger skips every slot — a silently wedged lane with no page; classify the lock root first and name it",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -910,7 +918,7 @@
       "target_at": null,
       "evidence": "VERIFIED LIVE",
       "commit": "72bb9c3",
-      "summary": "Complete (2026-09-07, cycles 6 to 8): the lane watchdog now classifies a lane's lock root and its ancestors before reading the lock \u2014 a dangling or looping link, a non-directory, an unreachable or uncreatable root or ancestor (any error while looking the root up) is one named warning with the kind, an escaped and bounded target, the consequence and an operator avenue, never a silently free lane; the lock tool names the same states with a matching verdict, so its refusal sentence is always true. Three independent verification rounds, each finding fixed test-first with named red-then-green cases; the final round converged (no shape reads a broken lane as free in any tool); sixteen mutants killed by name, two proven equivalent. Suites grew from 273 to 294, 80 to 88 and 96 to 99 cases and pass from the main checkout after the merge; the real lock root is proven read-only; no service restart was needed. Two sibling items filed for their own cycles (an existing unwritable root with no lock; the operator-configured lock path embedded raw).",
+      "summary": "Complete (2026-09-07, cycles 6 to 8): the lane watchdog now classifies a lane's lock root and its ancestors before reading the lock — a dangling or looping link, a non-directory, an unreachable or uncreatable root or ancestor (any error while looking the root up) is one named warning with the kind, an escaped and bounded target, the consequence and an operator avenue, never a silently free lane; the lock tool names the same states with a matching verdict, so its refusal sentence is always true. Three independent verification rounds, each finding fixed test-first with named red-then-green cases; the final round converged (no shape reads a broken lane as free in any tool); sixteen mutants killed by name, two proven equivalent. Suites grew from 273 to 294, 80 to 88 and 96 to 99 cases and pass from the main checkout after the merge; the real lock root is proven read-only; no service restart was needed. Two sibling items filed for their own cycles (an existing unwritable root with no lock; the operator-configured lock path embedded raw).",
       "blockers": [],
       "next_action": "Next queued item from the missions store.",
       "updated_at": "2026-09-07T09:51:31.932Z"
@@ -933,7 +941,7 @@
     },
     {
       "id": "MC-LOOP-35",
-      "title": "Autonomous loop: the watchdog's fast-fail page and alert say only that the headless runtime fails before it can acquire the lock and list generic causes, while the dead unit's own output file holds the exact reason (a model-scoped monthly spend limit sat there unread for three days) \u2014 quote the newest dead unit's output, bounded and escaped, and name the classified failure kind in the page and the alert",
+      "title": "Autonomous loop: the watchdog's fast-fail page and alert say only that the headless runtime fails before it can acquire the lock and list generic causes, while the dead unit's own output file holds the exact reason (a model-scoped monthly spend limit sat there unread for three days) — quote the newest dead unit's output, bounded and escaped, and name the classified failure kind in the page and the alert",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -949,7 +957,7 @@
     },
     {
       "id": "MC-LOOP-36",
-      "title": "Autonomous loop: the watchdog's outcome-ledger reader crashes the whole audit on a non-finite number (NaN/Infinity), counts a NaN duration as a real cycle and so auto-resolves an open fast-fail page, prints a negative age for an end time in the future, and goes blind on one undecodable byte anywhere in the file \u2014 decode per line, reject non-finite numbers, name the bad line once, clamp the age",
+      "title": "Autonomous loop: the watchdog's outcome-ledger reader crashes the whole audit on a non-finite number (NaN/Infinity), counts a NaN duration as a real cycle and so auto-resolves an open fast-fail page, prints a negative age for an end time in the future, and goes blind on one undecodable byte anywhere in the file — decode per line, reject non-finite numbers, name the bad line once, clamp the age",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -965,7 +973,7 @@
     },
     {
       "id": "MC-LOOP-37",
-      "title": "Autonomous loop: the watchdog's shared text escaper crashes the whole audit on a lone surrogate code point in any quoted datum (a hand-edited ledger unit name or exit status), and the lock file's own fields are quoted raw so a newline forges an alert line and a multi-line page comment \u2014 escape every code point instead of crashing (watchdog + lock tool), quote the lock fields through the escaper",
+      "title": "Autonomous loop: the watchdog's shared text escaper crashes the whole audit on a lone surrogate code point in any quoted datum (a hand-edited ledger unit name or exit status), and the lock file's own fields are quoted raw so a newline forges an alert line and a multi-line page comment — escape every code point instead of crashing (watchdog + lock tool), quote the lock fields through the escaper",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -981,7 +989,7 @@
     },
     {
       "id": "MC-LOOP-38",
-      "title": "Autonomous loop: the mission store's edit endpoint accepts a non-finite number for a flag field (paused/rework/archived) and commits it before the response fails, after which every mission list read fails until the row is repaired by hand \u2014 validate every flag and non-finite value before the write (4xx with a reason), never let a failed response leave a committed row, and serve a pre-poisoned row instead of failing the whole list",
+      "title": "Autonomous loop: the mission store's edit endpoint accepts a non-finite number for a flag field (paused/rework/archived) and commits it before the response fails, after which every mission list read fails until the row is repaired by hand — validate every flag and non-finite value before the write (4xx with a reason), never let a failed response leave a committed row, and serve a pre-poisoned row instead of failing the whole list",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -997,7 +1005,7 @@
     },
     {
       "id": "MC-LOOP-39",
-      "title": "Autonomous loop: the operations tape's append endpoint accepts an event payload holding a non-finite number and commits it before the response fails, after which every tape read (and the console's sessions view) fails until the row is deleted by hand \u2014 validate the payload before the write (4xx with a reason), never store a value the API cannot serve, and serve a pre-poisoned tape row named instead of failing the whole list",
+      "title": "Autonomous loop: the operations tape's append endpoint accepts an event payload holding a non-finite number and commits it before the response fails, after which every tape read (and the console's sessions view) fails until the row is deleted by hand — validate the payload before the write (4xx with a reason), never store a value the API cannot serve, and serve a pre-poisoned tape row named instead of failing the whole list",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -1013,7 +1021,7 @@
     },
     {
       "id": "MC-LOOP-40",
-      "title": "Autonomous loop: every remaining write endpoint of the mission-control API (agent registration and heartbeat, agent memory and persona, token cost, council convene/adjourn, message send, decisions create/rule, event cursors, timer control, re-home dossiers) still accepted a value the store cannot hold or the API cannot serve back \u2014 a lone surrogate code point, a non-finite number, an integer beyond 64 bits, a list in a text field \u2014 and answered 500, some after a partial write; apply the one shared boundary to all of them after auth and before the write, guard coverage with a test so no route can bypass it again, and serve a pre-poisoned council row named",
+      "title": "Autonomous loop: every remaining write endpoint of the mission-control API (agent registration and heartbeat, agent memory and persona, token cost, council convene/adjourn, message send, decisions create/rule, event cursors, timer control, re-home dossiers) still accepted a value the store cannot hold or the API cannot serve back — a lone surrogate code point, a non-finite number, an integer beyond 64 bits, a list in a text field — and answered 500, some after a partial write; apply the one shared boundary to all of them after auth and before the write, guard coverage with a test so no route can bypass it again, and serve a pre-poisoned council row named",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -1022,14 +1030,14 @@
       "target_at": null,
       "evidence": "VERIFIED LIVE",
       "commit": "57f6b60",
-      "summary": "Shipped (2026-09-14 cycle3): one shared store boundary now runs on every write endpoint of the mission-control API that accepts a JSON body (twenty routes, including three paid-service routes the first coverage guard had missed because it keyed on a parameter name) \u2014 after the caller's authority is decided and before anything is written \u2014 refusing a lone surrogate, a non-finite number, an integer the store cannot hold, an over-nested body, a non-string in a text column and a non-number in a numeric column with a bounded named reason; the heartbeat no longer commits its audit before failing; the council ledger, token aggregate and agent roster serve legacy poisoned values named instead of failing every read; two coverage guards (a syntax-tree scan of every router and a probe of every body route of the running app) fail as soon as a new route bypasses the boundary. Two independent verification rounds on frozen copies over a copy of the live store: round 1 found the guard gap (fixed), round 2 converged with only low findings closed as guards; two out-of-scope items filed, one recorded on an existing item. Test suite 577 to 1040, 81 named mutants killed, live proof after restart with zero server errors, paper gate and bolt unchanged.",
+      "summary": "Shipped (2026-09-14 cycle3): one shared store boundary now runs on every write endpoint of the mission-control API that accepts a JSON body (twenty routes, including three paid-service routes the first coverage guard had missed because it keyed on a parameter name) — after the caller's authority is decided and before anything is written — refusing a lone surrogate, a non-finite number, an integer the store cannot hold, an over-nested body, a non-string in a text column and a non-number in a numeric column with a bounded named reason; the heartbeat no longer commits its audit before failing; the council ledger, token aggregate and agent roster serve legacy poisoned values named instead of failing every read; two coverage guards (a syntax-tree scan of every router and a probe of every body route of the running app) fail as soon as a new route bypasses the boundary. Two independent verification rounds on frozen copies over a copy of the live store: round 1 found the guard gap (fixed), round 2 converged with only low findings closed as guards; two out-of-scope items filed, one recorded on an existing item. Test suite 577 to 1040, 81 named mutants killed, live proof after restart with zero server errors, paper gate and bolt unchanged.",
       "blockers": [],
       "next_action": "Next cycle picks the next queue item; filed follow-ups: legacy bytes values in other list readers, 64-bit bounds on list query parameters.",
       "updated_at": "2026-09-14T07:07:52.295Z"
     },
     {
       "id": "MC-LOOP-41",
-      "title": "Autonomous loop: six list endpoints of the mission-control API (missions, backlog, agents, decisions, audit, queue) answer 500 when a caller passes a page-size or page-offset integer beyond 64 bits or negative; and every list reader answers 500 forever if a legacy text cell holds raw bytes \u2014 bound the paging parameters on every list route and serve a legacy bytes cell named, guarded so no list route can regress",
+      "title": "Autonomous loop: six list endpoints of the mission-control API (missions, backlog, agents, decisions, audit, queue) answer 500 when a caller passes a page-size or page-offset integer beyond 64 bits or negative; and every list reader answers 500 forever if a legacy text cell holds raw bytes — bound the paging parameters on every list route and serve a legacy bytes cell named, guarded so no list route can regress",
       "project": "Mission Control",
       "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
@@ -1042,6 +1050,22 @@
       "blockers": [],
       "next_action": "Follow-ups filed: refuse unknown query keys by construction after fixing the callers that send undeclared filters; three write routes that fail on a pre-existing raw-bytes cell; filter-column raw-bytes cells that silently change behaviour.",
       "updated_at": "2026-09-20T20:33:55.071Z"
+    },
+    {
+      "id": "MC-LOOP-42",
+      "project": "Mission Control",
+      "title": "Autonomous loop: three write endpoints of the mission-control API (retire an agent, rule a decision, claim a mission as a sandboxed agent) answer 500 when the row they touch holds a legacy raw-bytes text cell — serve or refuse the cell named, and guard every write endpoint against a raw-bytes pre-image",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-20T21:25:52.484Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress (2026-09-20 cycle1): reproducing the three write-endpoint failures on a copy of the store, then failing tests first, fix, write-endpoint pre-image sweep guard, independent verification, merge, restart, live proof.",
+      "blockers": [],
+      "next_action": "Fix the three endpoints and add the sweep guard; independent verification before merge.",
+      "updated_at": "2026-09-20T21:25:52.484Z"
     }
   ],
   "history": [
@@ -1812,6 +1836,14 @@
       "at": "2026-09-20T20:33:55.071Z",
       "evidence": "VERIFIED LIVE",
       "commit": "8f722f2"
+    },
+    {
+      "task_id": "MC-LOOP-42",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-20T21:25:52.484Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
