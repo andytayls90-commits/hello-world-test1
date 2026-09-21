@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-21T05:23:01.406Z",
+  "updated_at": "2026-09-21T05:38:40.431Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-LOOP-44",
-  "next_action": "Write the failing cap tests by name, implement the per-endpoint cap, run the suite, independent verification, merge, restart, live proof.",
+  "next_action": "Dispose the verifier's findings, merge, restart the API, live proof, complete.",
   "milestones": [
     {
       "id": "MC0",
@@ -1108,12 +1108,12 @@
       "started_at": "2026-09-21T05:23:01.406Z",
       "completed_at": null,
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress 2026-09-21 cycle2: mission claimed, isolated worktree created; surveying every consumer of the list endpoints' page size before deciding the per-endpoint cap (RED first, then fix, independent verification, live proof).",
+      "evidence": "IMPLEMENTED / UNVERIFIED",
+      "commit": "5e77b43",
+      "summary": "Implemented on the isolated branch (RED first, then fix): one literal per-endpoint page-size table with no uncapped page type left, every list endpoint declared through it, a request above its cap refused by name before any handler runs; every known consumer's page size surveyed and confirmed under its cap; suite 1458 -> 1524, 9/9 mutants killed by name, subject-vs-control proof on copies of the live store (the whole-store dump becomes a named refusal, healthy pages byte-identical). Independent verification round 1 running.",
       "blockers": [],
-      "next_action": "Write the failing cap tests by name, implement the per-endpoint cap, run the suite, independent verification, merge, restart, live proof.",
-      "updated_at": "2026-09-21T05:23:01.406Z"
+      "next_action": "Dispose the verifier's findings, merge, restart the API, live proof, complete.",
+      "updated_at": "2026-09-21T05:38:40.431Z"
     }
   ],
   "history": [
@@ -1932,6 +1932,14 @@
       "at": "2026-09-21T05:23:01.406Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-44",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-21T05:38:40.431Z",
+      "evidence": "IMPLEMENTED / UNVERIFIED",
+      "commit": "5e77b43"
     }
   ]
 }

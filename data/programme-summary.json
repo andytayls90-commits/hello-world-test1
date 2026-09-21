@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-21T05:23:01.406Z",
+  "updated_at": "2026-09-21T05:38:40.431Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -35,8 +35,8 @@
         "total": 47,
         "percent": 96
       },
-      "next_action": "Write the failing cap tests by name, implement the per-endpoint cap, run the suite, independent verification, merge, restart, live proof.",
-      "updated_at": "2026-09-21T05:23:01.406Z"
+      "next_action": "Dispose the verifier's findings, merge, restart the API, live proof, complete.",
+      "updated_at": "2026-09-21T05:38:40.431Z"
     }
   ]
 }
