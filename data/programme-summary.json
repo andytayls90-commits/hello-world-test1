@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-21T06:26:47.341Z",
+  "updated_at": "2026-09-21T08:25:52.744Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -35,8 +35,8 @@
         "total": 48,
         "percent": 96
       },
-      "next_action": "Write the failing tests by name (every reader and every write endpoint against an invalid-text cell), implement the connection-level decode belt, run the suite, independent verification, merge, restart, live proof.",
-      "updated_at": "2026-09-21T06:26:47.341Z"
+      "next_action": "Full suite green, mutants killed by name, independent verification on frozen copies, --no-ff merge, service restart, live proof, then COMPLETE.",
+      "updated_at": "2026-09-21T08:25:52.744Z"
     }
   ]
 }

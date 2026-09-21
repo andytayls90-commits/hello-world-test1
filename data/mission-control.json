@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-21T06:26:47.341Z",
+  "updated_at": "2026-09-21T08:25:52.744Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-LOOP-45",
-  "next_action": "Write the failing tests by name (every reader and every write endpoint against an invalid-text cell), implement the connection-level decode belt, run the suite, independent verification, merge, restart, live proof.",
+  "next_action": "Full suite green, mutants killed by name, independent verification on frozen copies, --no-ff merge, service restart, live proof, then COMPLETE.",
   "milestones": [
     {
       "id": "MC0",
@@ -1134,10 +1134,10 @@
       "target_at": null,
       "evidence": "PLANNED",
       "commit": null,
-      "summary": "In progress 2026-09-21 cycle3: mission claimed, isolated worktree created; the failing case is a stored text cell that is not valid UTF-8 — the database driver raises while fetching the row, so every mission reader and write endpoint answers 500 for that row (a list reader for the whole page) before the response belt can name it. Fix: one decode belt at the connection hands such a cell to the existing raw-bytes path so it is served named; RED first, then fix, independent verification, live proof.",
+      "summary": "In progress 2026-09-21 cycle3 (resumed 08:20Z after the 06:21Z run stopped on a usage limit mid-implementation; same cycle id, lease renewed): failing tests written by name and committed (4d3e677), connection-level decode belt implemented and committed (efab3d3) — a stored text cell that is not valid UTF-8 is now handed to the existing named raw-bytes path and served named by every reader and write endpoint; the every-column read sweep and the every-write-endpoint pre-image sweep are parametrised over both poisons. Full suite, mutants by name, independent verification, merge, restart and live proof pending.",
       "blockers": [],
-      "next_action": "Write the failing tests by name (every reader and every write endpoint against an invalid-text cell), implement the connection-level decode belt, run the suite, independent verification, merge, restart, live proof.",
-      "updated_at": "2026-09-21T06:26:47.341Z"
+      "next_action": "Full suite green, mutants killed by name, independent verification on frozen copies, --no-ff merge, service restart, live proof, then COMPLETE.",
+      "updated_at": "2026-09-21T08:25:52.744Z"
     }
   ],
   "history": [
@@ -1978,6 +1978,14 @@
       "from": "PLANNED",
       "to": "IN_PROGRESS",
       "at": "2026-09-21T06:26:47.341Z",
+      "evidence": "PLANNED",
+      "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-45",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-21T08:25:52.744Z",
       "evidence": "PLANNED",
       "commit": null
     }
