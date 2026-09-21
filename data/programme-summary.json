@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-21T06:04:40.014Z",
+  "updated_at": "2026-09-21T06:26:47.341Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-45",
       "progress": {
         "complete": 46,
-        "total": 47,
-        "percent": 98
+        "total": 48,
+        "percent": 96
       },
-      "next_action": "Next cycle pulls the next open engineering item (candidates: the two follow-ups filed this cycle — page-less list reads, council sorter scan — or the invalid-text-cell decode belt).",
-      "updated_at": "2026-09-21T06:04:40.014Z"
+      "next_action": "Write the failing tests by name (every reader and every write endpoint against an invalid-text cell), implement the connection-level decode belt, run the suite, independent verification, merge, restart, live proof.",
+      "updated_at": "2026-09-21T06:26:47.341Z"
     }
   ]
 }
