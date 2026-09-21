@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-20T21:25:52.484Z",
+  "updated_at": "2026-09-21T00:30:31.312Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-42",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 43,
+        "complete": 44,
         "total": 45,
-        "percent": 96
+        "percent": 98
       },
-      "next_action": "Fix the three endpoints and add the sweep guard; independent verification before merge.",
-      "updated_at": "2026-09-20T21:25:52.484Z"
+      "next_action": "Follow-ups filed: readers on integer-column bytes (m-a93857fdbb), adjourn copies bytes verbatim (m-15c84f8f89), immortal lease on a bytes expiry (m-e72e9e0db7), close the class by construction with an app-level response belt (m-1cf6a3fd95).",
+      "updated_at": "2026-09-21T00:30:31.312Z"
     }
   ]
 }

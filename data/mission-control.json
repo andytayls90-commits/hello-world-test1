@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-20T21:25:52.484Z",
+  "updated_at": "2026-09-21T00:30:31.312Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-42",
-  "next_action": "Fix the three endpoints and add the sweep guard; independent verification before merge.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Follow-ups filed: readers on integer-column bytes (m-a93857fdbb), adjourn copies bytes verbatim (m-15c84f8f89), immortal lease on a bytes expiry (m-e72e9e0db7), close the class by construction with an app-level response belt (m-1cf6a3fd95).",
   "milestones": [
     {
       "id": "MC0",
@@ -1055,17 +1055,17 @@
       "id": "MC-LOOP-42",
       "project": "Mission Control",
       "title": "Autonomous loop: three write endpoints of the mission-control API (retire an agent, rule a decision, claim a mission as a sandboxed agent) answer 500 when the row they touch holds a legacy raw-bytes text cell — serve or refuse the cell named, and guard every write endpoint against a raw-bytes pre-image",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-20T21:25:52.484Z",
-      "completed_at": null,
+      "completed_at": "2026-09-21T00:30:31.312Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress (2026-09-20 cycle1): reproducing the three write-endpoint failures on a copy of the store, then failing tests first, fix, write-endpoint pre-image sweep guard, independent verification, merge, restart, live proof.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "c12f4a6",
+      "summary": "Shipped: no write endpoint of the mission-control API answers 500 on a legacy raw-bytes text cell in the row it touches (retire, rule, claim, schedule control, reap, held-by) — each serves or refuses the cell named; a state-aware sweep guard drives every write endpoint against open, held and expired rows as three identities; three independent verification rounds, re-stated claim converged; live proof after restart; bolt 10/10, gate PAPER.",
       "blockers": [],
-      "next_action": "Fix the three endpoints and add the sweep guard; independent verification before merge.",
-      "updated_at": "2026-09-20T21:25:52.484Z"
+      "next_action": "Follow-ups filed: readers on integer-column bytes (m-a93857fdbb), adjourn copies bytes verbatim (m-15c84f8f89), immortal lease on a bytes expiry (m-e72e9e0db7), close the class by construction with an app-level response belt (m-1cf6a3fd95).",
+      "updated_at": "2026-09-21T00:30:31.312Z"
     }
   ],
   "history": [
@@ -1844,6 +1844,14 @@
       "at": "2026-09-20T21:25:52.484Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-42",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-21T00:30:31.312Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "c12f4a6"
     }
   ]
 }
