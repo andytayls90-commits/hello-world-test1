@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-21T08:25:52.744Z",
+  "updated_at": "2026-09-21T09:15:09.291Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-LOOP-45",
-  "next_action": "Full suite green, mutants killed by name, independent verification on frozen copies, --no-ff merge, service restart, live proof, then COMPLETE.",
+  "next_action": "Round 2 independent verification, then merge, service restart, live proof and COMPLETE.",
   "milestones": [
     {
       "id": "MC0",
@@ -1132,12 +1132,12 @@
       "started_at": "2026-09-21T06:26:47.341Z",
       "completed_at": null,
       "target_at": null,
-      "evidence": "PLANNED",
+      "evidence": "PARTIAL",
       "commit": null,
-      "summary": "In progress 2026-09-21 cycle3 (resumed 08:20Z after the 06:21Z run stopped on a usage limit mid-implementation; same cycle id, lease renewed): failing tests written by name and committed (4d3e677), connection-level decode belt implemented and committed (efab3d3) — a stored text cell that is not valid UTF-8 is now handed to the existing named raw-bytes path and served named by every reader and write endpoint; the every-column read sweep and the every-write-endpoint pre-image sweep are parametrised over both poisons. Full suite, mutants by name, independent verification, merge, restart and live proof pending.",
+      "summary": "In progress 2026-09-21 cycle3 (resumed after a usage-limit stop): connection-level decode belt implemented — a stored text cell that is not valid UTF-8 is handed to the existing named raw-bytes path and served named by every reader and write endpoint; an update writes only the fields it names; the two store reapers are keyed by row identity so a corrupt key can no longer produce a silent false success. Independent verification round 1: HOLDS WITH FINDINGS — four in-scope findings fixed and pinned, two out-of-scope items filed as follow-up missions; suite 1539 → 1729 green; 20 code mutants killed by name. Round 2 verification running.",
       "blockers": [],
-      "next_action": "Full suite green, mutants killed by name, independent verification on frozen copies, --no-ff merge, service restart, live proof, then COMPLETE.",
-      "updated_at": "2026-09-21T08:25:52.744Z"
+      "next_action": "Round 2 independent verification, then merge, service restart, live proof and COMPLETE.",
+      "updated_at": "2026-09-21T09:15:09.291Z"
     }
   ],
   "history": [
@@ -1987,6 +1987,14 @@
       "to": "IN_PROGRESS",
       "at": "2026-09-21T08:25:52.744Z",
       "evidence": "PLANNED",
+      "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-45",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-21T09:15:09.291Z",
+      "evidence": "PARTIAL",
       "commit": null
     }
   ]
