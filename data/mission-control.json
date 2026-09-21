@@ -340,7 +340,7 @@
     {
       "id": "MC41",
       "title": "No write endpoint of the mission-control API fails on a legacy raw-bytes cell (2026-09-20 cycle1)",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-42"
       ]
