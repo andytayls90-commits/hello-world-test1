@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-21T03:52:57.250Z",
+  "updated_at": "2026-09-21T04:55:49.354Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-43",
-  "next_action": "Round-3 independent verification on the fixed tree, dispose findings, merge, restart the service, live proof, close.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next cycle pulls the next open engineering item (candidates: the invalid-text cell fetch error, the roster liveness compute error, the load-flaky test).",
   "milestones": [
     {
       "id": "MC0",
@@ -348,7 +348,7 @@
     {
       "id": "MC42",
       "title": "The legacy raw-bytes cell class is closed by construction for every endpoint of the mission-control API (2026-09-21 cycle1)",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-43"
       ]
@@ -1079,17 +1079,17 @@
       "id": "MC-LOOP-43",
       "project": "Mission Control",
       "title": "Autonomous loop: close the legacy raw-bytes cell class by construction — one application-level response belt names a raw-bytes value in any response body of any endpoint of the mission-control API (plain returns, constructed responses and error details), guarded so no endpoint can be built without it",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-21T01:27:51.607Z",
-      "completed_at": null,
+      "completed_at": "2026-09-21T04:55:49.354Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress (resumed after a runtime spend-limit stop mid-verification): the application-level response belt is built test-first; independent verification round 2 found registration spellings, value shapes and a cyclic-structure hang the belt missed — all fixed (the route list is now the single construction seam, the scrub mirrors the framework encoder and detects cycles); round 3 verification and a mutant sweep are running before merge.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "b825a4f",
+      "summary": "Done: the legacy raw-bytes class in the mission API is closed by construction — one application-level response belt every endpoint is built through names an unservable value in any response body, and the route registry itself refuses any endpoint not built through the belt; the scrub mirrors the framework encoder, cannot loop on a cyclic value and cannot leak a secret type; redundant per-endpoint scrubs removed (one belt per class). Three independent verification rounds converged (rounds 2 and 3 fixed and pinned every finding); mutant sweeps killed every code-level mutant by name; live proof after restart: healthy bodies byte-identical, no server errors, no bad cells in the store; the trading gate stayed paper with the bolt green. Resumed once after a runtime spend-limit stop.",
       "blockers": [],
-      "next_action": "Round-3 independent verification on the fixed tree, dispose findings, merge, restart the service, live proof, close.",
-      "updated_at": "2026-09-21T03:52:57.250Z"
+      "next_action": "Next cycle pulls the next open engineering item (candidates: the invalid-text cell fetch error, the roster liveness compute error, the load-flaky test).",
+      "updated_at": "2026-09-21T04:55:49.354Z"
     }
   ],
   "history": [
@@ -1892,6 +1892,14 @@
       "at": "2026-09-21T03:52:57.250Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-43",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-21T04:55:49.354Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "b825a4f"
     }
   ]
 }

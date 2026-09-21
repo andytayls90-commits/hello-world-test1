@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-21T03:52:57.250Z",
+  "updated_at": "2026-09-21T04:55:49.354Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-43",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 44,
+        "complete": 45,
         "total": 46,
-        "percent": 96
+        "percent": 98
       },
-      "next_action": "Round-3 independent verification on the fixed tree, dispose findings, merge, restart the service, live proof, close.",
-      "updated_at": "2026-09-21T03:52:57.250Z"
+      "next_action": "Next cycle pulls the next open engineering item (candidates: the invalid-text cell fetch error, the roster liveness compute error, the load-flaky test).",
+      "updated_at": "2026-09-21T04:55:49.354Z"
     }
   ]
 }
