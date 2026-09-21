@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-21T01:27:51.607Z",
+  "updated_at": "2026-09-21T03:52:57.250Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -35,8 +35,8 @@
         "total": 46,
         "percent": 96
       },
-      "next_action": "Build the belt test-first, guard every endpoint, independent verification before merge.",
-      "updated_at": "2026-09-21T01:27:51.607Z"
+      "next_action": "Round-3 independent verification on the fixed tree, dispose findings, merge, restart the service, live proof, close.",
+      "updated_at": "2026-09-21T03:52:57.250Z"
     }
   ]
 }

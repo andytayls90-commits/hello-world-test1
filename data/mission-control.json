@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-21T01:27:51.607Z",
+  "updated_at": "2026-09-21T03:52:57.250Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-LOOP-43",
-  "next_action": "Build the belt test-first, guard every endpoint, independent verification before merge.",
+  "next_action": "Round-3 independent verification on the fixed tree, dispose findings, merge, restart the service, live proof, close.",
   "milestones": [
     {
       "id": "MC0",
@@ -1084,12 +1084,12 @@
       "started_at": "2026-09-21T01:27:51.607Z",
       "completed_at": null,
       "target_at": null,
-      "evidence": "PLANNED",
+      "evidence": "PARTIAL",
       "commit": null,
-      "summary": "In progress: building one application-level response belt so a legacy raw-bytes cell is named in any response body of any endpoint (plain returns, constructed responses, error details), with a guard that every endpoint is built through it; test-first, independent verification before merge.",
+      "summary": "In progress (resumed after a runtime spend-limit stop mid-verification): the application-level response belt is built test-first; independent verification round 2 found registration spellings, value shapes and a cyclic-structure hang the belt missed — all fixed (the route list is now the single construction seam, the scrub mirrors the framework encoder and detects cycles); round 3 verification and a mutant sweep are running before merge.",
       "blockers": [],
-      "next_action": "Build the belt test-first, guard every endpoint, independent verification before merge.",
-      "updated_at": "2026-09-21T01:27:51.607Z"
+      "next_action": "Round-3 independent verification on the fixed tree, dispose findings, merge, restart the service, live proof, close.",
+      "updated_at": "2026-09-21T03:52:57.250Z"
     }
   ],
   "history": [
@@ -1883,6 +1883,14 @@
       "to": "IN_PROGRESS",
       "at": "2026-09-21T01:27:51.607Z",
       "evidence": "PLANNED",
+      "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-43",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-21T03:52:57.250Z",
+      "evidence": "PARTIAL",
       "commit": null
     }
   ]
