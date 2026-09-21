@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-21T05:38:40.431Z",
+  "updated_at": "2026-09-21T06:04:40.014Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-44",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 45,
+        "complete": 46,
         "total": 47,
-        "percent": 96
+        "percent": 98
       },
-      "next_action": "Dispose the verifier's findings, merge, restart the API, live proof, complete.",
-      "updated_at": "2026-09-21T05:38:40.431Z"
+      "next_action": "Next cycle pulls the next open engineering item (candidates: the two follow-ups filed this cycle — page-less list reads, council sorter scan — or the invalid-text-cell decode belt).",
+      "updated_at": "2026-09-21T06:04:40.014Z"
     }
   ]
 }

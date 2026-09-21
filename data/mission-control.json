@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-21T05:38:40.431Z",
+  "updated_at": "2026-09-21T06:04:40.014Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-44",
-  "next_action": "Dispose the verifier's findings, merge, restart the API, live proof, complete.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next cycle pulls the next open engineering item (candidates: the two follow-ups filed this cycle — page-less list reads, council sorter scan — or the invalid-text-cell decode belt).",
   "milestones": [
     {
       "id": "MC0",
@@ -356,7 +356,7 @@
     {
       "id": "MC43",
       "title": "Every list endpoint of the mission-control API has a pinned service cap on page size (2026-09-21 cycle2)",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-44"
       ]
@@ -1103,17 +1103,17 @@
       "id": "MC-LOOP-44",
       "project": "Mission Control",
       "title": "Autonomous loop: list endpoints of the mission-control API have no service cap on page size — an anonymous read can pull the whole store in one response; decide and pin a per-endpoint maximum page so a public read is bounded while every existing consumer keeps working",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-21T05:23:01.406Z",
-      "completed_at": null,
+      "completed_at": "2026-09-21T06:04:40.014Z",
       "target_at": null,
-      "evidence": "IMPLEMENTED / UNVERIFIED",
-      "commit": "5e77b43",
-      "summary": "Implemented on the isolated branch (RED first, then fix): one literal per-endpoint page-size table with no uncapped page type left, every list endpoint declared through it, a request above its cap refused by name before any handler runs; every known consumer's page size surveyed and confirmed under its cap; suite 1458 -> 1524, 9/9 mutants killed by name, subject-vs-control proof on copies of the live store (the whole-store dump becomes a named refusal, healthy pages byte-identical). Independent verification round 1 running.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "0db4423",
+      "summary": "Done: every list endpoint of the mission-control API now has a pinned per-endpoint maximum page size held in one literal table with no uncapped page type left; a request above its cap is refused by name before any handler runs, and the served page is pinned against an overfilled table for every endpoint so a handler cannot quietly over-serve. Every known consumer's page size was surveyed and stays under its cap (healthy pages byte-identical). Two independent verification rounds (round 1 with findings, all in-scope items fixed; round 2 holds with no regression); suite 1458 -> 1539; live proof after restart: the anonymous whole-store dump that previously streamed ~25 MB is refused by name, consumers unchanged, no server errors; trading gate paper, bolt green.",
       "blockers": [],
-      "next_action": "Dispose the verifier's findings, merge, restart the API, live proof, complete.",
-      "updated_at": "2026-09-21T05:38:40.431Z"
+      "next_action": "Next cycle pulls the next open engineering item (candidates: the two follow-ups filed this cycle — page-less list reads, council sorter scan — or the invalid-text-cell decode belt).",
+      "updated_at": "2026-09-21T06:04:40.014Z"
     }
   ],
   "history": [
@@ -1940,6 +1940,14 @@
       "at": "2026-09-21T05:38:40.431Z",
       "evidence": "IMPLEMENTED / UNVERIFIED",
       "commit": "5e77b43"
+    },
+    {
+      "task_id": "MC-LOOP-44",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-09-21T06:04:40.014Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "0db4423"
     }
   ]
 }
