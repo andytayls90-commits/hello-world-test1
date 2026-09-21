@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-09-21T00:30:31.312Z",
+  "updated_at": "2026-09-21T01:27:51.607Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Follow-ups filed: readers on integer-column bytes (m-a93857fdbb), adjourn copies bytes verbatim (m-15c84f8f89), immortal lease on a bytes expiry (m-e72e9e0db7), close the class by construction with an app-level response belt (m-1cf6a3fd95).",
+  "current_task_id": "MC-LOOP-43",
+  "next_action": "Build the belt test-first, guard every endpoint, independent verification before merge.",
   "milestones": [
     {
       "id": "MC0",
@@ -343,6 +343,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-42"
+      ]
+    },
+    {
+      "id": "MC42",
+      "title": "The legacy raw-bytes cell class is closed by construction for every endpoint of the mission-control API (2026-09-21 cycle1)",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-43"
       ]
     }
   ],
@@ -1066,6 +1074,22 @@
       "blockers": [],
       "next_action": "Follow-ups filed: readers on integer-column bytes (m-a93857fdbb), adjourn copies bytes verbatim (m-15c84f8f89), immortal lease on a bytes expiry (m-e72e9e0db7), close the class by construction with an app-level response belt (m-1cf6a3fd95).",
       "updated_at": "2026-09-21T00:30:31.312Z"
+    },
+    {
+      "id": "MC-LOOP-43",
+      "project": "Mission Control",
+      "title": "Autonomous loop: close the legacy raw-bytes cell class by construction — one application-level response belt names a raw-bytes value in any response body of any endpoint of the mission-control API (plain returns, constructed responses and error details), guarded so no endpoint can be built without it",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-09-21T01:27:51.607Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: building one application-level response belt so a legacy raw-bytes cell is named in any response body of any endpoint (plain returns, constructed responses, error details), with a guard that every endpoint is built through it; test-first, independent verification before merge.",
+      "blockers": [],
+      "next_action": "Build the belt test-first, guard every endpoint, independent verification before merge.",
+      "updated_at": "2026-09-21T01:27:51.607Z"
     }
   ],
   "history": [
@@ -1852,6 +1876,14 @@
       "at": "2026-09-21T00:30:31.312Z",
       "evidence": "VERIFIED LIVE",
       "commit": "c12f4a6"
+    },
+    {
+      "task_id": "MC-LOOP-43",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-09-21T01:27:51.607Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
