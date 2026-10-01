@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-01T15:25:08.047Z",
+  "updated_at": "2026-10-01T15:27:49.614Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Write the failing post-check test, implement the derivation, guard the believability scorer, promote to the live council home and verify on the next hourly cycle.",
+  "next_action": "Observe the next hourly council cycle: a derived chair row in the ledger means the chair still skips its line (now measurable, no longer paged); then the rejected-close booking defect and the remaining approval hygiene items.",
   "milestones": [
     {
       "id": "M0",
@@ -602,17 +602,17 @@
       "id": "WS-COUNCIL-1",
       "title": "Council chair verdict made tool-enforced: when the council filed its decision of record for a cycle but omitted the mandatory chair ledger line, the post-cycle check derives the chair row from that decision instead of paging a false no-decision hour",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane engineer (Claude)",
       "started_at": "2026-10-01T15:25:08.047Z",
-      "completed_at": null,
+      "completed_at": "2026-10-01T15:27:49.614Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "Thirty-one council cycles since early September ended with a recorded decision but no chair ledger line, each paging the Board as a false no-decision hour. The autonomous cycle is making the chair row tool-enforced: the post-cycle check derives it from the council's decision of record when the chair omitted it, and only a cycle with no decision at all stays a paged failure.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "1772c3f",
+      "summary": "Promoted to the live council home and re-verified from the live path by the autonomous cycle. The hourly post-cycle check no longer trusts the chair to write its own ledger line: when the council has filed its decision of record for the cycle through the gated approval route but omitted the chair row, the check derives that row from the decision, marks it as derived with no stated confidence, logs it, and passes; the believability scorer counts such rows but never scores them. A cycle with no council decision at all still fails loudly and pages as before. A new fifteen-check test went red then green, the existing checks were kept green, the real-money bolt held ten of ten, the PAPER gate was unchanged, and a read-only probe against the live service derived the correct row for each of today's three cycle shapes. One tooling gap was filed: the prompt-scanner test has no interpreter that runs it under the test runner.",
       "blockers": [],
-      "next_action": "Write the failing post-check test, implement the derivation, guard the believability scorer, promote to the live council home and verify on the next hourly cycle.",
-      "updated_at": "2026-10-01T15:25:08.047Z"
+      "next_action": "Observe the next hourly council cycle: a derived chair row in the ledger means the chair still skips its line (now measurable, no longer paged); then the rejected-close booking defect and the remaining approval hygiene items.",
+      "updated_at": "2026-10-01T15:27:49.614Z"
     }
   ],
   "history": [
@@ -958,6 +958,14 @@
       "at": "2026-10-01T15:25:08.047Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-1",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-01T15:27:49.614Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "1772c3f"
     }
   ]
 }

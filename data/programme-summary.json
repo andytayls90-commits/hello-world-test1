@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T15:25:08.047Z",
+  "updated_at": "2026-10-01T15:27:49.614Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 21,
+        "complete": 22,
         "total": 30,
-        "percent": 70
+        "percent": 73
       },
-      "next_action": "Write the failing post-check test, implement the derivation, guard the believability scorer, promote to the live council home and verify on the next hourly cycle.",
-      "updated_at": "2026-10-01T15:25:08.047Z"
+      "next_action": "Observe the next hourly council cycle: a derived chair row in the ledger means the chair still skips its line (now measurable, no longer paged); then the rejected-close booking defect and the remaining approval hygiene items.",
+      "updated_at": "2026-10-01T15:27:49.614Z"
     },
     {
       "project_id": "mission-control",
