@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-01T14:01:00.236Z",
+  "updated_at": "2026-10-01T14:09:46.795Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Make the failing tests pass, run the bolt, deploy by scope, then let the reconciler replace the under-sized stop live and verify the replacement at the broker.",
+  "next_action": "Watch subsequent reconcile ticks stay quiet (no resize) and the next partial-fill entry get a full-size stop; the broker-rejection labelling and poller fail-loud missions remain open.",
   "milestones": [
     {
       "id": "M0",
@@ -568,17 +568,17 @@
       "id": "WS-PROT-1",
       "title": "Protective-stop coverage: a position counts as protected only when its broker stop covers the booked quantity; the reconciler replaces an under-sized or dead stop sized to the book",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane engineer (Claude)",
       "started_at": "2026-10-01T14:01:00.236Z",
-      "completed_at": null,
+      "completed_at": "2026-10-01T14:09:46.795Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "Diagnostic review found an equity position whose resting broker stop covered only part of the booked share count while both the risk and positions APIs reported it protected, because protection was inferred from the existence of a stop identifier alone. Root cause proven from the intent ledger: the reconciler cancelled the original stop and re-placed it immediately, and the replacement was sized by the broker's available quantity while the cancel was still settling. The fix derives coverage from the live broker-order projection and reports it on both APIs, makes the reconciler replace an under-sized or dead stop with one sized to the booked quantity after the cancel has settled, and stops equity stop sizing from using the available-quantity rule that exists for crypto fee dust. Test-first (eighteen specs red); real-money bolt and PAPER gate untouched.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "8eb434c",
+      "summary": "Deployed and re-verified live by the autonomous cycle. A position is now reported as protected only when its resting broker stop covers the booked share count, read from the live broker-order projection; both the risk and positions APIs expose the coverage state and the risk summary counts uncovered positions. The reconciler now cancels an under-sized or dead protective stop, waits for the cancel to settle at the broker, and re-places one sized to the book, and an equity stop is never sized by the broker's available quantity (a crypto fee rule). A second defect found in review was closed with it: a cancelled stop's submit intent never became terminal because the broker's cancel echoes no body, so a replacement for the same position would have been refused as a replay. On deploy the first scheduled reconcile tick replaced the under-sized equity stop with a full-size one through the normal code path, with the broker showing exactly one resting stop afterwards. Twenty-one new tests red then green, full backend suite green, real-money bolt ten of ten on every run, PAPER gate unchanged.",
       "blockers": [],
-      "next_action": "Make the failing tests pass, run the bolt, deploy by scope, then let the reconciler replace the under-sized stop live and verify the replacement at the broker.",
-      "updated_at": "2026-10-01T14:01:00.236Z"
+      "next_action": "Watch subsequent reconcile ticks stay quiet (no resize) and the next partial-fill entry get a full-size stop; the broker-rejection labelling and poller fail-loud missions remain open.",
+      "updated_at": "2026-10-01T14:09:46.795Z"
     }
   ],
   "history": [
@@ -892,6 +892,14 @@
       "at": "2026-10-01T14:01:00.236Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-PROT-1",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-01T14:09:46.795Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "8eb434c"
     }
   ]
 }

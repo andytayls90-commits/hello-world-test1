@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T14:01:00.236Z",
+  "updated_at": "2026-10-01T14:09:46.795Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 19,
+        "complete": 20,
         "total": 28,
-        "percent": 68
+        "percent": 71
       },
-      "next_action": "Make the failing tests pass, run the bolt, deploy by scope, then let the reconciler replace the under-sized stop live and verify the replacement at the broker.",
-      "updated_at": "2026-10-01T14:01:00.236Z"
+      "next_action": "Watch subsequent reconcile ticks stay quiet (no resize) and the next partial-fill entry get a full-size stop; the broker-rejection labelling and poller fail-loud missions remain open.",
+      "updated_at": "2026-10-01T14:09:46.795Z"
     },
     {
       "project_id": "mission-control",
