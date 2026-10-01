@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T14:24:56.682Z",
+  "updated_at": "2026-10-01T14:57:55.686Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 20,
-        "total": 28,
-        "percent": 71
+        "total": 29,
+        "percent": 69
       },
-      "next_action": "Watch subsequent reconcile ticks stay quiet (no resize) and the next partial-fill entry get a full-size stop; the broker-rejection labelling and poller fail-loud missions remain open.",
-      "updated_at": "2026-10-01T14:09:46.795Z"
+      "next_action": "Make the spec green, hold the real-money bolt at ten of ten, run the full backend suite, merge with --no-ff, deploy the backend by scope and re-verify the PAPER gate.",
+      "updated_at": "2026-10-01T14:57:55.686Z"
     },
     {
       "project_id": "mission-control",
