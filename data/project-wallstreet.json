@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-01T23:41:35.547Z",
+  "updated_at": "2026-10-01T23:55:05.757Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Next trading-lane candidates from the board: the remaining re-routed operations cards (auth rotation items stay with the owner), the over-booked reconciler assessment, the research-profile weights visibility, the deprecated UTC clock calls and the approval hygiene items; a follow-up asks for the listener check to run periodically rather than only at boot.",
+  "next_action": "Verify read-only, record the evidence packet, block with the owner rotation sequence.",
   "milestones": [
     {
       "id": "M0",
@@ -84,7 +84,8 @@
         "WS-TEST-1",
         "WS-RET-1",
         "WS-CLOSE-2",
-        "WS-NET-1"
+        "WS-NET-1",
+        "WS-SEC-1"
       ]
     },
     {
@@ -734,6 +735,22 @@
       "blockers": [],
       "next_action": "Next trading-lane candidates from the board: the remaining re-routed operations cards (auth rotation items stay with the owner), the over-booked reconciler assessment, the research-profile weights visibility, the deprecated UTC clock calls and the approval hygiene items; a follow-up asks for the listener check to run periodically rather than only at boot.",
       "updated_at": "2026-10-01T23:41:35.547Z"
+    },
+    {
+      "id": "WS-SEC-1",
+      "title": "Knowledge-store agent credential rotation (owner decision): four agent access secrets and the messaging bot token behind the shared knowledge store are byte-identical to archived copies from June and the read-only database credential has no matching database role; verify the claim read-only, enumerate every consumer that holds a literal copy, and hand the owner the exact rotation sequence",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Board (owner decision); verified by the autonomous trading-lane engineer (Claude)",
+      "started_at": "2026-10-01T23:55:05.757Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "Claimed by the 2026-10-01 trading-lane cycle 14 as an owner-call card. The autonomous engineer verifies the rotation claim read-only (equality of archived and live values, never the values themselves), enumerates every local consumer configuration that holds a literal copy of a secret, confirms which database roles exist, and then blocks the card with the exact owner acts. No code change, nothing traded.",
+      "blockers": [],
+      "next_action": "Verify read-only, record the evidence packet, block with the owner rotation sequence.",
+      "updated_at": "2026-10-01T23:55:05.757Z"
     }
   ],
   "history": [
@@ -1191,6 +1208,14 @@
       "at": "2026-10-01T23:41:35.547Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "b8bfe06"
+    },
+    {
+      "task_id": "WS-SEC-1",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-01T23:55:05.757Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }

@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T23:41:35.547Z",
+  "updated_at": "2026-10-01T23:55:05.757Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 28,
-        "total": 37,
-        "percent": 76
+        "total": 38,
+        "percent": 74
       },
-      "next_action": "Next trading-lane candidates from the board: the remaining re-routed operations cards (auth rotation items stay with the owner), the over-booked reconciler assessment, the research-profile weights visibility, the deprecated UTC clock calls and the approval hygiene items; a follow-up asks for the listener check to run periodically rather than only at boot.",
-      "updated_at": "2026-10-01T23:41:35.547Z"
+      "next_action": "Verify read-only, record the evidence packet, block with the owner rotation sequence.",
+      "updated_at": "2026-10-01T23:55:05.757Z"
     },
     {
       "project_id": "mission-control",
