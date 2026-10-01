@@ -77,7 +77,8 @@
         "OPS-3",
         "WS-HYGIENE-1",
         "WS-EXPORT-2",
-        "WS-COUNCIL-1"
+        "WS-COUNCIL-1",
+        "WS-SCORE-1"
       ]
     },
     {
@@ -90,8 +91,7 @@
         "WS-EDGE-1",
         "WS-EXPORT-1",
         "WS-SECTOR-1",
-        "WS-DATA-1",
-        "WS-SCORE-1"
+        "WS-DATA-1"
       ]
     },
     {
