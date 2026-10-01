@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-01T13:10:25.973Z",
+  "updated_at": "2026-10-01T13:14:31.254Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Failing tests written and red; implement the guard and the pre-execution sweep, prove the real-money bolt, deploy and verify the stale backlog is expired live.",
+  "next_action": "Fix the broker authentication rejection itself (separate mission) now that late execution is impossible; watch the first council decisions after auth returns execute fresh, not stale.",
   "milestones": [
     {
       "id": "M0",
@@ -551,17 +551,17 @@
       "id": "WS-EXEC-1",
       "title": "Council approvals left unexecuted by a broker outage must expire, not execute late: max-age guard and stale sweep in the autonomous execution poller",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane engineer (Claude)",
       "started_at": "2026-10-01T13:10:25.973Z",
-      "completed_at": null,
+      "completed_at": "2026-10-01T13:14:31.254Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress by the autonomous trading-lane cycle. A week of broker authentication failures left a backlog of council-approved decisions unexecuted; the poller retried them every few minutes and would have opened them on week-old signals the moment authentication returned. Adding a time bound on execution: a decision older than a day, or on a signal older than two days, is expired before it is priced or sent.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "2be5260",
+      "summary": "Deployed and re-verified live by the autonomous cycle. The execution poller now expires any council approval older than a day, or on a signal older than two days, before it is priced or sent; both bounds are owner-editable policy. The sweep runs before any execution attempt and makes no network call, so a backlog left by a broker outage can never execute late. On deploy the twenty-six stale approvals from the week-long broker authentication outage were expired through the code path with audit notes and ledger rows, no order placed, open positions unchanged, and the poller call that had been timing out for hours returned in under a tenth of a second. Eleven new tests red then green, full backend suite green, real-money bolt ten of ten on every run, PAPER gate unchanged.",
       "blockers": [],
-      "next_action": "Failing tests written and red; implement the guard and the pre-execution sweep, prove the real-money bolt, deploy and verify the stale backlog is expired live.",
-      "updated_at": "2026-10-01T13:10:25.973Z"
+      "next_action": "Fix the broker authentication rejection itself (separate mission) now that late execution is impossible; watch the first council decisions after auth returns execute fresh, not stale.",
+      "updated_at": "2026-10-01T13:14:31.254Z"
     }
   ],
   "history": [
@@ -859,6 +859,14 @@
       "at": "2026-10-01T13:10:25.973Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "WS-EXEC-1",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-01T13:14:31.254Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "2be5260"
     }
   ]
 }

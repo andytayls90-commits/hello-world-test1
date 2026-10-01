@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T13:10:25.973Z",
+  "updated_at": "2026-10-01T13:14:31.254Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 18,
+        "complete": 19,
         "total": 27,
-        "percent": 67
+        "percent": 70
       },
-      "next_action": "Failing tests written and red; implement the guard and the pre-execution sweep, prove the real-money bolt, deploy and verify the stale backlog is expired live.",
-      "updated_at": "2026-10-01T13:10:25.973Z"
+      "next_action": "Fix the broker authentication rejection itself (separate mission) now that late execution is impossible; watch the first council decisions after auth returns execute fresh, not stale.",
+      "updated_at": "2026-10-01T13:14:31.254Z"
     },
     {
       "project_id": "mission-control",
