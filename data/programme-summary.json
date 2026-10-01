@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T20:53:59.455Z",
+  "updated_at": "2026-10-01T21:01:10.620Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 25,
+        "complete": 26,
         "total": 34,
-        "percent": 74
+        "percent": 76
       },
-      "next_action": "Write the failing specs through the real broker gateway, implement the keep-open path, run the real-money bolt, promote and re-verify live.",
-      "updated_at": "2026-10-01T20:53:59.455Z"
+      "next_action": "Next trading-lane candidates: the two shadow surfaces that still equate a stop id with protection, the over-booked reconciler assessment, the June approval hygiene items and the stray file clean-up; the equity sizing owner call stays with the owner.",
+      "updated_at": "2026-10-01T21:01:10.620Z"
     },
     {
       "project_id": "mission-control",
