@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T23:15:07.002Z",
+  "updated_at": "2026-10-01T23:26:24.158Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-50",
       "progress": {
         "complete": 51,
-        "total": 52,
-        "percent": 98
+        "total": 53,
+        "percent": 96
       },
-      "next_action": "Monitor the next scheduled report renders for registry drift warnings; reconcile the serving config if any appear.",
-      "updated_at": "2026-10-01T22:57:16.976Z"
+      "next_action": "Pin the stack-independent contract (red first), fix every legacy-blob reader through the shared loader, run the full suite, independent verification, merge, live proof.",
+      "updated_at": "2026-10-01T23:26:24.158Z"
     }
   ]
 }

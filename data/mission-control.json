@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T22:57:16.976Z",
+  "updated_at": "2026-10-01T23:26:24.158Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Monitor the next scheduled report renders for registry drift warnings; reconcile the serving config if any appear.",
+  "current_task_id": "MC-LOOP-50",
+  "next_action": "Pin the stack-independent contract (red first), fix every legacy-blob reader through the shared loader, run the full suite, independent verification, merge, live proof.",
   "milestones": [
     {
       "id": "MC0",
@@ -399,6 +399,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-49"
+      ]
+    },
+    {
+      "id": "MC49",
+      "title": "Too-deep legacy values are classified independently of the host stack limit",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-50"
       ]
     }
   ],
@@ -1234,6 +1242,22 @@
       "blockers": [],
       "next_action": "Monitor the next scheduled report renders for registry drift warnings; reconcile the serving config if any appear.",
       "updated_at": "2026-10-01T22:57:16.976Z"
+    },
+    {
+      "id": "MC-LOOP-50",
+      "title": "Autonomous loop: one orchestration-API test flips between pass and fail with the host's process stack limit — a legacy stored value nested far too deeply is named by whichever layer the JSON parser's stack-bound recursion happens to reach first; make the too-deep classification independent of the stack and keep the suite green from the main checkout",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous MC-lane engineer (Claude)",
+      "started_at": "2026-10-01T23:26:24.158Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "Reproduced: the test outcome depends on the process stack limit (passes at the default, fails when the limit is raised) because the JSON parser's recursion bound decides which layer names a too-deep legacy value. Fixing the readers so the classification is stack-independent, with tests pinned first.",
+      "blockers": [],
+      "next_action": "Pin the stack-independent contract (red first), fix every legacy-blob reader through the shared loader, run the full suite, independent verification, merge, live proof.",
+      "updated_at": "2026-10-01T23:26:24.158Z"
     }
   ],
   "history": [
@@ -2172,6 +2196,14 @@
       "at": "2026-10-01T22:57:16.976Z",
       "evidence": "VERIFIED LIVE",
       "commit": "2dd3a45"
+    },
+    {
+      "task_id": "MC-LOOP-50",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-01T23:26:24.158Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
