@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T13:26:21.353Z",
+  "updated_at": "2026-10-01T14:24:56.682Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Next cycle pulls the next open engineering item (candidates filed this cycle: m-156460a1cd audit-ref disclosure, m-46a4a77fcd render mktemp litter; master push still blocked behind m-211ec7eaf6 owner decision).",
+  "current_task_id": "MC-LOOP-46",
+  "next_action": "Reproduce with a failing harness case in an isolated worktree, implement, verify independently, merge and reinstall the auditor.",
   "milestones": [
     {
       "id": "MC0",
@@ -367,6 +367,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-45"
+      ]
+    },
+    {
+      "id": "MC45",
+      "title": "Loop health auditor pages on a multi-day stall",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-46"
       ]
     }
   ],
@@ -1138,6 +1146,22 @@
       "blockers": [],
       "next_action": "Next cycle pulls the next open engineering item (candidates filed this cycle: m-156460a1cd audit-ref disclosure, m-46a4a77fcd render mktemp litter; master push still blocked behind m-211ec7eaf6 owner decision).",
       "updated_at": "2026-10-01T13:26:21.353Z"
+    },
+    {
+      "id": "MC-LOOP-46",
+      "title": "Autonomous loop: the loop health auditor rated a multi-day stall (open engineering work, loop not running, no completion for days) as a digest-only warning and never paged — a ten-day stall went unpaged; escalate a stall past the threshold to a page with a single acknowledgeable rectify record per stall episode, auto-resolved when the loop completes work again",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous staff engineer (Claude)",
+      "started_at": "2026-10-01T14:24:56.682Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress (2026-10-01 cycle 1): the loop health auditor's stall check is hard-coded to a digest-only warning, so a stall of any length never pages; live journal shows 952 consecutive stall warnings since 2026-09-20 and no page. Fix: escalate a stall past the threshold to a page, file one acknowledgeable rectify record per stall episode, auto-resolve it when the loop completes work again; failing harness case first, then independent verification.",
+      "blockers": [],
+      "next_action": "Reproduce with a failing harness case in an isolated worktree, implement, verify independently, merge and reinstall the auditor.",
+      "updated_at": "2026-10-01T14:24:56.682Z"
     }
   ],
   "history": [
@@ -2012,6 +2036,14 @@
       "at": "2026-10-01T13:26:21.353Z",
       "evidence": "VERIFIED LIVE",
       "commit": "4df41a7"
+    },
+    {
+      "task_id": "MC-LOOP-46",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-01T14:24:56.682Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
