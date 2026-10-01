@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T12:45:15.503Z",
+  "updated_at": "2026-10-01T13:26:21.353Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-45",
-  "next_action": "Round 3 verdict, then merge, service restart, live proof, bolt/gate check, and task completion.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Next cycle pulls the next open engineering item (candidates filed this cycle: m-156460a1cd audit-ref disclosure, m-46a4a77fcd render mktemp litter; master push still blocked behind m-211ec7eaf6 owner decision).",
   "milestones": [
     {
       "id": "MC0",
@@ -364,7 +364,7 @@
     {
       "id": "MC44",
       "title": "A stored text cell that is not valid UTF-8 is served named by every endpoint of the mission-control API instead of a server error (2026-09-21 cycle3)",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-45"
       ]
@@ -1127,17 +1127,17 @@
       "id": "MC-LOOP-45",
       "project": "Mission Control",
       "title": "Autonomous loop: a stored text cell whose bytes are not valid UTF-8 makes every mission read and write endpoint of the mission-control API answer 500 while the row is fetched, before any response belt runs — decode at the connection so such a cell is served named like a raw-bytes cell, and pin it for every reader and every write endpoint",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous staff engineer (Claude)",
       "started_at": "2026-09-21T06:26:47.341Z",
-      "completed_at": null,
+      "completed_at": "2026-10-01T13:26:21.353Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress 2026-09-21 cycle3, resumed 2026-10-01 after a ten-day usage-limit stall (TRACKER_UPDATE_DELAYED 2026-09-21 to 2026-10-01: the previous unit stopped before it could record its round-2 result). State: connection-level decode belt implemented; an update writes only the fields it names; both store reapers keyed by row identity. Independent verification round 1 HOLDS WITH FINDINGS (fixed and pinned), round 2 HOLDS WITH FINDINGS (one audit-reference contract finding fixed so a reaped row's audit record keeps the raw key and row identity; one low disclosure); suite 1539 -> 1730 green; 21 code mutants killed by name. Round 3 focused re-verification running now.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "4df41a7",
+      "summary": "Done (2026-10-01 after a ten-day usage-limit stall; TRACKER_UPDATE_DELAYED 2026-09-21 to 2026-10-01): the mission-control API now decodes every stored text cell at the connection, so a cell whose bytes are not valid UTF-8 is served named by every read and write endpoint instead of a server error; an update writes only the fields it names (a poisoned cell is left as stored); both store reapers act by row identity and keep the raw key in the audit record. Three independent verification rounds (round 1 and 2 with findings, all fixed and pinned; round 3 holds with low-severity disclosures only, one filed); suite 1539 -> 1733 green from the main checkout after the merge; 82 code mutants killed by name across rounds. Service restarted on the merged code; live proof: every list endpoint 200, no server errors since restart, zero undecodable or raw-bytes cells in the live store; trading gate paper, bolt green before and after. The 12:39Z unit merged then ended its turn waiting on a background suite; the 13:20Z unit finished the close-out.",
       "blockers": [],
-      "next_action": "Round 3 verdict, then merge, service restart, live proof, bolt/gate check, and task completion.",
-      "updated_at": "2026-10-01T12:45:15.503Z"
+      "next_action": "Next cycle pulls the next open engineering item (candidates filed this cycle: m-156460a1cd audit-ref disclosure, m-46a4a77fcd render mktemp litter; master push still blocked behind m-211ec7eaf6 owner decision).",
+      "updated_at": "2026-10-01T13:26:21.353Z"
     }
   ],
   "history": [
@@ -2004,6 +2004,14 @@
       "at": "2026-10-01T12:45:15.503Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-45",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-01T13:26:21.353Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "4df41a7"
     }
   ]
 }
