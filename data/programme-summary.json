@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T16:28:11.772Z",
+  "updated_at": "2026-10-01T17:36:04.321Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-47",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 48,
+        "complete": 49,
         "total": 50,
-        "percent": 96
+        "percent": 98
       },
-      "next_action": "TDD in the worktree, both harness runs (8 MB and 4 MB) green, independent verification, merge.",
-      "updated_at": "2026-10-01T16:28:11.772Z"
+      "next_action": "Next loop cycle pulls the next eligible mission; m-4c7fc6d14e (helm-api deep-body test, same class) is open on the board.",
+      "updated_at": "2026-10-01T17:36:04.321Z"
     }
   ]
 }
