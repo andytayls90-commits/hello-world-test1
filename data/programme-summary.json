@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T21:01:10.620Z",
+  "updated_at": "2026-10-01T21:55:46.840Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 26,
-        "total": 34,
-        "percent": 76
+        "total": 35,
+        "percent": 74
       },
-      "next_action": "Next trading-lane candidates: the two shadow surfaces that still equate a stop id with protection, the over-booked reconciler assessment, the June approval hygiene items and the stray file clean-up; the equity sizing owner call stays with the owner.",
-      "updated_at": "2026-10-01T21:01:10.620Z"
+      "next_action": "Record the exact owner decisions with evidence, then mark this task BLOCKED on the Board decision.",
+      "updated_at": "2026-10-01T21:55:46.840Z"
     },
     {
       "project_id": "mission-control",

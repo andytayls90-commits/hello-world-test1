@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-01T21:01:10.620Z",
+  "updated_at": "2026-10-01T21:55:46.840Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Next trading-lane candidates: the two shadow surfaces that still equate a stop id with protection, the over-booked reconciler assessment, the June approval hygiene items and the stray file clean-up; the equity sizing owner call stays with the owner.",
+  "next_action": "Record the exact owner decisions with evidence, then mark this task BLOCKED on the Board decision.",
   "milestones": [
     {
       "id": "M0",
@@ -56,7 +56,8 @@
         "M4",
         "WS-EXEC-1",
         "WS-PROT-1",
-        "WS-CLOSE-1"
+        "WS-CLOSE-1",
+        "WS-SIZE-1"
       ]
     },
     {
@@ -681,6 +682,22 @@
       "blockers": [],
       "next_action": "Next trading-lane candidates: the two shadow surfaces that still equate a stop id with protection, the over-booked reconciler assessment, the June approval hygiene items and the stray file clean-up; the equity sizing owner call stays with the owner.",
       "updated_at": "2026-10-01T21:01:10.620Z"
+    },
+    {
+      "id": "WS-SIZE-1",
+      "title": "Legacy equity sizing and exit-ledger honesty: the owner decision on equity holdings that predate the current per-symbol and per-trade risk limits (trim versus grandfather), on two long-held equity holdings versus the stated swing horizon, and on the closed ledger rows whose realised result is still unrecorded",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane engineer (Claude) verifying; decision owner: Board",
+      "started_at": "2026-10-01T21:55:46.840Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "Trading-lane cycle 11 claimed the owner-call card. Verifying read-only: the oversized legacy equity holding against the current per-symbol cap and per-trade risk limit, the two long-held equity holdings against the swing horizon, and the closed ledger rows whose realised result is still unrecorded, using the live ledger, the risk report and the broker's own order history. No code change, no position moved.",
+      "blockers": [],
+      "next_action": "Record the exact owner decisions with evidence, then mark this task BLOCKED on the Board decision.",
+      "updated_at": "2026-10-01T21:55:46.840Z"
     }
   ],
   "history": [
@@ -1090,6 +1107,14 @@
       "at": "2026-10-01T21:01:10.620Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "ebee716"
+    },
+    {
+      "task_id": "WS-SIZE-1",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-01T21:55:46.840Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
