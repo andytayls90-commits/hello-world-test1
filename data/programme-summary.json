@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T13:26:21.353Z",
+  "updated_at": "2026-10-01T14:01:00.236Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 19,
-        "total": 27,
-        "percent": 70
+        "total": 28,
+        "percent": 68
       },
-      "next_action": "Fix the broker authentication rejection itself (separate mission) now that late execution is impossible; watch the first council decisions after auth returns execute fresh, not stale.",
-      "updated_at": "2026-10-01T13:14:31.254Z"
+      "next_action": "Make the failing tests pass, run the bolt, deploy by scope, then let the reconciler replace the under-sized stop live and verify the replacement at the broker.",
+      "updated_at": "2026-10-01T14:01:00.236Z"
     },
     {
       "project_id": "mission-control",
