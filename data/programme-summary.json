@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T15:00:01.372Z",
+  "updated_at": "2026-10-01T15:25:08.047Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 21,
-        "total": 29,
-        "percent": 72
+        "total": 30,
+        "percent": 70
       },
-      "next_action": "Next trading-lane candidates: the rejected-close booking defect, the two shadow surfaces that still equate a stop id with protection, and the June approval hygiene items; the equity sizing owner call stays with the owner.",
-      "updated_at": "2026-10-01T15:00:01.372Z"
+      "next_action": "Write the failing post-check test, implement the derivation, guard the believability scorer, promote to the live council home and verify on the next hourly cycle.",
+      "updated_at": "2026-10-01T15:25:08.047Z"
     },
     {
       "project_id": "mission-control",
