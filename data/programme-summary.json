@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T17:36:04.321Z",
+  "updated_at": "2026-10-01T17:54:12.595Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 23,
-        "total": 31,
-        "percent": 74
+        "total": 32,
+        "percent": 72
       },
-      "next_action": "Next trading-lane card from the board; the duplicate research card for the same finding can be closed against this audit.",
-      "updated_at": "2026-10-01T15:59:39.019Z"
+      "next_action": "Merge with --no-ff into the council home, push, re-verify the runner from the live path, record the Board action.",
+      "updated_at": "2026-10-01T17:54:12.595Z"
     },
     {
       "project_id": "mission-control",
