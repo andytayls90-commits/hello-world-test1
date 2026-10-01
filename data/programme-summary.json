@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T20:26:23.604Z",
+  "updated_at": "2026-10-01T20:53:59.455Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 25,
-        "total": 33,
-        "percent": 76
+        "total": 34,
+        "percent": 74
       },
-      "next_action": "None for this task. Follow-on retention candidates are tracked on the board.",
-      "updated_at": "2026-10-01T19:57:18.470Z"
+      "next_action": "Write the failing specs through the real broker gateway, implement the keep-open path, run the real-money bolt, promote and re-verify live.",
+      "updated_at": "2026-10-01T20:53:59.455Z"
     },
     {
       "project_id": "mission-control",

@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-01T19:57:18.470Z",
+  "updated_at": "2026-10-01T20:53:59.455Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "None for this task. Follow-on retention candidates are tracked on the board.",
+  "next_action": "Write the failing specs through the real broker gateway, implement the keep-open path, run the real-money bolt, promote and re-verify live.",
   "milestones": [
     {
       "id": "M0",
@@ -677,10 +677,10 @@
       "target_at": null,
       "evidence": "IMPLEMENTED / UNVERIFIED",
       "commit": null,
-      "summary": "Claimed by the autonomous trading-lane cycle. The single gated close path currently books the position closed from the caller's exit price even when the broker rejects the close leg, leaving the ledger flat while the broker still holds the shares until the reconciler surfaces the orphan. Scope: treat a rejected or unconfirmed close result as not closed, keep the row open, return a structured recoverable error from the close route, and make the auto-flatten engine and the manual override tolerate the failure and retry.",
+      "summary": "Claimed by the autonomous trading-lane cycle. The single gated close path currently books the position closed from the caller's exit price even when the broker rejects the close leg, leaving the ledger flat while the broker still holds the shares until the reconciler surfaces the orphan. Scope: treat a rejected or unconfirmed close result as not closed, keep the row open, return a structured recoverable error from the close route, and make the auto-flatten engine and the manual override tolerate the failure and retry with backoff.",
       "blockers": [],
       "next_action": "Write the failing specs through the real broker gateway, implement the keep-open path, run the real-money bolt, promote and re-verify live.",
-      "updated_at": "2026-10-01T20:51:38.000Z"
+      "updated_at": "2026-10-01T20:53:59.455Z"
     }
   ],
   "history": [
@@ -1074,6 +1074,14 @@
       "at": "2026-10-01T19:57:18.470Z",
       "evidence": "VERIFIED LIVE",
       "commit": "0dbc84b"
+    },
+    {
+      "task_id": "WS-CLOSE-2",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-01T20:53:59.455Z",
+      "evidence": "IMPLEMENTED / UNVERIFIED",
+      "commit": null
     }
   ]
 }
