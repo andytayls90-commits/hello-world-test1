@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-01T21:55:46.840Z",
+  "updated_at": "2026-10-01T21:58:09.128Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Record the exact owner decisions with evidence, then mark this task BLOCKED on the Board decision.",
+  "next_action": "Owner records the four decisions; the reap-then-flatten resolver defect proceeds as its own trading-lane card.",
   "milestones": [
     {
       "id": "M0",
@@ -51,7 +51,7 @@
     {
       "id": "M4",
       "title": "Governed autonomous equities",
-      "status": "IN_PROGRESS",
+      "status": "BLOCKED",
       "task_ids": [
         "M4",
         "WS-EXEC-1",
@@ -687,17 +687,19 @@
       "id": "WS-SIZE-1",
       "title": "Legacy equity sizing and exit-ledger honesty: the owner decision on equity holdings that predate the current per-symbol and per-trade risk limits (trim versus grandfather), on two long-held equity holdings versus the stated swing horizon, and on the closed ledger rows whose realised result is still unrecorded",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
-      "owner": "Autonomous trading-lane engineer (Claude) verifying; decision owner: Board",
+      "status": "BLOCKED",
+      "owner": "Board (owner decision); verified by the autonomous trading-lane engineer (Claude)",
       "started_at": "2026-10-01T21:55:46.840Z",
       "completed_at": null,
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "Trading-lane cycle 11 claimed the owner-call card. Verifying read-only: the oversized legacy equity holding against the current per-symbol cap and per-trade risk limit, the two long-held equity holdings against the swing horizon, and the closed ledger rows whose realised result is still unrecorded, using the live ledger, the risk report and the broker's own order history. No code change, no position moved.",
-      "blockers": [],
-      "next_action": "Record the exact owner decisions with evidence, then mark this task BLOCKED on the Board decision.",
-      "updated_at": "2026-10-01T21:55:46.840Z"
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "df5e33a",
+      "summary": "Every claim on the owner-call card was verified read-only against the live ledger, the risk report and the broker's own order history, and all three hold. One legacy equity holding sits at roughly twice the per-symbol envelope and twice the per-trade risk limit; both limits are enforced only when a position is opened, so nothing trims it. Two long-held equity holdings are protected and in profit, but the swing-horizon rule the card cites is not written anywhere an agent can read. Of the two closed rows with no realised result, one was reaped as broker-flat while the broker still held it and was flattened by the platform's own orphan clean-up the next day, so its real loss exists in the broker history but the resolver cannot attribute a fill that landed after the reap; the other never reached the broker and is a confirmed phantom. Recording a realised result is a ledgered correction that touches an uncommitted owner file, so it stays with the owner. The resolver and reap gap was filed as a separate engineering card. No code changed, nothing traded, the real-money bolt held ten of ten and the PAPER gate was unchanged.",
+      "blockers": [
+        "Owner decisions only: trim or grandfather the oversized legacy holding; state the hold-horizon policy and decide hold versus exit for the two long-held winners; approve the ledgered correction for the reaped-then-flattened row and commit or discard the pending data-corrections ledger change; set the void policy for phantom and legacy-mismatch rows."
+      ],
+      "next_action": "Owner records the four decisions; the reap-then-flatten resolver defect proceeds as its own trading-lane card.",
+      "updated_at": "2026-10-01T21:58:09.128Z"
     }
   ],
   "history": [
@@ -1115,6 +1117,14 @@
       "at": "2026-10-01T21:55:46.840Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-SIZE-1",
+      "from": "IN_PROGRESS",
+      "to": "BLOCKED",
+      "at": "2026-10-01T21:58:09.128Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "df5e33a"
     }
   ]
 }
