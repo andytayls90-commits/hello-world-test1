@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T23:08:22.273Z",
+  "updated_at": "2026-10-01T23:15:07.002Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 26,
+        "complete": 27,
         "total": 36,
-        "percent": 72
+        "percent": 75
       },
-      "next_action": "Red specs written; make them green, hold the real-money bolt ten of ten, promote by scope, re-verify the live ledger surface.",
-      "updated_at": "2026-10-01T23:08:22.273Z"
+      "next_action": "Next trading-lane candidates: the over-booked reconciler assessment, the research-profile weights visibility, the deprecated UTC clock calls, the two shadow surfaces that equate a stop id with protection, the June approval hygiene items and the stray file clean-up; the two legacy ledger rows and the equity sizing decision stay with the owner.",
+      "updated_at": "2026-10-01T23:15:07.002Z"
     },
     {
       "project_id": "mission-control",
