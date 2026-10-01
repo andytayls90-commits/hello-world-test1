@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-01T14:57:55.686Z",
+  "updated_at": "2026-10-01T15:00:01.372Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Make the spec green, hold the real-money bolt at ten of ten, run the full backend suite, merge with --no-ff, deploy the backend by scope and re-verify the PAPER gate.",
+  "next_action": "Next trading-lane candidates: the rejected-close booking defect, the two shadow surfaces that still equate a stop id with protection, and the June approval hygiene items; the equity sizing owner call stays with the owner.",
   "milestones": [
     {
       "id": "M0",
@@ -585,17 +585,17 @@
       "id": "WS-CLOSE-1",
       "title": "Equity close sizing: a manual, agent or auto-flatten close of an equity position goes to the broker for the booked quantity and waits for the protective-stop cancel to settle, instead of shrinking to the broker's available quantity (a crypto fee rule) and orphaning the remainder",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane engineer (Claude)",
       "started_at": "2026-10-01T14:57:55.686Z",
-      "completed_at": null,
+      "completed_at": "2026-10-01T15:00:01.372Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "Claimed by the autonomous trading-lane cycle. Root cause reproduced with a failing spec through the real broker gateway: the close leg was shrunk to the broker's available quantity and the cancel of the protective stop was never awaited. Fix in progress in an isolated worktree: the available-quantity haircut becomes crypto-only, an equity close waits for the stop cancel to settle and is sent for the requested quantity.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "1bb22ef",
+      "summary": "Deployed and re-verified live by the autonomous cycle. The single gated close path no longer shrinks an equity close to the broker's available quantity (a figure reduced by every order resting on the symbol, which is what left part of a position at the broker as an orphan). The available-quantity haircut now applies to crypto fee dust only; for every other asset class the close waits, bounded and fail-soft, for the protective-stop cancel to settle at the broker and then goes out for the requested quantity, never sized down. Six new specs through the real broker gateway were red then green, the full backend suite passed, the real-money bolt held ten of ten on every run, and the PAPER gate was unchanged before and after the deploy. One related defect was filed for its own cycle: a close the broker authoritatively rejects is still booked closed in the ledger.",
       "blockers": [],
-      "next_action": "Make the spec green, hold the real-money bolt at ten of ten, run the full backend suite, merge with --no-ff, deploy the backend by scope and re-verify the PAPER gate.",
-      "updated_at": "2026-10-01T14:57:55.686Z"
+      "next_action": "Next trading-lane candidates: the rejected-close booking defect, the two shadow surfaces that still equate a stop id with protection, and the June approval hygiene items; the equity sizing owner call stays with the owner.",
+      "updated_at": "2026-10-01T15:00:01.372Z"
     }
   ],
   "history": [
@@ -925,6 +925,14 @@
       "at": "2026-10-01T14:57:55.686Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "WS-CLOSE-1",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-01T15:00:01.372Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "1bb22ef"
     }
   ]
 }

@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T14:57:55.686Z",
+  "updated_at": "2026-10-01T15:00:01.372Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 20,
+        "complete": 21,
         "total": 29,
-        "percent": 69
+        "percent": 72
       },
-      "next_action": "Make the spec green, hold the real-money bolt at ten of ten, run the full backend suite, merge with --no-ff, deploy the backend by scope and re-verify the PAPER gate.",
-      "updated_at": "2026-10-01T14:57:55.686Z"
+      "next_action": "Next trading-lane candidates: the rejected-close booking defect, the two shadow surfaces that still equate a stop id with protection, and the June approval hygiene items; the equity sizing owner call stays with the owner.",
+      "updated_at": "2026-10-01T15:00:01.372Z"
     },
     {
       "project_id": "mission-control",
