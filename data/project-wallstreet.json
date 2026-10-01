@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-01T17:54:12.595Z",
+  "updated_at": "2026-10-01T17:55:22.839Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Merge with --no-ff into the council home, push, re-verify the runner from the live path, record the Board action.",
+  "next_action": "Next trading-lane card from the board.",
   "milestones": [
     {
       "id": "M0",
@@ -636,17 +636,17 @@
       "id": "WS-TEST-1",
       "title": "Council home test runner: one command runs every council test file with the interpreter that can actually import it (bash suites, the backend venv's pytest, and the agent venv as a plain function-runner for the prompt-scanner test, which previously had no interpreter able to run it), failing closed when an interpreter is missing",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane engineer (Claude)",
       "started_at": "2026-10-01T17:54:12.595Z",
-      "completed_at": null,
+      "completed_at": "2026-10-01T17:55:22.839Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress by the autonomous trading-lane cycle (resumed after the previous cycle ended on an API rate limit). The council home has three kinds of test file and no single interpreter can run them all: shell suites, two pytest files that only the backend environment can run, and a prompt-scanner test whose imports only the agent environment satisfies while that environment has no pytest. A single runner now executes each file under the interpreter that can import it, drives the scanner tests as plain functions, and treats a missing interpreter or file as a failure rather than a skip. A fourteen-check meta-test went red then green and the full run reports three suites passing.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "3f2b9a1",
+      "summary": "Completed by the autonomous trading-lane cycle (resumed after the previous cycle ended on an API rate limit). The council home now has one command that proves it green: shell suites run under bash, the two pytest files run under the backend environment, and the prompt-scanner test, whose imports only the agent environment satisfies and which previously had no interpreter able to run it, is driven as plain functions under that environment with the same pass-or-fail semantics. A missing interpreter or test file fails the suite rather than skipping it. A fourteen-check meta-test went red then green, and the full run from the live council home reports three suites passing with every test file named. Merged without fast-forward and pushed; no service restart was needed because nothing live sources the tool. The real-money bolt held ten of ten and the PAPER gate was unchanged before and after.",
       "blockers": [],
-      "next_action": "Merge with --no-ff into the council home, push, re-verify the runner from the live path, record the Board action.",
-      "updated_at": "2026-10-01T17:54:12.595Z"
+      "next_action": "Next trading-lane card from the board.",
+      "updated_at": "2026-10-01T17:55:22.839Z"
     }
   ],
   "history": [
@@ -1016,6 +1016,14 @@
       "at": "2026-10-01T17:54:12.595Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "WS-TEST-1",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-01T17:55:22.839Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "3f2b9a1"
     }
   ]
 }
