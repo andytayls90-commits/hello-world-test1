@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T19:21:18.243Z",
+  "updated_at": "2026-10-01T19:57:18.470Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 24,
+        "complete": 25,
         "total": 33,
-        "percent": 73
+        "percent": 76
       },
-      "next_action": "Failing tests first, then the retention module, scheduler job and status endpoint; bolt ten of ten; merge, deploy, verify.",
-      "updated_at": "2026-10-01T18:56:43.513Z"
+      "next_action": "None for this task. Follow-on retention candidates are tracked on the board.",
+      "updated_at": "2026-10-01T19:57:18.470Z"
     },
     {
       "project_id": "mission-control",
