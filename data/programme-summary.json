@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T15:38:15.502Z",
+  "updated_at": "2026-10-01T15:59:39.019Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 22,
+        "complete": 23,
         "total": 31,
-        "percent": 71
+        "percent": 74
       },
-      "next_action": "Observe the next hourly council cycle: a derived chair row in the ledger means the chair still skips its line (now measurable, no longer paged); then the rejected-close booking defect and the remaining approval hygiene items.",
-      "updated_at": "2026-10-01T15:27:49.614Z"
+      "next_action": "Next trading-lane card from the board; the duplicate research card for the same finding can be closed against this audit.",
+      "updated_at": "2026-10-01T15:59:39.019Z"
     },
     {
       "project_id": "mission-control",

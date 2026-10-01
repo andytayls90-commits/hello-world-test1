@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-01T15:27:49.614Z",
+  "updated_at": "2026-10-01T15:59:39.019Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Observe the next hourly council cycle: a derived chair row in the ledger means the chair still skips its line (now measurable, no longer paged); then the rejected-close booking defect and the remaining approval hygiene items.",
+  "next_action": "Next trading-lane card from the board; the duplicate research card for the same finding can be closed against this audit.",
   "milestones": [
     {
       "id": "M0",
@@ -619,17 +619,17 @@
       "id": "WS-SCORE-1",
       "title": "Signal attenuation audit: the research finding that a hidden dampening coefficient compresses high-confidence signals into low final scores is tested against the scoring contract and the stored signal history, and the audit is made a durable read-only surface so the finding cannot recur unverified",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane engineer (Claude)",
       "started_at": "2026-10-01T15:54:36.000Z",
-      "completed_at": null,
+      "completed_at": "2026-10-01T15:59:39.019Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "Claimed by the autonomous trading-lane cycle. Confidence and final score are two views of one blended score on different scales, so a confidence near 0.6 maps to a final score near 0.2 by construction; the cycle pins that contract with a test, audits the stored signal history for any row that breaks it, and adds a read-only audit endpoint on the reweight surface.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "654588a",
+      "summary": "Audited and closed by the autonomous trading-lane cycle. The research finding that a hidden dampening coefficient compresses high-confidence signals into low final scores was tested against the scoring contract and the stored signal history: confidence and final score are two views of one blended score on different scales, so the observed pairs follow the contract exactly, with five thousand of five thousand recent stored signals consistent and none suppressed. No weight or coefficient was changed, and weight promotion remains a human decision. A pure audit module, a ten-spec test that went red then green, and a read-only audit endpoint on the reweight surface now make the check reproducible. Promoted, deployed and re-verified live: the real-money bolt held ten of ten and the PAPER gate was unchanged before and after. One unrelated finding was filed: an uncalled duplicate blend for currencies and futures still uses the superseded coverage floor.",
       "blockers": [],
-      "next_action": "Write the failing audit test, implement the pure audit module and endpoint, run the bolt, promote and re-verify.",
-      "updated_at": "2026-10-01T15:54:36.000Z"
+      "next_action": "Next trading-lane card from the board; the duplicate research card for the same finding can be closed against this audit.",
+      "updated_at": "2026-10-01T15:59:39.019Z"
     }
   ],
   "history": [
@@ -983,6 +983,14 @@
       "at": "2026-10-01T15:27:49.614Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "1772c3f"
+    },
+    {
+      "task_id": "WS-SCORE-1",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-01T15:59:39.019Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "654588a"
     }
   ]
 }
