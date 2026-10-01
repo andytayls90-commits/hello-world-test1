@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T23:55:05.757Z",
+  "updated_at": "2026-10-01T23:56:52.032Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -19,8 +19,8 @@
         "total": 38,
         "percent": 74
       },
-      "next_action": "Verify read-only, record the evidence packet, block with the owner rotation sequence.",
-      "updated_at": "2026-10-01T23:55:05.757Z"
+      "next_action": "Owner rotates the secrets in the vault, re-issues the bot token, re-renders the store's environment, updates the seven local and two remote consumer configurations in the same window, restarts the agent gateway by scope, and decides whether to drop or back the unused read-only credential.",
+      "updated_at": "2026-10-01T23:56:52.032Z"
     },
     {
       "project_id": "mission-control",

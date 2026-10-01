@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-01T23:55:05.757Z",
+  "updated_at": "2026-10-01T23:56:52.032Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Verify read-only, record the evidence packet, block with the owner rotation sequence.",
+  "next_action": "Owner rotates the secrets in the vault, re-issues the bot token, re-renders the store's environment, updates the seven local and two remote consumer configurations in the same window, restarts the agent gateway by scope, and decides whether to drop or back the unused read-only credential.",
   "milestones": [
     {
       "id": "M0",
@@ -72,7 +72,7 @@
     {
       "id": "OPS",
       "title": "Hermes and autonomous engineering operations",
-      "status": "IN_PROGRESS",
+      "status": "BLOCKED",
       "task_ids": [
         "OPS-1",
         "OPS-2",
@@ -740,17 +740,19 @@
       "id": "WS-SEC-1",
       "title": "Knowledge-store agent credential rotation (owner decision): four agent access secrets and the messaging bot token behind the shared knowledge store are byte-identical to archived copies from June and the read-only database credential has no matching database role; verify the claim read-only, enumerate every consumer that holds a literal copy, and hand the owner the exact rotation sequence",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "BLOCKED",
       "owner": "Board (owner decision); verified by the autonomous trading-lane engineer (Claude)",
       "started_at": "2026-10-01T23:55:05.757Z",
       "completed_at": null,
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "Claimed by the 2026-10-01 trading-lane cycle 14 as an owner-call card. The autonomous engineer verifies the rotation claim read-only (equality of archived and live values, never the values themselves), enumerates every local consumer configuration that holds a literal copy of a secret, confirms which database roles exist, and then blocks the card with the exact owner acts. No code change, nothing traded.",
-      "blockers": [],
-      "next_action": "Verify read-only, record the evidence packet, block with the owner rotation sequence.",
-      "updated_at": "2026-10-01T23:55:05.757Z"
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "6ce5f24",
+      "summary": "Verified read-only by the 2026-10-01 trading-lane cycle 14: four agent access secrets, the messaging bot token and the read-only database credential behind the shared knowledge store are byte-identical to archived copies from June (one rotation happened in early June, none since; only the primary database credential was rotated this month). Seven local consumer configuration files hold a literal copy of one of those secrets, two remote consumers could not be inspected from this host, and the database has no read-only role behind the read-only credential, which nothing references. Every remediation is a vault value, a bot-platform token or a database role, so the card is blocked for the owner with the exact rotation sequence. No code changed, nothing traded, the real-money bolt held ten of ten and the PAPER gate was unchanged.",
+      "blockers": [
+        "Owner-only acts: generate four new agent access secrets and re-issue the bot token in the vault; drop or back the unused read-only database credential; update every consumer configuration in the same window; do together with the earlier plaintext-duplicate card."
+      ],
+      "next_action": "Owner rotates the secrets in the vault, re-issues the bot token, re-renders the store's environment, updates the seven local and two remote consumer configurations in the same window, restarts the agent gateway by scope, and decides whether to drop or back the unused read-only credential.",
+      "updated_at": "2026-10-01T23:56:52.032Z"
     }
   ],
   "history": [
@@ -1216,6 +1218,14 @@
       "at": "2026-10-01T23:55:05.757Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-SEC-1",
+      "from": "IN_PROGRESS",
+      "to": "BLOCKED",
+      "at": "2026-10-01T23:56:52.032Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "6ce5f24"
     }
   ]
 }
