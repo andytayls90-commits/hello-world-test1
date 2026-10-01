@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T21:58:09.128Z",
+  "updated_at": "2026-10-01T22:57:16.976Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-49",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 50,
+        "complete": 51,
         "total": 52,
-        "percent": 96
+        "percent": 98
       },
-      "next_action": "Write failing tests against the old generator, implement, independent verification, merge, re-render the 09:30 report as of its own timestamp.",
-      "updated_at": "2026-10-01T20:26:23.604Z"
+      "next_action": "Monitor the next scheduled report renders for registry drift warnings; reconcile the serving config if any appear.",
+      "updated_at": "2026-10-01T22:57:16.976Z"
     }
   ]
 }

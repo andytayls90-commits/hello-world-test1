@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T20:26:23.604Z",
+  "updated_at": "2026-10-01T22:57:16.976Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-49",
-  "next_action": "Write failing tests against the old generator, implement, independent verification, merge, re-render the 09:30 report as of its own timestamp.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Monitor the next scheduled report renders for registry drift warnings; reconcile the serving config if any appear.",
   "milestones": [
     {
       "id": "MC0",
@@ -396,7 +396,7 @@
     {
       "id": "MC48",
       "title": "GPU value report derives its model registry from the live serving configuration",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-49"
       ]
@@ -1223,17 +1223,17 @@
       "id": "MC-LOOP-49",
       "title": "Autonomous loop: the daily GPU value-per-hour report attributed token work from a static list of retired model names, so the live brain's work was reported as zero and the residency advice was wrong; the report now derives its model registry from the live serving configuration, flags unrecognised active models, separates window and cumulative counters, and can be re-rendered as of a past timestamp",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous MC-lane engineer (Claude)",
       "started_at": "2026-10-01T20:26:23.604Z",
-      "completed_at": null,
+      "completed_at": "2026-10-01T22:57:16.976Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "Started by the 2026-10-01 MC-lane autonomous cycle 7. Root cause confirmed in source: the report iterates a hardcoded list of five model aliases, three of which were retired in July, and omits the live brain and the embedding model; the same-timestamp metrics store shows 370,814 generated tokens for the live brain in the window the report scored as zero (control model matches). Fix: derive the registry from the live serving configuration, flag unrecognised active models, label window vs cumulative counters, add an as-of re-render; tests with a fake metrics server; independent verification before merge.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "2dd3a45",
+      "summary": "Daily GPU value-per-hour report now derives its model registry from the live serving config and the models Prometheus actually observed, flags unrecognised or ambiguous models, labels window versus cumulative counters, resolves GPU identity through DCGM, and treats decode batches as serving evidence for the embeddings model (which exposes no token counters). Three independent verification rounds; every finding fixed and pinned; the scheduled unit rewrote the live report after merge with the embeddings model correctly kept resident. Paper mode only; trading gate untouched.",
       "blockers": [],
-      "next_action": "Write failing tests against the old generator, implement, independent verification, merge, re-render the 09:30 report as of its own timestamp.",
-      "updated_at": "2026-10-01T20:26:23.604Z"
+      "next_action": "Monitor the next scheduled report renders for registry drift warnings; reconcile the serving config if any appear.",
+      "updated_at": "2026-10-01T22:57:16.976Z"
     }
   ],
   "history": [
@@ -2164,6 +2164,14 @@
       "at": "2026-10-01T20:26:23.604Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-49",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-01T22:57:16.976Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "2dd3a45"
     }
   ]
 }
