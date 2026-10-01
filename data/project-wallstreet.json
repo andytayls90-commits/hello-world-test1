@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-01T23:15:07.002Z",
+  "updated_at": "2026-10-01T23:35:09.526Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Next trading-lane candidates: the over-booked reconciler assessment, the research-profile weights visibility, the deprecated UTC clock calls, the two shadow surfaces that equate a stop id with protection, the June approval hygiene items and the stray file clean-up; the two legacy ledger rows and the equity sizing decision stay with the owner.",
+  "next_action": "Pin the bind, restart the gateway unit, re-verify from the local, overlay and LAN interfaces, update the operations docs, record evidence.",
   "milestones": [
     {
       "id": "M0",
@@ -83,7 +83,8 @@
         "WS-SCORE-1",
         "WS-TEST-1",
         "WS-RET-1",
-        "WS-CLOSE-2"
+        "WS-CLOSE-2",
+        "WS-NET-1"
       ]
     },
     {
@@ -717,6 +718,22 @@
       "blockers": [],
       "next_action": "Next trading-lane candidates: the over-booked reconciler assessment, the research-profile weights visibility, the deprecated UTC clock calls, the two shadow surfaces that equate a stop id with protection, the June approval hygiene items and the stray file clean-up; the two legacy ledger rows and the equity sizing decision stay with the owner.",
       "updated_at": "2026-10-01T23:15:07.002Z"
+    },
+    {
+      "id": "WS-NET-1",
+      "title": "Agent gateway inbound listener restricted to local connections: the trading council's gateway accepted inbound webhook connections on every network interface although its only consumer is the local orchestration health probe and no webhook routes are configured; prove the consumer set, pin the bind to the local machine through the gateway's own configuration writer, restart by scope and re-verify from every interface",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane engineer (Claude)",
+      "started_at": "2026-10-01T23:35:09.526Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "Started by the 2026-10-01 trading-lane autonomous cycle 13 (the queue's first card had just been completed by the operator and the second needs an owner secret rotation, recorded as blocked). Verified read-only: the gateway's inbound listener accepts connections on every interface, no webhook routes are configured so every webhook path fails closed, and the only consumer found in every service, scheduler and tool is the orchestration API's local health probe. Plan: pin the bind host to the local machine with the gateway's own configuration writer after backing the configuration up outside any repository, restart the gateway user unit by scope, and re-verify from every interface.",
+      "blockers": [],
+      "next_action": "Pin the bind, restart the gateway unit, re-verify from the local, overlay and LAN interfaces, update the operations docs, record evidence.",
+      "updated_at": "2026-10-01T23:35:09.526Z"
     }
   ],
   "history": [
@@ -1158,6 +1175,14 @@
       "at": "2026-10-01T23:15:07.002Z",
       "evidence": "VERIFIED LIVE",
       "commit": "8c35af5"
+    },
+    {
+      "task_id": "WS-NET-1",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-01T23:35:09.526Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }

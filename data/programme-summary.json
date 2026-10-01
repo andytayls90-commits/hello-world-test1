@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T23:26:24.158Z",
+  "updated_at": "2026-10-01T23:35:09.526Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 27,
-        "total": 36,
-        "percent": 75
+        "total": 37,
+        "percent": 73
       },
-      "next_action": "Next trading-lane candidates: the over-booked reconciler assessment, the research-profile weights visibility, the deprecated UTC clock calls, the two shadow surfaces that equate a stop id with protection, the June approval hygiene items and the stray file clean-up; the two legacy ledger rows and the equity sizing decision stay with the owner.",
-      "updated_at": "2026-10-01T23:15:07.002Z"
+      "next_action": "Pin the bind, restart the gateway unit, re-verify from the local, overlay and LAN interfaces, update the operations docs, record evidence.",
+      "updated_at": "2026-10-01T23:35:09.526Z"
     },
     {
       "project_id": "mission-control",
