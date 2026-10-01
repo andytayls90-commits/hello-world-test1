@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T18:56:43.513Z",
+  "updated_at": "2026-10-01T19:21:18.243Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-48",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 49,
+        "complete": 50,
         "total": 51,
-        "percent": 96
+        "percent": 98
       },
-      "next_action": "Red test for the stall with a slow stubbed model, then the bounded offload fix, independent verification, merge and one service restart.",
-      "updated_at": "2026-10-01T18:25:56.904Z"
+      "next_action": "Follow-ups filed: harden the static blocking-call guard; single-flight the watch probe cache.",
+      "updated_at": "2026-10-01T19:21:18.243Z"
     }
   ]
 }
