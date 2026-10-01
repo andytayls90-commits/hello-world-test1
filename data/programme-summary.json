@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T15:59:39.019Z",
+  "updated_at": "2026-10-01T16:28:11.772Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-47",
       "progress": {
         "complete": 48,
-        "total": 49,
-        "percent": 98
+        "total": 50,
+        "percent": 96
       },
-      "next_action": "Next cycle: pull the next mission from the store; residuals m-30dbbfa3e6 (count open work with the shared eligibility predicate) and m-b29e1c2421 (second-lane record text vs the claim scope guard) are filed.",
-      "updated_at": "2026-10-01T15:38:15.502Z"
+      "next_action": "TDD in the worktree, both harness runs (8 MB and 4 MB) green, independent verification, merge.",
+      "updated_at": "2026-10-01T16:28:11.772Z"
     }
   ]
 }
