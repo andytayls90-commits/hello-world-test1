@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-01T21:58:09.128Z",
+  "updated_at": "2026-10-01T23:08:22.273Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Owner records the four decisions; the reap-then-flatten resolver defect proceeds as its own trading-lane card.",
+  "next_action": "Red specs written; make them green, hold the real-money bolt ten of ten, promote by scope, re-verify the live ledger surface.",
   "milestones": [
     {
       "id": "M0",
@@ -57,7 +57,8 @@
         "WS-EXEC-1",
         "WS-PROT-1",
         "WS-CLOSE-1",
-        "WS-SIZE-1"
+        "WS-SIZE-1",
+        "WS-LEDGER-1"
       ]
     },
     {
@@ -700,6 +701,22 @@
       ],
       "next_action": "Owner records the four decisions; the reap-then-flatten resolver defect proceeds as its own trading-lane card.",
       "updated_at": "2026-10-01T21:58:09.128Z"
+    },
+    {
+      "id": "WS-LEDGER-1",
+      "title": "Reap-then-flatten closure: the reconciler no longer books a ledger row closed on a broker read that omits the holding while the broker has no closing fill for it (no reap without exit evidence, deferred and surfaced, raw read persisted), and the exit resolver gains a bounded daily slow pass that attributes an exact-quantity later fill to a row whose fast retry budget was spent",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane engineer (Claude)",
+      "started_at": "2026-10-01T23:08:22.273Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "IMPLEMENTED / UNVERIFIED",
+      "commit": "442cecd",
+      "summary": "In progress by the autonomous trading-lane cycle. Three closed ledger rows were booked flat by the reconciler on broker reads that omitted the holding while the broker still held the shares and had no closing fill; our own orphan auto-close sold the shares days later and the resolver's one-hour retry window could never attribute that fill. The fix makes the reconciler require exit evidence before reaping (a settled row the broker omits without a closing fill is deferred, surfaced and quoted with the raw read), and adds a bounded once-daily slow resolution that attributes an exact-quantity later fill, with the close path's own order ids excluded from attribution.",
+      "blockers": [],
+      "next_action": "Red specs written; make them green, hold the real-money bolt ten of ten, promote by scope, re-verify the live ledger surface.",
+      "updated_at": "2026-10-01T23:08:22.273Z"
     }
   ],
   "history": [
@@ -1125,6 +1142,14 @@
       "at": "2026-10-01T21:58:09.128Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "df5e33a"
+    },
+    {
+      "task_id": "WS-LEDGER-1",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-01T23:08:22.273Z",
+      "evidence": "IMPLEMENTED / UNVERIFIED",
+      "commit": "442cecd"
     }
   ]
 }

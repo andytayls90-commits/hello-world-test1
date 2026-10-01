@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T22:57:16.976Z",
+  "updated_at": "2026-10-01T23:08:22.273Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 26,
-        "total": 35,
-        "percent": 74
+        "total": 36,
+        "percent": 72
       },
-      "next_action": "Owner records the four decisions; the reap-then-flatten resolver defect proceeds as its own trading-lane card.",
-      "updated_at": "2026-10-01T21:58:09.128Z"
+      "next_action": "Red specs written; make them green, hold the real-money bolt ten of ten, promote by scope, re-verify the live ledger surface.",
+      "updated_at": "2026-10-01T23:08:22.273Z"
     },
     {
       "project_id": "mission-control",
