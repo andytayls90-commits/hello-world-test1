@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T23:35:09.526Z",
+  "updated_at": "2026-10-01T23:41:35.547Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 27,
+        "complete": 28,
         "total": 37,
-        "percent": 73
+        "percent": 76
       },
-      "next_action": "Pin the bind, restart the gateway unit, re-verify from the local, overlay and LAN interfaces, update the operations docs, record evidence.",
-      "updated_at": "2026-10-01T23:35:09.526Z"
+      "next_action": "Next trading-lane candidates from the board: the remaining re-routed operations cards (auth rotation items stay with the owner), the over-booked reconciler assessment, the research-profile weights visibility, the deprecated UTC clock calls and the approval hygiene items; a follow-up asks for the listener check to run periodically rather than only at boot.",
+      "updated_at": "2026-10-01T23:41:35.547Z"
     },
     {
       "project_id": "mission-control",
