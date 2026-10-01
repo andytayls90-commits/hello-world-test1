@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T23:56:52.032Z",
+  "updated_at": "2026-10-01T23:58:57.577Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 28,
-        "total": 38,
-        "percent": 74
+        "total": 39,
+        "percent": 72
       },
-      "next_action": "Owner rotates the secrets in the vault, re-issues the bot token, re-renders the store's environment, updates the seven local and two remote consumer configurations in the same window, restarts the agent gateway by scope, and decides whether to drop or back the unused read-only credential.",
-      "updated_at": "2026-10-01T23:56:52.032Z"
+      "next_action": "Write failing tests for the shared poll and the probe cache, implement, restart the console and aggregator by scope, verify request counts live.",
+      "updated_at": "2026-10-01T23:58:57.577Z"
     },
     {
       "project_id": "mission-control",
