@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-02T06:55:13.630Z",
+  "updated_at": "2026-10-02T06:59:48.505Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Write the failing test, restrict the execution inference to actioned decisions, run the real-money bolt, merge, deploy, re-verify the live read model shows zero mislabelled rows.",
+  "next_action": "Next trading-lane candidates: automated expiry of stale approved-but-unexecuted decisions, the June approval hygiene items, the upward-correction in-flight-close guard follow-up and the shadow surfaces that equate a stop id with protection; the host storage and credential decisions stay with the owner.",
   "milestones": [
     {
       "id": "M0",
@@ -914,17 +914,17 @@
       "id": "WS-APPR-1",
       "title": "Approval execution flag integrity: a rejected, cancelled, expired or superseded approval must never report itself as executed merely because a sibling approval for the same signal opened a trade; the decision-trail read model infers execution from the originating signal and so mislabels non-actioned decisions, confusing reconciliation and the council scorer",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane engineer (Claude)",
       "started_at": "2026-10-02T06:55:13.630Z",
-      "completed_at": null,
+      "completed_at": "2026-10-02T06:59:48.505Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "Claimed by the autonomous trading-lane cycle. Live read of the decision trail shows fifty-one non-actioned decisions (rejected, cancelled, expired) labelled executed because a sibling decision for the same signal opened the trade. Fix restricts the inference to actioned decisions, guarded by a failing-then-passing test, then re-verified live.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "19d3f3f",
+      "summary": "Deployed and re-verified by the autonomous cycle. The decision-trail read model inferred execution from the originating signal alone, so a decision that was rejected, cancelled, expired or superseded read as executed whenever a sibling decision for the same signal had opened the trade; fifty-two historical rows were mislabelled this way, including the council prayer's example. The predicate now denies that inference for every non-actioned state while actioned decisions are unchanged. Because the flag is computed rather than stored, the correction applied to every historical row at deploy with no data rewrite. A failing-then-passing unit check and an end-to-end read-model test guard it, the full backend suite passed, the real-money bolt held ten of ten in the worktree, at push and after deploy, and the PAPER gate was unchanged. A follow-up card records that the decision-change refusal still names the wrong decision when a sibling holds the trade.",
       "blockers": [],
-      "next_action": "Write the failing test, restrict the execution inference to actioned decisions, run the real-money bolt, merge, deploy, re-verify the live read model shows zero mislabelled rows.",
-      "updated_at": "2026-10-02T06:55:13.630Z"
+      "next_action": "Next trading-lane candidates: automated expiry of stale approved-but-unexecuted decisions, the June approval hygiene items, the upward-correction in-flight-close guard follow-up and the shadow surfaces that equate a stop id with protection; the host storage and credential decisions stay with the owner.",
+      "updated_at": "2026-10-02T06:59:48.505Z"
     }
   ],
   "history": [
@@ -1550,6 +1550,14 @@
       "at": "2026-10-02T06:55:13.630Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "WS-APPR-1",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-02T06:59:48.505Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "19d3f3f"
     }
   ]
 }

@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T06:55:13.630Z",
+  "updated_at": "2026-10-02T06:59:48.505Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 35,
+        "complete": 36,
         "total": 48,
-        "percent": 73
+        "percent": 75
       },
-      "next_action": "Write the failing test, restrict the execution inference to actioned decisions, run the real-money bolt, merge, deploy, re-verify the live read model shows zero mislabelled rows.",
-      "updated_at": "2026-10-02T06:55:13.630Z"
+      "next_action": "Next trading-lane candidates: automated expiry of stale approved-but-unexecuted decisions, the June approval hygiene items, the upward-correction in-flight-close guard follow-up and the shadow surfaces that equate a stop id with protection; the host storage and credential decisions stay with the owner.",
+      "updated_at": "2026-10-02T06:59:48.505Z"
     },
     {
       "project_id": "mission-control",
