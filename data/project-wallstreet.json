@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-02T00:14:17.018Z",
+  "updated_at": "2026-10-02T00:57:00.814Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Next trading-lane candidates from the board: the gateway auth-rotation card (owner credentials, block), the over-booked reconciler assessment, the research-profile weights visibility, the deprecated UTC clock calls and the approval hygiene items.",
+  "next_action": "Verify the overnight journal is clean, fix the stale governance document, then block with the exact owner re-authorization acts.",
   "milestones": [
     {
       "id": "M0",
@@ -86,7 +86,8 @@
         "WS-CLOSE-2",
         "WS-NET-1",
         "WS-SEC-1",
-        "WS-CONSOLE-1"
+        "WS-CONSOLE-1",
+        "WS-AGENT-1"
       ]
     },
     {
@@ -770,6 +771,22 @@
       "blockers": [],
       "next_action": "Next trading-lane candidates from the board: the gateway auth-rotation card (owner credentials, block), the over-booked reconciler assessment, the research-profile weights visibility, the deprecated UTC clock calls and the approval hygiene items.",
       "updated_at": "2026-10-02T00:14:17.018Z"
+    },
+    {
+      "id": "WS-AGENT-1",
+      "title": "Agent runtime credential hygiene (owner decision): the default agent profile's market-data connector authorization was failing every five minutes, a cloud inference provider's refresh credential has been invalid since late September, an unused paid-routing key is empty, the fallback model named a model no longer served, and two removed per-bot gateway units left orphan service drop-ins; verify what the operator already fixed, close the remaining engineering residue, and hand the owner the exact re-authorization acts",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Board (owner decision); verified by the autonomous trading-lane engineer (Claude)",
+      "started_at": "2026-10-02T00:57:00.814Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "Claimed by the 2026-10-02 trading-lane cycle 1. The operator fixed the configuration side on 2026-10-01 (fallback model repointed to a served model, auxiliary tasks pinned to the local model server, the failing market-data connector disabled, orphan drop-ins re-homed into the single multiplexed gateway, architecture note written). This cycle verifies those fixes held overnight, closes the remaining documentation residue, and classifies every credential item as an owner act or a non-defect.",
+      "blockers": [],
+      "next_action": "Verify the overnight journal is clean, fix the stale governance document, then block with the exact owner re-authorization acts.",
+      "updated_at": "2026-10-02T00:57:00.814Z"
     }
   ],
   "history": [
@@ -1259,6 +1276,14 @@
       "at": "2026-10-02T00:14:17.018Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "2c32581"
+    },
+    {
+      "task_id": "WS-AGENT-1",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-02T00:57:00.814Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
