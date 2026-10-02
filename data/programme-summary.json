@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T01:02:28.167Z",
+  "updated_at": "2026-10-02T01:04:17.327Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 29,
+        "complete": 30,
         "total": 41,
-        "percent": 71
+        "percent": 73
       },
-      "next_action": "Re-run the audit endpoint and its tests, record evidence, mark complete.",
-      "updated_at": "2026-10-02T01:02:28.167Z"
+      "next_action": "None for this finding. Future research cards that re-raise it are closed against the audit endpoint and the correction.",
+      "updated_at": "2026-10-02T01:04:17.327Z"
     },
     {
       "project_id": "mission-control",
