@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T06:06:41.486Z",
+  "updated_at": "2026-10-02T06:25:18.515Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-COMMS-1",
-  "next_action": "Finish isolated tests while owner approval for attributable runtime access is pending.",
+  "next_action": "Failing test by name, tolerant tag parse with a named 400, independent verification, merge, service restart, live proof.",
   "milestones": [
     {
       "id": "MC0",
@@ -439,6 +439,14 @@
       "status": "IN_PROGRESS",
       "task_ids": [
         "MC-COMMS-1"
+      ]
+    },
+    {
+      "id": "MC54",
+      "title": "Helm edit API: change-tag header hardening",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-54"
       ]
     }
   ],
@@ -1356,6 +1364,22 @@
       ],
       "next_action": "Finish isolated tests while owner approval for attributable runtime access is pending.",
       "updated_at": "2026-10-02T06:06:41.486Z"
+    },
+    {
+      "id": "MC-LOOP-54",
+      "title": "Helm mission edit API: a quoted or non-numeric change-tag header crashes the edit route instead of being refused with a clear reason",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous Mission Control engineer (Claude)",
+      "started_at": "2026-10-02T06:25:18.515Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "Started by the autonomous Mission Control cycle. Reproduced live: an authenticated edit carrying a quoted change-tag header crashes the route with a stack trace instead of a named refusal; a plain integer tag behaves correctly and anonymous callers are still refused first. Fix in progress on an isolated branch, failing test first.",
+      "blockers": [],
+      "next_action": "Failing test by name, tolerant tag parse with a named 400, independent verification, merge, service restart, live proof.",
+      "updated_at": "2026-10-02T06:25:18.515Z"
     }
   ],
   "history": [
@@ -2365,6 +2389,14 @@
       "to": "IN_PROGRESS",
       "at": "2026-10-02T06:06:41.486Z",
       "evidence": "PLANNED",
+      "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-54",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-02T06:25:18.515Z",
+      "evidence": "PARTIAL",
       "commit": null
     }
   ]

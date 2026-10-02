@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T06:06:41.486Z",
+  "updated_at": "2026-10-02T06:25:18.515Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -32,11 +32,11 @@
       "current_task_id": "MC-COMMS-1",
       "progress": {
         "complete": 55,
-        "total": 57,
-        "percent": 96
+        "total": 58,
+        "percent": 95
       },
-      "next_action": "Finish isolated tests while owner approval for attributable runtime access is pending.",
-      "updated_at": "2026-10-02T06:06:41.486Z"
+      "next_action": "Failing test by name, tolerant tag parse with a named 400, independent verification, merge, service restart, live proof.",
+      "updated_at": "2026-10-02T06:25:18.515Z"
     }
   ]
 }
