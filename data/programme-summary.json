@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T06:25:18.515Z",
+  "updated_at": "2026-10-02T06:46:34.430Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -35,8 +35,8 @@
         "total": 58,
         "percent": 95
       },
-      "next_action": "Failing test by name, tolerant tag parse with a named 400, independent verification, merge, service restart, live proof.",
-      "updated_at": "2026-10-02T06:25:18.515Z"
+      "next_action": "Complete fresh isolated verification and deployment preparation; await scoped owner access approval before integration.",
+      "updated_at": "2026-10-02T06:46:34.430Z"
     }
   ]
 }

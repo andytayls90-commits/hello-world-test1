@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T06:25:18.515Z",
+  "updated_at": "2026-10-02T06:46:34.430Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-COMMS-1",
-  "next_action": "Failing test by name, tolerant tag parse with a named 400, independent verification, merge, service restart, live proof.",
+  "next_action": "Complete fresh isolated verification and deployment preparation; await scoped owner access approval before integration.",
   "milestones": [
     {
       "id": "MC0",
@@ -1356,14 +1356,14 @@
       "started_at": "2026-10-02T06:06:41.486Z",
       "completed_at": null,
       "target_at": null,
-      "evidence": "PLANNED",
+      "evidence": "IMPLEMENTED / UNVERIFIED",
       "commit": null,
-      "summary": "Implement addressed agent coordination with durable inboxes, acknowledgements and runtime consumers; completion requires an independently authored recipient reply.",
+      "summary": "Continue the existing addressed communications draft; fresh API, console and runtime compatibility verification is underway. Actual peer response remains outstanding.",
       "blockers": [
-        "Live rollout depends on scoped owner approval for standing identity access."
+        "Standing identity provisioning, peer role promotion and read-access activation await owner approval."
       ],
-      "next_action": "Finish isolated tests while owner approval for attributable runtime access is pending.",
-      "updated_at": "2026-10-02T06:06:41.486Z"
+      "next_action": "Complete fresh isolated verification and deployment preparation; await scoped owner access approval before integration.",
+      "updated_at": "2026-10-02T06:46:34.430Z"
     },
     {
       "id": "MC-LOOP-54",
@@ -2397,6 +2397,14 @@
       "to": "IN_PROGRESS",
       "at": "2026-10-02T06:25:18.515Z",
       "evidence": "PARTIAL",
+      "commit": null
+    },
+    {
+      "task_id": "MC-COMMS-1",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-02T06:46:34.430Z",
+      "evidence": "IMPLEMENTED / UNVERIFIED",
       "commit": null
     }
   ]
