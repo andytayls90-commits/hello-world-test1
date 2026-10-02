@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T00:57:00.814Z",
+  "updated_at": "2026-10-02T01:00:05.228Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -19,8 +19,8 @@
         "total": 40,
         "percent": 73
       },
-      "next_action": "Verify the overnight journal is clean, fix the stale governance document, then block with the exact owner re-authorization acts.",
-      "updated_at": "2026-10-02T00:57:00.814Z"
+      "next_action": "Owner re-authorizes the market-data connector in a browser session and re-enables it, re-logs or drops the cloud inference provider whose refresh credential is invalid, drops the dead legacy entry for the primary model provider and confirms its live entry refreshes, and acknowledges the single-gateway consolidation.",
+      "updated_at": "2026-10-02T01:00:05.228Z"
     },
     {
       "project_id": "mission-control",
