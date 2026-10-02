@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T06:48:36.998Z",
+  "updated_at": "2026-10-02T06:55:13.630Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 35,
-        "total": 47,
-        "percent": 74
+        "total": 48,
+        "percent": 73
       },
-      "next_action": "Owner rotation of the knowledge-store credential (tracked on the board) now needs only the vault field, the knowledge-store render step and one gateway restart; a cosmetic startup warning in the agent command-line path was filed as its own low-priority card.",
-      "updated_at": "2026-10-02T06:00:59.353Z"
+      "next_action": "Write the failing test, restrict the execution inference to actioned decisions, run the real-money bolt, merge, deploy, re-verify the live read model shows zero mislabelled rows.",
+      "updated_at": "2026-10-02T06:55:13.630Z"
     },
     {
       "project_id": "mission-control",
