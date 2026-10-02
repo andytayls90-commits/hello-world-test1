@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T07:54:54.163Z",
+  "updated_at": "2026-10-02T07:59:51.522Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -31,12 +31,12 @@
       "data_file": "data/mission-control.json",
       "current_task_id": "MC-COMMS-1",
       "progress": {
-        "complete": 56,
+        "complete": 57,
         "total": 59,
-        "percent": 95
+        "percent": 97
       },
-      "next_action": "Reproduce on the running service, then RED tests, fix, class guard, verification, live proof.",
-      "updated_at": "2026-10-02T07:25:23.591Z"
+      "next_action": "None for this item. Known framework boundary: a body the framework itself cannot parse, or a missing change-tag header on the edit route, is still refused by the framework before authentication (tracked separately).",
+      "updated_at": "2026-10-02T07:59:51.522Z"
     }
   ]
 }
