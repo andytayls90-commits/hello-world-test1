@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T02:08:40.587Z",
+  "updated_at": "2026-10-02T02:27:13.311Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-51",
       "progress": {
         "complete": 52,
-        "total": 53,
-        "percent": 98
+        "total": 54,
+        "percent": 96
       },
-      "next_action": "None — complete. Write-side sibling (request bodies parsed before route code) remains open as its own task.",
-      "updated_at": "2026-10-02T01:41:07.071Z"
+      "next_action": "Write the failing tests, build the belts, independent verification, merge, live proof.",
+      "updated_at": "2026-10-02T02:27:13.311Z"
     }
   ]
 }

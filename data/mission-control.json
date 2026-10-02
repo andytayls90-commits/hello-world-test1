@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T01:41:07.071Z",
+  "updated_at": "2026-10-02T02:27:13.311Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "None — complete. Write-side sibling (request bodies parsed before route code) remains open as its own task.",
+  "current_task_id": "MC-LOOP-51",
+  "next_action": "Write the failing tests, build the belts, independent verification, merge, live proof.",
   "milestones": [
     {
       "id": "MC0",
@@ -407,6 +407,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-50"
+      ]
+    },
+    {
+      "id": "MC50",
+      "title": "Commit identity guard: commit, merge and push belts with automated tests; personal-address leak root-caused",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-51"
       ]
     }
   ],
@@ -1258,6 +1266,22 @@
       "blockers": [],
       "next_action": "None — complete. Write-side sibling (request bodies parsed before route code) remains open as its own task.",
       "updated_at": "2026-10-02T01:41:07.071Z"
+    },
+    {
+      "id": "MC-LOOP-51",
+      "title": "Autonomous loop: the shared engineering repository's history can no longer accept a commit or a push carrying a personal author address — a commit-time identity guard is now active in every worktree without a manual install step, merge commits and pushes are checked too, the guard has an automated red/green test suite, and the leak that queued eight unpushable commits is traced to an explicit per-command identity override copied from the public tracker's recipe",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous MC-lane engineer (Claude)",
+      "started_at": "2026-10-02T02:27:13.311Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress 2026-10-02 cycle2: mission claimed, isolated worktree created. Root cause of the personal-address commits already proven from the session record: an explicit per-command identity override copied from the public tracker's commit recipe, not an environment leak. The queued commits were accepted upstream on 2026-10-01 after the owner relaxed the address rule, so no history rewrite is needed. Remaining: make the commit-time guard active in every worktree without a manual install, add merge-commit and push-side belts, add an automated red/green test suite, document the rule.",
+      "blockers": [],
+      "next_action": "Write the failing tests, build the belts, independent verification, merge, live proof.",
+      "updated_at": "2026-10-02T02:27:13.311Z"
     }
   ],
   "history": [
@@ -2212,6 +2236,14 @@
       "at": "2026-10-02T01:41:07.071Z",
       "evidence": "VERIFIED LIVE",
       "commit": "bd3b732"
+    },
+    {
+      "task_id": "MC-LOOP-51",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-02T02:27:13.311Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
