@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T23:26:24.158Z",
+  "updated_at": "2026-10-02T01:41:07.071Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-50",
-  "next_action": "Pin the stack-independent contract (red first), fix every legacy-blob reader through the shared loader, run the full suite, independent verification, merge, live proof.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "None — complete. Write-side sibling (request bodies parsed before route code) remains open as its own task.",
   "milestones": [
     {
       "id": "MC0",
@@ -404,7 +404,7 @@
     {
       "id": "MC49",
       "title": "Too-deep legacy values are classified independently of the host stack limit",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-50"
       ]
@@ -1247,17 +1247,17 @@
       "id": "MC-LOOP-50",
       "title": "Autonomous loop: one orchestration-API test flips between pass and fail with the host's process stack limit — a legacy stored value nested far too deeply is named by whichever layer the JSON parser's stack-bound recursion happens to reach first; make the too-deep classification independent of the stack and keep the suite green from the main checkout",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous MC-lane engineer (Claude)",
       "started_at": "2026-10-01T23:26:24.158Z",
-      "completed_at": null,
+      "completed_at": "2026-10-02T01:41:07.071Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "Reproduced: the test outcome depends on the process stack limit (passes at the default, fails when the limit is raised) because the JSON parser's recursion bound decides which layer names a too-deep legacy value. Fixing the readers so the classification is stack-independent, with tests pinned first.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "bd3b732",
+      "summary": "Shipped and verified live. Root cause: every legacy-blob reader parsed first and checked depth second, so the JSON parser's stack-bound recursion decided which sentence a too-deep stored value received; the pin flipped between an 8 MB and a 16 MB stack. Fix: depth is now classified on the stored text by an iterative linear scan before the parser runs, for all four readers; a hostile-string quadratic scan, a bytes-cell regression and a vacuous shim pin found by two independent verification rounds were fixed and pinned; the backlog page no longer errors over a deep legacy row. Full suite green from the main checkout at the default stack; the two off-default failures are the pre-existing write-side pins tracked on the sibling card. Service restarted; readers serve live; paper gate all-false; bolt green.",
       "blockers": [],
-      "next_action": "Pin the stack-independent contract (red first), fix every legacy-blob reader through the shared loader, run the full suite, independent verification, merge, live proof.",
-      "updated_at": "2026-10-01T23:26:24.158Z"
+      "next_action": "None — complete. Write-side sibling (request bodies parsed before route code) remains open as its own task.",
+      "updated_at": "2026-10-02T01:41:07.071Z"
     }
   ],
   "history": [
@@ -2204,6 +2204,14 @@
       "at": "2026-10-01T23:26:24.158Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-50",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-02T01:41:07.071Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "bd3b732"
     }
   ]
 }

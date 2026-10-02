@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T01:04:17.327Z",
+  "updated_at": "2026-10-02T01:41:07.071Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-50",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 51,
+        "complete": 52,
         "total": 53,
-        "percent": 96
+        "percent": 98
       },
-      "next_action": "Pin the stack-independent contract (red first), fix every legacy-blob reader through the shared loader, run the full suite, independent verification, merge, live proof.",
-      "updated_at": "2026-10-01T23:26:24.158Z"
+      "next_action": "None — complete. Write-side sibling (request bodies parsed before route code) remains open as its own task.",
+      "updated_at": "2026-10-02T01:41:07.071Z"
     }
   ]
 }
