@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T05:18:21.281Z",
+  "updated_at": "2026-10-02T05:55:20.602Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 34,
-        "total": 46,
-        "percent": 74
+        "total": 47,
+        "percent": 72
       },
-      "next_action": "Next trading-lane candidates: tool-enforce the ledger append and restore the council's per-cycle commits (both filed), the upward-correction in-flight-close guard follow-up, the June approval hygiene items and the executed-flag fix at the source.",
-      "updated_at": "2026-10-02T05:12:14.259Z"
+      "next_action": "Field renderer and guarded migrator built test-first; promote, render the reference into each profile, migrate the five files, restart the agent gateway while the trading cycle is idle, re-verify.",
+      "updated_at": "2026-10-02T05:55:20.602Z"
     },
     {
       "project_id": "mission-control",

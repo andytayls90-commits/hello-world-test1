@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-02T05:12:14.259Z",
+  "updated_at": "2026-10-02T05:55:20.602Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Next trading-lane candidates: tool-enforce the ledger append and restore the council's per-cycle commits (both filed), the upward-correction in-flight-close guard follow-up, the June approval hygiene items and the executed-flag fix at the source.",
+  "next_action": "Field renderer and guarded migrator built test-first; promote, render the reference into each profile, migrate the five files, restart the agent gateway while the trading cycle is idle, re-verify.",
   "milestones": [
     {
       "id": "M0",
@@ -895,19 +895,19 @@
     },
     {
       "id": "WS-SEC-2",
-      "title": "Agent runtime configuration files embedded a plaintext knowledge-store access secret: replace it with a vault-rendered environment reference in every agent profile so the secret lives in one vault field and a rotation reaches all agents through one restart",
+      "title": "Agent runtime configuration files embedded a plaintext knowledge-store access credential; replace it with a vault-rendered environment reference in every agent profile so the credential lives in one vault field and a rotation reaches all agents through one restart",
       "project": "Project Wallstreet",
-      "status": "PLANNED",
+      "status": "IN_PROGRESS",
       "owner": "Autonomous trading-lane engineer (Claude)",
-      "started_at": null,
+      "started_at": "2026-10-02T05:55:20.602Z",
       "completed_at": null,
       "target_at": null,
       "evidence": "PLANNED",
       "commit": null,
-      "summary": "Five agent profile configuration files hold the same knowledge-store access secret as a literal value; the agent runtime supports environment references in that field and fails closed when the reference is unset.",
+      "summary": "Claimed by the 2026-10-02 trading-lane cycle 6. Five agent profile configuration files hold the same knowledge-store access credential as a literal value. The installed agent runtime expands environment references in that header from each profile's own credential file and fails closed at connect time when the reference is unset, and the matching vault field already holds the same value, so no new vault value is needed.",
       "blockers": [],
-      "next_action": "Build the fail-safe field renderer and the guarded migrator, test red then green, promote and restart the agent gateway.",
-      "updated_at": "2026-10-02T05:54:23.000Z"
+      "next_action": "Field renderer and guarded migrator built test-first; promote, render the reference into each profile, migrate the five files, restart the agent gateway while the trading cycle is idle, re-verify.",
+      "updated_at": "2026-10-02T05:55:20.602Z"
     }
   ],
   "history": [
@@ -1509,6 +1509,14 @@
       "at": "2026-10-02T05:12:14.259Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "aaf3947"
+    },
+    {
+      "task_id": "WS-SEC-2",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-02T05:55:20.602Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
