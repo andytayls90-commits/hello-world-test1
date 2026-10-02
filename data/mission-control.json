@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T02:27:13.311Z",
+  "updated_at": "2026-10-02T03:01:27.685Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-51",
-  "next_action": "Write the failing tests, build the belts, independent verification, merge, live proof.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Follow-up filed: judge a push to a remote with no tracking refs against all known remotes rather than the whole history.",
   "milestones": [
     {
       "id": "MC0",
@@ -412,7 +412,7 @@
     {
       "id": "MC50",
       "title": "Commit identity guard: commit, merge and push belts with automated tests; personal-address leak root-caused",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-51"
       ]
@@ -1271,17 +1271,17 @@
       "id": "MC-LOOP-51",
       "title": "Autonomous loop: the shared engineering repository's history can no longer accept a commit or a push carrying a personal author address — a commit-time identity guard is now active in every worktree without a manual install step, merge commits and pushes are checked too, the guard has an automated red/green test suite, and the leak that queued eight unpushable commits is traced to an explicit per-command identity override copied from the public tracker's recipe",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous MC-lane engineer (Claude)",
       "started_at": "2026-10-02T02:27:13.311Z",
-      "completed_at": null,
+      "completed_at": "2026-10-02T03:01:27.685Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress 2026-10-02 cycle2: mission claimed, isolated worktree created. Root cause of the personal-address commits already proven from the session record: an explicit per-command identity override copied from the public tracker's commit recipe, not an environment leak. The queued commits were accepted upstream on 2026-10-01 after the owner relaxed the address rule, so no history rewrite is needed. Remaining: make the commit-time guard active in every worktree without a manual install, add merge-commit and push-side belts, add an automated red/green test suite, document the rule.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "4333fcd",
+      "summary": "Shipped and verified live. The eight personal-address commits were accepted upstream on 2026-10-01 after the owner relaxed the address rule, so no history rewrite was needed. Root cause proven from the session record: every commit of that cycle carried an explicit per-command identity override copied from the public tracker's recipe; environment and config were clean. The identity guard is now a tracked part of the repository and active in every workspace with no install step; it judges ordinary commits, merge commits (which the earlier guard never saw) and the full pushed range (so a bypassed commit still cannot leave the repository); the allow-list is a tracked file; the operator escape is announced and audited. A 29-case scratch harness fails 19 cases by name on the pre-guard tree and passes on the new one; two independent verification rounds (seven coverage findings fixed, round two converged); live proof in the main checkout: a personal-address commit, a personal-address merge and a bypassed push are all refused with history unchanged. Paper mode only; trading gate untouched.",
       "blockers": [],
-      "next_action": "Write the failing tests, build the belts, independent verification, merge, live proof.",
-      "updated_at": "2026-10-02T02:27:13.311Z"
+      "next_action": "Follow-up filed: judge a push to a remote with no tracking refs against all known remotes rather than the whole history.",
+      "updated_at": "2026-10-02T03:01:27.685Z"
     }
   ],
   "history": [
@@ -2244,6 +2244,14 @@
       "at": "2026-10-02T02:27:13.311Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-51",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-02T03:01:27.685Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "4333fcd"
     }
   ]
 }

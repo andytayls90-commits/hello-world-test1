@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T03:01:06.851Z",
+  "updated_at": "2026-10-02T03:01:27.685Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-51",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 52,
+        "complete": 53,
         "total": 54,
-        "percent": 96
+        "percent": 98
       },
-      "next_action": "Write the failing tests, build the belts, independent verification, merge, live proof.",
-      "updated_at": "2026-10-02T02:27:13.311Z"
+      "next_action": "Follow-up filed: judge a push to a remote with no tracking refs against all known remotes rather than the whole history.",
+      "updated_at": "2026-10-02T03:01:27.685Z"
     }
   ]
 }
