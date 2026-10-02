@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T02:54:40.836Z",
+  "updated_at": "2026-10-02T02:56:34.829Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -19,8 +19,8 @@
         "total": 43,
         "percent": 72
       },
-      "next_action": "Verify read-only that the model weights are unreferenced by the live inference configuration, record the evidence, and block the card with the exact owner acts.",
-      "updated_at": "2026-10-02T02:54:40.836Z"
+      "next_action": "Owner decides, per item, whether to delete the two unreferenced model weight sets, the retired-stack weight cache and the container rollback image (about 135 gigabytes in total); the exact commands are in the private evidence packet.",
+      "updated_at": "2026-10-02T02:56:34.829Z"
     },
     {
       "project_id": "mission-control",

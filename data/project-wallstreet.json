@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-02T02:54:40.836Z",
+  "updated_at": "2026-10-02T02:56:34.829Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Verify read-only that the model weights are unreferenced by the live inference configuration, record the evidence, and block the card with the exact owner acts.",
+  "next_action": "Owner decides, per item, whether to delete the two unreferenced model weight sets, the retired-stack weight cache and the container rollback image (about 135 gigabytes in total); the exact commands are in the private evidence packet.",
   "milestones": [
     {
       "id": "M0",
@@ -829,17 +829,17 @@
       "id": "WS-DISK-1",
       "title": "Host storage hygiene (owner decision): about ninety gigabytes of local model weights no longer referenced by the inference-server configuration, a retired-stack model cache and a container rollback image remain on disk after the operator's non-destructive reclaim; verify what is unreferenced and hand the owner the exact deletion decisions",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "BLOCKED",
       "owner": "Board (owner decision); verified by the autonomous trading-lane engineer (Claude)",
       "started_at": "2026-10-02T02:54:40.836Z",
       "completed_at": null,
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "Trading-lane cycle 3 of 2026-10-02 claimed the storage-hygiene card: the operator's 2026-10-01 non-destructive reclaim is already done (root volume 85 to 78 percent); what remains is deletion of model weights, a retired-stack cache and a rollback image, which is an owner decision.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "7466e7a",
+      "summary": "Verified read-only by the 2026-10-02 trading-lane cycle 3: the two large model weight sets are referenced only by backup copies of the inference-server configuration and are not among the four models the server lists; the retired-stack weight cache is mounted by no container and its only possible consumer unit is disabled; the container rollback image is unused by any container. The operator's non-destructive reclaim of 2026-10-01 held. A stale service marker describing the weights directory was corrected. Nothing was deleted.",
       "blockers": [],
-      "next_action": "Verify read-only that the model weights are unreferenced by the live inference configuration, record the evidence, and block the card with the exact owner acts.",
-      "updated_at": "2026-10-02T02:54:40.836Z"
+      "next_action": "Owner decides, per item, whether to delete the two unreferenced model weight sets, the retired-stack weight cache and the container rollback image (about 135 gigabytes in total); the exact commands are in the private evidence packet.",
+      "updated_at": "2026-10-02T02:56:34.829Z"
     }
   ],
   "history": [
@@ -1385,6 +1385,14 @@
       "at": "2026-10-02T02:54:40.836Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "WS-DISK-1",
+      "from": "IN_PROGRESS",
+      "to": "BLOCKED",
+      "at": "2026-10-02T02:56:34.829Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "7466e7a"
     }
   ]
 }
