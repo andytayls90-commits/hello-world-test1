@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-02T02:08:40.587Z",
+  "updated_at": "2026-10-02T02:54:40.836Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Next cycle checks the research agent outputs after the change for any repeat of the delivered-artifact recommendation; follow-ups tracked on the board.",
+  "next_action": "Verify read-only that the model weights are unreferenced by the live inference configuration, record the evidence, and block the card with the exact owner acts.",
   "milestones": [
     {
       "id": "M0",
@@ -89,7 +89,8 @@
         "WS-CONSOLE-1",
         "WS-AGENT-1",
         "WS-SCORE-2",
-        "WS-CRO-1"
+        "WS-CRO-1",
+        "WS-DISK-1"
       ]
     },
     {
@@ -823,6 +824,22 @@
       "blockers": [],
       "next_action": "Next cycle checks the research agent outputs after the change for any repeat of the delivered-artifact recommendation; follow-ups tracked on the board.",
       "updated_at": "2026-10-02T02:08:40.587Z"
+    },
+    {
+      "id": "WS-DISK-1",
+      "title": "Host storage hygiene (owner decision): about ninety gigabytes of local model weights no longer referenced by the inference-server configuration, a retired-stack model cache and a container rollback image remain on disk after the operator's non-destructive reclaim; verify what is unreferenced and hand the owner the exact deletion decisions",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Board (owner decision); verified by the autonomous trading-lane engineer (Claude)",
+      "started_at": "2026-10-02T02:54:40.836Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "Trading-lane cycle 3 of 2026-10-02 claimed the storage-hygiene card: the operator's 2026-10-01 non-destructive reclaim is already done (root volume 85 to 78 percent); what remains is deletion of model weights, a retired-stack cache and a rollback image, which is an owner decision.",
+      "blockers": [],
+      "next_action": "Verify read-only that the model weights are unreferenced by the live inference configuration, record the evidence, and block the card with the exact owner acts.",
+      "updated_at": "2026-10-02T02:54:40.836Z"
     }
   ],
   "history": [
@@ -1360,6 +1377,14 @@
       "at": "2026-10-02T02:08:40.587Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "4bf794d"
+    },
+    {
+      "task_id": "WS-DISK-1",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-02T02:54:40.836Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }

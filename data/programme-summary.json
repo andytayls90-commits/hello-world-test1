@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T02:27:13.311Z",
+  "updated_at": "2026-10-02T02:54:40.836Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 31,
-        "total": 42,
-        "percent": 74
+        "total": 43,
+        "percent": 72
       },
-      "next_action": "Next cycle checks the research agent outputs after the change for any repeat of the delivered-artifact recommendation; follow-ups tracked on the board.",
-      "updated_at": "2026-10-02T02:08:40.587Z"
+      "next_action": "Verify read-only that the model weights are unreferenced by the live inference configuration, record the evidence, and block the card with the exact owner acts.",
+      "updated_at": "2026-10-02T02:54:40.836Z"
     },
     {
       "project_id": "mission-control",
