@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T02:56:34.829Z",
+  "updated_at": "2026-10-02T02:58:37.296Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 31,
-        "total": 43,
-        "percent": 72
+        "total": 44,
+        "percent": 70
       },
-      "next_action": "Owner decides, per item, whether to delete the two unreferenced model weight sets, the retired-stack weight cache and the container rollback image (about 135 gigabytes in total); the exact commands are in the private evidence packet.",
-      "updated_at": "2026-10-02T02:56:34.829Z"
+      "next_action": "Verify the live scheduler record, output cadence and change-log behaviour, decide the profile-routing question, and close the card with a verification packet.",
+      "updated_at": "2026-10-02T02:58:37.296Z"
     },
     {
       "project_id": "mission-control",

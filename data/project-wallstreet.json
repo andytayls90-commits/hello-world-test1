@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-02T02:56:34.829Z",
+  "updated_at": "2026-10-02T02:58:37.296Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Owner decides, per item, whether to delete the two unreferenced model weight sets, the retired-stack weight cache and the container rollback image (about 135 gigabytes in total); the exact commands are in the private evidence packet.",
+  "next_action": "Verify the live scheduler record, output cadence and change-log behaviour, decide the profile-routing question, and close the card with a verification packet.",
   "milestones": [
     {
       "id": "M0",
@@ -90,7 +90,8 @@
         "WS-AGENT-1",
         "WS-SCORE-2",
         "WS-CRO-1",
-        "WS-DISK-1"
+        "WS-DISK-1",
+        "WS-CRO-2"
       ]
     },
     {
@@ -840,6 +841,22 @@
       "blockers": [],
       "next_action": "Owner decides, per item, whether to delete the two unreferenced model weight sets, the retired-stack weight cache and the container rollback image (about 135 gigabytes in total); the exact commands are in the private evidence packet.",
       "updated_at": "2026-10-02T02:56:34.829Z"
+    },
+    {
+      "id": "WS-CRO-2",
+      "title": "Research-agent liveness card closed by live re-audit: a September review card said the research agent's gateway was idle and asked for a cadence or retirement; verify against the live scheduler that the research cycle already runs on a fixed cadence and that the per-agent gateway unit was already retired, settle the remaining profile-routing question, and record the evidence",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane engineer (Claude)",
+      "started_at": "2026-10-02T02:58:37.296Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "Trading-lane cycle 3 of 2026-10-02 claimed the research-agent liveness card after the previous cycle found its premise contradicted: the research cycle runs every two hours under the default agent profile and the per-agent gateway unit was retired on 2026-10-01.",
+      "blockers": [],
+      "next_action": "Verify the live scheduler record, output cadence and change-log behaviour, decide the profile-routing question, and close the card with a verification packet.",
+      "updated_at": "2026-10-02T02:58:37.296Z"
     }
   ],
   "history": [
@@ -1393,6 +1410,14 @@
       "at": "2026-10-02T02:56:34.829Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "7466e7a"
+    },
+    {
+      "task_id": "WS-CRO-2",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-02T02:58:37.296Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
