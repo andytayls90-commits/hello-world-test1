@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-02T04:55:47.708Z",
+  "updated_at": "2026-10-02T05:12:14.259Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Write failing tests for stance spelling normalisation and the rejected-decision outcome guard, make them pass, merge to the council repository, re-run the scorer read-only and publish evidence.",
+  "next_action": "Next trading-lane candidates: tool-enforce the ledger append and restore the council's per-cycle commits (both filed), the upward-correction in-flight-close guard follow-up, the June approval hygiene items and the executed-flag fix at the source.",
   "milestones": [
     {
       "id": "M0",
@@ -880,17 +880,17 @@
       "id": "WS-SCORE-3",
       "title": "Council believability scorer density: the non-directional endorsement scoring the June prayer asked for already shipped, so this task re-audits the scorer against the live ledger and fixes what still keeps every seat unscored (stance spelling drift dropped as unrecognised, and a rejected hold decision borrowing the outcome of a different decision's trade through a shared signal)",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane engineer (Claude)",
       "started_at": "2026-10-02T04:55:47.708Z",
-      "completed_at": null,
+      "completed_at": "2026-10-02T05:12:14.259Z",
       "target_at": null,
-      "evidence": "IMPLEMENTED / UNVERIFIED",
-      "commit": null,
-      "summary": "Started by the 2026-10-02 trading-lane cycle 5. Live re-audit first: the endorsement scoring the card asks for has been in the scorer since late June with tests, yet every seat still shows zero scored calls because the only two actioned council trades in the current ledger are still open and the rest were hold decisions. Two latent scorer defects were found that would drop or mis-score those calls once the trades close; fixing both with tests in the council repository.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "aaf3947",
+      "summary": "Completed by the 2026-10-02 trading-lane cycle 5 in the council repository. The live audit showed the endorsement scoring the card asked for had shipped in June, and that every seat still scored zero for three other reasons: the council's own scribe had rewritten its verdict ledger fifteen times since June, erasing committed history, the scorer read only that live file, stance and seat spellings had drifted past the exact-match lists, and a rejected hold could borrow the outcome of a different decision's trade through a shared signal. The scorer now reads every ledger segment and removes duplicates, matches stances by family, normalises seat and regime names, and joins an outcome only to a decision that was actually actioned. A committed archive segment rebuilt from forty-seven committed ledger versions plus the rows embedded in the council minutes restores the June to September record, and the hourly post-check keeps an append-only mirror and warns when the live file shrinks. Scored calls went from zero to eighty-nine across about four thousand verdicts, and four Charter II seat buckets now cross the weighting threshold, which the Chair sees at the next Sabbath recalibration. Sixteen scorer tests and three bash suites pass from the live home, the real-money bolt held ten of ten, the paper gate was unchanged, and no trading code or service was touched.",
       "blockers": [],
-      "next_action": "Write failing tests for stance spelling normalisation and the rejected-decision outcome guard, make them pass, merge to the council repository, re-run the scorer read-only and publish evidence.",
-      "updated_at": "2026-10-02T04:55:47.708Z"
+      "next_action": "Next trading-lane candidates: tool-enforce the ledger append and restore the council's per-cycle commits (both filed), the upward-correction in-flight-close guard follow-up, the June approval hygiene items and the executed-flag fix at the source.",
+      "updated_at": "2026-10-02T05:12:14.259Z"
     }
   ],
   "history": [
@@ -1484,6 +1484,14 @@
       "at": "2026-10-02T04:55:47.708Z",
       "evidence": "IMPLEMENTED / UNVERIFIED",
       "commit": null
+    },
+    {
+      "task_id": "WS-SCORE-3",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-02T05:12:14.259Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "aaf3947"
     }
   ]
 }

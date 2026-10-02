@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T04:55:47.708Z",
+  "updated_at": "2026-10-02T05:12:14.259Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 33,
+        "complete": 34,
         "total": 46,
-        "percent": 72
+        "percent": 74
       },
-      "next_action": "Write failing tests for stance spelling normalisation and the rejected-decision outcome guard, make them pass, merge to the council repository, re-run the scorer read-only and publish evidence.",
-      "updated_at": "2026-10-02T04:55:47.708Z"
+      "next_action": "Next trading-lane candidates: tool-enforce the ledger append and restore the council's per-cycle commits (both filed), the upward-correction in-flight-close guard follow-up, the June approval hygiene items and the executed-flag fix at the source.",
+      "updated_at": "2026-10-02T05:12:14.259Z"
     },
     {
       "project_id": "mission-control",
