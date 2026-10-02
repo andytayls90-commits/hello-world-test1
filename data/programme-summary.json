@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T01:41:07.071Z",
+  "updated_at": "2026-10-02T02:02:36.460Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 30,
-        "total": 41,
-        "percent": 73
+        "total": 42,
+        "percent": 71
       },
-      "next_action": "None for this finding. Future research cards that re-raise it are closed against the audit endpoint and the correction.",
-      "updated_at": "2026-10-02T01:04:17.327Z"
+      "next_action": "Make the research baseline load the export with visible provenance, stop the optimiser rewriting the baseline, point the research agent prompt and persona at the delivered artifacts, verify, publish.",
+      "updated_at": "2026-10-02T02:02:36.460Z"
     },
     {
       "project_id": "mission-control",

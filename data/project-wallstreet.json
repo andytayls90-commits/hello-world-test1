@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-02T01:04:17.327Z",
+  "updated_at": "2026-10-02T02:02:36.460Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "None for this finding. Future research cards that re-raise it are closed against the audit endpoint and the correction.",
+  "next_action": "Make the research baseline load the export with visible provenance, stop the optimiser rewriting the baseline, point the research agent prompt and persona at the delivered artifacts, verify, publish.",
   "milestones": [
     {
       "id": "M0",
@@ -88,7 +88,8 @@
         "WS-SEC-1",
         "WS-CONSOLE-1",
         "WS-AGENT-1",
-        "WS-SCORE-2"
+        "WS-SCORE-2",
+        "WS-CRO-1"
       ]
     },
     {
@@ -806,6 +807,22 @@
       "blockers": [],
       "next_action": "None for this finding. Future research cards that re-raise it are closed against the audit endpoint and the correction.",
       "updated_at": "2026-10-02T01:04:17.327Z"
+    },
+    {
+      "id": "WS-CRO-1",
+      "title": "Research baseline reads the delivered production weights export: the strategy-research baseline now loads the six-hourly production weight snapshot instead of a stale hand table, the optimiser writes candidates to a separate file, and the Chief Research Officer research cycle is told exactly which weight-export, change-log and config artifacts already exist so it stops re-recommending delivered work",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane engineer (Claude)",
+      "started_at": "2026-10-02T02:02:36.460Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "Started by the 2026-10-02 trading-lane cycle 2. Premise audited live: the production weight export, its change log and the config record have existed since mid-July and are refreshed every six hours, but the research baseline still hard-coded a June hand table and the research agent's scheduled prompt never named the delivered artifacts, so it kept recommending them and misread the export as research weights.",
+      "blockers": [],
+      "next_action": "Make the research baseline load the export with visible provenance, stop the optimiser rewriting the baseline, point the research agent prompt and persona at the delivered artifacts, verify, publish.",
+      "updated_at": "2026-10-02T02:02:36.460Z"
     }
   ],
   "history": [
@@ -1327,6 +1344,14 @@
       "at": "2026-10-02T01:04:17.327Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "6c63ca0"
+    },
+    {
+      "task_id": "WS-CRO-1",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-02T02:02:36.460Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
