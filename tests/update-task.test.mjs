@@ -1,6 +1,6 @@
-import test from 'node:test';
+import test, { after } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdtemp, mkdir, readFile, writeFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { updateTask } from '../scripts/update-task.mjs';
@@ -49,8 +49,14 @@ const summary = {
   }]
 };
 
+// Every fixture dir is removed when the file's tests finish: an un-cleaned mkdtemp here left
+// 4 `tracker-XXXXXX` dirs per `npm test` run (160+ found in /tmp on 2026-10-02).
+const fixtureDirs = [];
+after(async () => { await Promise.all(fixtureDirs.map((d) => rm(d, { recursive: true, force: true }))); });
+
 async function fixture() {
   const rootDir = await mkdtemp(path.join(tmpdir(), 'tracker-'));
+  fixtureDirs.push(rootDir);
   await mkdir(path.join(rootDir, 'data'));
   await writeFile(path.join(rootDir, 'data/project-wallstreet.json'), JSON.stringify(project, null, 2));
   await writeFile(path.join(rootDir, 'data/programme-summary.json'), JSON.stringify(summary, null, 2));

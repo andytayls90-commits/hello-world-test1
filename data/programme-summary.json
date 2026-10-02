@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-01T23:58:57.577Z",
+  "updated_at": "2026-10-02T00:14:17.018Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 28,
+        "complete": 29,
         "total": 39,
-        "percent": 72
+        "percent": 74
       },
-      "next_action": "Write failing tests for the shared poll and the probe cache, implement, restart the console and aggregator by scope, verify request counts live.",
-      "updated_at": "2026-10-01T23:58:57.577Z"
+      "next_action": "Next trading-lane candidates from the board: the gateway auth-rotation card (owner credentials, block), the over-booked reconciler assessment, the research-profile weights visibility, the deprecated UTC clock calls and the approval hygiene items.",
+      "updated_at": "2026-10-02T00:14:17.018Z"
     },
     {
       "project_id": "mission-control",
