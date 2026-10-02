@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T02:58:37.296Z",
+  "updated_at": "2026-10-02T03:01:06.851Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 31,
+        "complete": 32,
         "total": 44,
-        "percent": 70
+        "percent": 73
       },
-      "next_action": "Verify the live scheduler record, output cadence and change-log behaviour, decide the profile-routing question, and close the card with a verification packet.",
-      "updated_at": "2026-10-02T02:58:37.296Z"
+      "next_action": "Next cycle checks the first research outputs produced after the prompt change for any repeat of the delivered-artifact recommendation.",
+      "updated_at": "2026-10-02T03:01:06.851Z"
     },
     {
       "project_id": "mission-control",
