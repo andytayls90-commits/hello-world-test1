@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-02T03:01:06.851Z",
+  "updated_at": "2026-10-02T04:05:26.431Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Next cycle checks the first research outputs produced after the prompt change for any repeat of the delivered-artifact recommendation.",
+  "next_action": "Next trading-lane candidates: the upward-correction in-flight-close guard follow-up, the two shadow surfaces that still equate a stop id with protection, the June approval hygiene items and the stray file clean-up; the host storage and credential decisions stay with the owner.",
   "milestones": [
     {
       "id": "M0",
@@ -58,7 +58,8 @@
         "WS-PROT-1",
         "WS-CLOSE-1",
         "WS-SIZE-1",
-        "WS-LEDGER-1"
+        "WS-LEDGER-1",
+        "WS-RECON-1"
       ]
     },
     {
@@ -857,6 +858,22 @@
       "blockers": [],
       "next_action": "Next cycle checks the first research outputs produced after the prompt change for any repeat of the delivered-artifact recommendation.",
       "updated_at": "2026-10-02T03:01:06.851Z"
+    },
+    {
+      "id": "WS-RECON-1",
+      "title": "Over-booked reconciliation (the mirror of the July fill-continuation fix): when the broker holds fewer shares of a symbol than the internal book records, the reconciler now corrects the book downward only when the broker's own order history proves the whole shortfall, either an entry that filled less than was booked, or a sale the book never saw which is booked as its own closed slice so profit and loss attribution survives; anything ambiguous stays alert-only, with settle-grace and not-during-close guards",
+      "project": "Project Wallstreet",
+      "status": "COMPLETE",
+      "owner": "Autonomous trading-lane engineer (Claude)",
+      "started_at": "2026-10-02T04:05:26.413Z",
+      "completed_at": "2026-10-02T04:05:26.431Z",
+      "target_at": null,
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "9e2c021",
+      "summary": "Deployed and re-verified by the autonomous cycle. The reconciler now assesses a position the broker holds less of than the book records and corrects it downward only on broker evidence: an entry that filled fewer shares than were booked becomes a silent quantity edit with risk rescaled and the oversized protective stop replaced for the real size, while a sale the book never saw is booked as its own closed slice carrying the real exit and profit and loss so attribution survives and the fills are never counted twice. Anything ambiguous, a close still in flight, a quantity still moving, or a sighting younger than the settle grace stays alert-only and is surfaced for the sentinel with its reason, and a kill switch disables the correction entirely. Fifteen new specifications were red then green, the full backend suite passed, the real-money bolt held ten of ten before, at push and after deploy, and the PAPER gate was unchanged. No live position was over-booked at deploy time, so the first live exercise will be the next short fill or unbooked sale; a follow-up card records that the existing upward correction still lacks the in-flight-close guard.",
+      "blockers": [],
+      "next_action": "Next trading-lane candidates: the upward-correction in-flight-close guard follow-up, the two shadow surfaces that still equate a stop id with protection, the June approval hygiene items and the stray file clean-up; the host storage and credential decisions stay with the owner.",
+      "updated_at": "2026-10-02T04:05:26.431Z"
     }
   ],
   "history": [
@@ -1426,6 +1443,22 @@
       "at": "2026-10-02T03:01:06.851Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "28e4333"
+    },
+    {
+      "task_id": "WS-RECON-1",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-02T04:05:26.413Z",
+      "evidence": "PLANNED",
+      "commit": null
+    },
+    {
+      "task_id": "WS-RECON-1",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-02T04:05:26.431Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "9e2c021"
     }
   ]
 }

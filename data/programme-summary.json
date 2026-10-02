@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T03:48:44.234Z",
+  "updated_at": "2026-10-02T04:05:26.431Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 32,
-        "total": 44,
+        "complete": 33,
+        "total": 45,
         "percent": 73
       },
-      "next_action": "Next cycle checks the first research outputs produced after the prompt change for any repeat of the delivered-artifact recommendation.",
-      "updated_at": "2026-10-02T03:01:06.851Z"
+      "next_action": "Next trading-lane candidates: the upward-correction in-flight-close guard follow-up, the two shadow surfaces that still equate a stop id with protection, the June approval hygiene items and the stray file clean-up; the host storage and credential decisions stay with the owner.",
+      "updated_at": "2026-10-02T04:05:26.431Z"
     },
     {
       "project_id": "mission-control",
