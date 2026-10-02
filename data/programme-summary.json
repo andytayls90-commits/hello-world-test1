@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T05:12:14.259Z",
+  "updated_at": "2026-10-02T05:18:21.281Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "READY",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-LOOP-53",
+      "current_task_id": "MC-BASELINE",
       "progress": {
-        "complete": 54,
+        "complete": 55,
         "total": 56,
-        "percent": 96
+        "percent": 98
       },
-      "next_action": "Red harness case, fix, independent verification, live proof, merge.",
-      "updated_at": "2026-10-02T04:28:29.090Z"
+      "next_action": "Monitor the launcher log for any fixture line; the belt reports token-less growth for review.",
+      "updated_at": "2026-10-02T05:18:21.281Z"
     }
   ]
 }
