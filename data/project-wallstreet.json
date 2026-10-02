@@ -93,7 +93,8 @@
         "WS-CRO-1",
         "WS-DISK-1",
         "WS-CRO-2",
-        "WS-SCORE-3"
+        "WS-SCORE-3",
+        "WS-SEC-2"
       ]
     },
     {
@@ -891,6 +892,22 @@
       "blockers": [],
       "next_action": "Next trading-lane candidates: tool-enforce the ledger append and restore the council's per-cycle commits (both filed), the upward-correction in-flight-close guard follow-up, the June approval hygiene items and the executed-flag fix at the source.",
       "updated_at": "2026-10-02T05:12:14.259Z"
+    },
+    {
+      "id": "WS-SEC-2",
+      "title": "Agent runtime configuration files embedded a plaintext knowledge-store access secret: replace it with a vault-rendered environment reference in every agent profile so the secret lives in one vault field and a rotation reaches all agents through one restart",
+      "project": "Project Wallstreet",
+      "status": "PLANNED",
+      "owner": "Autonomous trading-lane engineer (Claude)",
+      "started_at": null,
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "Five agent profile configuration files hold the same knowledge-store access secret as a literal value; the agent runtime supports environment references in that field and fails closed when the reference is unset.",
+      "blockers": [],
+      "next_action": "Build the fail-safe field renderer and the guarded migrator, test red then green, promote and restart the agent gateway.",
+      "updated_at": "2026-10-02T05:54:23.000Z"
     }
   ],
   "history": [
