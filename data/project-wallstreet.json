@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-02T05:55:20.602Z",
+  "updated_at": "2026-10-02T06:00:59.353Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Field renderer and guarded migrator built test-first; promote, render the reference into each profile, migrate the five files, restart the agent gateway while the trading cycle is idle, re-verify.",
+  "next_action": "Owner rotation of the knowledge-store credential (tracked on the board) now needs only the vault field, the knowledge-store render step and one gateway restart; a cosmetic startup warning in the agent command-line path was filed as its own low-priority card.",
   "milestones": [
     {
       "id": "M0",
@@ -897,17 +897,17 @@
       "id": "WS-SEC-2",
       "title": "Agent runtime configuration files embedded a plaintext knowledge-store access credential; replace it with a vault-rendered environment reference in every agent profile so the credential lives in one vault field and a rotation reaches all agents through one restart",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane engineer (Claude)",
       "started_at": "2026-10-02T05:55:20.602Z",
-      "completed_at": null,
+      "completed_at": "2026-10-02T06:00:59.353Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "Claimed by the 2026-10-02 trading-lane cycle 6. Five agent profile configuration files hold the same knowledge-store access credential as a literal value. The installed agent runtime expands environment references in that header from each profile's own credential file and fails closed at connect time when the reference is unset, and the matching vault field already holds the same value, so no new vault value is needed.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "284ddbe",
+      "summary": "Promoted and re-verified live by the 2026-10-02 trading-lane cycle 6. The five agent profile configuration files now reference an environment variable for the knowledge-store access credential instead of embedding it, and that variable is rendered into each profile's own credential file at every agent gateway start from the one vault field that already held the same value, so a rotation is one vault edit and one gateway restart. A fail-safe field renderer and an all-or-nothing migrator that refuses unless every profile already carries the identical value were built test-first (eleven shell checks and ten unit tests red then green), the installed runtime was proven on a scratch home to expand the reference, scope it per profile and fail closed when it is unset, the gateway was restarted while the trading cycle was idle, and a real connection test from every profile discovered all ten knowledge-store tools. Real-money bolt ten of ten, PAPER gate unchanged, nothing traded. The old literal copies in dated backups retire with the owner's rotation card.",
       "blockers": [],
-      "next_action": "Field renderer and guarded migrator built test-first; promote, render the reference into each profile, migrate the five files, restart the agent gateway while the trading cycle is idle, re-verify.",
-      "updated_at": "2026-10-02T05:55:20.602Z"
+      "next_action": "Owner rotation of the knowledge-store credential (tracked on the board) now needs only the vault field, the knowledge-store render step and one gateway restart; a cosmetic startup warning in the agent command-line path was filed as its own low-priority card.",
+      "updated_at": "2026-10-02T06:00:59.353Z"
     }
   ],
   "history": [
@@ -1517,6 +1517,14 @@
       "at": "2026-10-02T05:55:20.602Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "WS-SEC-2",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-02T06:00:59.353Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "284ddbe"
     }
   ]
 }

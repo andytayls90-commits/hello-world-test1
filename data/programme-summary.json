@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T05:55:20.602Z",
+  "updated_at": "2026-10-02T06:00:59.353Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 34,
+        "complete": 35,
         "total": 47,
-        "percent": 72
+        "percent": 74
       },
-      "next_action": "Field renderer and guarded migrator built test-first; promote, render the reference into each profile, migrate the five files, restart the agent gateway while the trading cycle is idle, re-verify.",
-      "updated_at": "2026-10-02T05:55:20.602Z"
+      "next_action": "Owner rotation of the knowledge-store credential (tracked on the board) now needs only the vault field, the knowledge-store render step and one gateway restart; a cosmetic startup warning in the agent command-line path was filed as its own low-priority card.",
+      "updated_at": "2026-10-02T06:00:59.353Z"
     },
     {
       "project_id": "mission-control",
