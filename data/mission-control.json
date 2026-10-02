@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
+  "status": "READY",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T03:25:25.061Z",
+  "updated_at": "2026-10-02T03:48:44.234Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-LOOP-52",
-  "next_action": "Red case in the monitor's test harness, fix, independent verification round, live proof on the running monitor.",
+  "current_task_id": "MC-BASELINE",
+  "next_action": "Follow-up tracked on the existing sibling item: align the monitor's open-work and completion rules with the shared lane predicate (title and case differences).",
   "milestones": [
     {
       "id": "MC0",
@@ -420,7 +420,7 @@
     {
       "id": "MC51",
       "title": "Stall monitor: launcher housekeeping notes no longer count as completed work",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-52"
       ]
@@ -1295,17 +1295,17 @@
       "id": "MC-LOOP-52",
       "title": "Autonomous loop: the stall monitor's completion clock no longer resets when the launcher's own self-resolving alert notes are closed — only genuinely completed engineering work counts, so a loop that has stopped delivering is paged on time instead of being masked by its own housekeeping",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous MC-lane engineer (Claude)",
       "started_at": "2026-10-02T03:25:25.061Z",
-      "completed_at": null,
+      "completed_at": "2026-10-02T03:48:44.234Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "Claimed in the 2026-10-02 third autonomous cycle. Root cause located in the monitor's stall check: the completion clock excludes the monitor's own notes but not the launcher's self-resolving alert notes. Building a failing automated case first, then the fix, then independent verification.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "e033bd0",
+      "summary": "Shipped and verified live. Root cause confirmed on real monitor data: the launcher's self-resolving alert notes were being read as completed work by the stall monitor's completion clock — a batch of ten such closures on 2026-10-01 had reset a ten-day stall reading to zero. The monitor now applies one rule for both 'open work' and 'last completion': the launcher's own notes, like the monitor's own, never count. A failing automated case family was written first (six cases fail by name on the previous monitor), the fix makes the full monitor suite pass, seven deliberate code mutations are each caught by a named case, and an independent verification round converged with four coverage findings, all pinned or tracked. Replaying the real data through the fixed monitor pages the stall at the moment the old monitor went silent. Paper mode only; trading gate untouched before and after.",
       "blockers": [],
-      "next_action": "Red case in the monitor's test harness, fix, independent verification round, live proof on the running monitor.",
-      "updated_at": "2026-10-02T03:25:25.061Z"
+      "next_action": "Follow-up tracked on the existing sibling item: align the monitor's open-work and completion rules with the shared lane predicate (title and case differences).",
+      "updated_at": "2026-10-02T03:48:44.234Z"
     }
   ],
   "history": [
@@ -2284,6 +2284,14 @@
       "at": "2026-10-02T03:25:25.061Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-52",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-02T03:48:44.234Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "e033bd0"
     }
   ]
 }
