@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T04:05:26.431Z",
+  "updated_at": "2026-10-02T04:28:29.090Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -25,18 +25,18 @@
     {
       "project_id": "mission-control",
       "project_name": "Mission Control",
-      "status": "READY",
+      "status": "IN_PROGRESS",
       "evidence": "PARTIAL",
       "detail_page": "mission-control.html",
       "data_file": "data/mission-control.json",
-      "current_task_id": "MC-BASELINE",
+      "current_task_id": "MC-LOOP-53",
       "progress": {
         "complete": 54,
-        "total": 55,
-        "percent": 98
+        "total": 56,
+        "percent": 96
       },
-      "next_action": "Follow-up tracked on the existing sibling item: align the monitor's open-work and completion rules with the shared lane predicate (title and case differences).",
-      "updated_at": "2026-10-02T03:48:44.234Z"
+      "next_action": "Red harness case, fix, independent verification, live proof, merge.",
+      "updated_at": "2026-10-02T04:28:29.090Z"
     }
   ]
 }

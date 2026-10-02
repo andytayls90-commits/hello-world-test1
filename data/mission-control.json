@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T03:48:44.234Z",
+  "updated_at": "2026-10-02T04:28:29.090Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Follow-up tracked on the existing sibling item: align the monitor's open-work and completion rules with the shared lane predicate (title and case differences).",
+  "current_task_id": "MC-LOOP-53",
+  "next_action": "Red harness case, fix, independent verification, live proof, merge.",
   "milestones": [
     {
       "id": "MC0",
@@ -423,6 +423,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-52"
+      ]
+    },
+    {
+      "id": "MC52",
+      "title": "Launcher test suite: live log and ledger untouched (suite belt + scrub)",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-53"
       ]
     }
   ],
@@ -1306,6 +1314,22 @@
       "blockers": [],
       "next_action": "Follow-up tracked on the existing sibling item: align the monitor's open-work and completion rules with the shared lane predicate (title and case differences).",
       "updated_at": "2026-10-02T03:48:44.234Z"
+    },
+    {
+      "id": "MC-LOOP-53",
+      "title": "Autonomous loop: the launcher's own test suite no longer appends its fixture outcome lines to the live launcher log",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous Mission Control engineer (Claude)",
+      "started_at": "2026-10-02T04:28:29Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "Every run of the launcher test suite inside an autonomous cycle appended two fixture outcome lines to the live launcher log, because the recorder preferred the log path inherited from the cycle environment over the scratch ledger. Fix: the suite names its own scratch log and a suite-wide belt proves the live log and ledger are untouched; the historic fixture lines are removed with a dated backup.",
+      "blockers": [],
+      "next_action": "Red harness case, fix, independent verification, live proof, merge.",
+      "updated_at": "2026-10-02T04:28:29.090Z"
     }
   ],
   "history": [
@@ -2292,6 +2316,14 @@
       "at": "2026-10-02T03:48:44.234Z",
       "evidence": "VERIFIED LIVE",
       "commit": "e033bd0"
+    },
+    {
+      "task_id": "MC-LOOP-53",
+      "from": "IN_PROGRESS",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-02T04:28:29.090Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
