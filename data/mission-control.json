@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T06:46:34.430Z",
+  "updated_at": "2026-10-02T06:48:36.998Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-COMMS-1",
-  "next_action": "Complete fresh isolated verification and deployment preparation; await scoped owner access approval before integration.",
+  "next_action": "Sibling: a missing change-tag header is still refused by the framework before authentication (tracked separately).",
   "milestones": [
     {
       "id": "MC0",
@@ -444,7 +444,7 @@
     {
       "id": "MC54",
       "title": "Helm edit API: change-tag header hardening",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-54"
       ]
@@ -1369,17 +1369,17 @@
       "id": "MC-LOOP-54",
       "title": "Helm mission edit API: a quoted or non-numeric change-tag header crashes the edit route instead of being refused with a clear reason",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous Mission Control engineer (Claude)",
       "started_at": "2026-10-02T06:25:18.515Z",
-      "completed_at": null,
+      "completed_at": "2026-10-02T06:48:36.998Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "Started by the autonomous Mission Control cycle. Reproduced live: an authenticated edit carrying a quoted change-tag header crashes the route with a stack trace instead of a named refusal; a plain integer tag behaves correctly and anonymous callers are still refused first. Fix in progress on an isolated branch, failing test first.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "a904011",
+      "summary": "Shipped and verified live. Root cause confirmed on the running service: the mission edit route converted its change-tag header to a number with no guard, so the standard quoted form every HTTP client sends, or any non-numeric value, raised an unhandled error and a stack trace for authenticated callers. The header is now parsed by one small function that accepts the integer, its quoted form and the weak form with ordinary whitespace, and refuses everything else with a named, bounded reason after authentication and before any write. A failing case family was written first (nineteen cases fail by name on the old code), the full service suite passes, twenty-one deliberate code mutations are each caught by a named case, and two independent verification rounds (the second probing raw bytes on the wire) converged with every finding fixed and pinned. Live after the restart: every probe shape answers as specified with no errors logged. Paper mode only; trading gate untouched before and after.",
       "blockers": [],
-      "next_action": "Failing test by name, tolerant tag parse with a named 400, independent verification, merge, service restart, live proof.",
-      "updated_at": "2026-10-02T06:25:18.515Z"
+      "next_action": "Sibling: a missing change-tag header is still refused by the framework before authentication (tracked separately).",
+      "updated_at": "2026-10-02T06:48:36.998Z"
     }
   ],
   "history": [
@@ -2406,6 +2406,14 @@
       "at": "2026-10-02T06:46:34.430Z",
       "evidence": "IMPLEMENTED / UNVERIFIED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-54",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-02T06:48:36.998Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "a904011"
     }
   ]
 }

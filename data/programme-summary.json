@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T06:46:34.430Z",
+  "updated_at": "2026-10-02T06:48:36.998Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -31,12 +31,12 @@
       "data_file": "data/mission-control.json",
       "current_task_id": "MC-COMMS-1",
       "progress": {
-        "complete": 55,
+        "complete": 56,
         "total": 58,
-        "percent": 95
+        "percent": 97
       },
-      "next_action": "Complete fresh isolated verification and deployment preparation; await scoped owner access approval before integration.",
-      "updated_at": "2026-10-02T06:46:34.430Z"
+      "next_action": "Sibling: a missing change-tag header is still refused by the framework before authentication (tracked separately).",
+      "updated_at": "2026-10-02T06:48:36.998Z"
     }
   ]
 }
