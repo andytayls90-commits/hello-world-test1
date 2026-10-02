@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T02:02:36.460Z",
+  "updated_at": "2026-10-02T02:08:40.587Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 30,
+        "complete": 31,
         "total": 42,
-        "percent": 71
+        "percent": 74
       },
-      "next_action": "Make the research baseline load the export with visible provenance, stop the optimiser rewriting the baseline, point the research agent prompt and persona at the delivered artifacts, verify, publish.",
-      "updated_at": "2026-10-02T02:02:36.460Z"
+      "next_action": "Next cycle checks the research agent outputs after the change for any repeat of the delivered-artifact recommendation; follow-ups tracked on the board.",
+      "updated_at": "2026-10-02T02:08:40.587Z"
     },
     {
       "project_id": "mission-control",
