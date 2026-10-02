@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "READY",
+  "status": "IN_PROGRESS",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T03:01:27.685Z",
+  "updated_at": "2026-10-02T03:25:25.061Z",
   "stale_after_hours": 48,
-  "current_task_id": "MC-BASELINE",
-  "next_action": "Follow-up filed: judge a push to a remote with no tracking refs against all known remotes rather than the whole history.",
+  "current_task_id": "MC-LOOP-52",
+  "next_action": "Red case in the monitor's test harness, fix, independent verification round, live proof on the running monitor.",
   "milestones": [
     {
       "id": "MC0",
@@ -415,6 +415,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-51"
+      ]
+    },
+    {
+      "id": "MC51",
+      "title": "Stall monitor: launcher housekeeping notes no longer count as completed work",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-52"
       ]
     }
   ],
@@ -1282,6 +1290,22 @@
       "blockers": [],
       "next_action": "Follow-up filed: judge a push to a remote with no tracking refs against all known remotes rather than the whole history.",
       "updated_at": "2026-10-02T03:01:27.685Z"
+    },
+    {
+      "id": "MC-LOOP-52",
+      "title": "Autonomous loop: the stall monitor's completion clock no longer resets when the launcher's own self-resolving alert notes are closed — only genuinely completed engineering work counts, so a loop that has stopped delivering is paged on time instead of being masked by its own housekeeping",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous MC-lane engineer (Claude)",
+      "started_at": "2026-10-02T03:25:25.061Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "Claimed in the 2026-10-02 third autonomous cycle. Root cause located in the monitor's stall check: the completion clock excludes the monitor's own notes but not the launcher's self-resolving alert notes. Building a failing automated case first, then the fix, then independent verification.",
+      "blockers": [],
+      "next_action": "Red case in the monitor's test harness, fix, independent verification round, live proof on the running monitor.",
+      "updated_at": "2026-10-02T03:25:25.061Z"
     }
   ],
   "history": [
@@ -2252,6 +2276,14 @@
       "at": "2026-10-02T03:01:27.685Z",
       "evidence": "VERIFIED LIVE",
       "commit": "4333fcd"
+    },
+    {
+      "task_id": "MC-LOOP-52",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-02T03:25:25.061Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
