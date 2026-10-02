@@ -2,12 +2,12 @@
   "schema_version": 1,
   "project_id": "mission-control",
   "project_name": "Mission Control",
-  "status": "IN_PROGRESS",
-  "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T06:48:36.998Z",
+  "status": "BLOCKED",
+  "evidence": "BLOCKED",
+  "updated_at": "2026-10-02T07:17:33.249Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-COMMS-1",
-  "next_action": "Sibling: a missing change-tag header is still refused by the framework before authentication (tracked separately).",
+  "next_action": "Owner approves standing access and supplies private runtime references; then claim, reconcile transfer, deploy and obtain the actual peer response and review.",
   "milestones": [
     {
       "id": "MC0",
@@ -436,7 +436,7 @@
     {
       "id": "MC53",
       "title": "Agent communication",
-      "status": "IN_PROGRESS",
+      "status": "BLOCKED",
       "task_ids": [
         "MC-COMMS-1"
       ]
@@ -1351,19 +1351,19 @@
       "id": "MC-COMMS-1",
       "title": "Addressed agent coordination with durable inboxes and verified replies",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "BLOCKED",
       "owner": "Raven",
       "started_at": "2026-10-02T06:06:41.486Z",
       "completed_at": null,
       "target_at": null,
       "evidence": "IMPLEMENTED / UNVERIFIED",
       "commit": null,
-      "summary": "Continue the existing addressed communications draft; fresh API, console and runtime compatibility verification is underway. Actual peer response remains outstanding.",
+      "summary": "Draft verification passed: 1951 API tests, 403 console tests, typecheck, build, nine responsive browser checks and local messaging protocol. Deployment and independently authored peer review/reply remain unverified.",
       "blockers": [
-        "Standing identity provisioning, peer role promotion and read-access activation await owner approval."
+        "Owner approval and private credential setup are required for standing identities, peer role promotion and read-access activation; no live acceptance has been claimed."
       ],
-      "next_action": "Complete fresh isolated verification and deployment preparation; await scoped owner access approval before integration.",
-      "updated_at": "2026-10-02T06:46:34.430Z"
+      "next_action": "Owner approves standing access and supplies private runtime references; then claim, reconcile transfer, deploy and obtain the actual peer response and review.",
+      "updated_at": "2026-10-02T07:17:33.249Z"
     },
     {
       "id": "MC-LOOP-54",
@@ -2414,6 +2414,14 @@
       "at": "2026-10-02T06:48:36.998Z",
       "evidence": "VERIFIED LIVE",
       "commit": "a904011"
+    },
+    {
+      "task_id": "MC-COMMS-1",
+      "from": "IN_PROGRESS",
+      "to": "BLOCKED",
+      "at": "2026-10-02T07:17:33.249Z",
+      "evidence": "IMPLEMENTED / UNVERIFIED",
+      "commit": null
     }
   ]
 }
