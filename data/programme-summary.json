@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-02T04:28:29.090Z",
+  "updated_at": "2026-10-02T04:55:47.708Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 33,
-        "total": 45,
-        "percent": 73
+        "total": 46,
+        "percent": 72
       },
-      "next_action": "Next trading-lane candidates: the upward-correction in-flight-close guard follow-up, the two shadow surfaces that still equate a stop id with protection, the June approval hygiene items and the stray file clean-up; the host storage and credential decisions stay with the owner.",
-      "updated_at": "2026-10-02T04:05:26.431Z"
+      "next_action": "Write failing tests for stance spelling normalisation and the rejected-decision outcome guard, make them pass, merge to the council repository, re-run the scorer read-only and publish evidence.",
+      "updated_at": "2026-10-02T04:55:47.708Z"
     },
     {
       "project_id": "mission-control",

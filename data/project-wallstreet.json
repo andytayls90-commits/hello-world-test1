@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-02T04:05:26.431Z",
+  "updated_at": "2026-10-02T04:55:47.708Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Next trading-lane candidates: the upward-correction in-flight-close guard follow-up, the two shadow surfaces that still equate a stop id with protection, the June approval hygiene items and the stray file clean-up; the host storage and credential decisions stay with the owner.",
+  "next_action": "Write failing tests for stance spelling normalisation and the rejected-decision outcome guard, make them pass, merge to the council repository, re-run the scorer read-only and publish evidence.",
   "milestones": [
     {
       "id": "M0",
@@ -92,7 +92,8 @@
         "WS-SCORE-2",
         "WS-CRO-1",
         "WS-DISK-1",
-        "WS-CRO-2"
+        "WS-CRO-2",
+        "WS-SCORE-3"
       ]
     },
     {
@@ -874,6 +875,22 @@
       "blockers": [],
       "next_action": "Next trading-lane candidates: the upward-correction in-flight-close guard follow-up, the two shadow surfaces that still equate a stop id with protection, the June approval hygiene items and the stray file clean-up; the host storage and credential decisions stay with the owner.",
       "updated_at": "2026-10-02T04:05:26.431Z"
+    },
+    {
+      "id": "WS-SCORE-3",
+      "title": "Council believability scorer density: the non-directional endorsement scoring the June prayer asked for already shipped, so this task re-audits the scorer against the live ledger and fixes what still keeps every seat unscored (stance spelling drift dropped as unrecognised, and a rejected hold decision borrowing the outcome of a different decision's trade through a shared signal)",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane engineer (Claude)",
+      "started_at": "2026-10-02T04:55:47.708Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "IMPLEMENTED / UNVERIFIED",
+      "commit": null,
+      "summary": "Started by the 2026-10-02 trading-lane cycle 5. Live re-audit first: the endorsement scoring the card asks for has been in the scorer since late June with tests, yet every seat still shows zero scored calls because the only two actioned council trades in the current ledger are still open and the rest were hold decisions. Two latent scorer defects were found that would drop or mis-score those calls once the trades close; fixing both with tests in the council repository.",
+      "blockers": [],
+      "next_action": "Write failing tests for stance spelling normalisation and the rejected-decision outcome guard, make them pass, merge to the council repository, re-run the scorer read-only and publish evidence.",
+      "updated_at": "2026-10-02T04:55:47.708Z"
     }
   ],
   "history": [
@@ -1459,6 +1476,14 @@
       "at": "2026-10-02T04:05:26.431Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "9e2c021"
+    },
+    {
+      "task_id": "WS-SCORE-3",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-02T04:55:47.708Z",
+      "evidence": "IMPLEMENTED / UNVERIFIED",
+      "commit": null
     }
   ]
 }
