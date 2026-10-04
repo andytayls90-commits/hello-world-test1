@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-04T18:03:13.929Z",
+  "updated_at": "2026-10-04T18:24:58.269Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -32,11 +32,11 @@
       "current_task_id": "MC-COMMS-1",
       "progress": {
         "complete": 58,
-        "total": 60,
-        "percent": 97
+        "total": 61,
+        "percent": 95
       },
-      "next_action": "Follow-ups filed: trigger-side holder rendering, status output size on a nested value, non-dict lock body, stronger static guard.",
-      "updated_at": "2026-10-04T18:03:13.929Z"
+      "next_action": "Reproduce in a scratch root, red test, fix, mutants, independent verification, live proof, merge.",
+      "updated_at": "2026-10-04T18:24:58.269Z"
     }
   ]
 }

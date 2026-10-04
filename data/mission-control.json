@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "BLOCKED",
   "evidence": "BLOCKED",
-  "updated_at": "2026-10-04T18:03:13.929Z",
+  "updated_at": "2026-10-04T18:24:58.269Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-COMMS-1",
-  "next_action": "Follow-ups filed: trigger-side holder rendering, status output size on a nested value, non-dict lock body, stronger static guard.",
+  "next_action": "Reproduce in a scratch root, red test, fix, mutants, independent verification, live proof, merge.",
   "milestones": [
     {
       "id": "MC0",
@@ -463,6 +463,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-56"
+      ]
+    },
+    {
+      "id": "MC57",
+      "title": "Loop trigger: holder fields rendered safely",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-57"
       ]
     }
   ],
@@ -1428,6 +1436,22 @@
       "blockers": [],
       "next_action": "Follow-ups filed: trigger-side holder rendering, status output size on a nested value, non-dict lock body, stronger static guard.",
       "updated_at": "2026-10-04T18:03:13.929Z"
+    },
+    {
+      "id": "MC-LOOP-57",
+      "title": "Loop trigger: lock holder details read from the lock verdict are printed raw into the loop log",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous Mission Control engineer (Claude)",
+      "started_at": "2026-10-04T18:24:58.269Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "The loop trigger's single-flight gate decodes the lock tool's holder verdict and prints the holder's cycle id, process id and owner kind unescaped into its own log line, so a line break planted in a hand-edited lock file forges an extra loop-log line on every tick while the lock is held. Fix: route the holder fields through the trigger's existing bounded escape, red test first.",
+      "blockers": [],
+      "next_action": "Reproduce in a scratch root, red test, fix, mutants, independent verification, live proof, merge.",
+      "updated_at": "2026-10-04T18:24:58.269Z"
     }
   ],
   "history": [
@@ -2510,6 +2534,14 @@
       "at": "2026-10-04T18:03:13.929Z",
       "evidence": "VERIFIED LIVE",
       "commit": "65d85c4"
+    },
+    {
+      "task_id": "MC-LOOP-57",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-04T18:24:58.269Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
