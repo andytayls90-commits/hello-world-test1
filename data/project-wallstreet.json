@@ -102,7 +102,8 @@
         "WS-COUNCIL-2",
         "WS-COUNCIL-3",
         "WS-COUNCIL-4",
-        "WS-COUNCIL-5"
+        "WS-COUNCIL-5",
+        "WS-COUNCIL-6"
       ]
     },
     {
@@ -1046,6 +1047,22 @@
       "blockers": [],
       "next_action": "Watch the next scheduled council cycles for the guard's ok lines and zero stall warnings; forward the two upstream cards (framework schema cap, inference-server grammar clamp).",
       "updated_at": "2026-10-04T22:20:30.190Z"
+    },
+    {
+      "id": "WS-COUNCIL-6",
+      "title": "Pick up the upstream agent-framework fix for the 8000-character tool-schema limit that silently disabled local tool-call grammar: the framework maintainers merged a fix the same day; verify it against the local inference server, map which agent profiles are still exposed, and prepare the single fleet update command for the owner",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-04T23:01:07.000Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PROVISIONAL",
+      "commit": null,
+      "summary": "Follow-up to WS-COUNCIL-5. The upstream framework issue was already reported and fixed by its maintainers (the schema limit removed, plus a regression test keeping every tool schema under the inference-server repetition cap). The local install is many commits behind that fix. This task verifies the fixed schema against the local inference server, scans each agent profile's advertised toolset for the unsafe limit, and prepares the fleet update as one owner-run command with a post-update check.",
+      "blockers": [],
+      "next_action": "Verify the fixed schema against the local inference server; scan each profile; hand the owner the update command.",
+      "updated_at": "2026-10-04T23:01:07.000Z"
     }
   ],
   "history": [
