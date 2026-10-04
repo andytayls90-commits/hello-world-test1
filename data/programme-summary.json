@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-04T19:48:10.450Z",
+  "updated_at": "2026-10-04T19:58:32.375Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 39,
-        "total": 51,
-        "percent": 76
+        "total": 53,
+        "percent": 74
       },
-      "next_action": "Next trading-lane candidates: the liveness condition diagnosability note, the council no-verdict recurrence, the decision-change refusal naming follow-up, and an owner call on the prompt's self-authored board-override wording (filed).",
-      "updated_at": "2026-10-04T19:19:16.765Z"
+      "next_action": "Owner decides confirm or strike; on strike the trading lane ships the prompt change with a contract test pinning the sentence.",
+      "updated_at": "2026-10-04T19:58:32.375Z"
     },
     {
       "project_id": "mission-control",

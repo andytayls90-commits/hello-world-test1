@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-04T19:19:16.765Z",
+  "updated_at": "2026-10-04T19:58:32.375Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Next trading-lane candidates: the liveness condition diagnosability note, the council no-verdict recurrence, the decision-change refusal naming follow-up, and an owner call on the prompt's self-authored board-override wording (filed).",
+  "next_action": "Owner decides confirm or strike; on strike the trading lane ships the prompt change with a contract test pinning the sentence.",
   "milestones": [
     {
       "id": "M0",
@@ -45,7 +45,8 @@
       "task_ids": [
         "M3",
         "WS-RESIL-1",
-        "WS-RESIL-2"
+        "WS-RESIL-2",
+        "WS-LIVE-1"
       ]
     },
     {
@@ -98,7 +99,8 @@
         "WS-CRO-2",
         "WS-SCORE-3",
         "WS-SEC-2",
-        "WS-COUNCIL-2"
+        "WS-COUNCIL-2",
+        "WS-COUNCIL-3"
       ]
     },
     {
@@ -976,6 +978,40 @@
       "blockers": [],
       "next_action": "Next trading-lane candidates: the liveness condition diagnosability note, the council no-verdict recurrence, the decision-change refusal naming follow-up, and an owner call on the prompt's self-authored board-override wording (filed).",
       "updated_at": "2026-10-04T19:19:16.765Z"
+    },
+    {
+      "id": "WS-COUNCIL-3",
+      "title": "Owner decision on the council Chair's cycle prompt: a council cycle commit in July added a self-authored paragraph telling the Chair that the paper gate is a safety default rather than a permanent lock; mechanically harmless because the execution lock is code and environment rather than prompt text, but charter wording on the one human-only act is the owner's call — confirm and record it, or strike it back to the original never-seek-live wording with a prompt-contract test pinning the sentence",
+      "project": "Project Wallstreet",
+      "status": "BLOCKED",
+      "owner": "Owner (Andrew)",
+      "started_at": null,
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "BLOCKED",
+      "commit": null,
+      "summary": "Verified read-only by the autonomous trading-lane cycle: the paragraph is present in the live prompt and its reference copy, entered through a council cycle commit in July, and no prompt-contract test pins either wording. Nothing was edited; the card is paused for the owner's decision. The execution lock and paper gate were unaffected.",
+      "blockers": [
+        "Owner-only act: confirm the paragraph and record the decision, or direct that it be struck back to the original never-seek-live wording."
+      ],
+      "next_action": "Owner decides confirm or strike; on strike the trading lane ships the prompt change with a contract test pinning the sentence.",
+      "updated_at": "2026-10-04T19:58:32.375Z"
+    },
+    {
+      "id": "WS-LIVE-1",
+      "title": "Desk liveness page says why nothing opened: the council no-execution condition fired identically for a real defect (adds refused by the broker) and for deliberate policy withholding (eight of ten decisions were below the confidence floor); the firing condition now carries, since the last execution, the council decision count and the attempt count by refusal reason plus a one-word diagnosis (no decisions, decided but nothing attempted, withheld by policy, or broker refused or errored) so a responder can tell policy from defect at a glance; thresholds unchanged",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane engineer (Claude)",
+      "started_at": "2026-10-04T19:58:32.354Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "Claimed by the autonomous trading-lane cycle. Tests written failing first, implementation passing, bolt held ten of ten from the worktree; promotion and post-deploy verification in progress.",
+      "blockers": [],
+      "next_action": "Merge, deploy by scope, re-verify the live endpoint and the sentinel page line, then record completion evidence.",
+      "updated_at": "2026-10-04T19:58:32.354Z"
     }
   ],
   "history": [
@@ -1657,6 +1693,22 @@
       "at": "2026-10-04T19:19:16.765Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "4c2f403"
+    },
+    {
+      "task_id": "WS-LIVE-1",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-04T19:58:32.354Z",
+      "evidence": "PLANNED",
+      "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-3",
+      "from": "PLANNED",
+      "to": "BLOCKED",
+      "at": "2026-10-04T19:58:32.375Z",
+      "evidence": "BLOCKED",
+      "commit": null
     }
   ]
 }
