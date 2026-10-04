@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-04T22:14:57.722Z",
+  "updated_at": "2026-10-04T22:20:30.190Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Merge into the council home, prove with a forced council cycle, record verification and board note.",
+  "next_action": "Watch the next scheduled council cycles for the guard's ok lines and zero stall warnings; forward the two upstream cards (framework schema cap, inference-server grammar clamp).",
   "milestones": [
     {
       "id": "M0",
@@ -1035,17 +1035,17 @@
       "id": "WS-COUNCIL-5",
       "title": "Council streaming defect root-caused: since the 2026-10-01 agent-framework update about one in three council cycles lost a tool call mid-stream (\"Stream stalled mid tool-call\"); the cause is a new 8000-character limit on one tool's schema that the local inference server cannot compile into its tool-call grammar, so it silently drops the whole grammar and unconstrained tool calls then break the stream — remove the tool from the council toolset and add a per-cycle grammar guard that pages on recurrence",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane cycle (Claude)",
       "started_at": "2026-10-04T22:14:57.722Z",
-      "completed_at": null,
+      "completed_at": "2026-10-04T22:20:30.190Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "Claimed 2026-10-04 21:51Z. Root cause proven from runtime evidence and source: a tool-schema length limit introduced by the 2026-10-01 framework update makes the local inference server reject its tool-call grammar, so tool calls run unconstrained and a malformed one ends the stream. Fix in the council home: remove the tool from the council toolset and add a per-cycle grammar guard that pages on recurrence; tests red to green; live probe clean.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "ad98a68",
+      "summary": "Root cause proven from runtime evidence and the inference-server sources: the 2026-10-01 agent-framework update added an 8000-character limit to one tool's schema; the local inference server cannot compile a repetition that large into its tool-call grammar, logs a parse failure and silently continues with no grammar, so tool calls run unconstrained and a malformed one ends the stream mid call (the 'Stream stalled mid tool-call' warning). Fix shipped in the council home: the unused interactive tool is removed from the council toolset, and every council cycle now runs a grammar-safety preflight plus a post-cycle grammar-failure tripwire that page on recurrence. Tests red to green; whole council suite green in both checkouts; a forced council cycle through the new wrapper showed the guard clean before and after, no stall, chair verdict recorded. Three upstream follow-up cards filed. Trading desk, gates and execution lock untouched and re-proven.",
       "blockers": [],
-      "next_action": "Merge into the council home, prove with a forced council cycle, record verification and board note.",
-      "updated_at": "2026-10-04T22:14:57.722Z"
+      "next_action": "Watch the next scheduled council cycles for the guard's ok lines and zero stall warnings; forward the two upstream cards (framework schema cap, inference-server grammar clamp).",
+      "updated_at": "2026-10-04T22:20:30.190Z"
     }
   ],
   "history": [
@@ -1775,6 +1775,14 @@
       "at": "2026-10-04T22:14:57.722Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-5",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-04T22:20:30.190Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "ad98a68"
     }
   ]
 }

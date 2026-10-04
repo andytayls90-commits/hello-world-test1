@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-04T22:14:57.722Z",
+  "updated_at": "2026-10-04T22:20:30.190Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 41,
+        "complete": 42,
         "total": 55,
-        "percent": 75
+        "percent": 76
       },
-      "next_action": "Merge into the council home, prove with a forced council cycle, record verification and board note.",
-      "updated_at": "2026-10-04T22:14:57.722Z"
+      "next_action": "Watch the next scheduled council cycles for the guard's ok lines and zero stall warnings; forward the two upstream cards (framework schema cap, inference-server grammar clamp).",
+      "updated_at": "2026-10-04T22:20:30.190Z"
     },
     {
       "project_id": "mission-control",
