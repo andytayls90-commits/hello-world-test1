@@ -480,6 +480,14 @@
       "task_ids": [
         "MC-LOOP-58"
       ]
+    },
+    {
+      "id": "MC59",
+      "title": "Loop lock: status output bounded per holder field",
+      "status": "PLANNED",
+      "task_ids": [
+        "MC-LOOP-59"
+      ]
     }
   ],
   "tasks": [
@@ -1476,6 +1484,22 @@
       "blockers": [],
       "next_action": "Follow-up filed: decide whether an object lock body with no owner fields should also be named corrupt.",
       "updated_at": "2026-10-04T19:48:10.450Z"
+    },
+    {
+      "id": "MC-LOOP-59",
+      "title": "Loop lock tool: the status views print the lock holder's fields verbatim and unbounded",
+      "project": "Mission Control",
+      "status": "PLANNED",
+      "owner": "Autonomous Mission Control engineer (Claude)",
+      "started_at": null,
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "Claimed. The loop lock tool's plain and JSON status views dump the parsed lock file as a whole, so a hand-edited lock holding a deeply nested or oversized value makes the status probe that the loop trigger and the watchdog consume print an output whose size grows without bound (and worse than linearly with depth), bounded only by the trigger's probe timeout.",
+      "blockers": [],
+      "next_action": "Reproduce on the current build, write failing tests, fix, mutate, verify independently, prove live.",
+      "updated_at": "2026-10-04T20:28:08.000Z"
     }
   ],
   "history": [
