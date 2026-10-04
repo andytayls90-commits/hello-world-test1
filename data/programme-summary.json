@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-04T21:04:17.879Z",
+  "updated_at": "2026-10-04T21:11:38.972Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 40,
+        "complete": 41,
         "total": 54,
-        "percent": 74
+        "percent": 76
       },
-      "next_action": "Finish tests, merge into the council home, verify at the next council firing.",
-      "updated_at": "2026-10-04T21:04:17.879Z"
+      "next_action": "Watch the no-verdict counter card: it should stop incrementing; the derived-row and retry paths fire only on a failing run and are covered by tests.",
+      "updated_at": "2026-10-04T21:11:38.972Z"
     },
     {
       "project_id": "mission-control",

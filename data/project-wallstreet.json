@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-04T21:04:17.879Z",
+  "updated_at": "2026-10-04T21:11:38.972Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Finish tests, merge into the council home, verify at the next council firing.",
+  "next_action": "Watch the no-verdict counter card: it should stop incrementing; the derived-row and retry paths fire only on a failing run and are covered by tests.",
   "milestones": [
     {
       "id": "M0",
@@ -1018,17 +1018,17 @@
       "id": "WS-COUNCIL-4",
       "title": "Council Chair verdict of record: three Sabbath council cycles on 2026-10-03 ended with no Chair verdict row (an early model stop, rows written under the previous hour's id, rows appended to a stale duplicate ledger path) — make the cycle id and ledger path tool-set, capture a structured Chair verdict line from the final message as a tool-derived row of record, retire the duplicate ledger path, require the Chair row on Sabbath cycles too, and add one bounded retry",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane cycle (Claude)",
       "started_at": "2026-10-04T21:04:17.879Z",
-      "completed_at": null,
+      "completed_at": "2026-10-04T21:11:38.972Z",
       "target_at": null,
-      "evidence": "IMPLEMENTED / UNVERIFIED",
-      "commit": null,
-      "summary": "Root cause proven from the council session store and journal: all three failures were model compliance failures around the one ledger write (an early stop, rows written under the previous hour's id, rows appended to a stale duplicate ledger path with no Chair seat). Fix in progress in the council home repository: tool-set cycle id and ledger path, structured Chair verdict line captured from the final message as a tool-derived row of record, duplicate ledger path retired, Chair row required on Sabbath cycles, one bounded retry. Trading desk, gates and execution lock untouched.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "6ece866",
+      "summary": "Shipped in the council home repository: the cycle id and ledger path are now set by the wrapper and injected into the prompt, the Chair must end its final message with a structured verdict line that the post-check records as the row of record when the model's own ledger append is lost, the stale duplicate ledger path is retired (its rows salvaged into a scorer-visible segment), the Chair row is required on Sabbath cycles too, and a run that ends with no verdict at all is retried once. Verified by a forced council cycle through the new wrapper: verdict line present, chair row under the correct id, post-check passed, no retry. Trading desk, gates and execution lock untouched and re-proven.",
       "blockers": [],
-      "next_action": "Finish tests, merge into the council home, verify at the next council firing.",
-      "updated_at": "2026-10-04T21:04:17.879Z"
+      "next_action": "Watch the no-verdict counter card: it should stop incrementing; the derived-row and retry paths fire only on a failing run and are covered by tests.",
+      "updated_at": "2026-10-04T21:11:38.972Z"
     }
   ],
   "history": [
@@ -1742,6 +1742,14 @@
       "at": "2026-10-04T21:04:17.879Z",
       "evidence": "IMPLEMENTED / UNVERIFIED",
       "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-4",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-04T21:11:38.972Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "6ece866"
     }
   ]
 }
