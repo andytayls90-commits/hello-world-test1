@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-04T19:58:32.375Z",
+  "updated_at": "2026-10-04T20:04:02.701Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Owner decides confirm or strike; on strike the trading lane ships the prompt change with a contract test pinning the sentence.",
+  "next_action": "Next trading-lane candidates: the council no-verdict recurrence, the decision-change refusal naming follow-up, and the owner decision on the council prompt wording (blocked).",
   "milestones": [
     {
       "id": "M0",
@@ -1001,17 +1001,17 @@
       "id": "WS-LIVE-1",
       "title": "Desk liveness page says why nothing opened: the council no-execution condition fired identically for a real defect (adds refused by the broker) and for deliberate policy withholding (eight of ten decisions were below the confidence floor); the firing condition now carries, since the last execution, the council decision count and the attempt count by refusal reason plus a one-word diagnosis (no decisions, decided but nothing attempted, withheld by policy, or broker refused or errored) so a responder can tell policy from defect at a glance; thresholds unchanged",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane engineer (Claude)",
       "started_at": "2026-10-04T19:58:32.354Z",
-      "completed_at": null,
+      "completed_at": "2026-10-04T20:04:02.701Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "Claimed by the autonomous trading-lane cycle. Tests written failing first, implementation passing, bolt held ten of ten from the worktree; promotion and post-deploy verification in progress.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "bc6e301",
+      "summary": "Deployed and re-verified by the autonomous trading-lane cycle. The council no-execution liveness condition now reports, since the last execution, the council decision count and the attempt count by refusal reason, plus a one-word diagnosis separating no decisions, decided but nothing attempted, withheld by policy, and broker refused or errored; the lead sentence of the page text is unchanged so existing titles keep their shape. Seven failing-then-passing tests guard it, the full backend suite passed, the gate stayed PAPER, the bolt held ten of ten before and after the deploy, and the live endpoint showed the standing page to be the already-fixed broker-refusal shape rather than a new defect. The sentinel needs no change and will carry the new text at its next re-alert.",
       "blockers": [],
-      "next_action": "Merge, deploy by scope, re-verify the live endpoint and the sentinel page line, then record completion evidence.",
-      "updated_at": "2026-10-04T19:58:32.354Z"
+      "next_action": "Next trading-lane candidates: the council no-verdict recurrence, the decision-change refusal naming follow-up, and the owner decision on the council prompt wording (blocked).",
+      "updated_at": "2026-10-04T20:04:02.701Z"
     }
   ],
   "history": [
@@ -1709,6 +1709,14 @@
       "at": "2026-10-04T19:58:32.375Z",
       "evidence": "BLOCKED",
       "commit": null
+    },
+    {
+      "task_id": "WS-LIVE-1",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-04T20:04:02.701Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "bc6e301"
     }
   ]
 }
