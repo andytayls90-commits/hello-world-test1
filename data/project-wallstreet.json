@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-04T20:04:02.701Z",
+  "updated_at": "2026-10-04T21:04:17.879Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Next trading-lane candidates: the council no-verdict recurrence, the decision-change refusal naming follow-up, and the owner decision on the council prompt wording (blocked).",
+  "next_action": "Finish tests, merge into the council home, verify at the next council firing.",
   "milestones": [
     {
       "id": "M0",
@@ -100,7 +100,8 @@
         "WS-SCORE-3",
         "WS-SEC-2",
         "WS-COUNCIL-2",
-        "WS-COUNCIL-3"
+        "WS-COUNCIL-3",
+        "WS-COUNCIL-4"
       ]
     },
     {
@@ -1012,6 +1013,22 @@
       "blockers": [],
       "next_action": "Next trading-lane candidates: the council no-verdict recurrence, the decision-change refusal naming follow-up, and the owner decision on the council prompt wording (blocked).",
       "updated_at": "2026-10-04T20:04:02.701Z"
+    },
+    {
+      "id": "WS-COUNCIL-4",
+      "title": "Council Chair verdict of record: three Sabbath council cycles on 2026-10-03 ended with no Chair verdict row (an early model stop, rows written under the previous hour's id, rows appended to a stale duplicate ledger path) — make the cycle id and ledger path tool-set, capture a structured Chair verdict line from the final message as a tool-derived row of record, retire the duplicate ledger path, require the Chair row on Sabbath cycles too, and add one bounded retry",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-04T21:04:17.879Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "IMPLEMENTED / UNVERIFIED",
+      "commit": null,
+      "summary": "Root cause proven from the council session store and journal: all three failures were model compliance failures around the one ledger write (an early stop, rows written under the previous hour's id, rows appended to a stale duplicate ledger path with no Chair seat). Fix in progress in the council home repository: tool-set cycle id and ledger path, structured Chair verdict line captured from the final message as a tool-derived row of record, duplicate ledger path retired, Chair row required on Sabbath cycles, one bounded retry. Trading desk, gates and execution lock untouched.",
+      "blockers": [],
+      "next_action": "Finish tests, merge into the council home, verify at the next council firing.",
+      "updated_at": "2026-10-04T21:04:17.879Z"
     }
   ],
   "history": [
@@ -1717,6 +1734,14 @@
       "at": "2026-10-04T20:04:02.701Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "bc6e301"
+    },
+    {
+      "task_id": "WS-COUNCIL-4",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-04T21:04:17.879Z",
+      "evidence": "IMPLEMENTED / UNVERIFIED",
+      "commit": null
     }
   ]
 }
