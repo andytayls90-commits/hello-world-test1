@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "BLOCKED",
   "evidence": "BLOCKED",
-  "updated_at": "2026-10-04T22:22:39.124Z",
+  "updated_at": "2026-10-04T23:02:05.490Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-COMMS-1",
-  "next_action": "RED test by name, fix in the lock tool's read path, two verification rounds, merge, live proof.",
+  "next_action": "Follow-up filed: align the watchdog's page wording with the tool's corrupt verdict for this shape.",
   "milestones": [
     {
       "id": "MC0",
@@ -492,7 +492,7 @@
     {
       "id": "MC60",
       "title": "Loop lock: ownerless object body named corrupt",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-60"
       ]
@@ -1513,17 +1513,17 @@
       "id": "MC-LOOP-60",
       "title": "Loop lock tool: an object lock body that names no owner is held forever instead of being named corrupt",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous Mission Control engineer (Claude)",
       "started_at": "2026-10-04T22:22:39.124Z",
-      "completed_at": null,
+      "completed_at": "2026-10-04T23:02:05.490Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress: reproducing the ownerless-object lock body on a scratch root, then RED test, fix, independent verification and live proof (2026-10-04 mc cycle5).",
+      "evidence": "VERIFIED LIVE",
+      "commit": "f19ef1a",
+      "summary": "Shipped and verified live. The loop lock tool treated a hand-edited lock file holding a JSON object with none of its owner fields as a held lock owned by nobody: nothing in such a file could ever prove an owner absent, so the lane stayed wedged until a human cleared it, and the tool's probes reported it as healthy rather than corrupt. The tool now applies one narrow rule in its single read path: an object naming neither a cycle id nor a process id names no owner and is the corrupt case, exactly like a non-object body, so every entry point names it, refuses it on one line, never rewrites or removes it, and the trigger skips fail-closed while the watchdog pages. An object naming either field remains a holder; ordinary locks render byte for byte as before, confirmed read-only against the live lock. Ten new named cases plus a flipped boundary pin; thirteen builder and five verifier mutations caught by name (one equivalent); two independent verification rounds, the first with two low findings fixed and pinned (one disclosed behaviour change: an ownerless object carrying this host and a foreign boot id was previously reclaimable and is now a fail-closed stall), the second converged; consumer suite and bolt unchanged.",
       "blockers": [],
-      "next_action": "RED test by name, fix in the lock tool's read path, two verification rounds, merge, live proof.",
-      "updated_at": "2026-10-04T22:22:39.124Z"
+      "next_action": "Follow-up filed: align the watchdog's page wording with the tool's corrupt verdict for this shape.",
+      "updated_at": "2026-10-04T23:02:05.490Z"
     }
   ],
   "history": [
@@ -2662,6 +2662,14 @@
       "at": "2026-10-04T22:22:39.124Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-60",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-04T23:02:05.490Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "f19ef1a"
     }
   ]
 }
