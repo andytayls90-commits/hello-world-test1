@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-04T20:04:02.701Z",
+  "updated_at": "2026-10-04T20:28:24.972Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -32,11 +32,11 @@
       "current_task_id": "MC-COMMS-1",
       "progress": {
         "complete": 60,
-        "total": 62,
-        "percent": 97
+        "total": 63,
+        "percent": 95
       },
-      "next_action": "Follow-up filed: decide whether an object lock body with no owner fields should also be named corrupt.",
-      "updated_at": "2026-10-04T19:48:10.450Z"
+      "next_action": "Reproduce on the current build, write failing tests, fix, mutate, verify independently, prove live.",
+      "updated_at": "2026-10-04T20:28:24.972Z"
     }
   ]
 }
