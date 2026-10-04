@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-04T19:16:27.998Z",
+  "updated_at": "2026-10-04T19:19:16.765Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 38,
+        "complete": 39,
         "total": 51,
-        "percent": 75
+        "percent": 76
       },
-      "next_action": "Assurance and fix commits, merge without fast-forward into the council home, push, refresh the toolkit mirror, re-verify, then close with evidence.",
-      "updated_at": "2026-10-04T19:16:27.998Z"
+      "next_action": "Next trading-lane candidates: the liveness condition diagnosability note, the council no-verdict recurrence, the decision-change refusal naming follow-up, and an owner call on the prompt's self-authored board-override wording (filed).",
+      "updated_at": "2026-10-04T19:19:16.765Z"
     },
     {
       "project_id": "mission-control",
