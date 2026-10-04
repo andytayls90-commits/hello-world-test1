@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-04T18:24:58.269Z",
+  "updated_at": "2026-10-04T18:54:45.458Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -31,12 +31,12 @@
       "data_file": "data/mission-control.json",
       "current_task_id": "MC-COMMS-1",
       "progress": {
-        "complete": 58,
+        "complete": 59,
         "total": 61,
-        "percent": 95
+        "percent": 97
       },
-      "next_action": "Reproduce in a scratch root, red test, fix, mutants, independent verification, live proof, merge.",
-      "updated_at": "2026-10-04T18:24:58.269Z"
+      "next_action": "Follow-up filed: a syntax-aware belt for key reads spelled without a literal.",
+      "updated_at": "2026-10-04T18:54:45.458Z"
     }
   ]
 }

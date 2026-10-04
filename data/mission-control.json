@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "BLOCKED",
   "evidence": "BLOCKED",
-  "updated_at": "2026-10-04T18:24:58.269Z",
+  "updated_at": "2026-10-04T18:54:45.458Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-COMMS-1",
-  "next_action": "Reproduce in a scratch root, red test, fix, mutants, independent verification, live proof, merge.",
+  "next_action": "Follow-up filed: a syntax-aware belt for key reads spelled without a literal.",
   "milestones": [
     {
       "id": "MC0",
@@ -468,7 +468,7 @@
     {
       "id": "MC57",
       "title": "Loop trigger: holder fields rendered safely",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-57"
       ]
@@ -1441,17 +1441,17 @@
       "id": "MC-LOOP-57",
       "title": "Loop trigger: lock holder details read from the lock verdict are printed raw into the loop log",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous Mission Control engineer (Claude)",
       "started_at": "2026-10-04T18:24:58.269Z",
-      "completed_at": null,
+      "completed_at": "2026-10-04T18:54:45.458Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "The loop trigger's single-flight gate decodes the lock tool's holder verdict and prints the holder's cycle id, process id and owner kind unescaped into its own log line, so a line break planted in a hand-edited lock file forges an extra loop-log line on every tick while the lock is held. Fix: route the holder fields through the trigger's existing bounded escape, red test first.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "954db2f",
+      "summary": "Shipped and verified live. The loop trigger's single-flight gate printed the lock holder's cycle id, process id and owner kind exactly as read from the lock file, so a line break planted in a hand-edited lock forged an extra loop-log line on every tick while the lock was held, an oversized value printed in full, and a value the renderer could not walk silently emptied the holder from the line. Every such field, and the proven-dead reason, now goes through one shared safe renderer (escaped, bounded with the length named, an unrenderable value or a malformed verdict named instead of crashing); ordinary lines print byte-for-byte as before. Ten new named cases including a keep-in-step belt; twelve builder and seven verifier mutations plus three belt evasions each caught by name; two independent verification rounds, every finding fixed and pinned or filed. Live: the deployed trigger's dry run over the real lock renders this cycle's holder identically to the previous version with the log untouched. Paper mode only; trading gate untouched.",
       "blockers": [],
-      "next_action": "Reproduce in a scratch root, red test, fix, mutants, independent verification, live proof, merge.",
-      "updated_at": "2026-10-04T18:24:58.269Z"
+      "next_action": "Follow-up filed: a syntax-aware belt for key reads spelled without a literal.",
+      "updated_at": "2026-10-04T18:54:45.458Z"
     }
   ],
   "history": [
@@ -2542,6 +2542,14 @@
       "at": "2026-10-04T18:24:58.269Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-57",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-04T18:54:45.458Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "954db2f"
     }
   ]
 }
