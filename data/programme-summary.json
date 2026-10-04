@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-04T19:09:26.071Z",
+  "updated_at": "2026-10-04T19:16:27.998Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 38,
-        "total": 50,
-        "percent": 76
+        "total": 51,
+        "percent": 75
       },
-      "next_action": "Next trading-lane candidates: the council no-verdict recurrence, the decision-change refusal naming follow-up, the council prompt note on add semantics (filed), and the liveness condition diagnosability note (filed).",
-      "updated_at": "2026-10-04T19:09:26.071Z"
+      "next_action": "Assurance and fix commits, merge without fast-forward into the council home, push, refresh the toolkit mirror, re-verify, then close with evidence.",
+      "updated_at": "2026-10-04T19:16:27.998Z"
     },
     {
       "project_id": "mission-control",
