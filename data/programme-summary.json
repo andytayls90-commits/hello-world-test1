@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-04T18:54:45.458Z",
+  "updated_at": "2026-10-04T19:07:15.970Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 37,
-        "total": 49,
-        "percent": 76
+        "total": 50,
+        "percent": 74
       },
-      "next_action": "Next trading-lane candidates: the desk-down council-no-executions alert, the council no-verdict recurrence, the decision-change refusal naming follow-up, the June approval hygiene items and the shadow surfaces that equate a stop id with protection; host storage and credential decisions stay with the owner.",
-      "updated_at": "2026-10-04T17:56:40.075Z"
+      "next_action": "Failing tests first, then the implementation, the real-money bolt, a no-fast-forward merge, a scoped backend restart and live re-verification.",
+      "updated_at": "2026-10-04T19:07:15.970Z"
     },
     {
       "project_id": "mission-control",
