@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-04T22:20:30.190Z",
+  "updated_at": "2026-10-04T23:08:16.919Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Watch the next scheduled council cycles for the guard's ok lines and zero stall warnings; forward the two upstream cards (framework schema cap, inference-server grammar clamp).",
+  "next_action": "Owner runs the framework update outside the council window, then runs the grammar-guard post-check; the lane re-verifies on the next cycle.",
   "milestones": [
     {
       "id": "M0",
@@ -1052,17 +1052,19 @@
       "id": "WS-COUNCIL-6",
       "title": "Pick up the upstream agent-framework fix for the 8000-character tool-schema limit that silently disabled local tool-call grammar: the framework maintainers merged a fix the same day; verify it against the local inference server, map which agent profiles are still exposed, and prepare the single fleet update command for the owner",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "BLOCKED",
       "owner": "Autonomous trading-lane cycle (Claude)",
       "started_at": "2026-10-04T23:01:07.000Z",
       "completed_at": null,
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "Follow-up to WS-COUNCIL-5. The upstream framework issue was already reported and fixed by its maintainers (the schema limit removed, plus a regression test keeping every tool schema under the inference-server repetition cap). The local install is many commits behind that fix. This task verifies the fixed schema against the local inference server, scans each agent profile's advertised toolset for the unsafe limit, and prepares the fleet update as one owner-run command with a post-update check.",
-      "blockers": [],
-      "next_action": "Verify the fixed schema against the local inference server; scan each profile; hand the owner the update command.",
-      "updated_at": "2026-10-04T23:01:07.000Z"
+      "evidence": "BLOCKED",
+      "commit": "66ecd35",
+      "summary": "Verified: the upstream project already closed this defect (issue reported, fix merged, plus a regression test that keeps every tool schema under the inference-server repetition cap). Against the local install: two agent profiles still advertise the unsafe limit, three do not (the council had it removed last cycle). The fixed toolset was sent to the live inference server: accepted, no grammar failure logged. Running the fleet update is the owner's call; the command, the window to avoid (hourly council cycle) and the post-update checks are written up in the toolkit.",
+      "blockers": [
+        "Owner-run fleet update: the framework maintainers merged the fix the same day, but the local framework install is many commits behind it; picking it up restarts the whole agent fleet and migrates every agent's state database, and both earlier updates were run by the owner. One command plus a post-update grammar check is prepared in the evidence packet."
+      ],
+      "next_action": "Owner runs the framework update outside the council window, then runs the grammar-guard post-check; the lane re-verifies on the next cycle.",
+      "updated_at": "2026-10-04T23:08:16.919Z"
     }
   ],
   "history": [
@@ -1800,6 +1802,14 @@
       "at": "2026-10-04T22:20:30.190Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "ad98a68"
+    },
+    {
+      "task_id": "WS-COUNCIL-6",
+      "from": "IN_PROGRESS",
+      "to": "BLOCKED",
+      "at": "2026-10-04T23:08:16.919Z",
+      "evidence": "BLOCKED",
+      "commit": "66ecd35"
     }
   ]
 }

@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-04T23:02:05.490Z",
+  "updated_at": "2026-10-04T23:08:16.919Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 42,
-        "total": 55,
-        "percent": 76
+        "total": 56,
+        "percent": 75
       },
-      "next_action": "Watch the next scheduled council cycles for the guard's ok lines and zero stall warnings; forward the two upstream cards (framework schema cap, inference-server grammar clamp).",
-      "updated_at": "2026-10-04T22:20:30.190Z"
+      "next_action": "Owner runs the framework update outside the council window, then runs the grammar-guard post-check; the lane re-verifies on the next cycle.",
+      "updated_at": "2026-10-04T23:08:16.919Z"
     },
     {
       "project_id": "mission-control",
