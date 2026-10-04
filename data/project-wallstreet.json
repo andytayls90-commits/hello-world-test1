@@ -1057,7 +1057,7 @@
       "started_at": "2026-10-04T23:01:07.000Z",
       "completed_at": null,
       "target_at": null,
-      "evidence": "PROVISIONAL",
+      "evidence": "PARTIAL",
       "commit": null,
       "summary": "Follow-up to WS-COUNCIL-5. The upstream framework issue was already reported and fixed by its maintainers (the schema limit removed, plus a regression test keeping every tool schema under the inference-server repetition cap). The local install is many commits behind that fix. This task verifies the fixed schema against the local inference server, scans each agent profile's advertised toolset for the unsafe limit, and prepares the fleet update as one owner-run command with a post-update check.",
       "blockers": [],
