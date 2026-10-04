@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "BLOCKED",
   "evidence": "BLOCKED",
-  "updated_at": "2026-10-04T23:02:05.490Z",
+  "updated_at": "2026-10-04T23:31:04.751Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-COMMS-1",
-  "next_action": "Follow-up filed: align the watchdog's page wording with the tool's corrupt verdict for this shape.",
+  "next_action": "Land failing tests, apply the one-rule fix, run mutation and independent verification, verify live on a scratch lane root, merge.",
   "milestones": [
     {
       "id": "MC0",
@@ -495,6 +495,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-60"
+      ]
+    },
+    {
+      "id": "MC61",
+      "title": "Loop watchdog: ownerless object lock named corrupt, one rule with the lock tool",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-61"
       ]
     }
   ],
@@ -1524,6 +1532,22 @@
       "blockers": [],
       "next_action": "Follow-up filed: align the watchdog's page wording with the tool's corrupt verdict for this shape.",
       "updated_at": "2026-10-04T23:02:05.490Z"
+    },
+    {
+      "id": "MC-LOOP-61",
+      "title": "Loop watchdog: an ownerless object lock body is paged as held by nobody instead of named corrupt like the lock tool does",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous Mission Control engineer (Claude)",
+      "started_at": "2026-10-04T23:31:04.751Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "Started. The loop watchdog reads the lane lock file itself and, for a hand-written JSON object that names no owner (none of the lock tool's owner fields), pages a dead loop as held by nobody with a missing heartbeat; since the previous task the lock tool names that same file corrupt. Reproduced on the current main branch: the same shape is also described as held by a different run in the stuck-launch check, an ownerless object carrying only a unit's run identity is wrongly attributed to that unit, and an ownerless object with a fresh heartbeat reads as a live holder with nothing paged. Fix: one owner-naming predicate shared with the lock tool, applied at every lock reader in the watchdog, so the page and the tool's verdict agree; failing tests first, then mutation checks and independent verification.",
+      "blockers": [],
+      "next_action": "Land failing tests, apply the one-rule fix, run mutation and independent verification, verify live on a scratch lane root, merge.",
+      "updated_at": "2026-10-04T23:31:04.751Z"
     }
   ],
   "history": [
@@ -2670,6 +2694,14 @@
       "at": "2026-10-04T23:02:05.490Z",
       "evidence": "VERIFIED LIVE",
       "commit": "f19ef1a"
+    },
+    {
+      "task_id": "MC-LOOP-61",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-04T23:31:04.751Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }

@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-04T23:08:16.919Z",
+  "updated_at": "2026-10-04T23:31:04.751Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -32,11 +32,11 @@
       "current_task_id": "MC-COMMS-1",
       "progress": {
         "complete": 62,
-        "total": 64,
-        "percent": 97
+        "total": 65,
+        "percent": 95
       },
-      "next_action": "Follow-up filed: align the watchdog's page wording with the tool's corrupt verdict for this shape.",
-      "updated_at": "2026-10-04T23:02:05.490Z"
+      "next_action": "Land failing tests, apply the one-rule fix, run mutation and independent verification, verify live on a scratch lane root, merge.",
+      "updated_at": "2026-10-04T23:31:04.751Z"
     }
   ]
 }
