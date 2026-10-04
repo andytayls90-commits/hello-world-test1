@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "BLOCKED",
   "evidence": "BLOCKED",
-  "updated_at": "2026-10-02T08:21:41.852Z",
+  "updated_at": "2026-10-04T17:28:59.608Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-COMMS-1",
-  "next_action": "Stop pending owner access approval and private runtime setup, then create the legitimate claim/workspace and complete deployment and authentic peer acceptance.",
+  "next_action": "RED cases, fix, GREEN, mutants, independent verification, merge, live proof.",
   "milestones": [
     {
       "id": "MC0",
@@ -455,6 +455,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-55"
+      ]
+    },
+    {
+      "id": "MC56",
+      "title": "Loop lock tool: holder fields rendered safely",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-56"
       ]
     }
   ],
@@ -1404,6 +1412,22 @@
       "blockers": [],
       "next_action": "None for this item. Known framework boundary: a body the framework itself cannot parse, or a missing change-tag header on the edit route, is still refused by the framework before authentication (tracked separately).",
       "updated_at": "2026-10-02T07:59:51.522Z"
+    },
+    {
+      "id": "MC-LOOP-56",
+      "title": "Loop lock tool: holder details read from the lock file are printed raw into the loop log",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous Mission Control engineer (Claude)",
+      "started_at": "2026-10-04T17:28:59.608Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: cycle 2026-10-04-cycle1 claimed the helm mission m-7e0593f336 (after persisting the previous cycle's close-out, which had died on usage credits with everything shipped). The lock tool's refusal and evidence lines print holder fields read from the lock file without escaping; plan: failing cases first, route every rendered holder field through the existing safe renderer, keep plain output byte-identical, independent verification, live proof.",
+      "blockers": [],
+      "next_action": "RED cases, fix, GREEN, mutants, independent verification, merge, live proof.",
+      "updated_at": "2026-10-04T17:28:59.608Z"
     }
   ],
   "history": [
@@ -2469,6 +2493,14 @@
       "to": "BLOCKED",
       "at": "2026-10-02T08:21:41.852Z",
       "evidence": "IMPLEMENTED / UNVERIFIED",
+      "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-56",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-04T17:28:59.608Z",
+      "evidence": "PLANNED",
       "commit": null
     }
   ]
