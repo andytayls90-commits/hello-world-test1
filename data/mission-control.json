@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "BLOCKED",
   "evidence": "BLOCKED",
-  "updated_at": "2026-10-04T20:28:24.972Z",
+  "updated_at": "2026-10-04T21:24:38.711Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-COMMS-1",
-  "next_action": "Reproduce on the current build, write failing tests, fix, mutate, verify independently, prove live.",
+  "next_action": "Next loop cycle picks the next eligible lane item; follow-ups already filed for the field-less-object lock body and the keep-in-step belts.",
   "milestones": [
     {
       "id": "MC0",
@@ -484,7 +484,7 @@
     {
       "id": "MC59",
       "title": "Loop lock: status output bounded per holder field",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-59"
       ]
@@ -1489,17 +1489,17 @@
       "id": "MC-LOOP-59",
       "title": "Loop lock tool: the status views print the lock holder's fields verbatim and unbounded",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous Mission Control engineer (Claude)",
       "started_at": "2026-10-04T20:28:24.972Z",
-      "completed_at": null,
+      "completed_at": "2026-10-04T21:24:38.711Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "Claimed. The loop lock tool's plain and JSON status views dump the parsed lock file as a whole, so a hand-edited lock holding a deeply nested or oversized value makes the status probe that the loop trigger and the watchdog consume print an output whose size grows without bound (and worse than linearly with depth), bounded only by the trigger's probe timeout.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "6852f26",
+      "summary": "Shipped and verified live. The loop lock tool's plain and JSON status views printed the parsed lock file as a whole, so a hand-edited lock holding a deeply nested or oversized value made the status probe the loop trigger consumes print an output that grew without bound and faster than linearly with nesting depth (tens of megabytes at moderate depth, gigabytes at extreme depth), limited only by the trigger's probe timeout. Every holder field is now shaped for the view in one place: an ordinary lock renders exactly as before, field for field and type for type, while a deep, oversized, non-finite or foreign value is replaced by the tool's own bounded, escaped text, keys are bounded, the field count is capped with a marker, the tool's own fields always come first, the caller-supplied increment is bounded when written, and the trigger's own line widths were widened so a field rendered by the tool is never cut twice. Twelve new named cases plus consumer-suite re-pins; sixteen builder and nine verifier mutations each caught by name; two independent verification rounds — the first found the consumer suite red on the fix and two wording gaps, all fixed and pinned, the second converged. Live: the deployed tool renders this cycle's real lock identically to the previous version in both views and the trigger's reader prints the same line, while hand-edited deep and oversized shapes now print well under a kilobyte where the previous version printed megabytes; paper-only boundary and bolt confirmed before and after.",
       "blockers": [],
-      "next_action": "Reproduce on the current build, write failing tests, fix, mutate, verify independently, prove live.",
-      "updated_at": "2026-10-04T20:28:24.972Z"
+      "next_action": "Next loop cycle picks the next eligible lane item; follow-ups already filed for the field-less-object lock body and the keep-in-step belts.",
+      "updated_at": "2026-10-04T21:24:38.711Z"
     }
   ],
   "history": [
@@ -2622,6 +2622,14 @@
       "at": "2026-10-04T20:28:24.972Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-59",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-04T21:24:38.711Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "6852f26"
     }
   ]
 }
