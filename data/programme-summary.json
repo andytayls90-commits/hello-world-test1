@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-04T22:20:30.190Z",
+  "updated_at": "2026-10-04T22:22:39.124Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -32,11 +32,11 @@
       "current_task_id": "MC-COMMS-1",
       "progress": {
         "complete": 61,
-        "total": 63,
-        "percent": 97
+        "total": 64,
+        "percent": 95
       },
-      "next_action": "Next loop cycle picks the next eligible lane item; follow-ups already filed for the field-less-object lock body and the keep-in-step belts.",
-      "updated_at": "2026-10-04T21:24:38.711Z"
+      "next_action": "RED test by name, fix in the lock tool's read path, two verification rounds, merge, live proof.",
+      "updated_at": "2026-10-04T22:22:39.124Z"
     }
   ]
 }

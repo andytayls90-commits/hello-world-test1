@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "BLOCKED",
   "evidence": "BLOCKED",
-  "updated_at": "2026-10-04T21:24:38.711Z",
+  "updated_at": "2026-10-04T22:22:39.124Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-COMMS-1",
-  "next_action": "Next loop cycle picks the next eligible lane item; follow-ups already filed for the field-less-object lock body and the keep-in-step belts.",
+  "next_action": "RED test by name, fix in the lock tool's read path, two verification rounds, merge, live proof.",
   "milestones": [
     {
       "id": "MC0",
@@ -487,6 +487,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-59"
+      ]
+    },
+    {
+      "id": "MC60",
+      "title": "Loop lock: ownerless object body named corrupt",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-60"
       ]
     }
   ],
@@ -1500,6 +1508,22 @@
       "blockers": [],
       "next_action": "Next loop cycle picks the next eligible lane item; follow-ups already filed for the field-less-object lock body and the keep-in-step belts.",
       "updated_at": "2026-10-04T21:24:38.711Z"
+    },
+    {
+      "id": "MC-LOOP-60",
+      "title": "Loop lock tool: an object lock body that names no owner is held forever instead of being named corrupt",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous Mission Control engineer (Claude)",
+      "started_at": "2026-10-04T22:22:39.124Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: reproducing the ownerless-object lock body on a scratch root, then RED test, fix, independent verification and live proof (2026-10-04 mc cycle5).",
+      "blockers": [],
+      "next_action": "RED test by name, fix in the lock tool's read path, two verification rounds, merge, live proof.",
+      "updated_at": "2026-10-04T22:22:39.124Z"
     }
   ],
   "history": [
@@ -2630,6 +2654,14 @@
       "at": "2026-10-04T21:24:38.711Z",
       "evidence": "VERIFIED LIVE",
       "commit": "6852f26"
+    },
+    {
+      "task_id": "MC-LOOP-60",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-04T22:22:39.124Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
