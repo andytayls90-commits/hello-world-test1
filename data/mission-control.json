@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "BLOCKED",
   "evidence": "BLOCKED",
-  "updated_at": "2026-10-04T18:54:45.458Z",
+  "updated_at": "2026-10-04T19:24:57.152Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-COMMS-1",
-  "next_action": "Follow-up filed: a syntax-aware belt for key reads spelled without a literal.",
+  "next_action": "Reproduce on the current build, write failing tests, fix, mutate, verify independently, prove live.",
   "milestones": [
     {
       "id": "MC0",
@@ -471,6 +471,14 @@
       "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-57"
+      ]
+    },
+    {
+      "id": "MC58",
+      "title": "Loop lock: non-object lock body named as corrupt",
+      "status": "IN_PROGRESS",
+      "task_ids": [
+        "MC-LOOP-58"
       ]
     }
   ],
@@ -1452,6 +1460,22 @@
       "blockers": [],
       "next_action": "Follow-up filed: a syntax-aware belt for key reads spelled without a literal.",
       "updated_at": "2026-10-04T18:54:45.458Z"
+    },
+    {
+      "id": "MC-LOOP-58",
+      "title": "Loop lock tool: a lock file whose body is valid JSON but not an object crashes every lock command",
+      "project": "Mission Control",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous Mission Control engineer (Claude)",
+      "started_at": "2026-10-04T19:24:57.152Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "Claimed. The loop lock tool reads the lock file as JSON and assumes an object; a list, string, number or boolean body reaches attribute lookups and crashes acquire, heartbeat, release and status with an unhandled error, while the corrupt-lock branch that should refuse by name is never taken. Fix: treat any non-object body as a corrupt lock at every entry point, refusing without mutation and without a traceback; pin each shape and each command in the lock test suite.",
+      "blockers": [],
+      "next_action": "Reproduce on the current build, write failing tests, fix, mutate, verify independently, prove live.",
+      "updated_at": "2026-10-04T19:24:57.152Z"
     }
   ],
   "history": [
@@ -2550,6 +2574,14 @@
       "at": "2026-10-04T18:54:45.458Z",
       "evidence": "VERIFIED LIVE",
       "commit": "954db2f"
+    },
+    {
+      "task_id": "MC-LOOP-58",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-04T19:24:57.152Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
