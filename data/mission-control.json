@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "BLOCKED",
   "evidence": "BLOCKED",
-  "updated_at": "2026-10-04T17:28:59.608Z",
+  "updated_at": "2026-10-04T18:03:13.929Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-COMMS-1",
-  "next_action": "RED cases, fix, GREEN, mutants, independent verification, merge, live proof.",
+  "next_action": "Follow-ups filed: trigger-side holder rendering, status output size on a nested value, non-dict lock body, stronger static guard.",
   "milestones": [
     {
       "id": "MC0",
@@ -460,7 +460,7 @@
     {
       "id": "MC56",
       "title": "Loop lock tool: holder fields rendered safely",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-56"
       ]
@@ -1417,17 +1417,17 @@
       "id": "MC-LOOP-56",
       "title": "Loop lock tool: holder details read from the lock file are printed raw into the loop log",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous Mission Control engineer (Claude)",
       "started_at": "2026-10-04T17:28:59.608Z",
-      "completed_at": null,
+      "completed_at": "2026-10-04T18:03:13.929Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress: cycle 2026-10-04-cycle1 claimed the helm mission m-7e0593f336 (after persisting the previous cycle's close-out, which had died on usage credits with everything shipped). The lock tool's refusal and evidence lines print holder fields read from the lock file without escaping; plan: failing cases first, route every rendered holder field through the existing safe renderer, keep plain output byte-identical, independent verification, live proof.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "65d85c4",
+      "summary": "Shipped and verified live. The loop lock tool printed holder details exactly as read from the lock file in its refusal line, its evidence files and its unit-exit reasons, so a line break planted in the file forged an extra loop-log line and a pathologically nested value crashed the tool with a traceback. Every such rendering now goes through the tool's existing safe renderer (escaped, bounded, a short placeholder for an unrenderable value) and plain values print byte-for-byte as before. Eleven new named cases including a static belt over the file; ten builder mutations plus four verifier mutations each caught by a named case; two independent verification rounds, every in-scope finding fixed and pinned, three pre-existing neighbours filed as their own missions. Live: the real lock's refusal line, heartbeat and status render as specified. Paper mode only; trading gate untouched.",
       "blockers": [],
-      "next_action": "RED cases, fix, GREEN, mutants, independent verification, merge, live proof.",
-      "updated_at": "2026-10-04T17:28:59.608Z"
+      "next_action": "Follow-ups filed: trigger-side holder rendering, status output size on a nested value, non-dict lock body, stronger static guard.",
+      "updated_at": "2026-10-04T18:03:13.929Z"
     }
   ],
   "history": [
@@ -2502,6 +2502,14 @@
       "at": "2026-10-04T17:28:59.608Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-56",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-04T18:03:13.929Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "65d85c4"
     }
   ]
 }
