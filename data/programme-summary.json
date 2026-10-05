@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T16:02:15.813Z",
+  "updated_at": "2026-10-05T16:57:29.620Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 60,
-        "total": 76,
-        "percent": 79
+        "total": 77,
+        "percent": 78
       },
-      "next_action": "None for this item. Owner acts outstanding: push the toolkit and platform repositories to their remotes.",
-      "updated_at": "2026-10-05T16:02:15.813Z"
+      "next_action": "Merge into the live council checkout, push, re-verify the drift check reports the tool as versioned elsewhere with no untracked note.",
+      "updated_at": "2026-10-05T16:57:29.620Z"
     },
     {
       "project_id": "mission-control",
