@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T00:02:11.528Z",
+  "updated_at": "2026-10-05T00:56:14.325Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Owner runs the one-line serving-engine upgrade in a quiet window and the post-checks from the toolkit procedure, then moves the launcher default to the new immutable tag.",
+  "next_action": "Failing test first, then the launcher and wiring, bolt and paper-gate checks, forced paper council cycle as live proof.",
   "milestones": [
     {
       "id": "M0",
@@ -104,7 +104,8 @@
         "WS-COUNCIL-4",
         "WS-COUNCIL-5",
         "WS-COUNCIL-6",
-        "WS-COUNCIL-7"
+        "WS-COUNCIL-7",
+        "WS-COUNCIL-8"
       ]
     },
     {
@@ -1082,6 +1083,22 @@
       "blockers": [],
       "next_action": "Owner runs the one-line serving-engine upgrade in a quiet window and the post-checks from the toolkit procedure, then moves the launcher default to the new immutable tag.",
       "updated_at": "2026-10-05T00:02:11.528Z"
+    },
+    {
+      "id": "WS-COUNCIL-8",
+      "title": "Council one-shot runs leave zero diagnostics: the agent framework's one-shot mode silences every logger and discards the error stream, so a dropped model stream or provider error leaves no error text anywhere; keep logging alive for the council run and capture warnings per cycle",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-05T00:56:14.325Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: the autonomous trading-lane cycle claimed the board card at 00:52 UTC on 2026-10-05. Root cause confirmed read-only in the framework source: one-shot mode disables all standard logging below the highest severity (its own comment wrongly claims file handlers survive) and redirects both output streams to the null device for the whole run, so warning records from the streaming layer are lost everywhere. Fix is council-side: a launcher that keeps logging alive and writes warning-and-above records per cycle, wired into the cycle contract with an override kept for tests.",
+      "blockers": [],
+      "next_action": "Failing test first, then the launcher and wiring, bolt and paper-gate checks, forced paper council cycle as live proof.",
+      "updated_at": "2026-10-05T00:56:14.325Z"
     }
   ],
   "history": [
@@ -1843,6 +1860,14 @@
       "at": "2026-10-05T00:02:11.528Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "1784057"
+    },
+    {
+      "task_id": "WS-COUNCIL-8",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T00:56:14.325Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }

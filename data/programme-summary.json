@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T00:24:56.071Z",
+  "updated_at": "2026-10-05T00:56:14.325Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 43,
-        "total": 57,
-        "percent": 75
+        "total": 58,
+        "percent": 74
       },
-      "next_action": "Owner runs the one-line serving-engine upgrade in a quiet window and the post-checks from the toolkit procedure, then moves the launcher default to the new immutable tag.",
-      "updated_at": "2026-10-05T00:02:11.528Z"
+      "next_action": "Failing test first, then the launcher and wiring, bolt and paper-gate checks, forced paper council cycle as live proof.",
+      "updated_at": "2026-10-05T00:56:14.325Z"
     },
     {
       "project_id": "mission-control",
