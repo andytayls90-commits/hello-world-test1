@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T12:09:05.023Z",
+  "updated_at": "2026-10-05T13:03:45.438Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 56,
-        "total": 72,
-        "percent": 78
+        "total": 73,
+        "percent": 77
       },
-      "next_action": "Owner posts the issue and pull request from the prepared text (or records won't-do), then the card is closed; meanwhile the sibling card for the other three profiles pins the named provider locally.",
-      "updated_at": "2026-10-05T12:09:05.023Z"
+      "next_action": "Commit the runbooks, ship the README-index gate with its pre-commit hook, verify on the real READMEs.",
+      "updated_at": "2026-10-05T13:03:45.438Z"
     },
     {
       "project_id": "mission-control",

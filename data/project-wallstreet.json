@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T12:09:05.023Z",
+  "updated_at": "2026-10-05T13:03:45.438Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Owner posts the issue and pull request from the prepared text (or records won't-do), then the card is closed; meanwhile the sibling card for the other three profiles pins the named provider locally.",
+  "next_action": "Commit the runbooks, ship the README-index gate with its pre-commit hook, verify on the real READMEs.",
   "milestones": [
     {
       "id": "M0",
@@ -119,7 +119,8 @@
         "WS-SEC-4",
         "WS-COUNCIL-17",
         "WS-COUNCIL-18",
-        "WS-COUNCIL-19"
+        "WS-COUNCIL-19",
+        "WS-HYGIENE-2"
       ]
     },
     {
@@ -1341,6 +1342,22 @@
       ],
       "next_action": "Owner posts the issue and pull request from the prepared text (or records won't-do), then the card is closed; meanwhile the sibling card for the other three profiles pins the named provider locally.",
       "updated_at": "2026-10-05T12:09:05.023Z"
+    },
+    {
+      "id": "WS-HYGIENE-2",
+      "title": "Toolkit single source of truth: two prepared Helm addressed-comms runbooks were indexed by the READMEs for three days but never tracked by git, so a clone or backup pointed at files it did not contain; commit them and add a commit-time gate so every path a README names must be in git",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane engineer (Claude)",
+      "started_at": "2026-10-05T13:03:45.438Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "Claimed at 12:51Z by the trading lane; the two runbooks were reviewed for secret values (names and placeholders only) and the commit-time gate is being built test-first.",
+      "blockers": [],
+      "next_action": "Commit the runbooks, ship the README-index gate with its pre-commit hook, verify on the real READMEs.",
+      "updated_at": "2026-10-05T13:03:45.438Z"
     }
   ],
   "history": [
@@ -2350,6 +2367,14 @@
       "at": "2026-10-05T12:09:05.023Z",
       "evidence": "BLOCKED",
       "commit": "d803e3d"
+    },
+    {
+      "task_id": "WS-HYGIENE-2",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T13:03:45.438Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
