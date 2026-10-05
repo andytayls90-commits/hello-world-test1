@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T09:00:15.405Z",
+  "updated_at": "2026-10-05T09:47:16.212Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 53,
+        "complete": 54,
         "total": 69,
-        "percent": 77
+        "percent": 78
       },
-      "next_action": "Red tests, then prompt + tripwire, merge, forced paper cycle as live proof, verification packet.",
-      "updated_at": "2026-10-05T09:00:15.405Z"
+      "next_action": "Watch the per-cycle secret-exposure journal line over the week (zero is the contract); the owner-only rotation and redaction card stays blocked for the Board; the runaway-generation card is next in the lane for the model-call timeout.",
+      "updated_at": "2026-10-05T09:47:16.212Z"
     },
     {
       "project_id": "mission-control",
