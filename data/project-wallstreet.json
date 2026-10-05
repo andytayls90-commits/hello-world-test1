@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T06:52:48.095Z",
+  "updated_at": "2026-10-05T07:13:24.313Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Classify failures, write the failing prompt test, add the rule, merge, prove on a live cycle.",
+  "next_action": "Next from the lane queue: the framework alias inconsistency for the auxiliary provider, the reasoning-only final message without the verdict line, the framework-internal warnings per cycle; watch the per-cycle tool-error count over the week; a filed owner-only card covers a credential seen inline in a late-September council session.",
   "milestones": [
     {
       "id": "M0",
@@ -1207,17 +1207,17 @@
       "id": "WS-COUNCIL-15",
       "title": "Council agent: most recent shell syntax failures come from nesting quotes inside a one-line terminal command (an inline Python one-liner or a JSON body inside a quoted argument); teach the prompt to write multi-line commands to a file through a quoted heredoc and run that file, never nest quotes in a one-liner, and pin the rule with a prompt test",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane cycle (Claude)",
       "started_at": "2026-10-05T06:52:48.095Z",
-      "completed_at": null,
+      "completed_at": "2026-10-05T07:13:24.313Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "Started: auditing the council session store to classify every recent shell-syntax failure by shape before writing the prompt rule and its test pin.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "609b58e",
+      "summary": "Complete: the council prompt now carries a shell-discipline block — code or a JSON body goes into a file through a quoted heredoc and the file is run or sent, never quotes nested inside a one-line command; one-word heredoc delimiter quoted at the open and bare at the close; a shell syntax error means the quoting, so rewrite in the file form rather than retry with more escaping. Premise audited in the council session store: fifteen shell-syntax failures since late September classified by shape, eight of them nested quoting. A forced paper cycle after the merge had zero shell-syntax failures but exposed a second defect: the briefing heredoc was opened and closed with different words, the delivery helper sent the body with a stray delimiter line and printed nothing, and the agent re-sent, so the Board got two briefings. Fixed in the same cycle: the helper strips a stray trailing delimiter line, prints a success line, and refuses a second send within five minutes; the prompt cites the incident. Twelve new helper checks and an extended prompt pin went from failing to passing; a second forced cycle sent exactly one briefing with matched delimiters and the success line. Trading code untouched; bolt and paper gate proven unchanged.",
       "blockers": [],
-      "next_action": "Classify failures, write the failing prompt test, add the rule, merge, prove on a live cycle.",
-      "updated_at": "2026-10-05T06:52:48.095Z"
+      "next_action": "Next from the lane queue: the framework alias inconsistency for the auxiliary provider, the reasoning-only final message without the verdict line, the framework-internal warnings per cycle; watch the per-cycle tool-error count over the week; a filed owner-only card covers a credential seen inline in a late-September council session.",
+      "updated_at": "2026-10-05T07:13:24.313Z"
     }
   ],
   "history": [
@@ -2107,6 +2107,14 @@
       "at": "2026-10-05T06:52:48.095Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-15",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-05T07:13:24.313Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "609b58e"
     }
   ]
 }
