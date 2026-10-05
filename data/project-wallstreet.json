@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T16:58:06.240Z",
+  "updated_at": "2026-10-05T18:04:33.064Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "None for this item.",
+  "next_action": "None for this item; the empty-key provider shape on the same profiles stays a separate tracked card.",
   "milestones": [
     {
       "id": "M0",
@@ -124,7 +124,8 @@
         "WS-HYGIENE-3",
         "WS-EVID-1",
         "WS-HYGIENE-4",
-        "WS-HYGIENE-5"
+        "WS-HYGIENE-5",
+        "WS-COUNCIL-20"
       ]
     },
     {
@@ -1426,6 +1427,22 @@
       "blockers": [],
       "next_action": "None for this item.",
       "updated_at": "2026-10-05T16:58:06.240Z"
+    },
+    {
+      "id": "WS-COUNCIL-20",
+      "title": "The three remaining routed assistant profiles (admission narrator, analyst, research officer) carried the same sixteen auxiliary model entries naming the provider by the alias 'main' that the framework's runtime resolver rejects, so their background reviews and helper tasks silently ran on the large main model; pin the named local provider on every entry and widen the council suite's live check to every served profile",
+      "project": "Project Wallstreet",
+      "status": "COMPLETE",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-05T18:04:33.042Z",
+      "completed_at": "2026-10-05T18:04:33.064Z",
+      "target_at": null,
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "104787b",
+      "summary": "Complete: all sixteen auxiliary entries of the three remaining routed profiles now name the local provider explicitly (backups kept, each proven to fail the guard as a regression fixture). The resolver probe went from unknown-provider on the runtime path to resolving on both paths for every profile, the research profile resolving through its legacy provider entry so no new provider block was needed. The council suite's live check now covers every served profile and went from three failures to all passing; the full suite passed in the worktree and the live home. The multiplexed gateway re-scanned all three profiles within twenty seconds with no restart. Trading backend untouched: paper gate and bolt verified before and after.",
+      "blockers": [],
+      "next_action": "None for this item; the empty-key provider shape on the same profiles stays a separate tracked card.",
+      "updated_at": "2026-10-05T18:04:33.064Z"
     }
   ],
   "history": [
@@ -2515,6 +2532,22 @@
       "at": "2026-10-05T16:58:06.240Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "dd6ce05"
+    },
+    {
+      "task_id": "WS-COUNCIL-20",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T18:04:33.042Z",
+      "evidence": "PARTIAL",
+      "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-20",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-05T18:04:33.064Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "104787b"
     }
   ]
 }

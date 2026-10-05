@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T16:58:06.240Z",
+  "updated_at": "2026-10-05T18:04:33.064Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 61,
-        "total": 77,
+        "complete": 62,
+        "total": 78,
         "percent": 79
       },
-      "next_action": "None for this item.",
-      "updated_at": "2026-10-05T16:58:06.240Z"
+      "next_action": "None for this item; the empty-key provider shape on the same profiles stays a separate tracked card.",
+      "updated_at": "2026-10-05T18:04:33.064Z"
     },
     {
       "project_id": "mission-control",
