@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T19:08:26.830Z",
+  "updated_at": "2026-10-05T20:06:36.371Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Watch the per-hour compliance record; the recurring reasoning-only stops with a broken tool-call tail are tracked as a separate card.",
+  "next_action": "Write the failing harness test, implement the continuation, run the council suite, merge before the next hourly firing.",
   "milestones": [
     {
       "id": "M0",
@@ -126,7 +126,8 @@
         "WS-HYGIENE-4",
         "WS-HYGIENE-5",
         "WS-COUNCIL-20",
-        "WS-COUNCIL-21"
+        "WS-COUNCIL-21",
+        "WS-COUNCIL-22"
       ]
     },
     {
@@ -1460,6 +1461,22 @@
       "blockers": [],
       "next_action": "Watch the per-hour compliance record; the recurring reasoning-only stops with a broken tool-call tail are tracked as a separate card.",
       "updated_at": "2026-10-05T19:08:26.830Z"
+    },
+    {
+      "id": "WS-COUNCIL-22",
+      "title": "Council hour whose final turn is lost because the model omits the think-close delimiter: the last tool call (Board briefing, work packet, verdict line) is filed as reasoning by the model server and never executed, and the agent framework reports the turn complete (three of twenty-four hours on 2026-10-05, one briefing never sent) — prove the cause at the model-server parser level and add a bounded same-session continuation in the council harness so the pending action is carried out",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-05T20:06:36.371Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress: cause proven from the model-server log (the final request opened a thinking budget and never closed it: 29 openings, 28 natural closes in the buffer) and the agent store (the final turn had empty content, no tool call, and the whole tool call inside its reasoning text, which ended in a closer tag where the think-close belonged). Six such turns in 1,248 since 2026-10-01: two recovered by the framework's stall guard, three lost as final turns, one benign. Fix under way: a bounded same-session continuation in the council harness when the final message is a leaked tool-call envelope, plus a per-hour leak record.",
+      "blockers": [],
+      "next_action": "Write the failing harness test, implement the continuation, run the council suite, merge before the next hourly firing.",
+      "updated_at": "2026-10-05T20:06:36.371Z"
     }
   ],
   "history": [
@@ -2581,6 +2598,14 @@
       "at": "2026-10-05T19:08:26.830Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "331a4c9"
+    },
+    {
+      "task_id": "WS-COUNCIL-22",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T20:06:36.371Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }

@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T19:08:26.830Z",
+  "updated_at": "2026-10-05T20:06:36.371Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 63,
-        "total": 79,
-        "percent": 80
+        "total": 80,
+        "percent": 79
       },
-      "next_action": "Watch the per-hour compliance record; the recurring reasoning-only stops with a broken tool-call tail are tracked as a separate card.",
-      "updated_at": "2026-10-05T19:08:26.830Z"
+      "next_action": "Write the failing harness test, implement the continuation, run the council suite, merge before the next hourly firing.",
+      "updated_at": "2026-10-05T20:06:36.371Z"
     },
     {
       "project_id": "mission-control",
