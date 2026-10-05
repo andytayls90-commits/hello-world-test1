@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T10:11:37.150Z",
+  "updated_at": "2026-10-05T10:23:01.182Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Implement the per-attempt cap and cycle budget, the output-cap preflight and the live provider entry edit; merge; force one paper cycle; verify.",
+  "next_action": "Watch the hourly council journal for any KILLED line (none is the contract) and for length-capped turns; the follow-up card trims the raw API dumps that dominate the council's context.",
   "milestones": [
     {
       "id": "M0",
@@ -1294,17 +1294,17 @@
       "id": "WS-COUNCIL-17",
       "title": "Council agent runaway generation bounded: a forced council cycle ran a single model request for twenty-eight minutes until the service unit's thirty-minute kill, because the agent framework has no deadline on a flowing response stream and the one-shot sends no output-token cap; add a hard per-attempt wall-clock cap inside a per-cycle budget to the council harness, a request-level output-token cap on the model provider entry pinned by a per-cycle preflight, and make the post-check name a killed attempt",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane engineer (Claude)",
       "started_at": "2026-10-05T10:11:37.150Z",
-      "completed_at": null,
+      "completed_at": "2026-10-05T10:23:01.182Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress: root cause proven from the agent framework source (stream timeouts are per-socket-read, the stale detector needs the stream to stop, the one-shot sends no output cap) and the session store; failing tests written for the harness cap, the post-check wording and the provider-cap preflight.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "1b69a73",
+      "summary": "Complete: root cause proven from the agent framework source and the session store — its response-stream timeouts are per socket read and its stale detector only fires when chunks stop, so a flowing runaway stream had no deadline, and the one-shot path sent no output-token cap. The council harness now runs every model attempt under a hard wall-clock cap (fourteen minutes) inside a twenty-seven-minute cycle budget that leaves room for the single retry and the pre and post flights; a killed attempt is announced, the reaper and the post-check still run, and the post-check names the cap in the journal, the Board page and the parent card. The model provider entry now carries a sixteen-thousand-token output cap per request, sized from the largest turn seen in the prior week with margin, and a new per-cycle preflight pins it. Thirty-eight checks went red then green and the council test runner is green on all three suites. Live: one forced paper cycle after the merge completed in two minutes seventeen seconds with the guard reporting the cap, the attempt announced with its budget, a chair hold recorded and no kill. Trading code untouched, real-money bolt ten of ten, paper gate unchanged. A follow-up card covers the four raw API dumps that make up most of the council's context.",
       "blockers": [],
-      "next_action": "Implement the per-attempt cap and cycle budget, the output-cap preflight and the live provider entry edit; merge; force one paper cycle; verify.",
-      "updated_at": "2026-10-05T10:11:37.150Z"
+      "next_action": "Watch the hourly council journal for any KILLED line (none is the contract) and for length-capped turns; the follow-up card trims the raw API dumps that dominate the council's context.",
+      "updated_at": "2026-10-05T10:23:01.182Z"
     }
   ],
   "history": [
@@ -2274,6 +2274,14 @@
       "at": "2026-10-05T10:11:37.150Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-17",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-05T10:23:01.182Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "1b69a73"
     }
   ]
 }

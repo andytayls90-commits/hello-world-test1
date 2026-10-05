@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T10:11:37.150Z",
+  "updated_at": "2026-10-05T10:23:01.182Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 54,
+        "complete": 55,
         "total": 70,
-        "percent": 77
+        "percent": 79
       },
-      "next_action": "Implement the per-attempt cap and cycle budget, the output-cap preflight and the live provider entry edit; merge; force one paper cycle; verify.",
-      "updated_at": "2026-10-05T10:11:37.150Z"
+      "next_action": "Watch the hourly council journal for any KILLED line (none is the contract) and for length-capped turns; the follow-up card trims the raw API dumps that dominate the council's context.",
+      "updated_at": "2026-10-05T10:23:01.182Z"
     },
     {
       "project_id": "mission-control",
