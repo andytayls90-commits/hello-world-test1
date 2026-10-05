@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T23:07:16.670Z",
+  "updated_at": "2026-10-05T23:55:06.160Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "None for this task; the next council card in the lane.",
+  "next_action": "Run the new test on pristine and patched exports; write the packet; owner posts.",
   "milestones": [
     {
       "id": "M0",
@@ -131,7 +131,8 @@
         "WS-COUNCIL-23",
         "WS-COUNCIL-24",
         "WS-COUNCIL-25",
-        "WS-COUNCIL-26"
+        "WS-COUNCIL-26",
+        "WS-COUNCIL-27"
       ]
     },
     {
@@ -1549,6 +1550,22 @@
       "blockers": [],
       "next_action": "None for this task; the next council card in the lane.",
       "updated_at": "2026-10-05T23:07:16.670Z"
+    },
+    {
+      "id": "WS-COUNCIL-27",
+      "title": "Hermes upstream: the auxiliary client warns about a missing key for a keyless local (loopback) named provider while the main runtime path stays silent — verify the two open upstream fixes against our config shapes and prepare the contribution packet for the owner to post",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-05T23:55:06.160Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress: confirmed the inconsistency still exists on upstream main; two open upstream pull requests already include the local-endpoint exemption, so the increment is verifying them against our shapes on exported copies and preparing the owner's posting packet.",
+      "blockers": [],
+      "next_action": "Run the new test on pristine and patched exports; write the packet; owner posts.",
+      "updated_at": "2026-10-05T23:55:06.160Z"
     }
   ],
   "history": [
@@ -2758,6 +2775,14 @@
       "at": "2026-10-05T23:07:16.670Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "891146f"
+    },
+    {
+      "task_id": "WS-COUNCIL-27",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T23:55:06.160Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }

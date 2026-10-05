@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T23:07:16.670Z",
+  "updated_at": "2026-10-05T23:55:06.160Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 66,
-        "total": 84,
-        "percent": 79
+        "total": 85,
+        "percent": 78
       },
-      "next_action": "None for this task; the next council card in the lane.",
-      "updated_at": "2026-10-05T23:07:16.670Z"
+      "next_action": "Run the new test on pristine and patched exports; write the packet; owner posts.",
+      "updated_at": "2026-10-05T23:55:06.160Z"
     },
     {
       "project_id": "mission-control",
