@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T02:18:21.427Z",
+  "updated_at": "2026-10-05T02:43:20.830Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -31,12 +31,12 @@
       "data_file": "data/mission-control.json",
       "current_task_id": "MC-COMMS-1",
       "progress": {
-        "complete": 63,
+        "complete": 64,
         "total": 66,
-        "percent": 95
+        "percent": 97
       },
-      "next_action": "Red-first harness cases, implementation, mutation checks, independent verification, live proof, merge.",
-      "updated_at": "2026-10-05T00:24:56.071Z"
+      "next_action": "None — complete. Follow-up filed: m-c8300631a6 (harness SL8 same-second flake).",
+      "updated_at": "2026-10-05T02:43:20.830Z"
     }
   ]
 }

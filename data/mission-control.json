@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "BLOCKED",
   "evidence": "BLOCKED",
-  "updated_at": "2026-10-05T00:24:56.071Z",
+  "updated_at": "2026-10-05T02:43:20.830Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-COMMS-1",
-  "next_action": "Red-first harness cases, implementation, mutation checks, independent verification, live proof, merge.",
+  "next_action": "None — complete. Follow-up filed: m-c8300631a6 (harness SL8 same-second flake).",
   "milestones": [
     {
       "id": "MC0",
@@ -508,7 +508,7 @@
     {
       "id": "MC62",
       "title": "Loop watchdog: progress-log truncation paged",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-62"
       ]
@@ -1561,17 +1561,17 @@
       "id": "MC-LOOP-62",
       "title": "Loop watchdog: a lane progress log that shrinks below its committed size (or empties) pages instead of going unnoticed",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous Mission Control engineer (Claude)",
       "started_at": "2026-10-05T00:24:56.071Z",
-      "completed_at": null,
+      "completed_at": "2026-10-05T02:43:20.830Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress: the loop watchdog audits each lane's progress log for truncation — a log that is empty or shorter than its committed version pages the operator naming the file, both sizes and the modification time, with the recovery hint; growth and identical files stay silent.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "673932c",
+      "summary": "Done: the loop watchdog's new check 8 pages when a lane's progress log is empty, missing, or shorter than its committed copy (every tick until restored) or shorter than the previous audit's record (once); the committed copy is read through three structural git probes so an unborn or damaged repository is classified honestly, never by wording. Verified by three independent rounds (holds with findings, converged, converged), 36 mutants killed by name, and a live proof on the deployed file: real lanes byte-identical, the incident shape pages. Merge 673932c.",
       "blockers": [],
-      "next_action": "Red-first harness cases, implementation, mutation checks, independent verification, live proof, merge.",
-      "updated_at": "2026-10-05T00:24:56.071Z"
+      "next_action": "None — complete. Follow-up filed: m-c8300631a6 (harness SL8 same-second flake).",
+      "updated_at": "2026-10-05T02:43:20.830Z"
     }
   ],
   "history": [
@@ -2742,6 +2742,14 @@
       "at": "2026-10-05T00:24:56.071Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-62",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-05T02:43:20.830Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "673932c"
     }
   ]
 }
