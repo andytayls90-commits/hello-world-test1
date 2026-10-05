@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T14:01:26.253Z",
+  "updated_at": "2026-10-05T15:02:13.650Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 58,
-        "total": 74,
-        "percent": 78
+        "total": 75,
+        "percent": 77
       },
-      "next_action": "Owner decision remaining: push cadence and identity for the public toolkit remote; the board keeps the lag visible meanwhile. Two side cards filed: a transient public-contract failure leaving the evidence-capture unit failed for a day, and the live tool scripts having no versioned copy.",
-      "updated_at": "2026-10-05T14:01:26.253Z"
+      "next_action": "Merge into the operations repository, deploy the unit timeout change, verify the paper gate and bolt, record the board action.",
+      "updated_at": "2026-10-05T15:02:13.650Z"
     },
     {
       "project_id": "mission-control",

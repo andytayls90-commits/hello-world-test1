@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T14:01:26.253Z",
+  "updated_at": "2026-10-05T15:02:13.650Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Owner decision remaining: push cadence and identity for the public toolkit remote; the board keeps the lag visible meanwhile. Two side cards filed: a transient public-contract failure leaving the evidence-capture unit failed for a day, and the live tool scripts having no versioned copy.",
+  "next_action": "Merge into the operations repository, deploy the unit timeout change, verify the paper gate and bolt, record the board action.",
   "milestones": [
     {
       "id": "M0",
@@ -121,7 +121,8 @@
         "WS-COUNCIL-18",
         "WS-COUNCIL-19",
         "WS-HYGIENE-2",
-        "WS-HYGIENE-3"
+        "WS-HYGIENE-3",
+        "WS-EVID-1"
       ]
     },
     {
@@ -1375,6 +1376,22 @@
       "blockers": [],
       "next_action": "Owner decision remaining: push cadence and identity for the public toolkit remote; the board keeps the lag visible meanwhile. Two side cards filed: a transient public-contract failure leaving the evidence-capture unit failed for a day, and the live tool scripts having no versioned copy.",
       "updated_at": "2026-10-05T14:01:26.253Z"
+    },
+    {
+      "id": "WS-EVID-1",
+      "title": "Daily web-evidence public-contract check: a seconds-long edge tunnel reconnect failed two of thirteen public endpoints (one timeout, one gateway error) and left the capture unit in a failed state for a day; add bounded retries on transient edge outcomes only, a longer timeout for the two heaviest public reads, per-endpoint latency evidence, one stage retry, and clearing of the stale failed state on a later pass",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane engineer (Claude)",
+      "started_at": "2026-10-05T15:02:13.650Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress: root cause proven from the host journal (both edge tunnels reconnected for one to two seconds exactly during the check; the backend answered every public read in milliseconds). Hermetic tests reproduce the failure shape; the retry policy is implemented and green (29 of 29); a read-only run against the live public edge passed with latency recorded for every endpoint.",
+      "blockers": [],
+      "next_action": "Merge into the operations repository, deploy the unit timeout change, verify the paper gate and bolt, record the board action.",
+      "updated_at": "2026-10-05T15:02:13.650Z"
     }
   ],
   "history": [
@@ -2416,6 +2433,14 @@
       "at": "2026-10-05T14:01:26.253Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "ea19ddc"
+    },
+    {
+      "task_id": "WS-EVID-1",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T15:02:13.650Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
