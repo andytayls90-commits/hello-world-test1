@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T20:06:36.371Z",
+  "updated_at": "2026-10-05T20:24:03.353Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 63,
+        "complete": 64,
         "total": 80,
-        "percent": 79
+        "percent": 80
       },
-      "next_action": "Write the failing harness test, implement the continuation, run the council suite, merge before the next hourly firing.",
-      "updated_at": "2026-10-05T20:06:36.371Z"
+      "next_action": "Read the per-hour leak record over the coming days; the owner decides whether to A/B the official model build, disable forced thinking for the council, or pin the vendor sampling values.",
+      "updated_at": "2026-10-05T20:24:03.353Z"
     },
     {
       "project_id": "mission-control",

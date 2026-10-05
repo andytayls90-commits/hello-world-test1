@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T20:06:36.371Z",
+  "updated_at": "2026-10-05T20:24:03.353Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Write the failing harness test, implement the continuation, run the council suite, merge before the next hourly firing.",
+  "next_action": "Read the per-hour leak record over the coming days; the owner decides whether to A/B the official model build, disable forced thinking for the council, or pin the vendor sampling values.",
   "milestones": [
     {
       "id": "M0",
@@ -1466,17 +1466,17 @@
       "id": "WS-COUNCIL-22",
       "title": "Council hour whose final turn is lost because the model omits the think-close delimiter: the last tool call (Board briefing, work packet, verdict line) is filed as reasoning by the model server and never executed, and the agent framework reports the turn complete (three of twenty-four hours on 2026-10-05, one briefing never sent) — prove the cause at the model-server parser level and add a bounded same-session continuation in the council harness so the pending action is carried out",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane cycle (Claude)",
       "started_at": "2026-10-05T20:06:36.371Z",
-      "completed_at": null,
+      "completed_at": "2026-10-05T20:24:03.353Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress: cause proven from the model-server log (the final request opened a thinking budget and never closed it: 29 openings, 28 natural closes in the buffer) and the agent store (the final turn had empty content, no tool call, and the whole tool call inside its reasoning text, which ended in a closer tag where the think-close belonged). Six such turns in 1,248 since 2026-10-01: two recovered by the framework's stall guard, three lost as final turns, one benign. Fix under way: a bounded same-session continuation in the council harness when the final message is a leaked tool-call envelope, plus a per-hour leak record.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "c5cbe40",
+      "summary": "Complete: cause proven at the model-server level. The chat template forces the thinking block open on every turn; in about half a percent of turns the model emits a tool-call closer tag where the think-close belonged, the server files the whole turn as reasoning (the final request of the affected hour opened a thinking budget and never closed it), the lazy tool grammar never engages, and the agent framework promotes the text as the answer while its tail-based stall guard misses a long leaked envelope. Six such turns in 1,248 since 2026-10-01: three lost as final turns (one Board briefing never sent), two recovered by the framework early in a session, one benign; two at low context, so not context pressure; the grammar cap did not fire; sampling matches the vendor recipe apart from two minor settings. Fix: the council harness now detects a leaked envelope after a clean attempt (no well-formed verdict line plus closer or opener tags or a new reasoning-only record) and continues the same session once with a pointed instruction, bounded by the attempt cap inside the cycle budget, announced in the journal, with a per-hour leak record that survives the recovery; killed attempts are never continued and the verdict and retry decisions are unchanged. Resume mechanics proven live on a non-council profile through the identical launcher. New test went from thirty-five failures to fifty-two passing; the full council suite passed in the worktree and the live home. Live proof: a forced council cycle after the merge ran through the new contract in under two minutes, its final message was itself a reasoning-only stop that carried the verdict line and was correctly not flagged. Trading backend untouched: paper gate and bolt verified before and after. Follow-ups filed: the framework-level envelope detector for upstream, and the owner decision on the model itself.",
       "blockers": [],
-      "next_action": "Write the failing harness test, implement the continuation, run the council suite, merge before the next hourly firing.",
-      "updated_at": "2026-10-05T20:06:36.371Z"
+      "next_action": "Read the per-hour leak record over the coming days; the owner decides whether to A/B the official model build, disable forced thinking for the council, or pin the vendor sampling values.",
+      "updated_at": "2026-10-05T20:24:03.353Z"
     }
   ],
   "history": [
@@ -2606,6 +2606,14 @@
       "at": "2026-10-05T20:06:36.371Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-22",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-05T20:24:03.353Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "c5cbe40"
     }
   ]
 }
