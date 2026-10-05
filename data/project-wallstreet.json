@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T08:34:10.603Z",
+  "updated_at": "2026-10-05T08:55:22.626Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Observe this cycle's own finish record for the clean summary text; the remaining loop-tooling card (progress line stamps the wrong checkout head) is tracked separately.",
+  "next_action": "Owner: rotate the vault API client credential and re-render the client's credential file; decide the redaction of the session-store rows; decide the permission model for the vault client files versus the council runtime user. The engineering never-list follow-up proceeds as a normal lane card.",
   "milestones": [
     {
       "id": "M0",
@@ -114,7 +114,8 @@
         "WS-COUNCIL-14",
         "WS-COUNCIL-15",
         "WS-COUNCIL-16",
-        "WS-LOOP-1"
+        "WS-LOOP-1",
+        "WS-SEC-3"
       ]
     },
     {
@@ -1252,6 +1253,24 @@
       "blockers": [],
       "next_action": "Observe this cycle's own finish record for the clean summary text; the remaining loop-tooling card (progress line stamps the wrong checkout head) is tracked separately.",
       "updated_at": "2026-10-05T08:34:10.603Z"
+    },
+    {
+      "id": "WS-SEC-3",
+      "title": "Council agent vault-client credential exposure (owner decision): during the late-September desk outage the council agent read the vault command-line client configuration and its credential file, then issued a vault token request with the client credential inline in a shell command, so the credential now sits verbatim in the agent's session store; verify the claim read-only, confirm nothing has rotated since, and hand the owner the exact rotate, redact and permission decisions",
+      "project": "Project Wallstreet",
+      "status": "BLOCKED",
+      "owner": "Board (owner decision); verified by the autonomous trading-lane engineer (Claude)",
+      "started_at": "2026-10-05T08:55:22.605Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "BLOCKED",
+      "commit": null,
+      "summary": "Verified read-only by the 2026-10-05 trading-lane cycle 11. The council agent's session store holds twenty-one rows across three late-September sessions whose stored shell commands carry the vault client credential string inline (fourteen in the outage session itself); the vault client's rendered credential file was last written in June, so the credential has not been rotated since the exposure; the council runtime runs as the same user that owns the mode-600 vault client files, so they remain readable to it. No value was read or reproduced. The prompt already routes a broken desk to the sanctioned restart helper and forbids touching the vault; the engineering follow-up (name the vault token endpoint, the client configuration directory and the credential helpers in the never-list, pin it with a prompt test, and add a per-cycle tripwire for inline credential strings in shell commands) is filed as its own board card. No code changed, nothing traded, real-money bolt ten of ten, PAPER gate unchanged.",
+      "blockers": [
+        "Owner-only acts: rotate the vault API client credential used by the vault command-line client (its rendered credential file has not changed since June, so no rotation has landed); decide whether to redact the twenty-one session-store rows across three late-September sessions that carry the credential string verbatim; decide whether the vault client configuration and credential file may stay readable by the council runtime, which today runs as the same user that owns them."
+      ],
+      "next_action": "Owner: rotate the vault API client credential and re-render the client's credential file; decide the redaction of the session-store rows; decide the permission model for the vault client files versus the council runtime user. The engineering never-list follow-up proceeds as a normal lane card.",
+      "updated_at": "2026-10-05T08:55:22.626Z"
     }
   ],
   "history": [
@@ -2181,6 +2200,22 @@
       "at": "2026-10-05T08:34:10.603Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "2acd925"
+    },
+    {
+      "task_id": "WS-SEC-3",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T08:55:22.605Z",
+      "evidence": "PLANNED",
+      "commit": null
+    },
+    {
+      "task_id": "WS-SEC-3",
+      "from": "IN_PROGRESS",
+      "to": "BLOCKED",
+      "at": "2026-10-05T08:55:22.626Z",
+      "evidence": "BLOCKED",
+      "commit": null
     }
   ]
 }
