@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T21:04:35.694Z",
+  "updated_at": "2026-10-05T21:06:00.189Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Owner picks one of three generator-side options or none; the lane can then run the A/B or the profile change under that decision.",
+  "next_action": "Owner posts per the packet; the fleet mitigation (council same-session continuation) stays in place until the upstream fix ships via a normal framework update.",
   "milestones": [
     {
       "id": "M0",
@@ -1491,12 +1491,12 @@
       "target_at": null,
       "evidence": "BLOCKED",
       "commit": null,
-      "summary": "Blocked on the owner post. The defect was already reported upstream on 2026-09-30 and an open fix (unreviewed by a human) routes markup found in promoted reasoning through the existing bounded dropped-tool-call re-prompt. The cycle verified that fix on scratch exports of upstream main against the four envelope shapes observed on this install (built from real rows, content neutralised): on pristine main all four are delivered as the answer after one call; with the fix all four re-prompt and the markup is neither delivered nor replayed. Two shapes the fix misses (closer tags alone on a line without the block closer; the other vendor's invoke-style envelope) were not seen on clean-stop rows here, only on length-cut rows that take a different path; a small widening plus a seven-test file covers them, with a negative test that an inline mention of a tag still promotes. Install data: thirteen reasoning-only rows in twenty-eight thousand assistant rows over five days. Packet: issue comment, review comment, follow-up PR text, three patches that apply cleanly on fresh exports, exact commands. Live agent tree, trading backend, paper gate and bolt untouched.",
+      "summary": "Blocked on the owner post. The defect was already reported upstream on 2026-09-30 and an open fix (unreviewed by a human) routes markup found in promoted reasoning through the existing bounded dropped-tool-call re-prompt. The cycle verified that fix on scratch exports of upstream main against the four envelope shapes observed on this install (built from real rows, content neutralised): on pristine main all four are delivered as the answer after one call; with the fix all four re-prompt and the markup is neither delivered nor replayed. Two shapes the fix misses (closer tags alone on a line without the block closer; the other vendor's invoke-style envelope) were not seen in the five-day window, only on older length-cut rows that take a different path; a small widening plus a seven-test file covers them, with a negative test that an inline mention of a tag still promotes. Corrected install data: six reasoning-only rows in 1,271 assistant rows across 79 sessions over five days, all six carrying markup (an earlier figure in this record used a year-early cutoff). Packet: issue comment, review comment, follow-up PR text, three patches that apply cleanly on fresh exports, exact commands. Live agent tree, trading backend, paper gate and bolt untouched.",
       "blockers": [
         "Posting to the upstream project is the owner's public identity: comment on the existing upstream issue, review-comment on the open upstream fix, or open the follow-up PR from the prepared packet."
       ],
       "next_action": "Owner posts per the packet; the fleet mitigation (council same-session continuation) stays in place until the upstream fix ships via a normal framework update.",
-      "updated_at": "2026-10-05T21:01:39.358Z"
+      "updated_at": "2026-10-05T21:06:00.189Z"
     },
     {
       "id": "WS-COUNCIL-24",
@@ -2673,6 +2673,14 @@
       "to": "IN_PROGRESS",
       "at": "2026-10-05T21:04:35.694Z",
       "evidence": "PLANNED",
+      "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-23",
+      "from": "BLOCKED",
+      "to": "BLOCKED",
+      "at": "2026-10-05T21:06:00.189Z",
+      "evidence": "BLOCKED",
       "commit": null
     }
   ]
