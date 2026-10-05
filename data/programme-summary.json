@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T22:57:49.326Z",
+  "updated_at": "2026-10-05T23:07:16.670Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 65,
+        "complete": 66,
         "total": 84,
-        "percent": 77
+        "percent": 79
       },
-      "next_action": "Apply the placeholder, run the resolver probe under the hermes runtime, merge, tracker COMPLETE.",
-      "updated_at": "2026-10-05T22:57:49.326Z"
+      "next_action": "None for this task; the next council card in the lane.",
+      "updated_at": "2026-10-05T23:07:16.670Z"
     },
     {
       "project_id": "mission-control",
