@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T00:07:32.860Z",
+  "updated_at": "2026-10-05T00:24:56.071Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -32,11 +32,11 @@
       "current_task_id": "MC-COMMS-1",
       "progress": {
         "complete": 63,
-        "total": 65,
-        "percent": 97
+        "total": 66,
+        "percent": 95
       },
-      "next_action": "Follow-ups filed: a watchdog check for a shrunk progress log; the fleet reader's non-finite heartbeat handling; a test-suite interpreter dependency.",
-      "updated_at": "2026-10-05T00:07:32.860Z"
+      "next_action": "Red-first harness cases, implementation, mutation checks, independent verification, live proof, merge.",
+      "updated_at": "2026-10-05T00:24:56.071Z"
     }
   ]
 }
