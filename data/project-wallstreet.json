@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T20:54:16.089Z",
+  "updated_at": "2026-10-05T21:01:39.358Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Premise check against upstream main, then patch and tests, then hand the posting commands to the owner.",
+  "next_action": "Owner posts per the packet; the fleet mitigation (council same-session continuation) stays in place until the upstream fix ships via a normal framework update.",
   "milestones": [
     {
       "id": "M0",
@@ -1483,17 +1483,19 @@
       "id": "WS-COUNCIL-23",
       "title": "Agent framework (upstream): the final-response stall guard looks only at a short plan-phrase tail of promoted reasoning, so a turn that drops the think-close delimiter and writes its tool call inside reasoning is delivered as the complete answer — prepare an envelope detector (raw closer or opener tags in promoted reasoning trigger the same bounded continuation nudge), tests, issue and PR text for the owner to post upstream",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "BLOCKED",
       "owner": "Autonomous trading-lane cycle (Claude)",
       "started_at": "2026-10-05T20:54:16.089Z",
       "completed_at": null,
       "target_at": null,
-      "evidence": "PLANNED",
+      "evidence": "BLOCKED",
       "commit": null,
-      "summary": "In progress: checking the upstream tracker for an existing report or fix, then preparing the envelope-detector patch, tests and issue text on scratch exports of the upstream main branch; the live agent tree is never patched.",
-      "blockers": [],
-      "next_action": "Premise check against upstream main, then patch and tests, then hand the posting commands to the owner.",
-      "updated_at": "2026-10-05T20:54:16.089Z"
+      "summary": "Blocked on the owner post. The defect was already reported upstream on 2026-09-30 and an open fix (unreviewed by a human) routes markup found in promoted reasoning through the existing bounded dropped-tool-call re-prompt. The cycle verified that fix on scratch exports of upstream main against the four envelope shapes observed on this install (built from real rows, content neutralised): on pristine main all four are delivered as the answer after one call; with the fix all four re-prompt and the markup is neither delivered nor replayed. Two shapes the fix misses (closer tags alone on a line without the block closer; the other vendor's invoke-style envelope) were not seen on clean-stop rows here, only on length-cut rows that take a different path; a small widening plus a seven-test file covers them, with a negative test that an inline mention of a tag still promotes. Install data: thirteen reasoning-only rows in twenty-eight thousand assistant rows over five days. Packet: issue comment, review comment, follow-up PR text, three patches that apply cleanly on fresh exports, exact commands. Live agent tree, trading backend, paper gate and bolt untouched.",
+      "blockers": [
+        "Posting to the upstream project is the owner's public identity: comment on the existing upstream issue, review-comment on the open upstream fix, or open the follow-up PR from the prepared packet."
+      ],
+      "next_action": "Owner posts per the packet; the fleet mitigation (council same-session continuation) stays in place until the upstream fix ships via a normal framework update.",
+      "updated_at": "2026-10-05T21:01:39.358Z"
     }
   ],
   "history": [
@@ -2638,6 +2640,14 @@
       "to": "IN_PROGRESS",
       "at": "2026-10-05T20:54:16.089Z",
       "evidence": "PLANNED",
+      "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-23",
+      "from": "IN_PROGRESS",
+      "to": "BLOCKED",
+      "at": "2026-10-05T21:01:39.358Z",
+      "evidence": "BLOCKED",
       "commit": null
     }
   ]
