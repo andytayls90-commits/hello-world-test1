@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T13:03:45.438Z",
+  "updated_at": "2026-10-05T13:04:09.194Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 56,
+        "complete": 57,
         "total": 73,
-        "percent": 77
+        "percent": 78
       },
-      "next_action": "Commit the runbooks, ship the README-index gate with its pre-commit hook, verify on the real READMEs.",
-      "updated_at": "2026-10-05T13:03:45.438Z"
+      "next_action": "Owner decision filed as a separate card: the toolkit remote is behind the local branch and the NAS backup does not include the toolkit, so an off-host copy cadence is needed.",
+      "updated_at": "2026-10-05T13:04:09.194Z"
     },
     {
       "project_id": "mission-control",

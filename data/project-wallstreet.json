@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T13:03:45.438Z",
+  "updated_at": "2026-10-05T13:04:09.194Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Commit the runbooks, ship the README-index gate with its pre-commit hook, verify on the real READMEs.",
+  "next_action": "Owner decision filed as a separate card: the toolkit remote is behind the local branch and the NAS backup does not include the toolkit, so an off-host copy cadence is needed.",
   "milestones": [
     {
       "id": "M0",
@@ -1347,17 +1347,17 @@
       "id": "WS-HYGIENE-2",
       "title": "Toolkit single source of truth: two prepared Helm addressed-comms runbooks were indexed by the READMEs for three days but never tracked by git, so a clone or backup pointed at files it did not contain; commit them and add a commit-time gate so every path a README names must be in git",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane engineer (Claude)",
       "started_at": "2026-10-05T13:03:45.438Z",
-      "completed_at": null,
+      "completed_at": "2026-10-05T13:04:09.194Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "Claimed at 12:51Z by the trading lane; the two runbooks were reviewed for secret values (names and placeholders only) and the commit-time gate is being built test-first.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "d8b41ad",
+      "summary": "Done. Both prepared Helm addressed-comms runbooks (owner setup, deployment and rollback; prepared and explicitly not deployed; credential names only) are now committed together with the pending architecture note on the pinned model-server image. A new README-index check scans every toolkit README and fails when a named path exists on disk but is not in git, or when a link target is missing, while ignoring prose mentions of paths that live elsewhere; it runs as a pre-commit hook installed through a reversible installer and is covered by 36 scratch-repo checks. Live proof: the check reported exactly the two runbooks on the real checkout and zero false positives across 134 README paths, zero problems after the commit, and the installed hook refused a throwaway commit that named an untracked file. No trading code changed; the paper gate and the bolt are unchanged.",
       "blockers": [],
-      "next_action": "Commit the runbooks, ship the README-index gate with its pre-commit hook, verify on the real READMEs.",
-      "updated_at": "2026-10-05T13:03:45.438Z"
+      "next_action": "Owner decision filed as a separate card: the toolkit remote is behind the local branch and the NAS backup does not include the toolkit, so an off-host copy cadence is needed.",
+      "updated_at": "2026-10-05T13:04:09.194Z"
     }
   ],
   "history": [
@@ -2375,6 +2375,14 @@
       "at": "2026-10-05T13:03:45.438Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-HYGIENE-2",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-05T13:04:09.194Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "d8b41ad"
     }
   ]
 }
