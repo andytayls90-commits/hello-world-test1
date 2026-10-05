@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T04:53:45.997Z",
+  "updated_at": "2026-10-05T04:58:34.292Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Failing docs test first, then the scaffold fix, no-fast-forward merge into mission-control, re-verify bolt and paper gate, record.",
+  "next_action": "Next from the lane queue: auxiliary model entries naming an unknown provider alias; a reasoning-only final message without the verdict line; two framework-internal warnings per cycle.",
   "milestones": [
     {
       "id": "M0",
@@ -1156,17 +1156,17 @@
       "id": "WS-COUNCIL-12",
       "title": "The reusable work-packet prompt scaffold in the governance docs told any profile agent that pasted it to shape its packet to a schema path relative to the engineering repository, which no agent home resolves (the origin of the council's missing-file warnings); make the pasted block carry the absolute location and pin by test that every copy-verbatim block names only paths an agent can read from its home",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane cycle (Claude)",
       "started_at": "2026-10-05T04:53:45.997Z",
-      "completed_at": null,
+      "completed_at": "2026-10-05T04:58:34.292Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress: the governance scaffold's copy-verbatim block names the work-packet schema by a path relative to the engineering repository; correcting it to the absolute location with a note, aligning the sibling docs, and adding a test that scans every copy-verbatim block for paths an agent home cannot resolve.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "c59d4ef",
+      "summary": "Complete: the reusable work-packet prompt scaffold now names the schema by its absolute location and tells the agent it is not under its home, so the pasted block is byte-identical to the deployed council prompt; the contract and integration note carry the same rule. Two failing checks written first went green (four docs checks, neighbouring suites still green). Documentation only in the engineering repository: no service restarted, trading code untouched, bolt and paper gate proven unchanged before and after.",
       "blockers": [],
-      "next_action": "Failing docs test first, then the scaffold fix, no-fast-forward merge into mission-control, re-verify bolt and paper gate, record.",
-      "updated_at": "2026-10-05T04:53:45.997Z"
+      "next_action": "Next from the lane queue: auxiliary model entries naming an unknown provider alias; a reasoning-only final message without the verdict line; two framework-internal warnings per cycle.",
+      "updated_at": "2026-10-05T04:58:34.292Z"
     }
   ],
   "history": [
@@ -2008,6 +2008,14 @@
       "at": "2026-10-05T04:53:45.997Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-12",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-05T04:58:34.292Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "c59d4ef"
     }
   ]
 }

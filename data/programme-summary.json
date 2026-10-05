@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T04:53:45.997Z",
+  "updated_at": "2026-10-05T04:58:34.292Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 47,
+        "complete": 48,
         "total": 62,
-        "percent": 76
+        "percent": 77
       },
-      "next_action": "Failing docs test first, then the scaffold fix, no-fast-forward merge into mission-control, re-verify bolt and paper gate, record.",
-      "updated_at": "2026-10-05T04:53:45.997Z"
+      "next_action": "Next from the lane queue: auxiliary model entries naming an unknown provider alias; a reasoning-only final message without the verdict line; two framework-internal warnings per cycle.",
+      "updated_at": "2026-10-05T04:58:34.292Z"
     },
     {
       "project_id": "mission-control",
