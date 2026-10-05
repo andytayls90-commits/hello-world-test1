@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T06:10:15.993Z",
+  "updated_at": "2026-10-05T06:18:09.895Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 49,
-        "total": 63,
-        "percent": 78
+        "total": 64,
+        "percent": 77
       },
-      "next_action": "Next from the lane queue: a reasoning-only final message without the verdict line; two framework-internal warnings per cycle; the same alias shape in the other routed profiles.",
-      "updated_at": "2026-10-05T06:10:15.993Z"
+      "next_action": "Failing tests first (helper stdin contract, tripwire counts, prompt pin), then the fix, full council suite, forced paper cycle as live proof.",
+      "updated_at": "2026-10-05T06:18:09.895Z"
     },
     {
       "project_id": "mission-control",

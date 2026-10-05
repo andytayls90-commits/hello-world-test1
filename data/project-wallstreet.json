@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T06:10:15.993Z",
+  "updated_at": "2026-10-05T06:18:09.895Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Next from the lane queue: a reasoning-only final message without the verdict line; two framework-internal warnings per cycle; the same alias shape in the other routed profiles.",
+  "next_action": "Failing tests first (helper stdin contract, tripwire counts, prompt pin), then the fix, full council suite, forced paper cycle as live proof.",
   "milestones": [
     {
       "id": "M0",
@@ -110,7 +110,8 @@
         "WS-COUNCIL-10",
         "WS-COUNCIL-11",
         "WS-COUNCIL-12",
-        "WS-COUNCIL-13"
+        "WS-COUNCIL-13",
+        "WS-COUNCIL-14"
       ]
     },
     {
@@ -1184,6 +1185,22 @@
       "blockers": [],
       "next_action": "Next from the lane queue: a reasoning-only final message without the verdict line; two framework-internal warnings per cycle; the same alias shape in the other routed profiles.",
       "updated_at": "2026-10-05T06:10:15.993Z"
+    },
+    {
+      "id": "WS-COUNCIL-14",
+      "title": "The council agent's Board-briefing helper takes the message as one single-quoted shell argument, forcing the model to shell-escape free prose; on 2026-10-05 an apostrophe escaped the wrong way broke the command (logged as prose run as a terminal command) and the briefing was re-sent paraphrased. Let the helper read the body from standard input via a quoted heredoc, teach the prompt that form, and add a per-cycle tripwire that counts tool-call errors so the frequency is visible",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-05T06:18:09.895Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress: root cause proven from the council session store — the Board-briefing helper's single-quoted-argument interface made the model shell-escape an apostrophe as a backslash-quote, which bash rejects; the retry paraphrased the briefing. Fix: helper reads the body from standard input (quoted heredoc, no escaping), prompt teaches that form, per-cycle tool-error tripwire in the journal.",
+      "blockers": [],
+      "next_action": "Failing tests first (helper stdin contract, tripwire counts, prompt pin), then the fix, full council suite, forced paper cycle as live proof.",
+      "updated_at": "2026-10-05T06:18:09.895Z"
     }
   ],
   "history": [
@@ -2049,6 +2066,14 @@
       "at": "2026-10-05T06:10:15.993Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "8478e4b"
+    },
+    {
+      "task_id": "WS-COUNCIL-14",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T06:18:09.895Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
