@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T16:57:29.620Z",
+  "updated_at": "2026-10-05T16:58:06.240Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Merge into the live council checkout, push, re-verify the drift check reports the tool as versioned elsewhere with no untracked note.",
+  "next_action": "None for this item.",
   "milestones": [
     {
       "id": "M0",
@@ -1415,17 +1415,17 @@
       "id": "WS-HYGIENE-5",
       "title": "Council repository single source of truth: the operator's prayer-blessing tool (the command the owner uses to bless or decline the Scribe's self-improvement proposals) lived only as an unversioned file in the live council home because that repository ignores its automation directory by name; version it alongside the other council tools and add a test that fails the suite whenever a tool file in that directory is left untracked",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane engineer (Claude)",
       "started_at": "2026-10-05T16:57:29.620Z",
-      "completed_at": null,
+      "completed_at": "2026-10-05T16:58:06.240Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress: the blessing tool was the only untracked tool file in the council automation directory (nineteen files audited, eighteen tracked). Test written first and failing; carve-out plus byte-identical tracked copy make it pass; full council suite green; gate paper, bolt ten of ten.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "dd6ce05",
+      "summary": "Done. The owner's prayer-blessing tool is now a tracked, byte-identical file in the council repository (one dated carve-out from the ignore-by-name rule), and a new test fails the council suite whenever any tool file in the automation directory is untracked, present but ignored, or not executable, and exercises the tool against a fixture ledger (list, bless, decline, shortcut, bad input) without touching the live ledger. Test-first: five failures before the fix, eighteen passes after; the full council suite (shell, pytest and prompt-scanner halves) stays green; the toolkit drift check now reports the tool as versioned elsewhere with no untracked note. Audit of the whole automation directory: nineteen tool files, this was the only untracked one. No trading code, no restart; gate paper, bolt ten of ten.",
       "blockers": [],
-      "next_action": "Merge into the live council checkout, push, re-verify the drift check reports the tool as versioned elsewhere with no untracked note.",
-      "updated_at": "2026-10-05T16:57:29.620Z"
+      "next_action": "None for this item.",
+      "updated_at": "2026-10-05T16:58:06.240Z"
     }
   ],
   "history": [
@@ -2507,6 +2507,14 @@
       "at": "2026-10-05T16:57:29.620Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-HYGIENE-5",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-05T16:58:06.240Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "dd6ce05"
     }
   ]
 }
