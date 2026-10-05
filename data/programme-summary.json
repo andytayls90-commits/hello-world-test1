@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T07:13:24.313Z",
+  "updated_at": "2026-10-05T07:53:35.515Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 51,
-        "total": 65,
-        "percent": 78
+        "total": 66,
+        "percent": 77
       },
-      "next_action": "Next from the lane queue: the framework alias inconsistency for the auxiliary provider, the reasoning-only final message without the verdict line, the framework-internal warnings per cycle; watch the per-cycle tool-error count over the week; a filed owner-only card covers a credential seen inline in a late-September council session.",
-      "updated_at": "2026-10-05T07:13:24.313Z"
+      "next_action": "Audit the premise, write the failing tests, change the prompt and post-check, prove with a forced paper cycle.",
+      "updated_at": "2026-10-05T07:53:35.515Z"
     },
     {
       "project_id": "mission-control",

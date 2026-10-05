@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T07:13:24.313Z",
+  "updated_at": "2026-10-05T07:53:35.515Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Next from the lane queue: the framework alias inconsistency for the auxiliary provider, the reasoning-only final message without the verdict line, the framework-internal warnings per cycle; watch the per-cycle tool-error count over the week; a filed owner-only card covers a credential seen inline in a late-September council session.",
+  "next_action": "Audit the premise, write the failing tests, change the prompt and post-check, prove with a forced paper cycle.",
   "milestones": [
     {
       "id": "M0",
@@ -112,7 +112,8 @@
         "WS-COUNCIL-12",
         "WS-COUNCIL-13",
         "WS-COUNCIL-14",
-        "WS-COUNCIL-15"
+        "WS-COUNCIL-15",
+        "WS-COUNCIL-16"
       ]
     },
     {
@@ -1218,6 +1219,22 @@
       "blockers": [],
       "next_action": "Next from the lane queue: the framework alias inconsistency for the auxiliary provider, the reasoning-only final message without the verdict line, the framework-internal warnings per cycle; watch the per-cycle tool-error count over the week; a filed owner-only card covers a credential seen inline in a late-September council session.",
       "updated_at": "2026-10-05T07:13:24.313Z"
+    },
+    {
+      "id": "WS-COUNCIL-16",
+      "title": "Council agent: the file-write tool refused a work packet whose JSON carried trailing text and refused an attempted rewrite of the day's append-only minutes; teach the prompt that minutes and the verdict ledger are appended only through a quoted heredoc, the work packet is written through a heredoc and checked with the JSON tool in file form, a refusal is never retried with the same tool, pin it with a prompt test, and count file-write refusals separately in the per-cycle tool-error line",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-05T07:53:35.515Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress: auditing the council session store for file-write refusals since the start of October, then adding the prompt rule, the prompt-contract pin and the separate refusal count in the per-cycle tool-error line.",
+      "blockers": [],
+      "next_action": "Audit the premise, write the failing tests, change the prompt and post-check, prove with a forced paper cycle.",
+      "updated_at": "2026-10-05T07:53:35.515Z"
     }
   ],
   "history": [
@@ -2115,6 +2132,14 @@
       "at": "2026-10-05T07:13:24.313Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "609b58e"
+    },
+    {
+      "task_id": "WS-COUNCIL-16",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T07:53:35.515Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
