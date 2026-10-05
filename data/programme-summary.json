@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T15:09:54.267Z",
+  "updated_at": "2026-10-05T16:02:15.813Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 59,
-        "total": 75,
+        "complete": 60,
+        "total": 76,
         "percent": 79
       },
-      "next_action": "The next scheduled daily run exercises the deployed code on cadence; nothing further required.",
-      "updated_at": "2026-10-05T15:09:54.267Z"
+      "next_action": "None for this item. Owner acts outstanding: push the toolkit and platform repositories to their remotes.",
+      "updated_at": "2026-10-05T16:02:15.813Z"
     },
     {
       "project_id": "mission-control",
