@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T05:56:09.510Z",
+  "updated_at": "2026-10-05T06:10:15.993Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Write the failing guard test, back up and edit the live profile config, prove the resolver on both paths, merge, verify on the next on-cadence council firing.",
+  "next_action": "Next from the lane queue: a reasoning-only final message without the verdict line; two framework-internal warnings per cycle; the same alias shape in the other routed profiles.",
   "milestones": [
     {
       "id": "M0",
@@ -1173,17 +1173,17 @@
       "id": "WS-COUNCIL-13",
       "title": "All sixteen auxiliary model entries in the council agent's profile name the provider by the alias 'main', which the framework's auxiliary client accepts but its runtime resolver (background review, curator, mixture slots, delegation) rejects as an unknown provider, so background reviews silently ran on the large main model instead of the small helper model; pin the named local provider on every entry and add a per-cycle guard with a live check",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane cycle (Claude)",
       "started_at": "2026-10-05T05:56:09.510Z",
-      "completed_at": null,
+      "completed_at": "2026-10-05T06:10:15.993Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress: root cause proven in framework source (the alias resolves on the auxiliary-client path but the runtime resolver rejects it); fix is a profile-config pin plus a pre-cycle guard and tests in the council repository.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "8478e4b",
+      "summary": "Complete: every auxiliary model entry of the council profile now names the local provider explicitly (the previous alias was accepted by one framework path and rejected by the other, so background reviews silently ran on the large model). A fail-open pre-cycle guard with fixtures, wiring and a live-config check went from failing to passing; the full council test suite passed in the worktree and the live home. A forced paper council cycle logged the guard as ok and carried no unknown-provider warning; trading code untouched, bolt and paper gate proven unchanged before and after. The other three routed profiles carry the same shape and are filed separately, as is the framework inconsistency.",
       "blockers": [],
-      "next_action": "Write the failing guard test, back up and edit the live profile config, prove the resolver on both paths, merge, verify on the next on-cadence council firing.",
-      "updated_at": "2026-10-05T05:56:09.510Z"
+      "next_action": "Next from the lane queue: a reasoning-only final message without the verdict line; two framework-internal warnings per cycle; the same alias shape in the other routed profiles.",
+      "updated_at": "2026-10-05T06:10:15.993Z"
     }
   ],
   "history": [
@@ -2041,6 +2041,14 @@
       "at": "2026-10-05T05:56:09.510Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-13",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-05T06:10:15.993Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "8478e4b"
     }
   ]
 }
