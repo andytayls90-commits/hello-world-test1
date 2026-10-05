@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T10:23:01.182Z",
+  "updated_at": "2026-10-05T11:02:26.338Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 55,
-        "total": 70,
-        "percent": 79
+        "total": 71,
+        "percent": 77
       },
-      "next_action": "Watch the hourly council journal for any KILLED line (none is the contract) and for length-capped turns; the follow-up card trims the raw API dumps that dominate the council's context.",
-      "updated_at": "2026-10-05T10:23:01.182Z"
+      "next_action": "Read the next council session's tool-result sizes from the session store and record the before and after.",
+      "updated_at": "2026-10-05T11:02:26.338Z"
     },
     {
       "project_id": "mission-control",
