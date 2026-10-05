@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T15:02:13.650Z",
+  "updated_at": "2026-10-05T15:09:54.267Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 58,
+        "complete": 59,
         "total": 75,
-        "percent": 77
+        "percent": 79
       },
-      "next_action": "Merge into the operations repository, deploy the unit timeout change, verify the paper gate and bolt, record the board action.",
-      "updated_at": "2026-10-05T15:02:13.650Z"
+      "next_action": "The next scheduled daily run exercises the deployed code on cadence; nothing further required.",
+      "updated_at": "2026-10-05T15:09:54.267Z"
     },
     {
       "project_id": "mission-control",
