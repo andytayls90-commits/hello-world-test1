@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T04:09:30.628Z",
+  "updated_at": "2026-10-05T04:53:45.997Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Follow-up filed: the reusable work-packet prompt scaffold in the governance docs still carries the relative path and should be corrected before another profile pastes it.",
+  "next_action": "Failing docs test first, then the scaffold fix, no-fast-forward merge into mission-control, re-verify bolt and paper gate, record.",
   "milestones": [
     {
       "id": "M0",
@@ -108,7 +108,8 @@
         "WS-COUNCIL-8",
         "WS-COUNCIL-9",
         "WS-COUNCIL-10",
-        "WS-COUNCIL-11"
+        "WS-COUNCIL-11",
+        "WS-COUNCIL-12"
       ]
     },
     {
@@ -1150,6 +1151,22 @@
       "blockers": [],
       "next_action": "Follow-up filed: the reusable work-packet prompt scaffold in the governance docs still carries the relative path and should be corrected before another profile pastes it.",
       "updated_at": "2026-10-05T04:09:30.628Z"
+    },
+    {
+      "id": "WS-COUNCIL-12",
+      "title": "The reusable work-packet prompt scaffold in the governance docs told any profile agent that pasted it to shape its packet to a schema path relative to the engineering repository, which no agent home resolves (the origin of the council's missing-file warnings); make the pasted block carry the absolute location and pin by test that every copy-verbatim block names only paths an agent can read from its home",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-05T04:53:45.997Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress: the governance scaffold's copy-verbatim block names the work-packet schema by a path relative to the engineering repository; correcting it to the absolute location with a note, aligning the sibling docs, and adding a test that scans every copy-verbatim block for paths an agent home cannot resolve.",
+      "blockers": [],
+      "next_action": "Failing docs test first, then the scaffold fix, no-fast-forward merge into mission-control, re-verify bolt and paper gate, record.",
+      "updated_at": "2026-10-05T04:53:45.997Z"
     }
   ],
   "history": [
@@ -1983,6 +2000,14 @@
       "at": "2026-10-05T04:09:30.628Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "7be5eba"
+    },
+    {
+      "task_id": "WS-COUNCIL-12",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T04:53:45.997Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }

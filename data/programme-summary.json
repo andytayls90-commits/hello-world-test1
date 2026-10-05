@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T04:09:30.628Z",
+  "updated_at": "2026-10-05T04:53:45.997Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 47,
-        "total": 61,
-        "percent": 77
+        "total": 62,
+        "percent": 76
       },
-      "next_action": "Follow-up filed: the reusable work-packet prompt scaffold in the governance docs still carries the relative path and should be corrected before another profile pastes it.",
-      "updated_at": "2026-10-05T04:09:30.628Z"
+      "next_action": "Failing docs test first, then the scaffold fix, no-fast-forward merge into mission-control, re-verify bolt and paper gate, record.",
+      "updated_at": "2026-10-05T04:53:45.997Z"
     },
     {
       "project_id": "mission-control",
