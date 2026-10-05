@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T22:08:26.118Z",
+  "updated_at": "2026-10-05T22:57:49.326Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "None for this task; the next council card in the lane.",
+  "next_action": "Apply the placeholder, run the resolver probe under the hermes runtime, merge, tracker COMPLETE.",
   "milestones": [
     {
       "id": "M0",
@@ -130,7 +130,8 @@
         "WS-COUNCIL-22",
         "WS-COUNCIL-23",
         "WS-COUNCIL-24",
-        "WS-COUNCIL-25"
+        "WS-COUNCIL-25",
+        "WS-COUNCIL-26"
       ]
     },
     {
@@ -1532,6 +1533,22 @@
       "blockers": [],
       "next_action": "None for this task; the next council card in the lane.",
       "updated_at": "2026-10-05T22:08:26.118Z"
+    },
+    {
+      "id": "WS-COUNCIL-26",
+      "title": "Hermes agent profiles (admitter, analyst, CRO, default): give the loopback local-model provider an explicit key placeholder so the auxiliary client stops logging a spurious missing-key warning on every call, with a fleet-wide check tool and test",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-05T22:57:49.326Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress. Fixing the four live hermes profile configs (backed up first) with a new fleet-wide check-and-fix tool plus test; the council profile keeps its earlier fix.",
+      "blockers": [],
+      "next_action": "Apply the placeholder, run the resolver probe under the hermes runtime, merge, tracker COMPLETE.",
+      "updated_at": "2026-10-05T22:57:49.326Z"
     }
   ],
   "history": [
@@ -2725,6 +2742,14 @@
       "at": "2026-10-05T22:08:26.118Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "79f8acf"
+    },
+    {
+      "task_id": "WS-COUNCIL-26",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T22:57:49.326Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }

@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T22:08:26.118Z",
+  "updated_at": "2026-10-05T22:57:49.326Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 65,
-        "total": 83,
-        "percent": 78
+        "total": 84,
+        "percent": 77
       },
-      "next_action": "None for this task; the next council card in the lane.",
-      "updated_at": "2026-10-05T22:08:26.118Z"
+      "next_action": "Apply the placeholder, run the resolver probe under the hermes runtime, merge, tracker COMPLETE.",
+      "updated_at": "2026-10-05T22:57:49.326Z"
     },
     {
       "project_id": "mission-control",
