@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T02:00:24.353Z",
+  "updated_at": "2026-10-05T02:18:21.427Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Guard + tests green, config placeholder live, next council cycle's diagnostics clean, merge and push.",
+  "next_action": "Apply the same recipe to the other agent profiles (filed) and propose the loopback exemption upstream (filed).",
   "milestones": [
     {
       "id": "M0",
@@ -1105,17 +1105,17 @@
       "id": "WS-COUNCIL-9",
       "title": "Council one-shot diagnostics open with a spurious 'no resolvable credential' warning from the agent framework's auxiliary client on every cycle: the local model server's provider entry carries an empty credential, which the framework resolves to its literal placeholder and warns on; verify the local server never rejects the request, set an explicit placeholder, and guard it before each cycle",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane cycle (Claude)",
       "started_at": "2026-10-05T02:00:24.353Z",
-      "completed_at": null,
+      "completed_at": "2026-10-05T02:18:21.427Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress: root cause confirmed in the framework source (empty credential resolves to the literal placeholder, which the auxiliary client warns on; the main runtime substitutes it silently for loopback endpoints). The local model server has returned zero authentication rejections in its whole request log, so the record is noise. Fix: explicit placeholder in the council profile config (backed up), a pre-cycle guard pinning it, and tests.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "804e845",
+      "summary": "Complete: the warning was proven cosmetic (the agent framework resolves an empty credential to its literal placeholder and warns on the resolved value; the local model server has never rejected a request for authentication). The council profile config now carries an explicit placeholder credential (backed up), a pre-cycle guard pins it and names any entry that would regress, with tests from red to green; a forced live council cycle logged the guard green and its diagnostics file carried zero such warnings. Bolt and paper gate proven untouched.",
       "blockers": [],
-      "next_action": "Guard + tests green, config placeholder live, next council cycle's diagnostics clean, merge and push.",
-      "updated_at": "2026-10-05T02:00:24.353Z"
+      "next_action": "Apply the same recipe to the other agent profiles (filed) and propose the loopback exemption upstream (filed).",
+      "updated_at": "2026-10-05T02:18:21.427Z"
     }
   ],
   "history": [
@@ -1901,6 +1901,14 @@
       "at": "2026-10-05T02:00:24.353Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-9",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-05T02:18:21.427Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "804e845"
     }
   ]
 }

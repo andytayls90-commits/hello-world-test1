@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T02:00:24.353Z",
+  "updated_at": "2026-10-05T02:18:21.427Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 44,
+        "complete": 45,
         "total": 59,
-        "percent": 75
+        "percent": 76
       },
-      "next_action": "Guard + tests green, config placeholder live, next council cycle's diagnostics clean, merge and push.",
-      "updated_at": "2026-10-05T02:00:24.353Z"
+      "next_action": "Apply the same recipe to the other agent profiles (filed) and propose the loopback exemption upstream (filed).",
+      "updated_at": "2026-10-05T02:18:21.427Z"
     },
     {
       "project_id": "mission-control",
