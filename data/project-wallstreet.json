@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T18:58:28.026Z",
+  "updated_at": "2026-10-05T19:08:26.830Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Make the new test pass, run the full council suite, merge and push the council repo, verify on the next hourly cycle.",
+  "next_action": "Watch the per-hour compliance record; the recurring reasoning-only stops with a broken tool-call tail are tracked as a separate card.",
   "milestones": [
     {
       "id": "M0",
@@ -1449,17 +1449,17 @@
       "id": "WS-COUNCIL-21",
       "title": "Council hour whose decision of record exists but whose final message lacks the mandatory structured verdict line passes the post-check silently (the 0257Z final message was a reasoning-only stop ending in raw tool-call closer tags; the 1105Z one claimed the line without carrying it): classify the cause from the captured output and diagnostics, warn once per hour in the journal, keep a per-hour compliance record, never page",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane cycle (Claude)",
       "started_at": "2026-10-05T18:58:28.026Z",
-      "completed_at": null,
+      "completed_at": "2026-10-05T19:08:26.830Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress: root cause proven from the agent store (final turn finished with an empty reply and no tool call; the whole text was filed as reasoning ending in stray closer tags; two minutes, nineteen calls, no budget cut). Adding a journal warning, cause classification and a per-hour compliance record to the council post-check with a failing-first test.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "331a4c9",
+      "summary": "Complete: root cause proven from the agent store (the final turn finished with an empty reply and no tool call; its text was filed as reasoning ending in stray closer tags; two minutes, nineteen calls, no budget cut). The council post-check now checks the last-line contract on both passing paths: a positive journal line when the verdict line parses, otherwise one warning naming the cause (raw closer-tag tail, reasoning-only stop, a mention without a well-formed line, empty capture) plus an idempotent per-hour compliance record; pass/fail, paging and card filing unchanged. New test went from fifteen failures to all passing; the full council suite passed in the worktree and the live home. Live proof on the first hourly firing after the merge: that hour was itself a reasoning-only stop with a closer-tag tail, the hour passed on its ledger row and the new warning named the cause. Trading backend untouched: paper gate and bolt verified before and after.",
       "blockers": [],
-      "next_action": "Make the new test pass, run the full council suite, merge and push the council repo, verify on the next hourly cycle.",
-      "updated_at": "2026-10-05T18:58:28.026Z"
+      "next_action": "Watch the per-hour compliance record; the recurring reasoning-only stops with a broken tool-call tail are tracked as a separate card.",
+      "updated_at": "2026-10-05T19:08:26.830Z"
     }
   ],
   "history": [
@@ -2573,6 +2573,14 @@
       "at": "2026-10-05T18:58:28.026Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-21",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-05T19:08:26.830Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "331a4c9"
     }
   ]
 }

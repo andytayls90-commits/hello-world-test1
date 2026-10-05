@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T18:58:28.026Z",
+  "updated_at": "2026-10-05T19:08:26.830Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 62,
+        "complete": 63,
         "total": 79,
-        "percent": 78
+        "percent": 80
       },
-      "next_action": "Make the new test pass, run the full council suite, merge and push the council repo, verify on the next hourly cycle.",
-      "updated_at": "2026-10-05T18:58:28.026Z"
+      "next_action": "Watch the per-hour compliance record; the recurring reasoning-only stops with a broken tool-call tail are tracked as a separate card.",
+      "updated_at": "2026-10-05T19:08:26.830Z"
     },
     {
       "project_id": "mission-control",
