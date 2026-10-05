@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T21:06:00.189Z",
+  "updated_at": "2026-10-05T21:07:58.300Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Owner posts per the packet; the fleet mitigation (council same-session continuation) stays in place until the upstream fix ships via a normal framework update.",
+  "next_action": "Owner replies a, b, c or none on the mission; the lane then claims the follow-up under that decision.",
   "milestones": [
     {
       "id": "M0",
@@ -1502,17 +1502,19 @@
       "id": "WS-COUNCIL-24",
       "title": "Council model generator defect: the local council model drops the think-close delimiter and emits tool-call closer tags in its place in about half a percent of turns — an owner decision between an A/B of the official model build, disabling forced thinking for the council, or pinning the vendor sampling recipe; the lane verifies the facts read-only and prepares the decision packet",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "BLOCKED",
       "owner": "Autonomous trading-lane cycle (Claude)",
       "started_at": "2026-10-05T21:04:35.694Z",
       "completed_at": null,
       "target_at": null,
-      "evidence": "PLANNED",
+      "evidence": "BLOCKED",
       "commit": null,
-      "summary": "In progress: re-verifying the model-server sampling values, the chat template behaviour and the per-hour leak record read-only, then preparing the owner decision packet.",
-      "blockers": [],
-      "next_action": "Owner picks one of three generator-side options or none; the lane can then run the A/B or the profile change under that decision.",
-      "updated_at": "2026-10-05T21:04:35.694Z"
+      "summary": "Blocked on the owner decision. Facts re-verified read-only: the serving sampling values match the card (the only departures from the vendor recipe are the minimum-probability floor and the zero presence penalty); the chat template has a switch that closes the thinking block from the first token when thinking is disabled, and the council profile does not set it, so thinking is forced open; the key-value cache runs at a 4-bit type at full context; the leak rate since 2026-10-01 is six turns in 1,271 across 79 sessions, four of them delivered as the answer. A decision packet lays out the three options with cost, risk and the lane follow-up each enables, and recommends the cheapest reversible one first (vendor sampling pin, council-only), then disabling forced thinking, then the model A/B. No config, model, flag, code or restart changed; paper gate and bolt verified.",
+      "blockers": [
+        "Owner decision: pick one generator-side remedy (A/B of the official model build; disable forced thinking for the council; pin the vendor sampling values, council-only or server-wide) or none."
+      ],
+      "next_action": "Owner replies a, b, c or none on the mission; the lane then claims the follow-up under that decision.",
+      "updated_at": "2026-10-05T21:07:58.300Z"
     }
   ],
   "history": [
@@ -2680,6 +2682,14 @@
       "from": "BLOCKED",
       "to": "BLOCKED",
       "at": "2026-10-05T21:06:00.189Z",
+      "evidence": "BLOCKED",
+      "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-24",
+      "from": "IN_PROGRESS",
+      "to": "BLOCKED",
+      "at": "2026-10-05T21:07:58.300Z",
       "evidence": "BLOCKED",
       "commit": null
     }

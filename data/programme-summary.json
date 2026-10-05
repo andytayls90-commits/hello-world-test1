@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T21:06:00.189Z",
+  "updated_at": "2026-10-05T21:07:58.300Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -19,8 +19,8 @@
         "total": 82,
         "percent": 78
       },
-      "next_action": "Owner posts per the packet; the fleet mitigation (council same-session continuation) stays in place until the upstream fix ships via a normal framework update.",
-      "updated_at": "2026-10-05T21:06:00.189Z"
+      "next_action": "Owner replies a, b, c or none on the mission; the lane then claims the follow-up under that decision.",
+      "updated_at": "2026-10-05T21:07:58.300Z"
     },
     {
       "project_id": "mission-control",
