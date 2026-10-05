@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T04:08:20.956Z",
+  "updated_at": "2026-10-05T04:09:30.628Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Follow-ups filed: the reusable work-packet prompt scaffold in the governance docs still carries the relative path; the council has emitted no work packet since late September despite the mandatory block.",
+  "next_action": "Follow-up filed: the reusable work-packet prompt scaffold in the governance docs still carries the relative path and should be corrected before another profile pastes it.",
   "milestones": [
     {
       "id": "M0",
@@ -1142,14 +1142,14 @@
       "status": "COMPLETE",
       "owner": "Autonomous trading-lane cycle (Claude)",
       "started_at": "2026-10-05T03:54:56.033Z",
-      "completed_at": "2026-10-05T04:08:20.956Z",
+      "completed_at": "2026-10-05T04:09:30.628Z",
       "target_at": null,
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "7be5eba",
-      "summary": "Complete: the council prompt now names the work-packet schema by its absolute location in the mission-control repository and tells the Chair it is not under the profile home; a prompt test pins that every path the council is told to read resolves from its home. Two failing checks written first went green (fourteen scanner checks; all three council suites green in the worktree and the live profile). The next real council firing after the merge logged three diagnostics records, none about the schema path, where the previous cycle logged eight including the missing-file and failed-search pair. No restart needed; bolt and paper gate proven untouched; the governance scaffold that originated the relative path is filed as a follow-up.",
+      "summary": "Complete: the council prompt now names the work-packet schema by its absolute location in the mission-control repository and tells the Chair it is not under the profile home; a prompt test pins that every path the council is told to read resolves from its home. Two failing checks written first went green (fourteen scanner checks; all three council suites green in the worktree and the live profile). The next real council firing after the merge logged three diagnostics records, none about the schema path, where the previous cycle logged eight including the missing-file and failed-search pair, and it wrote a work packet that validates against the schema. No restart needed; bolt and paper gate proven untouched; the governance scaffold that originated the relative path is filed as a follow-up.",
       "blockers": [],
-      "next_action": "Follow-ups filed: the reusable work-packet prompt scaffold in the governance docs still carries the relative path; the council has emitted no work packet since late September despite the mandatory block.",
-      "updated_at": "2026-10-05T04:08:20.956Z"
+      "next_action": "Follow-up filed: the reusable work-packet prompt scaffold in the governance docs still carries the relative path and should be corrected before another profile pastes it.",
+      "updated_at": "2026-10-05T04:09:30.628Z"
     }
   ],
   "history": [
@@ -1973,6 +1973,14 @@
       "from": "IN_PROGRESS",
       "to": "COMPLETE",
       "at": "2026-10-05T04:08:20.956Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "7be5eba"
+    },
+    {
+      "task_id": "WS-COUNCIL-11",
+      "from": "COMPLETE",
+      "to": "COMPLETE",
+      "at": "2026-10-05T04:09:30.628Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "7be5eba"
     }

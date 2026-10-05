@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T04:08:20.956Z",
+  "updated_at": "2026-10-05T04:09:30.628Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -19,8 +19,8 @@
         "total": 61,
         "percent": 77
       },
-      "next_action": "Follow-ups filed: the reusable work-packet prompt scaffold in the governance docs still carries the relative path; the council has emitted no work packet since late September despite the mandatory block.",
-      "updated_at": "2026-10-05T04:08:20.956Z"
+      "next_action": "Follow-up filed: the reusable work-packet prompt scaffold in the governance docs still carries the relative path and should be corrected before another profile pastes it.",
+      "updated_at": "2026-10-05T04:09:30.628Z"
     },
     {
       "project_id": "mission-control",
