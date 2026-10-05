@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T03:54:56.033Z",
+  "updated_at": "2026-10-05T04:08:20.956Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 46,
+        "complete": 47,
         "total": 61,
-        "percent": 75
+        "percent": 77
       },
-      "next_action": "Make the reference absolute, run all three council suites green in the worktree and the live profile, merge without fast-forward, no restart, verify a forced paper cycle shows no missing-file warning.",
-      "updated_at": "2026-10-05T03:54:56.033Z"
+      "next_action": "Follow-ups filed: the reusable work-packet prompt scaffold in the governance docs still carries the relative path; the council has emitted no work packet since late September despite the mandatory block.",
+      "updated_at": "2026-10-05T04:08:20.956Z"
     },
     {
       "project_id": "mission-control",
