@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T04:58:34.292Z",
+  "updated_at": "2026-10-05T05:56:09.510Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 48,
-        "total": 62,
-        "percent": 77
+        "total": 63,
+        "percent": 76
       },
-      "next_action": "Next from the lane queue: auxiliary model entries naming an unknown provider alias; a reasoning-only final message without the verdict line; two framework-internal warnings per cycle.",
-      "updated_at": "2026-10-05T04:58:34.292Z"
+      "next_action": "Write the failing guard test, back up and edit the live profile config, prove the resolver on both paths, merge, verify on the next on-cadence council firing.",
+      "updated_at": "2026-10-05T05:56:09.510Z"
     },
     {
       "project_id": "mission-control",

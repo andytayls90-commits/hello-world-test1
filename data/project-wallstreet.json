@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T04:58:34.292Z",
+  "updated_at": "2026-10-05T05:56:09.510Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Next from the lane queue: auxiliary model entries naming an unknown provider alias; a reasoning-only final message without the verdict line; two framework-internal warnings per cycle.",
+  "next_action": "Write the failing guard test, back up and edit the live profile config, prove the resolver on both paths, merge, verify on the next on-cadence council firing.",
   "milestones": [
     {
       "id": "M0",
@@ -109,7 +109,8 @@
         "WS-COUNCIL-9",
         "WS-COUNCIL-10",
         "WS-COUNCIL-11",
-        "WS-COUNCIL-12"
+        "WS-COUNCIL-12",
+        "WS-COUNCIL-13"
       ]
     },
     {
@@ -1167,6 +1168,22 @@
       "blockers": [],
       "next_action": "Next from the lane queue: auxiliary model entries naming an unknown provider alias; a reasoning-only final message without the verdict line; two framework-internal warnings per cycle.",
       "updated_at": "2026-10-05T04:58:34.292Z"
+    },
+    {
+      "id": "WS-COUNCIL-13",
+      "title": "All sixteen auxiliary model entries in the council agent's profile name the provider by the alias 'main', which the framework's auxiliary client accepts but its runtime resolver (background review, curator, mixture slots, delegation) rejects as an unknown provider, so background reviews silently ran on the large main model instead of the small helper model; pin the named local provider on every entry and add a per-cycle guard with a live check",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-05T05:56:09.510Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress: root cause proven in framework source (the alias resolves on the auxiliary-client path but the runtime resolver rejects it); fix is a profile-config pin plus a pre-cycle guard and tests in the council repository.",
+      "blockers": [],
+      "next_action": "Write the failing guard test, back up and edit the live profile config, prove the resolver on both paths, merge, verify on the next on-cadence council firing.",
+      "updated_at": "2026-10-05T05:56:09.510Z"
     }
   ],
   "history": [
@@ -2016,6 +2033,14 @@
       "at": "2026-10-05T04:58:34.292Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "c59d4ef"
+    },
+    {
+      "task_id": "WS-COUNCIL-13",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T05:56:09.510Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
