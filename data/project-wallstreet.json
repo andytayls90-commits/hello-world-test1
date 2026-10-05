@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T20:24:03.353Z",
+  "updated_at": "2026-10-05T20:54:16.089Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Read the per-hour leak record over the coming days; the owner decides whether to A/B the official model build, disable forced thinking for the council, or pin the vendor sampling values.",
+  "next_action": "Premise check against upstream main, then patch and tests, then hand the posting commands to the owner.",
   "milestones": [
     {
       "id": "M0",
@@ -127,7 +127,8 @@
         "WS-HYGIENE-5",
         "WS-COUNCIL-20",
         "WS-COUNCIL-21",
-        "WS-COUNCIL-22"
+        "WS-COUNCIL-22",
+        "WS-COUNCIL-23"
       ]
     },
     {
@@ -1477,6 +1478,22 @@
       "blockers": [],
       "next_action": "Read the per-hour leak record over the coming days; the owner decides whether to A/B the official model build, disable forced thinking for the council, or pin the vendor sampling values.",
       "updated_at": "2026-10-05T20:24:03.353Z"
+    },
+    {
+      "id": "WS-COUNCIL-23",
+      "title": "Agent framework (upstream): the final-response stall guard looks only at a short plan-phrase tail of promoted reasoning, so a turn that drops the think-close delimiter and writes its tool call inside reasoning is delivered as the complete answer — prepare an envelope detector (raw closer or opener tags in promoted reasoning trigger the same bounded continuation nudge), tests, issue and PR text for the owner to post upstream",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-05T20:54:16.089Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: checking the upstream tracker for an existing report or fix, then preparing the envelope-detector patch, tests and issue text on scratch exports of the upstream main branch; the live agent tree is never patched.",
+      "blockers": [],
+      "next_action": "Premise check against upstream main, then patch and tests, then hand the posting commands to the owner.",
+      "updated_at": "2026-10-05T20:54:16.089Z"
     }
   ],
   "history": [
@@ -2614,6 +2631,14 @@
       "at": "2026-10-05T20:24:03.353Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "c5cbe40"
+    },
+    {
+      "task_id": "WS-COUNCIL-23",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T20:54:16.089Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
