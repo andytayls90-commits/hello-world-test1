@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T02:18:21.427Z",
+  "updated_at": "2026-10-05T03:03:07.992Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Apply the same recipe to the other agent profiles (filed) and propose the loopback exemption upstream (filed).",
+  "next_action": "Follow-ups filed: prompt path to the work-packet schema is relative to the wrong root; auxiliary model entries name an unknown provider alias; one cycle's final message was reasoning-only without the verdict line; two framework-internal warnings per cycle need classifying.",
   "milestones": [
     {
       "id": "M0",
@@ -106,7 +106,8 @@
         "WS-COUNCIL-6",
         "WS-COUNCIL-7",
         "WS-COUNCIL-8",
-        "WS-COUNCIL-9"
+        "WS-COUNCIL-9",
+        "WS-COUNCIL-10"
       ]
     },
     {
@@ -1116,6 +1117,22 @@
       "blockers": [],
       "next_action": "Apply the same recipe to the other agent profiles (filed) and propose the loopback exemption upstream (filed).",
       "updated_at": "2026-10-05T02:18:21.427Z"
+    },
+    {
+      "id": "WS-COUNCIL-10",
+      "title": "Council cycle diagnostics summary counted file LINES, not log records: a diagnostics file holding three warnings with two multi-line stack traces was reported as nineteen records and the quoted 'last record' was a stack-trace tail; count records by their prefix and quote the last record line, in both the journal summary and the no-decision page",
+      "project": "Project Wallstreet",
+      "status": "COMPLETE",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-05T03:03:07.967Z",
+      "completed_at": "2026-10-05T03:03:07.992Z",
+      "target_at": null,
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "571a3d0",
+      "summary": "Complete: the summary and the no-decision page now count diagnostics records by their log-record prefix and quote the last record line (a stack trace's continuation lines belong to the record above). Eight failing test cases written first went green (fifty-four checks, all three council test suites green in the worktree and the live profile); the helpers report three records for the file the card quotes and five for the earlier one; a forced live paper council cycle after the merge journaled eight records for a file with eight record lines. No restart needed; bolt and paper gate proven untouched; four follow-up findings from the new diagnostics filed.",
+      "blockers": [],
+      "next_action": "Follow-ups filed: prompt path to the work-packet schema is relative to the wrong root; auxiliary model entries name an unknown provider alias; one cycle's final message was reasoning-only without the verdict line; two framework-internal warnings per cycle need classifying.",
+      "updated_at": "2026-10-05T03:03:07.992Z"
     }
   ],
   "history": [
@@ -1909,6 +1926,22 @@
       "at": "2026-10-05T02:18:21.427Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "804e845"
+    },
+    {
+      "task_id": "WS-COUNCIL-10",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T03:03:07.967Z",
+      "evidence": "PARTIAL",
+      "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-10",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-05T03:03:07.992Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "571a3d0"
     }
   ]
 }

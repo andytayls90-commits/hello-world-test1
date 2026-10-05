@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T02:43:20.830Z",
+  "updated_at": "2026-10-05T03:03:07.992Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 45,
-        "total": 59,
-        "percent": 76
+        "complete": 46,
+        "total": 60,
+        "percent": 77
       },
-      "next_action": "Apply the same recipe to the other agent profiles (filed) and propose the loopback exemption upstream (filed).",
-      "updated_at": "2026-10-05T02:18:21.427Z"
+      "next_action": "Follow-ups filed: prompt path to the work-packet schema is relative to the wrong root; auxiliary model entries name an unknown provider alias; one cycle's final message was reasoning-only without the verdict line; two framework-internal warnings per cycle need classifying.",
+      "updated_at": "2026-10-05T03:03:07.992Z"
     },
     {
       "project_id": "mission-control",
