@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T13:04:09.194Z",
+  "updated_at": "2026-10-05T13:55:35.476Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Owner decision filed as a separate card: the toolkit remote is behind the local branch and the NAS backup does not include the toolkit, so an off-host copy cadence is needed.",
+  "next_action": "Write failing tests, implement, run the live nightly backup unit once as proof, record evidence.",
   "milestones": [
     {
       "id": "M0",
@@ -120,7 +120,8 @@
         "WS-COUNCIL-17",
         "WS-COUNCIL-18",
         "WS-COUNCIL-19",
-        "WS-HYGIENE-2"
+        "WS-HYGIENE-2",
+        "WS-HYGIENE-3"
       ]
     },
     {
@@ -1358,6 +1359,22 @@
       "blockers": [],
       "next_action": "Owner decision filed as a separate card: the toolkit remote is behind the local branch and the NAS backup does not include the toolkit, so an off-host copy cadence is needed.",
       "updated_at": "2026-10-05T13:04:09.194Z"
+    },
+    {
+      "id": "WS-HYGIENE-3",
+      "title": "Toolkit off-host coverage: the engineering single-source-of-truth repository had no automatic off-host copy (its public remote lagged the local branch by a dozen commits and the nightly NAS backup never included it); add a verified git bundle of the repository to the nightly backup set, a fleet health signal naming the remote lag and bundle coverage, and a README rule",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane engineer (Claude)",
+      "started_at": "2026-10-05T13:55:35.476Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress: the nightly backup job gains a verified git bundle of the toolkit repository (local retention plus NAS shipping, failure flagged so the pager fires), the fleet health board gains a toolkit signal that names how many commits the public remote lags and whether the newest bundle covers the current commit, and the toolkit README records the push and backup rule. Pushing the public remote stays an owner act. Test-first; no trading code changes.",
+      "blockers": [],
+      "next_action": "Write failing tests, implement, run the live nightly backup unit once as proof, record evidence.",
+      "updated_at": "2026-10-05T13:55:35.476Z"
     }
   ],
   "history": [
@@ -2383,6 +2400,14 @@
       "at": "2026-10-05T13:04:09.194Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "d8b41ad"
+    },
+    {
+      "task_id": "WS-HYGIENE-3",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T13:55:35.476Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
