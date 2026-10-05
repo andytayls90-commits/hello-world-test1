@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T21:07:58.300Z",
+  "updated_at": "2026-10-05T22:05:44.229Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Owner replies a, b, c or none on the mission; the lane then claims the follow-up under that decision.",
+  "next_action": "Merge the launcher allowlist, prove it on a live cycle, update the toolkit note.",
   "milestones": [
     {
       "id": "M0",
@@ -129,7 +129,8 @@
         "WS-COUNCIL-21",
         "WS-COUNCIL-22",
         "WS-COUNCIL-23",
-        "WS-COUNCIL-24"
+        "WS-COUNCIL-24",
+        "WS-COUNCIL-25"
       ]
     },
     {
@@ -1515,6 +1516,22 @@
       ],
       "next_action": "Owner replies a, b, c or none on the mission; the lane then claims the follow-up under that decision.",
       "updated_at": "2026-10-05T21:07:58.300Z"
+    },
+    {
+      "id": "WS-COUNCIL-25",
+      "title": "Council one-shot diagnostics: two hermes-internal warnings (a skipped telemetry scope for a concurrent turn, and a transparently recreated shared client) classified as benign and set aside from the per-cycle diagnostic count without being lost",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-05T22:05:44.229Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress. Both warnings appeared once in twenty-three cycles, in the same forced cycle, caused by a background-review fork falling back to the parent runtime (already fixed by the auxiliary provider pin). The lane keeps them in a sidecar file and out of the journal count, with tests pinned to the upstream message texts.",
+      "blockers": [],
+      "next_action": "Merge the launcher allowlist, prove it on a live cycle, update the toolkit note.",
+      "updated_at": "2026-10-05T22:05:44.229Z"
     }
   ],
   "history": [
@@ -2691,6 +2708,14 @@
       "to": "BLOCKED",
       "at": "2026-10-05T21:07:58.300Z",
       "evidence": "BLOCKED",
+      "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-25",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T22:05:44.229Z",
+      "evidence": "PARTIAL",
       "commit": null
     }
   ]

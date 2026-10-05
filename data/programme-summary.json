@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T21:07:58.300Z",
+  "updated_at": "2026-10-05T22:05:44.229Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 64,
-        "total": 82,
-        "percent": 78
+        "total": 83,
+        "percent": 77
       },
-      "next_action": "Owner replies a, b, c or none on the mission; the lane then claims the follow-up under that decision.",
-      "updated_at": "2026-10-05T21:07:58.300Z"
+      "next_action": "Merge the launcher allowlist, prove it on a live cycle, update the toolkit note.",
+      "updated_at": "2026-10-05T22:05:44.229Z"
     },
     {
       "project_id": "mission-control",
