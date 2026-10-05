@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T18:04:33.064Z",
+  "updated_at": "2026-10-05T18:58:28.026Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "None for this item; the empty-key provider shape on the same profiles stays a separate tracked card.",
+  "next_action": "Make the new test pass, run the full council suite, merge and push the council repo, verify on the next hourly cycle.",
   "milestones": [
     {
       "id": "M0",
@@ -125,7 +125,8 @@
         "WS-EVID-1",
         "WS-HYGIENE-4",
         "WS-HYGIENE-5",
-        "WS-COUNCIL-20"
+        "WS-COUNCIL-20",
+        "WS-COUNCIL-21"
       ]
     },
     {
@@ -1443,6 +1444,22 @@
       "blockers": [],
       "next_action": "None for this item; the empty-key provider shape on the same profiles stays a separate tracked card.",
       "updated_at": "2026-10-05T18:04:33.064Z"
+    },
+    {
+      "id": "WS-COUNCIL-21",
+      "title": "Council hour whose decision of record exists but whose final message lacks the mandatory structured verdict line passes the post-check silently (the 0257Z final message was a reasoning-only stop ending in raw tool-call closer tags; the 1105Z one claimed the line without carrying it): classify the cause from the captured output and diagnostics, warn once per hour in the journal, keep a per-hour compliance record, never page",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-05T18:58:28.026Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress: root cause proven from the agent store (final turn finished with an empty reply and no tool call; the whole text was filed as reasoning ending in stray closer tags; two minutes, nineteen calls, no budget cut). Adding a journal warning, cause classification and a per-hour compliance record to the council post-check with a failing-first test.",
+      "blockers": [],
+      "next_action": "Make the new test pass, run the full council suite, merge and push the council repo, verify on the next hourly cycle.",
+      "updated_at": "2026-10-05T18:58:28.026Z"
     }
   ],
   "history": [
@@ -2548,6 +2565,14 @@
       "at": "2026-10-05T18:04:33.064Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "104787b"
+    },
+    {
+      "task_id": "WS-COUNCIL-21",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T18:58:28.026Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }

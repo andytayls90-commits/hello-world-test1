@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T18:04:33.064Z",
+  "updated_at": "2026-10-05T18:58:28.026Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 62,
-        "total": 78,
-        "percent": 79
+        "total": 79,
+        "percent": 78
       },
-      "next_action": "None for this item; the empty-key provider shape on the same profiles stays a separate tracked card.",
-      "updated_at": "2026-10-05T18:04:33.064Z"
+      "next_action": "Make the new test pass, run the full council suite, merge and push the council repo, verify on the next hourly cycle.",
+      "updated_at": "2026-10-05T18:58:28.026Z"
     },
     {
       "project_id": "mission-control",
