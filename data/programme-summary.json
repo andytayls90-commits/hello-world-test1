@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T22:05:44.229Z",
+  "updated_at": "2026-10-05T22:08:26.118Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 64,
+        "complete": 65,
         "total": 83,
-        "percent": 77
+        "percent": 78
       },
-      "next_action": "Merge the launcher allowlist, prove it on a live cycle, update the toolkit note.",
-      "updated_at": "2026-10-05T22:05:44.229Z"
+      "next_action": "None for this task; the next council card in the lane.",
+      "updated_at": "2026-10-05T22:08:26.118Z"
     },
     {
       "project_id": "mission-control",

@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T22:05:44.229Z",
+  "updated_at": "2026-10-05T22:08:26.118Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Merge the launcher allowlist, prove it on a live cycle, update the toolkit note.",
+  "next_action": "None for this task; the next council card in the lane.",
   "milestones": [
     {
       "id": "M0",
@@ -1521,17 +1521,17 @@
       "id": "WS-COUNCIL-25",
       "title": "Council one-shot diagnostics: two hermes-internal warnings (a skipped telemetry scope for a concurrent turn, and a transparently recreated shared client) classified as benign and set aside from the per-cycle diagnostic count without being lost",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane cycle (Claude)",
       "started_at": "2026-10-05T22:05:44.229Z",
-      "completed_at": null,
+      "completed_at": "2026-10-05T22:08:26.118Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress. Both warnings appeared once in twenty-three cycles, in the same forced cycle, caused by a background-review fork falling back to the parent runtime (already fixed by the auxiliary provider pin). The lane keeps them in a sidecar file and out of the journal count, with tests pinned to the upstream message texts.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "79f8acf",
+      "summary": "Done. Both warnings are hermes' own designed fallback paths (a skipped telemetry scope for a concurrent turn; a transparently recreated shared client after the one-shot closed it). They appeared once in twenty-three cycles, caused by a background-review fork falling back to the parent runtime, which the earlier auxiliary provider pin already removed; the client race is already tracked upstream, so nothing new was filed. The council launcher now routes these records to a sidecar file, the journal count shows actionable records only and names how many were set aside, nothing is dropped, and tests pin both message texts to the installed hermes tree. A forced paper cycle ran through the merged launcher cleanly; paper gate and bolt verified.",
       "blockers": [],
-      "next_action": "Merge the launcher allowlist, prove it on a live cycle, update the toolkit note.",
-      "updated_at": "2026-10-05T22:05:44.229Z"
+      "next_action": "None for this task; the next council card in the lane.",
+      "updated_at": "2026-10-05T22:08:26.118Z"
     }
   ],
   "history": [
@@ -2717,6 +2717,14 @@
       "at": "2026-10-05T22:05:44.229Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-25",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-05T22:08:26.118Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "79f8acf"
     }
   ]
 }
