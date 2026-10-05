@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T11:11:31.863Z",
+  "updated_at": "2026-10-05T12:04:14.966Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Confirm on the next on-cadence council cycle that the single-signal lookup is the small read, then watch the per-turn context size in the model server log over the day.",
+  "next_action": "Red-then-green tests on the export, then write the issue and pull-request text and hand the post to the owner.",
   "milestones": [
     {
       "id": "M0",
@@ -118,7 +118,8 @@
         "WS-SEC-3",
         "WS-SEC-4",
         "WS-COUNCIL-17",
-        "WS-COUNCIL-18"
+        "WS-COUNCIL-18",
+        "WS-COUNCIL-19"
       ]
     },
     {
@@ -1322,6 +1323,22 @@
       "blockers": [],
       "next_action": "Confirm on the next on-cadence council cycle that the single-signal lookup is the small read, then watch the per-turn context size in the model server log over the day.",
       "updated_at": "2026-10-05T11:11:31.863Z"
+    },
+    {
+      "id": "WS-COUNCIL-19",
+      "title": "Hermes upstream carry: the documented auxiliary provider value 'main' is accepted by the auxiliary client but rejected by the runtime resolver, so background review, curator, mixture-of-agents and delegation silently fall back to the main model; prepare the upstream patch and parity tests on a read-only export and hand the public post to the owner",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane engineer (Claude)",
+      "started_at": "2026-10-05T12:04:14.966Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress: claimed by the trading lane. Upstream tip checked read-only: the runtime resolver still has no handling for the value; an open upstream issue and pull request cover only the doctor symptom and propose hiding it rather than resolving the value. Building the runtime-path patch and parity tests on a read-only export.",
+      "blockers": [],
+      "next_action": "Red-then-green tests on the export, then write the issue and pull-request text and hand the post to the owner.",
+      "updated_at": "2026-10-05T12:04:14.966Z"
     }
   ],
   "history": [
@@ -2315,6 +2332,14 @@
       "at": "2026-10-05T11:11:31.863Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "3beced9"
+    },
+    {
+      "task_id": "WS-COUNCIL-19",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T12:04:14.966Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }

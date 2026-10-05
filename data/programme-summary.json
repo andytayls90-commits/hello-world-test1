@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T11:11:31.863Z",
+  "updated_at": "2026-10-05T12:04:14.966Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 56,
-        "total": 71,
-        "percent": 79
+        "total": 72,
+        "percent": 78
       },
-      "next_action": "Confirm on the next on-cadence council cycle that the single-signal lookup is the small read, then watch the per-turn context size in the model server log over the day.",
-      "updated_at": "2026-10-05T11:11:31.863Z"
+      "next_action": "Red-then-green tests on the export, then write the issue and pull-request text and hand the post to the owner.",
+      "updated_at": "2026-10-05T12:04:14.966Z"
     },
     {
       "project_id": "mission-control",
