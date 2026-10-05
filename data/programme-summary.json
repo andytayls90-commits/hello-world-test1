@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T07:53:35.515Z",
+  "updated_at": "2026-10-05T08:19:07.086Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 51,
+        "complete": 52,
         "total": 66,
-        "percent": 77
+        "percent": 79
       },
-      "next_action": "Audit the premise, write the failing tests, change the prompt and post-check, prove with a forced paper cycle.",
-      "updated_at": "2026-10-05T07:53:35.515Z"
+      "next_action": "Next from the lane queue: the framework alias inconsistency for the auxiliary provider, the reasoning-only final message without the verdict line (seen again on the first attempt of the proving cycle and recovered by the retry), the framework-internal warnings per cycle; watch the file-write refusal count in the journal over the week.",
+      "updated_at": "2026-10-05T08:19:07.086Z"
     },
     {
       "project_id": "mission-control",
