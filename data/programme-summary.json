@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T11:02:26.338Z",
+  "updated_at": "2026-10-05T11:11:31.863Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 55,
+        "complete": 56,
         "total": 71,
-        "percent": 77
+        "percent": 79
       },
-      "next_action": "Read the next council session's tool-result sizes from the session store and record the before and after.",
-      "updated_at": "2026-10-05T11:02:26.338Z"
+      "next_action": "Confirm on the next on-cadence council cycle that the single-signal lookup is the small read, then watch the per-turn context size in the model server log over the day.",
+      "updated_at": "2026-10-05T11:11:31.863Z"
     },
     {
       "project_id": "mission-control",
