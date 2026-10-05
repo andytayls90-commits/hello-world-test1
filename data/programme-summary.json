@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T08:55:22.626Z",
+  "updated_at": "2026-10-05T09:00:15.405Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 53,
-        "total": 68,
-        "percent": 78
+        "total": 69,
+        "percent": 77
       },
-      "next_action": "Owner: rotate the vault API client credential and re-render the client's credential file; decide the redaction of the session-store rows; decide the permission model for the vault client files versus the council runtime user. The engineering never-list follow-up proceeds as a normal lane card.",
-      "updated_at": "2026-10-05T08:55:22.626Z"
+      "next_action": "Red tests, then prompt + tripwire, merge, forced paper cycle as live proof, verification packet.",
+      "updated_at": "2026-10-05T09:00:15.405Z"
     },
     {
       "project_id": "mission-control",
