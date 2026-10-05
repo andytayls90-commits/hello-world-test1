@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T06:18:09.895Z",
+  "updated_at": "2026-10-05T06:30:46.764Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Failing tests first (helper stdin contract, tripwire counts, prompt pin), then the fix, full council suite, forced paper cycle as live proof.",
+  "next_action": "Next from the lane queue: the framework alias inconsistency and the other routed profiles' auxiliary provider shape; the reasoning-only final message without the verdict line; two framework-internal warnings per cycle.",
   "milestones": [
     {
       "id": "M0",
@@ -1190,17 +1190,17 @@
       "id": "WS-COUNCIL-14",
       "title": "The council agent's Board-briefing helper takes the message as one single-quoted shell argument, forcing the model to shell-escape free prose; on 2026-10-05 an apostrophe escaped the wrong way broke the command (logged as prose run as a terminal command) and the briefing was re-sent paraphrased. Let the helper read the body from standard input via a quoted heredoc, teach the prompt that form, and add a per-cycle tripwire that counts tool-call errors so the frequency is visible",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane cycle (Claude)",
       "started_at": "2026-10-05T06:18:09.895Z",
-      "completed_at": null,
+      "completed_at": "2026-10-05T06:30:46.764Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress: root cause proven from the council session store — the Board-briefing helper's single-quoted-argument interface made the model shell-escape an apostrophe as a backslash-quote, which bash rejects; the retry paraphrased the briefing. Fix: helper reads the body from standard input (quoted heredoc, no escaping), prompt teaches that form, per-cycle tool-error tripwire in the journal.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "0dcfb62",
+      "summary": "Complete: the council's Board-briefing helper now takes the message on standard input through a quoted heredoc (no shell escaping of prose), with a bounded read so an empty call cannot hang, the messaging platform's length cap honoured, and a silent-exit bug on a missing token fixed; the council prompt teaches that form and forbids the quoted-argument form; a per-cycle journal tripwire counts tool-call errors and the shell-syntax subset. Root cause proven from the council session store (the card's 'prose run as a command' reading was wrong: an apostrophe was escaped the wrong way inside single quotes). Two new test files and a prompt pin went from failing to passing; the full council suite passed in the worktree and the live home. A forced paper council cycle sent its briefing through the new form on the first attempt with zero tool-call errors. Trading code untouched; bolt and paper gate proven unchanged before and after.",
       "blockers": [],
-      "next_action": "Failing tests first (helper stdin contract, tripwire counts, prompt pin), then the fix, full council suite, forced paper cycle as live proof.",
-      "updated_at": "2026-10-05T06:18:09.895Z"
+      "next_action": "Next from the lane queue: the framework alias inconsistency and the other routed profiles' auxiliary provider shape; the reasoning-only final message without the verdict line; two framework-internal warnings per cycle.",
+      "updated_at": "2026-10-05T06:30:46.764Z"
     }
   ],
   "history": [
@@ -2074,6 +2074,14 @@
       "at": "2026-10-05T06:18:09.895Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-14",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-05T06:30:46.764Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "0dcfb62"
     }
   ]
 }

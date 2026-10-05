@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T06:18:09.895Z",
+  "updated_at": "2026-10-05T06:30:46.764Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 49,
+        "complete": 50,
         "total": 64,
-        "percent": 77
+        "percent": 78
       },
-      "next_action": "Failing tests first (helper stdin contract, tripwire counts, prompt pin), then the fix, full council suite, forced paper cycle as live proof.",
-      "updated_at": "2026-10-05T06:18:09.895Z"
+      "next_action": "Next from the lane queue: the framework alias inconsistency and the other routed profiles' auxiliary provider shape; the reasoning-only final message without the verdict line; two framework-internal warnings per cycle.",
+      "updated_at": "2026-10-05T06:30:46.764Z"
     },
     {
       "project_id": "mission-control",
