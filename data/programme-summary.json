@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T09:47:16.212Z",
+  "updated_at": "2026-10-05T10:11:37.150Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 54,
-        "total": 69,
-        "percent": 78
+        "total": 70,
+        "percent": 77
       },
-      "next_action": "Watch the per-cycle secret-exposure journal line over the week (zero is the contract); the owner-only rotation and redaction card stays blocked for the Board; the runaway-generation card is next in the lane for the model-call timeout.",
-      "updated_at": "2026-10-05T09:47:16.212Z"
+      "next_action": "Implement the per-attempt cap and cycle budget, the output-cap preflight and the live provider entry edit; merge; force one paper cycle; verify.",
+      "updated_at": "2026-10-05T10:11:37.150Z"
     },
     {
       "project_id": "mission-control",

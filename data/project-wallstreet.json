@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T09:47:16.212Z",
+  "updated_at": "2026-10-05T10:11:37.150Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Watch the per-cycle secret-exposure journal line over the week (zero is the contract); the owner-only rotation and redaction card stays blocked for the Board; the runaway-generation card is next in the lane for the model-call timeout.",
+  "next_action": "Implement the per-attempt cap and cycle budget, the output-cap preflight and the live provider entry edit; merge; force one paper cycle; verify.",
   "milestones": [
     {
       "id": "M0",
@@ -116,7 +116,8 @@
         "WS-COUNCIL-16",
         "WS-LOOP-1",
         "WS-SEC-3",
-        "WS-SEC-4"
+        "WS-SEC-4",
+        "WS-COUNCIL-17"
       ]
     },
     {
@@ -1288,6 +1289,22 @@
       "blockers": [],
       "next_action": "Watch the per-cycle secret-exposure journal line over the week (zero is the contract); the owner-only rotation and redaction card stays blocked for the Board; the runaway-generation card is next in the lane for the model-call timeout.",
       "updated_at": "2026-10-05T09:47:16.212Z"
+    },
+    {
+      "id": "WS-COUNCIL-17",
+      "title": "Council agent runaway generation bounded: a forced council cycle ran a single model request for twenty-eight minutes until the service unit's thirty-minute kill, because the agent framework has no deadline on a flowing response stream and the one-shot sends no output-token cap; add a hard per-attempt wall-clock cap inside a per-cycle budget to the council harness, a request-level output-token cap on the model provider entry pinned by a per-cycle preflight, and make the post-check name a killed attempt",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane engineer (Claude)",
+      "started_at": "2026-10-05T10:11:37.150Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress: root cause proven from the agent framework source (stream timeouts are per-socket-read, the stale detector needs the stream to stop, the one-shot sends no output cap) and the session store; failing tests written for the harness cap, the post-check wording and the provider-cap preflight.",
+      "blockers": [],
+      "next_action": "Implement the per-attempt cap and cycle budget, the output-cap preflight and the live provider entry edit; merge; force one paper cycle; verify.",
+      "updated_at": "2026-10-05T10:11:37.150Z"
     }
   ],
   "history": [
@@ -2249,6 +2266,14 @@
       "at": "2026-10-05T09:47:16.212Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "7430f55"
+    },
+    {
+      "task_id": "WS-COUNCIL-17",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T10:11:37.150Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
