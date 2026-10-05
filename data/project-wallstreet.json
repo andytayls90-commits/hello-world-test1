@@ -103,7 +103,8 @@
         "WS-COUNCIL-3",
         "WS-COUNCIL-4",
         "WS-COUNCIL-5",
-        "WS-COUNCIL-6"
+        "WS-COUNCIL-6",
+        "WS-COUNCIL-7"
       ]
     },
     {
@@ -984,7 +985,7 @@
     },
     {
       "id": "WS-COUNCIL-3",
-      "title": "Owner decision on the council Chair's cycle prompt: a council cycle commit in July added a self-authored paragraph telling the Chair that the paper gate is a safety default rather than a permanent lock; mechanically harmless because the execution lock is code and environment rather than prompt text, but charter wording on the one human-only act is the owner's call — confirm and record it, or strike it back to the original never-seek-live wording with a prompt-contract test pinning the sentence",
+      "title": "Owner decision on the council Chair's cycle prompt: a council cycle commit in July added a self-authored paragraph telling the Chair that the paper gate is a safety default rather than a permanent lock; mechanically harmless because the execution lock is code and environment rather than prompt text, but charter wording on the one human-only act is the owner's call \u2014 confirm and record it, or strike it back to the original never-seek-live wording with a prompt-contract test pinning the sentence",
       "project": "Project Wallstreet",
       "status": "BLOCKED",
       "owner": "Owner (Andrew)",
@@ -1018,7 +1019,7 @@
     },
     {
       "id": "WS-COUNCIL-4",
-      "title": "Council Chair verdict of record: three Sabbath council cycles on 2026-10-03 ended with no Chair verdict row (an early model stop, rows written under the previous hour's id, rows appended to a stale duplicate ledger path) — make the cycle id and ledger path tool-set, capture a structured Chair verdict line from the final message as a tool-derived row of record, retire the duplicate ledger path, require the Chair row on Sabbath cycles too, and add one bounded retry",
+      "title": "Council Chair verdict of record: three Sabbath council cycles on 2026-10-03 ended with no Chair verdict row (an early model stop, rows written under the previous hour's id, rows appended to a stale duplicate ledger path) \u2014 make the cycle id and ledger path tool-set, capture a structured Chair verdict line from the final message as a tool-derived row of record, retire the duplicate ledger path, require the Chair row on Sabbath cycles too, and add one bounded retry",
       "project": "Project Wallstreet",
       "status": "COMPLETE",
       "owner": "Autonomous trading-lane cycle (Claude)",
@@ -1034,7 +1035,7 @@
     },
     {
       "id": "WS-COUNCIL-5",
-      "title": "Council streaming defect root-caused: since the 2026-10-01 agent-framework update about one in three council cycles lost a tool call mid-stream (\"Stream stalled mid tool-call\"); the cause is a new 8000-character limit on one tool's schema that the local inference server cannot compile into its tool-call grammar, so it silently drops the whole grammar and unconstrained tool calls then break the stream — remove the tool from the council toolset and add a per-cycle grammar guard that pages on recurrence",
+      "title": "Council streaming defect root-caused: since the 2026-10-01 agent-framework update about one in three council cycles lost a tool call mid-stream (\"Stream stalled mid tool-call\"); the cause is a new 8000-character limit on one tool's schema that the local inference server cannot compile into its tool-call grammar, so it silently drops the whole grammar and unconstrained tool calls then break the stream \u2014 remove the tool from the council toolset and add a per-cycle grammar guard that pages on recurrence",
       "project": "Project Wallstreet",
       "status": "COMPLETE",
       "owner": "Autonomous trading-lane cycle (Claude)",
@@ -1065,6 +1066,22 @@
       ],
       "next_action": "Owner runs the framework update outside the council window, then runs the grammar-guard post-check; the lane re-verifies on the next cycle.",
       "updated_at": "2026-10-04T23:08:16.919Z"
+    },
+    {
+      "id": "WS-COUNCIL-7",
+      "title": "Local inference-server grammar cap: confirm the upstream project already ships the loud-failure and degrade fixes for tool schemas above the repetition cap, decide against a duplicate upstream report, and pin the serving-engine container image so a relaunch cannot silently change the inference build under the agent fleet",
+      "project": "Project Wallstreet",
+      "status": "PLANNED",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": null,
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "",
+      "blockers": [],
+      "next_action": "",
+      "updated_at": "2026-10-04T23:43:55.000Z"
     }
   ],
   "history": [
