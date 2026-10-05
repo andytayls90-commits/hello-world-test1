@@ -4,10 +4,10 @@
   "project_name": "Mission Control",
   "status": "BLOCKED",
   "evidence": "BLOCKED",
-  "updated_at": "2026-10-04T23:31:04.751Z",
+  "updated_at": "2026-10-05T00:07:32.860Z",
   "stale_after_hours": 48,
   "current_task_id": "MC-COMMS-1",
-  "next_action": "Land failing tests, apply the one-rule fix, run mutation and independent verification, verify live on a scratch lane root, merge.",
+  "next_action": "Follow-ups filed: a watchdog check for a shrunk progress log; the fleet reader's non-finite heartbeat handling; a test-suite interpreter dependency.",
   "milestones": [
     {
       "id": "MC0",
@@ -500,7 +500,7 @@
     {
       "id": "MC61",
       "title": "Loop watchdog: ownerless object lock named corrupt, one rule with the lock tool",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "task_ids": [
         "MC-LOOP-61"
       ]
@@ -1537,17 +1537,17 @@
       "id": "MC-LOOP-61",
       "title": "Loop watchdog: an ownerless object lock body is paged as held by nobody instead of named corrupt like the lock tool does",
       "project": "Mission Control",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous Mission Control engineer (Claude)",
       "started_at": "2026-10-04T23:31:04.751Z",
-      "completed_at": null,
+      "completed_at": "2026-10-05T00:07:32.860Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "Started. The loop watchdog reads the lane lock file itself and, for a hand-written JSON object that names no owner (none of the lock tool's owner fields), pages a dead loop as held by nobody with a missing heartbeat; since the previous task the lock tool names that same file corrupt. Reproduced on the current main branch: the same shape is also described as held by a different run in the stuck-launch check, an ownerless object carrying only a unit's run identity is wrongly attributed to that unit, and an ownerless object with a fresh heartbeat reads as a live holder with nothing paged. Fix: one owner-naming predicate shared with the lock tool, applied at every lock reader in the watchdog, so the page and the tool's verdict agree; failing tests first, then mutation checks and independent verification.",
+      "evidence": "VERIFIED LIVE",
+      "commit": "185a492",
+      "summary": "Shipped and verified live. The loop watchdog and the fleet heartbeat reader both judged a hand-written lock object that names no owner on its being an object alone: the watchdog paged it as held by nobody with a missing heartbeat, read it as a live holder when it carried a fresh heartbeat, described it as held by a different run in the stuck-launch check and attributed it to a cycle unit on a run identity alone, while the fleet reader counted its heartbeat as proof the loop works. Each consumer now applies the lock tool's own owner-naming rule by name, so an ownerless object is the corrupt case everywhere, the page names the kind and what the lock tool says of the same file, and an ownerless heartbeat is nobody's. Objects naming an owner are unchanged and real locks behave byte for byte as before, confirmed read-only on the live lane. Twenty-four new named cases plus pytest cases; seventeen builder and verifier mutations caught by name (one equivalent, disclosed); two independent verification rounds, the first with four low wording findings fixed and pinned and one pre-existing medium finding filed, the second converged. Paper gate and bolt unchanged. A self-inflicted truncation of the progress log during the cycle was restored from the committed copy with no loss and a watchdog check for that class was filed.",
       "blockers": [],
-      "next_action": "Land failing tests, apply the one-rule fix, run mutation and independent verification, verify live on a scratch lane root, merge.",
-      "updated_at": "2026-10-04T23:31:04.751Z"
+      "next_action": "Follow-ups filed: a watchdog check for a shrunk progress log; the fleet reader's non-finite heartbeat handling; a test-suite interpreter dependency.",
+      "updated_at": "2026-10-05T00:07:32.860Z"
     }
   ],
   "history": [
@@ -2702,6 +2702,14 @@
       "at": "2026-10-04T23:31:04.751Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "MC-LOOP-61",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-05T00:07:32.860Z",
+      "evidence": "VERIFIED LIVE",
+      "commit": "185a492"
     }
   ]
 }

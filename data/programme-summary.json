@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T00:02:11.528Z",
+  "updated_at": "2026-10-05T00:07:32.860Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -31,12 +31,12 @@
       "data_file": "data/mission-control.json",
       "current_task_id": "MC-COMMS-1",
       "progress": {
-        "complete": 62,
+        "complete": 63,
         "total": 65,
-        "percent": 95
+        "percent": 97
       },
-      "next_action": "Land failing tests, apply the one-rule fix, run mutation and independent verification, verify live on a scratch lane root, merge.",
-      "updated_at": "2026-10-04T23:31:04.751Z"
+      "next_action": "Follow-ups filed: a watchdog check for a shrunk progress log; the fleet reader's non-finite heartbeat handling; a test-suite interpreter dependency.",
+      "updated_at": "2026-10-05T00:07:32.860Z"
     }
   ]
 }
