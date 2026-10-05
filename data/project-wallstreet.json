@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T08:19:07.086Z",
+  "updated_at": "2026-10-05T08:27:25.611Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Next from the lane queue: the framework alias inconsistency for the auxiliary provider, the reasoning-only final message without the verdict line (seen again on the first attempt of the proving cycle and recovered by the retry), the framework-internal warnings per cycle; watch the file-write refusal count in the journal over the week.",
+  "next_action": "Failing test first, then the parser fix, bolt and PAPER gate re-verified, no-fast-forward merge into the mission-control main line.",
   "milestones": [
     {
       "id": "M0",
@@ -113,7 +113,8 @@
         "WS-COUNCIL-13",
         "WS-COUNCIL-14",
         "WS-COUNCIL-15",
-        "WS-COUNCIL-16"
+        "WS-COUNCIL-16",
+        "WS-LOOP-1"
       ]
     },
     {
@@ -1235,6 +1236,22 @@
       "blockers": [],
       "next_action": "Next from the lane queue: the framework alias inconsistency for the auxiliary provider, the reasoning-only final message without the verdict line (seen again on the first attempt of the proving cycle and recovered by the retry), the framework-internal warnings per cycle; watch the file-write refusal count in the journal over the week.",
       "updated_at": "2026-10-05T08:19:07.086Z"
+    },
+    {
+      "id": "WS-LOOP-1",
+      "title": "Autonomous engineering loop tooling: the cycle-finish command accepted its summary text through an undeclared flag and copied the flag word itself into the progress record and the mission comment; parse the declared flags, treat summary as an alias of reason, reject an unknown flag loudly, and pin it with a regression test",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-05T08:27:25.611Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: the loop's cycle-finish command joins everything after the verb into free text and only strips a leading reason flag, so a summary flag is copied verbatim into the progress record and the mission comment. Fixing the argument parser (reason and summary flags, equals form, loud refusal of an unknown flag) with a regression test in the operations test suite.",
+      "blockers": [],
+      "next_action": "Failing test first, then the parser fix, bolt and PAPER gate re-verified, no-fast-forward merge into the mission-control main line.",
+      "updated_at": "2026-10-05T08:27:25.611Z"
     }
   ],
   "history": [
@@ -2148,6 +2165,14 @@
       "at": "2026-10-05T08:19:07.086Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "b86f385"
+    },
+    {
+      "task_id": "WS-LOOP-1",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T08:27:25.611Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
