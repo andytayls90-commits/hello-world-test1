@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T13:55:35.476Z",
+  "updated_at": "2026-10-05T14:01:26.253Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Write failing tests, implement, run the live nightly backup unit once as proof, record evidence.",
+  "next_action": "Owner decision remaining: push cadence and identity for the public toolkit remote; the board keeps the lag visible meanwhile. Two side cards filed: a transient public-contract failure leaving the evidence-capture unit failed for a day, and the live tool scripts having no versioned copy.",
   "milestones": [
     {
       "id": "M0",
@@ -1364,17 +1364,17 @@
       "id": "WS-HYGIENE-3",
       "title": "Toolkit off-host coverage: the engineering single-source-of-truth repository had no automatic off-host copy (its public remote lagged the local branch by a dozen commits and the nightly NAS backup never included it); add a verified git bundle of the repository to the nightly backup set, a fleet health signal naming the remote lag and bundle coverage, and a README rule",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane engineer (Claude)",
       "started_at": "2026-10-05T13:55:35.476Z",
-      "completed_at": null,
+      "completed_at": "2026-10-05T14:01:26.253Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress: the nightly backup job gains a verified git bundle of the toolkit repository (local retention plus NAS shipping, failure flagged so the pager fires), the fleet health board gains a toolkit signal that names how many commits the public remote lags and whether the newest bundle covers the current commit, and the toolkit README records the push and backup rule. Pushing the public remote stays an owner act. Test-first; no trading code changes.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "ea19ddc",
+      "summary": "Done. The nightly backup job now writes a verified full git bundle of the engineering single-source-of-truth repository into its backup set, ships it to the NAS with the other sets and prunes it under the existing retention; a bundle failure is flagged so the existing failure pager fires, while a missing checkout on another host is only a warning. The fleet health board gained a toolkit signal that names how many commits the public remote lags (a warning, because pushing the public remote stays an owner act), whether the newest bundle covers the current commit, and any uncommitted paths; no bundle or a bundle older than three days is a fault. The toolkit README records the off-host copy and push rule. Test-first: ten new backup checks and eight new board checks failed against the untouched scripts and pass after the change (26 and 29 checks in total). Live proof: the real backup unit ran once, bundled the current commit, verified it, and the NAS copy's checksum equals the local one; the board moved from fault to warning. No trading code changed; the paper gate and the bolt are unchanged.",
       "blockers": [],
-      "next_action": "Write failing tests, implement, run the live nightly backup unit once as proof, record evidence.",
-      "updated_at": "2026-10-05T13:55:35.476Z"
+      "next_action": "Owner decision remaining: push cadence and identity for the public toolkit remote; the board keeps the lag visible meanwhile. Two side cards filed: a transient public-contract failure leaving the evidence-capture unit failed for a day, and the live tool scripts having no versioned copy.",
+      "updated_at": "2026-10-05T14:01:26.253Z"
     }
   ],
   "history": [
@@ -2408,6 +2408,14 @@
       "at": "2026-10-05T13:55:35.476Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-HYGIENE-3",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-05T14:01:26.253Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "ea19ddc"
     }
   ]
 }

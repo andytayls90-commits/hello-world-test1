@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T13:55:35.476Z",
+  "updated_at": "2026-10-05T14:01:26.253Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 57,
+        "complete": 58,
         "total": 74,
-        "percent": 77
+        "percent": 78
       },
-      "next_action": "Write failing tests, implement, run the live nightly backup unit once as proof, record evidence.",
-      "updated_at": "2026-10-05T13:55:35.476Z"
+      "next_action": "Owner decision remaining: push cadence and identity for the public toolkit remote; the board keeps the lag visible meanwhile. Two side cards filed: a transient public-contract failure leaving the evidence-capture unit failed for a day, and the live tool scripts having no versioned copy.",
+      "updated_at": "2026-10-05T14:01:26.253Z"
     },
     {
       "project_id": "mission-control",
