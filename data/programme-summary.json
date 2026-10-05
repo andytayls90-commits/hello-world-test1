@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T03:03:07.992Z",
+  "updated_at": "2026-10-05T03:54:56.033Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 46,
-        "total": 60,
-        "percent": 77
+        "total": 61,
+        "percent": 75
       },
-      "next_action": "Follow-ups filed: prompt path to the work-packet schema is relative to the wrong root; auxiliary model entries name an unknown provider alias; one cycle's final message was reasoning-only without the verdict line; two framework-internal warnings per cycle need classifying.",
-      "updated_at": "2026-10-05T03:03:07.992Z"
+      "next_action": "Make the reference absolute, run all three council suites green in the worktree and the live profile, merge without fast-forward, no restart, verify a forced paper cycle shows no missing-file warning.",
+      "updated_at": "2026-10-05T03:54:56.033Z"
     },
     {
       "project_id": "mission-control",

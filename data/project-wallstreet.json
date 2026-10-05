@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T03:03:07.992Z",
+  "updated_at": "2026-10-05T03:54:56.033Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Follow-ups filed: prompt path to the work-packet schema is relative to the wrong root; auxiliary model entries name an unknown provider alias; one cycle's final message was reasoning-only without the verdict line; two framework-internal warnings per cycle need classifying.",
+  "next_action": "Make the reference absolute, run all three council suites green in the worktree and the live profile, merge without fast-forward, no restart, verify a forced paper cycle shows no missing-file warning.",
   "milestones": [
     {
       "id": "M0",
@@ -107,7 +107,8 @@
         "WS-COUNCIL-7",
         "WS-COUNCIL-8",
         "WS-COUNCIL-9",
-        "WS-COUNCIL-10"
+        "WS-COUNCIL-10",
+        "WS-COUNCIL-11"
       ]
     },
     {
@@ -1133,6 +1134,22 @@
       "blockers": [],
       "next_action": "Follow-ups filed: prompt path to the work-packet schema is relative to the wrong root; auxiliary model entries name an unknown provider alias; one cycle's final message was reasoning-only without the verdict line; two framework-internal warnings per cycle need classifying.",
       "updated_at": "2026-10-05T03:03:07.992Z"
+    },
+    {
+      "id": "WS-COUNCIL-11",
+      "title": "Council cycle prompt pointed the Chair at the work-packet schema by a path relative to the wrong repository, so every cycle spent two tool turns on a missing file and logged two warnings; make the reference absolute and pin in the prompt test that every path the council is told to read exists",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-05T03:54:56.033Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: failing prompt test written first (two new checks red, twelve existing green); the fix is an absolute schema reference in the council prompt plus a pin that every path the council is told to read exists from its home.",
+      "blockers": [],
+      "next_action": "Make the reference absolute, run all three council suites green in the worktree and the live profile, merge without fast-forward, no restart, verify a forced paper cycle shows no missing-file warning.",
+      "updated_at": "2026-10-05T03:54:56.033Z"
     }
   ],
   "history": [
@@ -1942,6 +1959,14 @@
       "at": "2026-10-05T03:03:07.992Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "571a3d0"
+    },
+    {
+      "task_id": "WS-COUNCIL-11",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T03:54:56.033Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
