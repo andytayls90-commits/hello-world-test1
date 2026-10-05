@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T01:21:53.223Z",
+  "updated_at": "2026-10-05T02:00:24.353Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 44,
-        "total": 58,
-        "percent": 76
+        "total": 59,
+        "percent": 75
       },
-      "next_action": "Operator relabels the six stray ledger rows from the incident (filed mission); after the next framework update re-run the council suite — the live-tree case says whether the launcher is still needed.",
-      "updated_at": "2026-10-05T01:21:53.223Z"
+      "next_action": "Guard + tests green, config placeholder live, next council cycle's diagnostics clean, merge and push.",
+      "updated_at": "2026-10-05T02:00:24.353Z"
     },
     {
       "project_id": "mission-control",

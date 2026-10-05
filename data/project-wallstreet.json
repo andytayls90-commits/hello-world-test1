@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T01:21:53.223Z",
+  "updated_at": "2026-10-05T02:00:24.353Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Operator relabels the six stray ledger rows from the incident (filed mission); after the next framework update re-run the council suite — the live-tree case says whether the launcher is still needed.",
+  "next_action": "Guard + tests green, config placeholder live, next council cycle's diagnostics clean, merge and push.",
   "milestones": [
     {
       "id": "M0",
@@ -105,7 +105,8 @@
         "WS-COUNCIL-5",
         "WS-COUNCIL-6",
         "WS-COUNCIL-7",
-        "WS-COUNCIL-8"
+        "WS-COUNCIL-8",
+        "WS-COUNCIL-9"
       ]
     },
     {
@@ -1099,6 +1100,22 @@
       "blockers": [],
       "next_action": "Operator relabels the six stray ledger rows from the incident (filed mission); after the next framework update re-run the council suite — the live-tree case says whether the launcher is still needed.",
       "updated_at": "2026-10-05T01:21:53.223Z"
+    },
+    {
+      "id": "WS-COUNCIL-9",
+      "title": "Council one-shot diagnostics open with a spurious 'no resolvable credential' warning from the agent framework's auxiliary client on every cycle: the local model server's provider entry carries an empty credential, which the framework resolves to its literal placeholder and warns on; verify the local server never rejects the request, set an explicit placeholder, and guard it before each cycle",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-05T02:00:24.353Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "In progress: root cause confirmed in the framework source (empty credential resolves to the literal placeholder, which the auxiliary client warns on; the main runtime substitutes it silently for loopback endpoints). The local model server has returned zero authentication rejections in its whole request log, so the record is noise. Fix: explicit placeholder in the council profile config (backed up), a pre-cycle guard pinning it, and tests.",
+      "blockers": [],
+      "next_action": "Guard + tests green, config placeholder live, next council cycle's diagnostics clean, merge and push.",
+      "updated_at": "2026-10-05T02:00:24.353Z"
     }
   ],
   "history": [
@@ -1876,6 +1893,14 @@
       "at": "2026-10-05T01:21:53.223Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "305413c"
+    },
+    {
+      "task_id": "WS-COUNCIL-9",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T02:00:24.353Z",
+      "evidence": "PLANNED",
+      "commit": null
     }
   ]
 }
