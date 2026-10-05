@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T00:56:14.325Z",
+  "updated_at": "2026-10-05T01:21:53.223Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 43,
+        "complete": 44,
         "total": 58,
-        "percent": 74
+        "percent": 76
       },
-      "next_action": "Failing test first, then the launcher and wiring, bolt and paper-gate checks, forced paper council cycle as live proof.",
-      "updated_at": "2026-10-05T00:56:14.325Z"
+      "next_action": "Operator relabels the six stray ledger rows from the incident (filed mission); after the next framework update re-run the council suite — the live-tree case says whether the launcher is still needed.",
+      "updated_at": "2026-10-05T01:21:53.223Z"
     },
     {
       "project_id": "mission-control",

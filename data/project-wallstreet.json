@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T00:56:14.325Z",
+  "updated_at": "2026-10-05T01:21:53.223Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Failing test first, then the launcher and wiring, bolt and paper-gate checks, forced paper council cycle as live proof.",
+  "next_action": "Operator relabels the six stray ledger rows from the incident (filed mission); after the next framework update re-run the council suite — the live-tree case says whether the launcher is still needed.",
   "milestones": [
     {
       "id": "M0",
@@ -1088,17 +1088,17 @@
       "id": "WS-COUNCIL-8",
       "title": "Council one-shot runs leave zero diagnostics: the agent framework's one-shot mode silences every logger and discards the error stream, so a dropped model stream or provider error leaves no error text anywhere; keep logging alive for the council run and capture warnings per cycle",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane cycle (Claude)",
       "started_at": "2026-10-05T00:56:14.325Z",
-      "completed_at": null,
+      "completed_at": "2026-10-05T01:21:53.223Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress: the autonomous trading-lane cycle claimed the board card at 00:52 UTC on 2026-10-05. Root cause confirmed read-only in the framework source: one-shot mode disables all standard logging below the highest severity (its own comment wrongly claims file handlers survive) and redirects both output streams to the null device for the whole run, so warning records from the streaming layer are lost everywhere. Fix is council-side: a launcher that keeps logging alive and writes warning-and-above records per cycle, wired into the cycle contract with an override kept for tests.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "305413c",
+      "summary": "Complete: the council now launches the agent framework's one-shot mode through a council-side launcher that runs the real command-line entry point under the framework's own runtime interpreter, keeps the standard logging subsystem enabled for the run, and writes warning-and-above records (secret-redacted by the framework's own formatter) to a per-cycle diagnostics file next to the captured output; each attempt logs a one-line record count to the service journal and a failed hour quotes the last record in its page. A live-run guard now refuses to launch the real agent outside the scheduled cycle script. Test went red then green (45 checks, hermetic fake tree plus live self-tests), all three council suites pass from the live home, lock suite 10 of 10, paper gate confirmed before and after. Live proof: a forced paper council cycle captured 21 warning records (the first ever seen from this path) and recorded its verdict normally. Incident during the red run: the un-guarded default launched real one-shots whose side effects were reverted or filed; the guard closes that class.",
       "blockers": [],
-      "next_action": "Failing test first, then the launcher and wiring, bolt and paper-gate checks, forced paper council cycle as live proof.",
-      "updated_at": "2026-10-05T00:56:14.325Z"
+      "next_action": "Operator relabels the six stray ledger rows from the incident (filed mission); after the next framework update re-run the council suite — the live-tree case says whether the launcher is still needed.",
+      "updated_at": "2026-10-05T01:21:53.223Z"
     }
   ],
   "history": [
@@ -1868,6 +1868,14 @@
       "at": "2026-10-05T00:56:14.325Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-8",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-05T01:21:53.223Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "305413c"
     }
   ]
 }
