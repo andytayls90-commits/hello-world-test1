@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T06:30:46.764Z",
+  "updated_at": "2026-10-05T06:52:48.095Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 50,
-        "total": 64,
-        "percent": 78
+        "total": 65,
+        "percent": 77
       },
-      "next_action": "Next from the lane queue: the framework alias inconsistency and the other routed profiles' auxiliary provider shape; the reasoning-only final message without the verdict line; two framework-internal warnings per cycle.",
-      "updated_at": "2026-10-05T06:30:46.764Z"
+      "next_action": "Classify failures, write the failing prompt test, add the rule, merge, prove on a live cycle.",
+      "updated_at": "2026-10-05T06:52:48.095Z"
     },
     {
       "project_id": "mission-control",

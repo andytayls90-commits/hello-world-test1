@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T06:30:46.764Z",
+  "updated_at": "2026-10-05T06:52:48.095Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Next from the lane queue: the framework alias inconsistency and the other routed profiles' auxiliary provider shape; the reasoning-only final message without the verdict line; two framework-internal warnings per cycle.",
+  "next_action": "Classify failures, write the failing prompt test, add the rule, merge, prove on a live cycle.",
   "milestones": [
     {
       "id": "M0",
@@ -111,7 +111,8 @@
         "WS-COUNCIL-11",
         "WS-COUNCIL-12",
         "WS-COUNCIL-13",
-        "WS-COUNCIL-14"
+        "WS-COUNCIL-14",
+        "WS-COUNCIL-15"
       ]
     },
     {
@@ -1201,6 +1202,22 @@
       "blockers": [],
       "next_action": "Next from the lane queue: the framework alias inconsistency and the other routed profiles' auxiliary provider shape; the reasoning-only final message without the verdict line; two framework-internal warnings per cycle.",
       "updated_at": "2026-10-05T06:30:46.764Z"
+    },
+    {
+      "id": "WS-COUNCIL-15",
+      "title": "Council agent: most recent shell syntax failures come from nesting quotes inside a one-line terminal command (an inline Python one-liner or a JSON body inside a quoted argument); teach the prompt to write multi-line commands to a file through a quoted heredoc and run that file, never nest quotes in a one-liner, and pin the rule with a prompt test",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-05T06:52:48.095Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "Started: auditing the council session store to classify every recent shell-syntax failure by shape before writing the prompt rule and its test pin.",
+      "blockers": [],
+      "next_action": "Classify failures, write the failing prompt test, add the rule, merge, prove on a live cycle.",
+      "updated_at": "2026-10-05T06:52:48.095Z"
     }
   ],
   "history": [
@@ -2082,6 +2099,14 @@
       "at": "2026-10-05T06:30:46.764Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "0dcfb62"
+    },
+    {
+      "task_id": "WS-COUNCIL-15",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-05T06:52:48.095Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
