@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T08:27:25.611Z",
+  "updated_at": "2026-10-05T08:34:10.603Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Failing test first, then the parser fix, bolt and PAPER gate re-verified, no-fast-forward merge into the mission-control main line.",
+  "next_action": "Observe this cycle's own finish record for the clean summary text; the remaining loop-tooling card (progress line stamps the wrong checkout head) is tracked separately.",
   "milestones": [
     {
       "id": "M0",
@@ -1241,17 +1241,17 @@
       "id": "WS-LOOP-1",
       "title": "Autonomous engineering loop tooling: the cycle-finish command accepted its summary text through an undeclared flag and copied the flag word itself into the progress record and the mission comment; parse the declared flags, treat summary as an alias of reason, reject an unknown flag loudly, and pin it with a regression test",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane cycle (Claude)",
       "started_at": "2026-10-05T08:27:25.611Z",
-      "completed_at": null,
+      "completed_at": "2026-10-05T08:34:10.603Z",
       "target_at": null,
-      "evidence": "PLANNED",
-      "commit": null,
-      "summary": "In progress: the loop's cycle-finish command joins everything after the verb into free text and only strips a leading reason flag, so a summary flag is copied verbatim into the progress record and the mission comment. Fixing the argument parser (reason and summary flags, equals form, loud refusal of an unknown flag) with a regression test in the operations test suite.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "2acd925",
+      "summary": "Complete: the loop's cycle-finish command now parses its text flags. Reason and summary are aliases, the equals form works, bare text still works, tokens are joined in order, and an unknown flag is refused with a named error before the cycle, lock or store is touched. Sixteen new parser tests and two new end-to-end harness cases (progress line, mission comment and blocked-row detail carry the text without the flag word; a refused finish leaves everything in place and a corrected retry converges) went from failing to passing; the harness also now clears the launch cycle id so it runs under a live cycle. Merged into the mission-control main line without fast-forward; no service restart needed. The trading backend was untouched: paper gate all-false and the real-money bolt ten of ten before and after.",
       "blockers": [],
-      "next_action": "Failing test first, then the parser fix, bolt and PAPER gate re-verified, no-fast-forward merge into the mission-control main line.",
-      "updated_at": "2026-10-05T08:27:25.611Z"
+      "next_action": "Observe this cycle's own finish record for the clean summary text; the remaining loop-tooling card (progress line stamps the wrong checkout head) is tracked separately.",
+      "updated_at": "2026-10-05T08:34:10.603Z"
     }
   ],
   "history": [
@@ -2173,6 +2173,14 @@
       "at": "2026-10-05T08:27:25.611Z",
       "evidence": "PLANNED",
       "commit": null
+    },
+    {
+      "task_id": "WS-LOOP-1",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-05T08:34:10.603Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "2acd925"
     }
   ]
 }

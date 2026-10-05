@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-05T08:27:25.611Z",
+  "updated_at": "2026-10-05T08:34:10.603Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 52,
+        "complete": 53,
         "total": 67,
-        "percent": 78
+        "percent": 79
       },
-      "next_action": "Failing test first, then the parser fix, bolt and PAPER gate re-verified, no-fast-forward merge into the mission-control main line.",
-      "updated_at": "2026-10-05T08:27:25.611Z"
+      "next_action": "Observe this cycle's own finish record for the clean summary text; the remaining loop-tooling card (progress line stamps the wrong checkout head) is tracked separately.",
+      "updated_at": "2026-10-05T08:34:10.603Z"
     },
     {
       "project_id": "mission-control",
