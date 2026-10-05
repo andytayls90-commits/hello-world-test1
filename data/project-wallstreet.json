@@ -123,7 +123,8 @@
         "WS-HYGIENE-2",
         "WS-HYGIENE-3",
         "WS-EVID-1",
-        "WS-HYGIENE-4"
+        "WS-HYGIENE-4",
+        "WS-HYGIENE-5"
       ]
     },
     {
@@ -1409,6 +1410,22 @@
       "blockers": [],
       "next_action": "None for this item. Owner acts outstanding: push the toolkit and platform repositories to their remotes.",
       "updated_at": "2026-10-05T16:02:15.813Z"
+    },
+    {
+      "id": "WS-HYGIENE-5",
+      "title": "Council repository single source of truth: the operator's prayer-blessing tool (the command the owner uses to bless or decline the Scribe's self-improvement proposals) lived only as an unversioned file in the live council home because that repository ignores its automation directory by name; version it alongside the other council tools and add a test that fails the suite whenever a tool file in that directory is left untracked",
+      "project": "Project Wallstreet",
+      "status": "PLANNED",
+      "owner": "Autonomous trading-lane engineer (Claude)",
+      "started_at": null,
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PLANNED",
+      "commit": null,
+      "summary": "Found by the previous hygiene item's drift check, which reported the blessing tool as versioned nowhere.",
+      "blockers": [],
+      "next_action": "Carve the tool out of the ignore rule, add a byte-identical tracked copy, add the tracked-tools audit test, merge and push.",
+      "updated_at": "2026-10-05T16:53:00.000Z"
     }
   ],
   "history": [
