@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-06T00:02:02.394Z",
+  "updated_at": "2026-10-06T01:02:51.458Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -16,11 +16,11 @@
       "current_task_id": "M2.3",
       "progress": {
         "complete": 66,
-        "total": 85,
-        "percent": 78
+        "total": 86,
+        "percent": 77
       },
-      "next_action": "Owner runs the commands in the packet to post the issue and pull request, or marks the card won't-do; the fleet already carries the config-side placeholder so nothing is waiting locally.",
-      "updated_at": "2026-10-06T00:02:02.394Z"
+      "next_action": "Write the failing tests, the tool, the doctor section; apply to the live profiles with backups; prove on the next council run that the warning is gone.",
+      "updated_at": "2026-10-06T01:02:51.458Z"
     },
     {
       "project_id": "mission-control",

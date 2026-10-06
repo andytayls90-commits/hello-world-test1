@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-06T00:02:02.394Z",
+  "updated_at": "2026-10-06T01:02:51.458Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Owner runs the commands in the packet to post the issue and pull request, or marks the card won't-do; the fleet already carries the config-side placeholder so nothing is waiting locally.",
+  "next_action": "Write the failing tests, the tool, the doctor section; apply to the live profiles with backups; prove on the next council run that the warning is gone.",
   "milestones": [
     {
       "id": "M0",
@@ -132,7 +132,8 @@
         "WS-COUNCIL-24",
         "WS-COUNCIL-25",
         "WS-COUNCIL-26",
-        "WS-COUNCIL-27"
+        "WS-COUNCIL-27",
+        "WS-COUNCIL-28"
       ]
     },
     {
@@ -1568,6 +1569,22 @@
       ],
       "next_action": "Owner runs the commands in the packet to post the issue and pull request, or marks the card won't-do; the fleet already carries the config-side placeholder so nothing is waiting locally.",
       "updated_at": "2026-10-06T00:02:02.394Z"
+    },
+    {
+      "id": "WS-COUNCIL-28",
+      "title": "Council model context pin: hermes warns on every council run that the configured 262k context pin disagrees with an 'advertised' 131k window — verify the served window, make the advertised value truthful, add a fleet check and a recurring alarm",
+      "project": "Project Wallstreet",
+      "status": "IN_PROGRESS",
+      "owner": "Autonomous trading-lane cycle (Claude)",
+      "started_at": "2026-10-06T01:02:51.458Z",
+      "completed_at": null,
+      "target_at": null,
+      "evidence": "PARTIAL",
+      "commit": null,
+      "summary": "In progress. Verified read-only that the local model server really serves the council model with a 262k window (its config and the live server both say so), so the 262k pin is correct and the 131k figure is hermes' built-in family default, not a measurement: the card's overflow premise is falsified and the warning is noise. Building a fleet check/fix tool that reads the served window, records it where hermes looks for the advertised value, and aligns a drifted pin, plus a recurring health-check alarm.",
+      "blockers": [],
+      "next_action": "Write the failing tests, the tool, the doctor section; apply to the live profiles with backups; prove on the next council run that the warning is gone.",
+      "updated_at": "2026-10-06T01:02:51.458Z"
     }
   ],
   "history": [
@@ -2793,6 +2810,14 @@
       "at": "2026-10-06T00:02:02.394Z",
       "evidence": "BLOCKED",
       "commit": "8c032e7"
+    },
+    {
+      "task_id": "WS-COUNCIL-28",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-06T01:02:51.458Z",
+      "evidence": "PARTIAL",
+      "commit": null
     }
   ]
 }
