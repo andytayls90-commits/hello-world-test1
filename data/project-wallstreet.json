@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-05T23:55:06.160Z",
+  "updated_at": "2026-10-06T00:02:02.394Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Run the new test on pristine and patched exports; write the packet; owner posts.",
+  "next_action": "Owner runs the commands in the packet to post the issue and pull request, or marks the card won't-do; the fleet already carries the config-side placeholder so nothing is waiting locally.",
   "milestones": [
     {
       "id": "M0",
@@ -1555,17 +1555,19 @@
       "id": "WS-COUNCIL-27",
       "title": "Hermes upstream: the auxiliary client warns about a missing key for a keyless local (loopback) named provider while the main runtime path stays silent — verify the two open upstream fixes against our config shapes and prepare the contribution packet for the owner to post",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "BLOCKED",
       "owner": "Autonomous trading-lane cycle (Claude)",
       "started_at": "2026-10-05T23:55:06.160Z",
       "completed_at": null,
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress: confirmed the inconsistency still exists on upstream main; two open upstream pull requests already include the local-endpoint exemption, so the increment is verifying them against our shapes on exported copies and preparing the owner's posting packet.",
-      "blockers": [],
-      "next_action": "Run the new test on pristine and patched exports; write the packet; owner posts.",
-      "updated_at": "2026-10-05T23:55:06.160Z"
+      "evidence": "BLOCKED",
+      "commit": "8c032e7",
+      "summary": "Prepared, waiting on the owner. Confirmed on current upstream main that the auxiliary client still warns about a missing key for a keyless local (loopback) named provider while the main runtime path resolves the same entry silently; the two open upstream pull requests on the adjacent issue both leave that warning line untouched. Prepared a minimal complementary patch with eight tests (five fail on pristine main, all eight pass with the patch; neighbouring suites unchanged apart from the new passes), verified it applies cleanly to a fresh export, plus the issue text, pull-request text, commit message and exact owner commands. Nothing on the live hermes tree or the trading desk changed; paper gate and bolt verified before and after.",
+      "blockers": [
+        "Owner act: posting the prepared issue and pull request upstream under the owner's public GitHub identity (or recording a config-only won't-do on the card)."
+      ],
+      "next_action": "Owner runs the commands in the packet to post the issue and pull request, or marks the card won't-do; the fleet already carries the config-side placeholder so nothing is waiting locally.",
+      "updated_at": "2026-10-06T00:02:02.394Z"
     }
   ],
   "history": [
@@ -2783,6 +2785,14 @@
       "at": "2026-10-05T23:55:06.160Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-27",
+      "from": "IN_PROGRESS",
+      "to": "BLOCKED",
+      "at": "2026-10-06T00:02:02.394Z",
+      "evidence": "BLOCKED",
+      "commit": "8c032e7"
     }
   ]
 }
