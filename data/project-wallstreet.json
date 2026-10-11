@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-11T17:55:23.863Z",
+  "updated_at": "2026-10-11T19:01:04.605Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "None for this card. Follow-up card on the board for the unpinned research profile whose catalog window (256k) exceeds its served window (64k).",
+  "next_action": "Next trading-lane candidates: the council sub-floor approvals follow-up (filed), the approvals decide/cancel conflict guards, the reconcile true-up re-inflation, and the deprecated UTC timestamp sweep.",
   "milestones": [
     {
       "id": "M0",
@@ -63,7 +63,8 @@
         "WS-RECON-1",
         "WS-APPR-1",
         "WS-APPR-2",
-        "WS-EXEC-2"
+        "WS-EXEC-2",
+        "WS-EXEC-3"
       ]
     },
     {
@@ -1585,6 +1586,22 @@
       "blockers": [],
       "next_action": "None for this card. Follow-up card on the board for the unpinned research profile whose catalog window (256k) exceeds its served window (64k).",
       "updated_at": "2026-10-11T17:55:23.863Z"
+    },
+    {
+      "id": "WS-EXEC-3",
+      "title": "Desk soft-wedged at ninety-two percent deployed: the autonomous sizing derived every entry from its risk budget alone and never looked at the capital still available, so every add to the utilities position was refused five times for insufficient capital (including two council re-approvals that asked for a smaller size) and the desk liveness sentinel paged DESK DOWN for three episodes; size each entry to the smaller of the risk-sized quantity and what remains of the paper principal, refuse only when the fit would be dust, keep every gate unchanged",
+      "project": "Project Wallstreet",
+      "status": "COMPLETE",
+      "owner": "Autonomous trading-lane engineer (Claude)",
+      "started_at": "2026-10-11T19:01:04.583Z",
+      "completed_at": "2026-10-11T19:01:04.605Z",
+      "target_at": null,
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "ef9add8",
+      "summary": "Deployed and re-verified by the autonomous trading-lane cycle. The available-capital arithmetic now lives in one helper that both the capital gate and the autonomous sizing read; the sizing takes the smaller of the risk-sized quantity and what the remaining paper principal can fund, records the fit on the approval, leaves a fit below a quarter of the risk-sized exposure untaken so the gate refuses it explicitly as before, and a configuration switch restores refuse-only. Stop, target and risk budget are unchanged and no gate or limit was raised. Eight failing-then-passing tests guard it, the sizing, execution and gate areas pass, the full backend suite passed, the bolt held ten of ten four times, and a scratch replay of the real refused utilities add produced a fitted quantity that the gate accepts. After the deploy the gate stayed PAPER, the service was healthy on the new build, open positions were untouched and the journal was clean. The liveness alert clears on the first fill in regular hours (markets closed at completion). The policy-correct refusals in the same window (confidence floor, sector cap) were filed as a council-prompt follow-up.",
+      "blockers": [],
+      "next_action": "Next trading-lane candidates: the council sub-floor approvals follow-up (filed), the approvals decide/cancel conflict guards, the reconcile true-up re-inflation, and the deprecated UTC timestamp sweep.",
+      "updated_at": "2026-10-11T19:01:04.605Z"
     }
   ],
   "history": [
@@ -2826,6 +2843,22 @@
       "at": "2026-10-11T17:55:23.863Z",
       "evidence": "SELF-VERIFIED LIVE",
       "commit": "7635a0f"
+    },
+    {
+      "task_id": "WS-EXEC-3",
+      "from": "PLANNED",
+      "to": "IN_PROGRESS",
+      "at": "2026-10-11T19:01:04.583Z",
+      "evidence": "PARTIAL",
+      "commit": null
+    },
+    {
+      "task_id": "WS-EXEC-3",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-11T19:01:04.605Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "ef9add8"
     }
   ]
 }

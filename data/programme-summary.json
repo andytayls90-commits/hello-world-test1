@@ -3,7 +3,7 @@
   "programme_name": "Re-AgentAI",
   "status": "BLOCKED",
   "evidence": "PARTIAL",
-  "updated_at": "2026-10-11T17:55:23.863Z",
+  "updated_at": "2026-10-11T19:01:04.605Z",
   "stale_after_hours": 48,
   "projects": [
     {
@@ -15,12 +15,12 @@
       "data_file": "data/project-wallstreet.json",
       "current_task_id": "M2.3",
       "progress": {
-        "complete": 67,
-        "total": 86,
+        "complete": 68,
+        "total": 87,
         "percent": 78
       },
-      "next_action": "None for this card. Follow-up card on the board for the unpinned research profile whose catalog window (256k) exceeds its served window (64k).",
-      "updated_at": "2026-10-11T17:55:23.863Z"
+      "next_action": "Next trading-lane candidates: the council sub-floor approvals follow-up (filed), the approvals decide/cancel conflict guards, the reconcile true-up re-inflation, and the deprecated UTC timestamp sweep.",
+      "updated_at": "2026-10-11T19:01:04.605Z"
     },
     {
       "project_id": "mission-control",
