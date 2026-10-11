@@ -4,10 +4,10 @@
   "project_name": "Project Wallstreet",
   "status": "BLOCKED",
   "evidence": "CONTRADICTED",
-  "updated_at": "2026-10-06T01:02:51.458Z",
+  "updated_at": "2026-10-11T17:55:23.863Z",
   "stale_after_hours": 48,
   "current_task_id": "M2.3",
-  "next_action": "Write the failing tests, the tool, the doctor section; apply to the live profiles with backups; prove on the next council run that the warning is gone.",
+  "next_action": "None for this card. Follow-up card on the board for the unpinned research profile whose catalog window (256k) exceeds its served window (64k).",
   "milestones": [
     {
       "id": "M0",
@@ -1574,17 +1574,17 @@
       "id": "WS-COUNCIL-28",
       "title": "Council model context pin: hermes warns on every council run that the configured 262k context pin disagrees with an 'advertised' 131k window — verify the served window, make the advertised value truthful, add a fleet check and a recurring alarm",
       "project": "Project Wallstreet",
-      "status": "IN_PROGRESS",
+      "status": "COMPLETE",
       "owner": "Autonomous trading-lane cycle (Claude)",
       "started_at": "2026-10-06T01:02:51.458Z",
-      "completed_at": null,
+      "completed_at": "2026-10-11T17:55:23.863Z",
       "target_at": null,
-      "evidence": "PARTIAL",
-      "commit": null,
-      "summary": "In progress. Verified read-only that the local model server really serves the council model with a 262k window (its config and the live server both say so), so the 262k pin is correct and the 131k figure is hermes' built-in family default, not a measurement: the card's overflow premise is falsified and the warning is noise. Building a fleet check/fix tool that reads the served window, records it where hermes looks for the advertised value, and aligns a drifted pin, plus a recurring health-check alarm.",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "7635a0f",
+      "summary": "Done and proven live. The local model server really serves the council model with a 262k window, so the 262k pin is correct and the 131k figure was hermes' built-in family default, not a measurement: the overflow premise was falsified. Shipped a fleet check/fix tool that reads the served window, records it where hermes looks for the advertised value and aligns a drifted pin with a backup, plus a recurring health-check alarm section, both test-first (37 and 9 checks, red to green) and a toolkit SOP. Applied to the three council profile homes with a backup; the resolver probe under each live profile home then reported the advertised value equal to the pin with the warning silent. Live proof over five days: 61 council runs since the fix date, the warning present only in the one run before the fix, absent in the forced run right after it and in the 59 scheduled runs since; the health-check alarm reports green. No trading code, no unit restart, paper gate and bolt verified before and after.",
       "blockers": [],
-      "next_action": "Write the failing tests, the tool, the doctor section; apply to the live profiles with backups; prove on the next council run that the warning is gone.",
-      "updated_at": "2026-10-06T01:02:51.458Z"
+      "next_action": "None for this card. Follow-up card on the board for the unpinned research profile whose catalog window (256k) exceeds its served window (64k).",
+      "updated_at": "2026-10-11T17:55:23.863Z"
     }
   ],
   "history": [
@@ -2818,6 +2818,14 @@
       "at": "2026-10-06T01:02:51.458Z",
       "evidence": "PARTIAL",
       "commit": null
+    },
+    {
+      "task_id": "WS-COUNCIL-28",
+      "from": "IN_PROGRESS",
+      "to": "COMPLETE",
+      "at": "2026-10-11T17:55:23.863Z",
+      "evidence": "SELF-VERIFIED LIVE",
+      "commit": "7635a0f"
     }
   ]
 }
